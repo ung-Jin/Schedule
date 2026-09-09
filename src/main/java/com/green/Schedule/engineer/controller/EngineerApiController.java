@@ -17,21 +17,21 @@ public class EngineerApiController {
     return engineerService.engineerDetail(engineerNo);
   }
 
-  //기사 등록 (AJAX)
+  //기사 등록
   @PostMapping("/insert")
   public boolean insertEngineer(@RequestBody EngineerDTO engineerDTO){
     engineerService.insertEngineer(engineerDTO);
     return true;
   }
 
-  //기사 정보 수정 (AJAX)
+  //기사 정보 수정
   @PostMapping("/update")
   public boolean updateEngineer(@RequestBody EngineerDTO engineerDTO){
     engineerService.updateEngineer(engineerDTO);
     return true;
   }
 
-  //기사 삭제 (AJAX)
+  //기사 삭제
   @GetMapping("/delete/{engineerNo}")
   public boolean deleteEngineer(@PathVariable("engineerNo") int engineerNo){
     engineerService.deleteEngineer(engineerNo);

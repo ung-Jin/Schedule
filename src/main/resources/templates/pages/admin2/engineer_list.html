@@ -33,17 +33,17 @@
       <tbody>
       <!--데이터가 없을 경우-->
       <tr th:if="${#lists.isEmpty(engineerList)}">
-        <td colspan="6" class="empty-row"></td>
+        <td colspan="6" class="empty-row">등록된 기사가 없습니다.</td>
       </tr>
       <!--데이터가 있을 경우-->
       <tr th:each="engineer : ${engineerList}">
-        <td th:text="${engineer.engineerName}"></td>
-        <td th:text="${engineer.engineerTel}"></td>
-        <td th:text="${engineer.specialty}"></td>
+        <td th:text="${engineer.engineerName}">김기사</td>
+        <td th:text="${engineer.engineerTel}">010-1234-5678</td>
+        <td th:text="${engineer.specialty}">에어컨</td>
         <td>
-          <span th:text="${engineer.workStartTime}"></span>
+          <span th:text="${engineer.workStartTime}">09:00</span>
           ~
-          <span th:text="${engineer.workEndTime}"></span>
+          <span th:text="${engineer.workEndTime}">18:00</span>
         </td>
         <td>
           <span th:if="${engineer.status == 'WORK'}" class="badge badge-work">근무중</span>
@@ -141,10 +141,13 @@
         <button type="button" class="btn-cancel" onclick="closeForm()">취소</button>
         <button type="button" class="btn-primary" id="submitBtn" onclick="submitForm()">등록하기</button>
       </div>
+
     </form>
   </div>
+
 </div>
 
+<!-- axios CDN -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script th:src="@{/js/pages/admin2/engineer_list.js}"></script>
 
