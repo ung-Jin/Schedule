@@ -1,0 +1,191 @@
+.schedule-container{
+  width: 100%;
+  margin: 0px auto;
+  
+}
+.schedule-main{
+  display: flex;
+  gap: 10px;
+}
+
+.schedule-container {
+  --accent: #2f6fe4;
+  --accent-strong: #2557c2;
+  --accent-soft: #e8effd;
+  --border: #dde3ea;
+  --surface: #ffffff;
+  --surface-2: #f5f7fa;
+  --text: #16202a;
+  --text-dim: #5b6b76;
+ 
+  padding: 24px;
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  color: var(--text);
+}
+ 
+.schedule-container h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+ 
+.schedule-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .schedule-main { grid-template-columns: 1fr; }
+}
+ 
+/* ================= 왼쪽: 캘린더 카드 ================= */
+.cal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(20, 32, 42, .05), 0 8px 20px -12px rgba(20, 32, 42, .15);
+}
+ 
+.cal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+ 
+.tb-left { display: flex; align-items: center; gap: 10px; }
+.tb-left button {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+.tb-left button:hover { background: var(--accent-soft); }
+ 
+.cal-title { font-weight: 700; font-size: 15px; min-width: 90px; }
+ 
+.tb-right { display: flex; align-items: center; gap: 10px; }
+ 
+.view-switch {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.view-switch button {
+  padding: 6px 13px;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text-dim);
+  border: none;
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  font-family: inherit;
+}
+.view-switch button:last-child { border-right: none; }
+.view-switch button.active { background: var(--accent); color: #fff; }
+ 
+#techFilter {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 6px 10px;
+}
+ 
+#calendar { padding: 18px; }
+ 
+/* FullCalendar 기본 스타일을 카드 톤에 맞춤 */
+.cal-card .fc { --fc-border-color: var(--border); }
+.cal-card .fc .fc-col-header-cell-cushion {
+  color: var(--text-dim); font-weight: 600; font-size: 12px; padding: 8px 4px; text-decoration: none;
+}
+.cal-card .fc .fc-daygrid-day-number {
+  color: var(--text); font-size: 12.5px; padding: 6px 8px; text-decoration: none;
+}
+.cal-card .fc .fc-day-today { background: var(--accent-soft) !important; }
+.cal-card .fc .fc-daygrid-day-frame { min-height: 68px; }
+.cal-card .fc-event { border: none; border-radius: 6px; font-size: 12px; padding: 1px 4px; cursor: pointer; }
+.cal-card .fc-theme-standard td, .cal-card .fc-theme-standard th { border-color: var(--border); }
+ 
+/* ================= 오른쪽: AS 일정 배정 패널 ================= */
+.assign-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.assign-card h4 { font-size: 15px; font-weight: 700; margin: 0 0 16px; }
+ 
+.assign-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.assign-card form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.assign-card form > div p {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+ 
+.assign-card select,
+.assign-card input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--surface);
+}
+.assign-card select:focus,
+.assign-card input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+ 
+/* 시간선택 줄: <div><input type=time><span>-</span><input type=time></div> */
+.assign-card form > div > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.assign-card form > div > div input { flex: 1; width: auto; }
+.assign-card form > div > div span { color: var(--text-dim); font-size: 13px; }
+ 
+.assign-card button[type="button"] {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 2px;
+}
+.assign-card button[type="button"]:hover { background: var(--accent-strong); }
