@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A/S 요청 신청 - 냉·난방 AS</title>
+
+  <link rel="stylesheet" th:href="@{/request.css}">
+</head>
+<body>
+
+  <!-- 로그인한 사용자용 상단 메뉴 -->
+  <header class="top-bar">
+    <div class="logo"><a th:href="@{/}">❄ 냉·난방 AS</a></div>
+
+    <nav>
+      <ul>
+        <li><a th:href="@{/request/write}">A/S 신청</a></li>
+        <!-- 신청 내역 조회 / 고객센터 페이지는 아직 안 만들어서 자리만 잡아둠 -->
+        <li><a href="#">신청 내역 조회</a></li>
+        <li><a href="#">고객센터</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-area">
+      <span th:text="${session.loginMember.memName} + '님'">회원님</span>
+      <a th:href="@{/member/logout}" class="logout">로그아웃</a>
+    </div>
+  </header>
+
+  <div class="request-layout">
+
+    <!-- 사이드바 : 왼쪽 -->
+    <aside class="sidebar">
+      <div class="info-box">
+        <h3>ℹ️ 신청 안내</h3>
+        <ol>
+          <li>A/S 요청 정보를 입력해주세요.</li>
+          <li>접수 후 관리자 확인이 진행됩니다.</li>
+          <li>담당 기사 배정이 완료되면 연락을 드립니다.</li>
+          <li>배정된 기사님이 방문하여 점검 및 수리를 진행합니다.</li>
+        </ol>
+      </div>
+
+      <div class="info-box">
+        <h3>☎ 고객센터</h3>
+        <p class="tel">1588-1234</p>
+        <p>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</p>
+      </div>
+    </aside>
+
+    <!-- 신청 폼 : 오른쪽 -->
+    <main class="request-form-area">
+      <h2>A/S 요청 신청</h2>
+      <p class="sub-desc">제품의 문제를 접수해주시면 신속하게 확인 후 방문 일정을 안내해 드립니다.</p>
+
+      <!-- 실제로 단계를 넘나드는 기능은 만들지 않고, 보기용으로만 간단히 표시합니다. -->
+      <div class="step-bar">
+        <span class="step active">1. 요청 정보 입력</span>
+        <span class="step">2. 접수 완료</span>
+      </div>
+
+      <form th:action="@{/request/write}" method="post" id="requestForm">
+
+        <div class="form-group">
+          <label for="customerName">이름 *</label>
+          <input type="text" id="customerName" name="customerName"
+                 th:value="${session.loginMember != null ? session.loginMember.memName : ''}"
+                 placeholder="이름을 입력해주세요" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customerTel">연락처 *</label>
+          <input type="text" id="customerTel" name="customerTel"
+                 placeholder="예: 010-1234-5678" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customerAddr">주소 *</label>
+          <input type="text" id="customerAddr" name="customerAddr"
+                 placeholder="주소를 입력해주세요" required>
+        </div>
+
+        <div class="form-group">
+          <label for="productType">제품 종류 *</label>
+          <select id="productType" name="productType" required>
+            <option value="">선택하세요</option>
+            <option value="에어컨">에어컨</option>
+            <option value="보일러">보일러</option>
+            <option value="세탁기">세탁기</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="symptom">고장 증상 *</label>
+          <textarea id="symptom" name="symptom" rows="4"
+                    placeholder="고장 증상을 자세히 입력해주세요. (예: 냉방이 되지 않습니다.)" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="wishDate">희망 날짜 *</label>
+          <input type="date" id="wishDate" name="wishDate" required>
+        </div>
+
+        <div class="form-buttons">
+          <a th:href="@{/}" class="btn btn-outline">취소</a>
+          <button type="submit" class="btn btn-primary">접수하기</button>
+        </div>
+
+      </form>
+    </main>
+
+  </div>
+
+  <script th:src="@{/js/request.js}"></script>
+</body>
+</html>
