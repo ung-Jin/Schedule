@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  A
+  <link rel="stylesheet" href="/common/layout.css">
+  <link rel="stylesheet" href="/common/main.css">
+  <link rel="stylesheet" href="/common/side.css">
+  <link rel="stylesheet" href="/common/header.css">
+
+  <th:block layout:fragment="content_css"></th:block>
+
 </head>
+
 <body>
-  
+
+  <div class="container">
+
+    <div class="side">
+      <th:block th:replace="~{common/side::sideFragment}"></th:block>
+    </div>
+
+
+    <div class="main">
+      <div class="header">
+        <th:block th:replace="~{common/header::headerFragment}"></th:block>
+      </div>
+
+      <div class="content">
+        <th:block layout:fragment="content"></th:block>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <th:block layout:fragment="content_js"></th:block>
 </body>
+
 </html>

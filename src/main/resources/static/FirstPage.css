@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "맑은 고딕", sans-serif;
+  color: #222;
+}
+
+/* 페이지 전체를 세로로 쌓는 큰 틀 (header - hero - content) */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상단 메뉴 : 로고는 왼쪽, 메뉴는 오른쪽 */
+.first-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.first-top h1 a {
+  color: #222;
+  text-decoration: none;
+}
+
+.first-top nav ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.first-top nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* 메인 소개 영역 : 세로로 정렬 + 가운데 정렬 */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #2d6cdf;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1px solid #2d6cdf;
+  color: #2d6cdf;
+}
+
+/* 메인 화면의 "주요 기능 미리보기" 영역 */
+.features-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #eee;
+}
+
+.features-preview .more-link {
+  margin-top: 24px;
+}
+
+/* 서비스 소개(/service-intro), 주요 기능(/features) 페이지 공통 레이아웃 */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  gap: 16px;
+}
+
+.page-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.page-content .btn {
+  margin-top: 24px;
+}
+
+.feature-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.feature-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 24px;
+  width: 220px;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
