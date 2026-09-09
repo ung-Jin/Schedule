@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기사관리</title>
+  <link rel="stylesheet" th:href="@{/css/pages/admin2/engineer_list.css}">
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!--기사 목록 카드-->
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">기사관리</h2>
+      <button type="button" class="btn-primary btn-add" onclick="openForm()">
+        + 기사 등록
+      </button>
+    </div>
+
+    <table class="engineer-table">
+      <thead>
+      <tr>
+        <th>기사명</th>
+        <th>연락처</th>
+        <th>전문분야</th>
+        <th>근무가능시간</th>
+        <th>상태</th>
+        <th>관리</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--데이터가 없을 경우-->
+      <tr th:if="${#lists.isEmpty(engineerList)}">
+        <td colspan="6" class="empty-row"></td>
+      </tr>
+      <!--데이터가 있을 경우-->
+      <tr th:each="engineer : ${engineerList}">
+        <td th:text="${engineer.engineerName}"></td>
+        <td th:text="${engineer.engineerTel}"></td>
+        <td th:text="${engineer.specialty}"></td>
+        <td>
+          <span th:text="${engineer.workStartTime}"></span>
+          ~
+          <span th:text="${engineer.workEndTime}"></span>
+        </td>
+        <td>
+          <span th:if="${engineer.status == 'WORK'}" class="badge badge-work">근무중</span>
+          <span th:if="${engineer.status == 'REST'}" class="badge badge-rest">휴무</span>
+        </td>
+        <td>
+          <button class="link-edit" th:onclick="'openEditForm(' + ${engineer.engineerNo} + ')'">수정</button>
+          <span class="link-sep">|</span>
+          <button class="link-delete" th:onclick="'deleteEngineer(' + ${engineer.engineerNo} + ')'">삭제</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--기사 등록/수정 카드-->
+  <div class="card form-card" id="formCard">
+    <div class="card-header">
+      <h3 class="form-title" id="formTitle">기사 등록</h3>
+      <button type="button" class="btn-close" onclick="closeForm()">×</button>
+    </div>
+
+    <form id="engineerForm">
+      <!--수정 시에만 사용되는 hidden-->
+      <input type="hidden" name="engineerNo" id="engineerNo" value="">
+
+      <!--첫째 줄: 기사명 / 연락처-->
+      <div class="form-grid-2">
+        <div class="form-item">
+          <label>기사명</label>
+          <input type="text" name="engineerName" id="engineerName" placeholder="이름을 입력하세요" required>
+        </div>
+        <div class="form-item">
+          <label>연락처</label>
+          <input type="text" name="engineerTel" id="engineerTel" placeholder="010-0000-0000" required>
+        </div>
+      </div>
+
+      <!--아이디 / 비밀번호 (등록 시에만 노출)-->
+      <div class="form-grid-2" id="accountRow">
+        <div class="form-item">
+          <label>아이디</label>
+          <input type="text" name="memId" id="memId" placeholder="아이디">
+        </div>
+        <div class="form-item">
+          <label>비밀번호</label>
+          <input type="password" name="memPw" id="memPw" placeholder="비밀번호">
+        </div>
+      </div>
+
+      <!--전문분야 체크박스-->
+      <div class="form-item form-item-full">
+        <label>전문분야</label>
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="specialty" value="에어컨"> 에어컨
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="specialty" value="보일러"> 보일러
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="specialty" value="냉난방 전체"> 냉난방 전체
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="specialty" value="기타"> 기타
+          </label>
+        </div>
+      </div>
+
+      <!--근무가능시간-->
+      <div class="form-item form-item-full">
+        <label>근무가능시간</label>
+        <div class="time-group">
+          <input type="time" name="workStartTime" id="workStartTime" value="09:00">
+          <span>~</span>
+          <input type="time" name="workEndTime" id="workEndTime" value="18:00">
+        </div>
+      </div>
+
+      <!--상태 라디오-->
+      <div class="form-item form-item-full">
+        <label>상태</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="status" value="WORK" checked> 근무중
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="status" value="REST"> 휴무
+          </label>
+        </div>
+      </div>
+
+      <!--버튼-->
+      <div class="btn-group">
+        <button type="button" class="btn-cancel" onclick="closeForm()">취소</button>
+        <button type="button" class="btn-primary" id="submitBtn" onclick="submitForm()">등록하기</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script th:src="@{/js/pages/admin2/engineer_list.js}"></script>
+
+</body>
+</html>
