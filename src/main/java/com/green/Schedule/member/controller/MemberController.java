@@ -65,10 +65,10 @@ public class MemberController {
         return redirectByRole(loginMember.getRole());
     }
 
-    /**
-     * 로그아웃
-     * 주소 예: /member/logout
-     */
+
+    /* 로그아웃
+     * 주소 예: /member/logout      */
+
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         // 세션에 저장된 정보를 모두 지웁니다.
@@ -77,60 +77,16 @@ public class MemberController {
     }
 
 
-    /**
-     * role 값에 따라 이동할 주소를 정해주는 메서드
-     * (로그인 성공 직후, 그리고 로그인 상태로 로그인 화면에 다시 들어왔을 때
-     *  똑같은 분기 코드를 두 번 쓰지 않기 위해 따로 뺐습니다.)
-     */
     private String redirectByRole(String role) {
         if ("admin".equals(role)) {
             return "redirect:/pages/admin/main";
         } else if ("repairman".equals(role)) {
-            return "redirect:/pages/engineer/main";
+            return "redirect:/pages/result/result_dashboard";
         } else {
             return "redirect:/pages/user/main";
         }
     }
 
 
-    // =========================
-    // 사용자 메인
-    // =========================
-    @Controller
-    @RequestMapping("/pages/user")
-    public class UserController {
 
-        @GetMapping("/main")
-        public String main() {
-            return "pages/user/main";
-        }
-    }
-
-
-    // =========================
-    // 관리자 메인
-    // =========================
-    @Controller
-    @RequestMapping("/pages/admin")
-    public class AdminController {
-
-        @GetMapping("/main")
-        public String main() {
-            return "pages/admin/main";
-        }
-    }
-
-
-    // =========================
-    // 기사 메인
-    // =========================
-    @Controller
-    @RequestMapping("/pages/engineer")
-    public class EngineerController {
-
-        @GetMapping("/main")
-        public String main() {
-            return "pages/engineer/main";
-        }
-    }
 }
