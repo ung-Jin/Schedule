@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서비스 소개 - 냉·난방 AS</title>
+
+  <link rel="stylesheet" th:href="@{/css/FirstPage.css}">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 상단 메뉴 (메인페이지와 동일) -->
+    <header class="first-top">
+      <h1><a th:href="@{/}">냉,난방 AS</a></h1>
+
+      <nav>
+        <ul>
+          <li><a th:href="@{/service-intro}">서비스소개</a></li>
+          <li><a th:href="@{/features}">주요기능</a></li>
+          <li><a th:href="@{/member/login}">로그인</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 서비스 소개 내용 -->
+    <section class="page-content">
+      <h2>서비스 소개</h2>
+
+      <p>
+        냉·난방 AS기사 스케줄 관리 시스템은 고객의 수리 요청부터<br>
+        기사 배정, 작업 완료 확인까지 전체 과정을 한 곳에서 관리할 수 있는 서비스입니다.
+      </p>
+
+      <p>
+        사용자는 원하는 날짜와 시간에 수리를 신청하고,<br>
+        관리자는 상황에 맞는 기사를 배정하며,<br>
+        기사는 배정받은 일정을 확인하고 작업 결과를 등록합니다.
+      </p>
+
+      <a th:href="@{/}" class="btn btn-outline">홈으로 돌아가기</a>
+    </section>
+
+  </div>
+
+</body>
+</html>

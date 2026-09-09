@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
 <body>
-  
+
+  <div th:fragment="headerFragment" class="header-inner">
+
+    <div class="header-title">냉·난방 AS기사 스케줄 관리 시스템</div>
+
+    <div class="header-user">
+      <span th:text="${session.loginMember.memName} + '님'">회원님</span>
+      <a th:href="@{/member/logout}" class="logout-btn">로그아웃</a>
+    </div>
+
+  </div>
+
 </body>
 </html>
