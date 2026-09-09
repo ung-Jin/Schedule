@@ -1,3 +1,4 @@
+
 -- 1. MEMBER (부모 테이블)
 CREATE TABLE MEMBER (
     MEM_NO INT AUTO_INCREMENT PRIMARY KEY,                              -- 회원 고유번호 (PK, 자동증가)
@@ -18,6 +19,7 @@ CREATE TABLE ENGINEER (
     WORK_END_TIME TIME,                             -- 근무 종료 시간
     STATUS VARCHAR(20) DEFAULT 'WORK',              -- 근무 상태 (WORK/REST)
     FOREIGN KEY (MEM_NO) REFERENCES MEMBER(MEM_NO)
+
 );
 
 -- 3. AS_REQUEST (독립)
@@ -64,4 +66,12 @@ INSERT INTO AS_REQUEST (CUSTOMER_NAME, CUSTOMER_TEL, CUSTOMER_ADDR, PRODUCT_TYPE
 ('정하나', '010-4444-4444', '서울 마포구',              '냉난방', '전원이 안 켜짐',     '2026-09-11 15:00:00', 'RECEIVED'),
 ('최영호', '010-5555-5555', '경기 수원시',              '보일러', '온수가 약함',        '2026-09-09 11:00:00', 'COMPLETED'),
 ('한지원', '010-6666-6666', '서울 서초구',              '에어컨', '냄새 발생',          '2026-09-08 16:00:00', 'CANCELED');
+
+
+--  테이블 생성 쿼리문 더미 데이터 INSERT문은 해당 파일에 작성해주세요!!
+-- insert 한 더미 데이터로 공유 해주세요
+INSERT INTO member VALUES (1, 'admin', '1234','관리자','admin');
+INSERT INTO MEMBER VALUES (2, 'repa1', '1234','기사1','repairman');
+INSERT INTO MEMBER VALUES (3, 'user1', '1234','유저1','user');
+COMMIT;
 

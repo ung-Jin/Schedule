@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+
+  <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+
+      <h1 class="logo">냉·난방 AS</h1>
+      <p class="subtitle">냉·난방 AS기사 스케줄 관리 시스템</p>
+
+      <!-- 로그인 실패 시에만 보이는 에러 메시지 -->
+      <p class="error-msg" th:if="${loginError}" th:text="${loginError}"></p>
+
+      <!-- 관리자/기사 구분 없이 하나의 로그인 폼으로 처리 -->
+      <!-- 서버(MemberController)가 조회한 회원의 role 값을 보고 알아서 이동시켜줌 -->
+      <form th:action="@{/member/login}" method="post" id="loginForm">
+
+        <div class="input-group">
+          <label for="memId">아이디</label>
+          <input type="text" id="memId" name="memId" placeholder="아이디를 입력하세요" required>
+        </div>
+
+        <div class="input-group">
+          <label for="memPw">비밀번호</label>
+          <div class="pw-wrap">
+            <input type="password" id="memPw" name="memPw" placeholder="비밀번호를 입력하세요" required>
+            <button type="button" id="pwToggleBtn" class="pw-toggle">👁</button>
+          </div>
+        </div>
+
+        <div class="login-options">
+          <label><input type="checkbox" id="saveId"> 아이디 저장</label>
+          <a href="#" class="find-link">아이디/비밀번호 찾기</a>
+        </div>
+
+        <button type="submit" class="btn-login">로그인</button>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="/login.js"></script>
+</body>
+</html>

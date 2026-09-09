@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "맑은 고딕", sans-serif;
+  color: #222;
+  background: #f5f7fa;
+}
+
+/* 로그인 후 상단 메뉴 */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.top-bar .logo a {
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-bar nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.top-bar nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.top-bar .user-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.top-bar .user-area .logout {
+  background: #2d6cdf;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* 버튼 (write / complete 페이지 공용) */
+.btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2d6cdf;
+  color: #fff;
+}
+
+.btn-outline {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+/* 사이드바(왼쪽) + 신청 폼(오른쪽) */
+.request-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.info-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.info-box h3 {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.info-box ol {
+  padding-left: 18px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.info-box .tel {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d6cdf;
+  margin-bottom: 6px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #555;
+}
+
+.request-form-area {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.request-form-area h2 {
+  margin-bottom: 8px;
+}
+
+.sub-desc {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* 단계 표시 (보기용, 클릭해도 아무 동작 안 함) */
+.step-bar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #999;
+}
+
+.step-bar .step.active {
+  color: #2d6cdf;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.error-msg {
+  color: #e02424;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* 접수 완료 페이지 */
+.complete-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.complete-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 48px;
+  text-align: center;
+  max-width: 420px;
+}
+
+.complete-box p {
+  color: #555;
+  margin-top: 8px;
+}
+
+.complete-buttons {
+  justify-content: center;
+}
