@@ -2,258 +2,51 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org"
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{layouts/layout}">
-  
+
 <!--이 곳에 link태그로 css파일을 연결하는 코드 작성-->
 <th:block layout:fragment="content_css">
-  
+  <link rel="stylesheet" href="/css/pages/result/result_dashboard.css">
 </th:block>
-  
+
 <!--아래 block에 html코드 작성-->
 <th:block layout:fragment="content">
-  <div class="result-container">
+  <div class="dash-container">
 
-  <!-- 화면 제목 -->
-  <div class="result-title">
-    <h2>AS 결과보고</h2>
-    <p>AS 작업 완료 후 처리 결과를 등록해주세요.</p>
-  </div>
-
-  <div class="result-content">
-
-    <!-- ======================== -->
-    <!-- 왼쪽 : 처리 결과 등록 영역 -->
-    <!-- ======================== -->
-    <div class="result-form-box">
-      <h3>처리 정보</h3>
-      <form action="/result/reg"
-            method="post"
-            enctype="multipart/form-data">
-        <!-- 나중에 일정 상세화면에서 scheduleNo 전달 -->
-        <input
-            type="hidden"
-            name="scheduleNo"
-            th:value="${scheduleInfo != null ? scheduleInfo.scheduleNo : ''}">
-
-        <!-- 처리 날짜 -->
-        <div class="form-row">
-          <label for="processDate">
-            처리날짜
-            <span class="required">*</span>
-          </label>
-          <input
-              type="datetime-local"
-              id="processDate"
-              name="processDate"
-              required>
-        </div>
-
-
-        <!-- 처리 내용 -->
-        <div class="form-row content-row">
-          <label for="processContent">
-            처리내용
-            <span class="required">*</span>
-          </label>
-          <div class="textarea-box">
-            <textarea
-                id="processContent"
-                name="processContent"
-                maxlength="500"
-                placeholder="작업한 내용을 상세히 입력해주세요."
-                required></textarea>
-            <div class="text-count">
-              <span id="contentCount">0</span>/500
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 처리 사진 -->
-        <div class="form-row">
-          <label for="resultImage">
-            처리사진
-          </label>
-
-          <div class="image-upload-box">
-            <label for="resultImage" class="image-upload-label">
-              <div class="upload-icon">
-                ↑
-              </div>
-              <p>사진을 클릭하여 첨부해주세요.</p>
-              <span>
-                JPG, PNG 파일
-              </span>
-            </label>
-            <input
-                type="file"
-                id="resultImage"
-                name="resultImage"
-                accept="image/jpeg, image/png"
-                hidden>
-
-            <!-- 사진 미리보기 -->
-            <div class="image-preview-box">
-              <img
-                  id="imagePreview"
-                  alt="처리사진 미리보기">
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 버튼 -->
-        <div class="button-area">
-
-          <button
-              type="button"
-              class="cancel-btn"
-              onclick="history.back()">
-            취소
-          </button>
-
-          <button
-              type="submit"
-              class="submit-btn">
-            결과 등록하기
-          </button>
-
-        </div>
-
-      </form>
-
+    <div class="dash-title">
+      <h2>AS 기사 대시보드</h2>
+      <p>오늘 배정된 AS 일정을 확인하고 처리 결과를 등록해주세요.</p>
     </div>
 
-
-    <!-- ======================== -->
-    <!-- 오른쪽 : AS 기본정보 -->
-    <!-- ======================== -->
-    <div class="as-info-box">
-
-      <h3>AS 기본 정보</h3>
-      <div class="info-table">
-        <div class="info-row">
-          <span class="info-title">접수번호</span>
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null ? scheduleInfo.requestNo : '-'}">
-            AS20240909001
-          </span>
+    <div class="today-list" th:if="${not #lists.isEmpty(todayList)}">
+      <div class="today-card" th:each="schedule : ${todayList}">
+        <div class="today-time">
+          <span th:text="${#temporals.format(schedule.startTime, 'HH:mm')}">09:00</span>
+          <span> ~ </span>
+          <span th:text="${#temporals.format(schedule.endTime, 'HH:mm')}">12:00</span>
         </div>
 
-        <div class="info-row">
-          <span class="info-title">고객명</span>
-
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null ? scheduleInfo.customerName : '-'}">
-            김민수 고객님
-          </span>
+        <div class="today-body">
+          <div class="today-customer" th:text="${schedule.customerName}">고객명</div>
+          <div class="today-symptom" th:text="${schedule.symptom}">증상</div>
         </div>
 
-        <div class="info-row">
-          <span class="info-title">연락처</span>
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null ? scheduleInfo.customerTel : '-'}">
-            010-1234-5678
-          </span>
-        </div>
-
-        <div class="info-row">
-          <span class="info-title">주소</span>
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null ? scheduleInfo.customerAddr : '-'}">
-            울산광역시 남구 삼산동
-          </span>
-        </div>
-
-
-        <div class="info-row">
-          <span class="info-title">제품구분</span>
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null ? scheduleInfo.productType : '-'}">
-            에어컨
-          </span>
-        </div>
-
-        <div class="info-row symptom-row">
-          <span class="info-title">요청내용</span>
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null ? scheduleInfo.symptom : '-'}">
-            에어컨 냉방이 되지 않습니다.
-          </span>
-        </div>
-
-        <div class="info-row">
-          <span class="info-title">접수일</span>
-          <span
-              class="info-value"
-              th:text="${scheduleInfo != null && scheduleInfo.requestDate != null
-                        ? #temporals.format(scheduleInfo.requestDate, 'yyyy.MM.dd HH:mm')
-                        : '-'}">
-            2026.09.09
-          </span>
-        </div>
-      </div>
-
-
-      <!-- 처리 상태 -->
-      <div class="status-box">
-
-        <h3>처리 상태</h3>
-
-        <div class="status-list">
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatusDisplay"
-                value="완료"
-                checked
-                onclick="changeStatus('완료')">
-            완료
-          </label>
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatusDisplay"
-                value="보류"
-                onclick="changeStatus('보류')">
-            보류
-          </label>
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatusDisplay"
-                value="재방문"
-                onclick="changeStatus('재방문')">
-            재방문
-          </label>
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatusDisplay"
-                value="취소"
-                onclick="changeStatus('취소')">
-            취소
-          </label>
-        </div>
+        <a class="today-btn"
+           th:href="@{/as-result-report(scheduleNo=${schedule.scheduleNo})}">
+          결과 등록
+        </a>
       </div>
     </div>
-  </div>
-</div>
 
+    <div class="today-empty" th:if="${#lists.isEmpty(todayList)}">
+      오늘 배정된 일정이 없습니다.
+    </div>
+
+  </div>
 </th:block>
-  
+
 <!--이 곳에 script태그로 js파일을 연결하는 코드 작성-->
 <th:block layout:fragment="content_js">
-  
+
 </th:block>
-  
+
 </html>

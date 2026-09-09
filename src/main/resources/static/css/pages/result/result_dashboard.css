@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f7fb;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  color: #1f2937;
+}
+
+
+/* 전체 영역 */
+
+.dash-container {
+  width: 1100px;
+  margin: 50px auto;
+}
+
+
+/* 제목 */
+
+.dash-title {
+  margin-bottom: 25px;
+}
+
+.dash-title h2 {
+  margin: 0 0 7px 0;
+  font-size: 26px;
+  color: #173b6c;
+}
+
+.dash-title p {
+  margin: 0;
+  font-size: 14px;
+  color: #7b8797;
+}
+
+
+/* 오늘 일정 목록 */
+
+.today-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.today-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.today-time {
+  width: 130px;
+  font-weight: bold;
+  color: #2878e8;
+}
+
+.today-body {
+  flex: 1;
+}
+
+.today-customer {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.today-symptom {
+  font-size: 13px;
+  color: #7b8797;
+}
+
+.today-btn {
+  width: 120px;
+  height: 42px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2878e8;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.today-btn:hover {
+  background-color: #1767d3;
+}
+
+
+/* 오늘 일정 없음 */
+
+.today-empty {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  color: #7b8797;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
