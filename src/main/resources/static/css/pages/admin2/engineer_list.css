@@ -1,0 +1,301 @@
+/* 기사관리 화면 CSS (시안 반영) */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: '맑은 고딕', 'Noto Sans KR', sans-serif;
+  background-color: #f4f6fa;
+  margin: 0;
+  padding: 24px;
+  color: #333;
+}
+
+/* 페이지 컨테이너 */
+.page-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* 카드 */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+.form-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+/* 파란 등록 버튼 */
+.btn-primary {
+  background-color: #2b6cb0;
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #2c5282;
+}
+
+.btn-add {
+  font-size: 12px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #718096;
+  line-height: 1;
+}
+
+.btn-close:hover {
+  color: #1a202c;
+}
+
+/* 목록 테이블 */
+.engineer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.engineer-table th {
+  background-color: #f7fafc;
+  color: #4a5568;
+  font-weight: 600;
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.engineer-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.engineer-table tr:last-child td {
+  border-bottom: none;
+}
+
+.engineer-table tr:hover td {
+  background-color: #f7fafc;
+}
+
+.empty-row {
+  text-align: center;
+  color: #a0aec0;
+  padding: 20px 0 !important;
+}
+
+/* 상태 배지 */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-work {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-rest {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* 관리 - 수정/삭제 버튼 (링크 스타일) */
+.link-edit {
+  background: none;
+  border: none;
+  color: #2b6cb0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.link-edit:hover {
+  text-decoration: underline;
+}
+
+.link-sep {
+  color: #cbd5e0;
+  margin: 0 4px;
+  font-size: 12px;
+}
+
+.link-delete {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.link-delete:hover {
+  text-decoration: underline;
+}
+
+/* 등록/수정 폼 */
+.form-card {
+  background-color: #f7fafc;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item-full {
+  margin-bottom: 12px;
+}
+
+.form-item label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 4px;
+}
+
+.form-item input[type="text"],
+.form-item input[type="password"],
+.form-item input[type="time"] {
+  padding: 7px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+
+.form-item input:focus {
+  outline: none;
+  border-color: #2b6cb0;
+}
+
+/* 체크박스 그룹 */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.checkbox-label {
+  font-size: 13px;
+  color: #4a5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.checkbox-label input {
+  cursor: pointer;
+}
+
+/* 시간 입력 */
+.time-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-group input[type="time"] {
+  padding: 7px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+
+.time-group span {
+  color: #718096;
+  font-size: 13px;
+}
+
+/* 라디오 그룹 */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.radio-label {
+  font-size: 13px;
+  color: #4a5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.radio-label input {
+  cursor: pointer;
+}
+
+/* 폼 버튼 그룹 */
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btn-cancel {
+  background-color: #edf2f7;
+  color: #4a5568;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-cancel:hover {
+  background-color: #e2e8f0;
+}
