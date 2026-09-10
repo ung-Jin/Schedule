@@ -13,7 +13,7 @@ public class ResultController {
   //a.s기사 대시보드
   @GetMapping("/as-result-dash-board")
   public String asResultDashboard(){
-    return "pages/result_dashboard";
+    return "pages/result/result_dashboard";
   }
 
   //a.s기사 결과보고
