@@ -81,6 +81,15 @@
     WHERE s.SCHEDULE_NO = #{scheduleNo};
   </select>
 
+  <!-- 이 일정이 로그인한 기사 본인 것인지 확인 (일치하는 행이 있으면 1, 없으면 0) -->
+  <select id="countMySchedule" resultType="int">
+    SELECT COUNT(*)
+    FROM AS_SCHEDULE s
+    JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
+    WHERE s.SCHEDULE_NO = #{scheduleNo}
+    AND e.MEM_NO = #{memNo};
+  </select>
+
   <!-- 대시보드 "진행예정" 버튼 -> AS_REQUEST 상태를 IN_PROGRESS로 변경 -->
   <update id="startProgress">
     UPDATE AS_REQUEST

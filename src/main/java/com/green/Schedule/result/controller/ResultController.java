@@ -46,11 +46,17 @@ public class ResultController {
   @GetMapping("/as-result-report")
   public String asResultReport(@RequestParam(value = "scheduleNo", required = false) Long scheduleNo,
                                 HttpSession session, Model model){
-    if (getRepairmanOrNull(session) == null) {
+    MemberDTO loginMember = getRepairmanOrNull(session);
+    if (loginMember == null) {
       return "redirect:/member/login";
     }
-    // scheduleNo가 넘어왔으면 화면 오른쪽 "AS 기본 정보"에 채울 데이터를 조회
+    // scheduleNo가 넘어왔으면, 그게 내(로그인한 기사) 일정이 맞는지 먼저 확인하고
+    // 맞을 때만 화면 오른쪽 "AS 기본 정보"에 채울 데이터를 조회
+    // (다른 기사의 scheduleNo를 주소에 직접 넣어서 남의 정보를 보는 것을 막기 위함)
     if (scheduleNo != null) {
+      if (!resultService.isMySchedule(scheduleNo, loginMember.getMemNo())) {
+        return "redirect:/as-result-dash-board";
+      }
       model.addAttribute("scheduleInfo", resultService.selectScheduleDetail(scheduleNo));
     }
     return "pages/result/result_report";
@@ -59,9 +65,15 @@ public class ResultController {
   // 대시보드 "진행예정" 버튼 처리
   // 버튼을 누르면 AS_REQUEST 상태가 RECEIVED/ASSIGNED -> IN_PROGRESS(진행중)로 바뀝니다.
   @PostMapping("/as-result/start")
-  public String startProgress(@RequestParam("requestNo") int requestNo, HttpSession session){
-    if (getRepairmanOrNull(session) == null) {
+  public String startProgress(@RequestParam("requestNo") int requestNo,
+                               @RequestParam("scheduleNo") long scheduleNo,
+                               HttpSession session){
+    MemberDTO loginMember = getRepairmanOrNull(session);
+    if (loginMember == null) {
       return "redirect:/member/login";
+    }
+    if (!resultService.isMySchedule(scheduleNo, loginMember.getMemNo())) {
+      return "redirect:/as-result-dash-board";
     }
 
     resultService.startProgress(requestNo);
@@ -76,8 +88,14 @@ public class ResultController {
                            @RequestParam(value = "resultImage", required = false) MultipartFile resultImage,
                            @RequestParam(value = "resultImage2", required = false) MultipartFile resultImage2,
                            HttpSession session) throws IOException {
-    if (getRepairmanOrNull(session) == null) {
+    MemberDTO loginMember = getRepairmanOrNull(session);
+    if (loginMember == null) {
       return "redirect:/member/login";
+    }
+    // 내 일정이 맞는지 확인 (남의 scheduleNo로 결과를 등록해버리는 것을 막기 위함)
+    if (resultDTO.getScheduleNo() == null
+        || !resultService.isMySchedule(resultDTO.getScheduleNo(), loginMember.getMemNo())) {
+      return "redirect:/as-result-dash-board";
     }
 
     // 사진 1, 사진 2 각각 저장하고 DB에 넣을 경로를 DTO에 담아줌

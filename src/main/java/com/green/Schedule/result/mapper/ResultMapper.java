@@ -24,6 +24,10 @@ public interface ResultMapper {
   // scheduleNo: 결과를 등록하려는 일정 번호(AS_SCHEDULE.SCHEDULE_NO)
   ScheduleDetailDTO selectScheduleDetail(long scheduleNo);
 
+  // 이 일정(scheduleNo)이 로그인한 기사(memNo) 본인 것이 맞는지 확인 (내 것이면 1, 아니면 0)
+  // 다른 기사의 scheduleNo를 주소에 직접 입력해서 남의 일정을 보거나 등록하는 걸 막기 위함
+  int countMySchedule(long scheduleNo, int memNo);
+
   //달력조회
 
 
