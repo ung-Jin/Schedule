@@ -3,24 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.schedule.request.mapper.RequestMapper">
+<mapper namespace="com.green.Schedule.request.mapper.RequestMapper">
 
-    <!--
-        A/S 요청 등록
-        useGeneratedKeys="true", keyProperty="requestNo"
-        : INSERT 후에 DB가 자동으로 만들어준 REQUEST_NO 값을
-          다시 requestDTO.requestNo 에 채워줍니다.
-    -->
     <insert id="insertRequest" parameterType="com.green.Schedule.request.dto.RequestDTO"
             useGeneratedKeys="true" keyProperty="requestNo">
-        INSERT INTO REPAIR_REQUEST (
+        INSERT INTO AS_REQUEST (
             CUSTOMER_NAME,
             CUSTOMER_TEL,
             CUSTOMER_ADDR,
             PRODUCT_TYPE,
             SYMPTOM,
             REQUEST_DATE,
-            WISH_DATE
+            WISH_DATE,
+            STATUS
         ) VALUES (
             #{customerName},
             #{customerTel},
@@ -28,14 +23,15 @@
             #{productType},
             #{symptom},
             #{requestDate},
-            #{wishDate}
+            #{wishDate},
+            #{status}
         )
     </insert>
 
     <!-- 같은 연락처 + 같은 희망 날짜로 접수된 요청이 몇 건인지 (0이면 중복 아님) -->
     <select id="countDuplicate" resultType="int">
         SELECT COUNT(*)
-        FROM REPAIR_REQUEST
+        FROM AS_REQUEST
         WHERE CUSTOMER_TEL = #{customerTel}
           AND WISH_DATE = #{wishDate}
     </select>

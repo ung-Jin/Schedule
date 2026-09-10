@@ -30,6 +30,7 @@ public class ResultController {
 
   // a/s기사 대시보드, 로그인 된 상태에서만 보이게 세팅
   @GetMapping("/as-result-dash-board")
+
   public String asResultDashboard(HttpSession session, Model model){
     MemberDTO loginMember = getRepairmanOrNull(session);
     if (loginMember == null) {
@@ -37,6 +38,7 @@ public class ResultController {
     }
     // 로그인한 기사의 회원번호(memNo)로 오늘 일정만 조회해서 화면에 전달
     model.addAttribute("todayList", resultService.selectToday(loginMember.getMemNo()));
+
     return "pages/result/result_dashboard";
   }
 

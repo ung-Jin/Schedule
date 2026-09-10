@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{layouts/layout}">
 
 <th:block layout:fragment="content_css">
-<!-- 이 곳에 link태그로 css파일을 연결하는 코드 작성 -->
+  <link rel="stylesheet" th:href="@{/main-home.css}">
 </th:block>
 
-<!-- 아래 bloack에 layout으로 보낼 코드 작성 -->
 <th:block layout:fragment="content">
-  <h2>user 메인</h2>
-  <p> <a href="/request/write">수리신청</a> </p>
+
+  <div class="welcome-card">
+    <div class="welcome-icon">❄️</div>
+    <div class="welcome-text">
+      <h2 th:text="${session.loginMember.memName} + '님, 안녕하세요'">회원님, 안녕하세요</h2>
+      <p>냉·난방 AS기사 스케줄 관리 시스템입니다. 제품에 문제가 생기면 바로 A/S를 신청해보세요.</p>
+      <a th:href="@{/request/write}" class="btn btn-primary">A/S 요청하기</a>
+    </div>
+  </div>
+
+  <div class="guide-cards">
+    <div class="guide-card accent-blue">
+      <div class="guide-icon">📝</div>
+      <span class="step-num">1</span>
+      <p>A/S 요청 정보를 입력해주세요.</p>
+    </div>
+    <div class="guide-card accent-green">
+      <div class="guide-icon">🗂️</div>
+      <span class="step-num">2</span>
+      <p>접수 후 관리자 확인이 진행됩니다.</p>
+    </div>
+    <div class="guide-card accent-orange">
+      <div class="guide-icon">👷</div>
+      <span class="step-num">3</span>
+      <p>담당 기사 배정이 완료되면 연락을 드립니다.</p>
+    </div>
+    <div class="guide-card accent-purple">
+      <div class="guide-icon">🔧</div>
+      <span class="step-num">4</span>
+      <p>배정된 기사님이 방문하여 점검 및 수리를 진행합니다.</p>
+    </div>
+  </div>
+
 </th:block>
 
-<th:block layout:fragment="content_js">
-<!-- 이 곳에 script태그로 js파일을 연결하는 코드 작성 -->
-</th:block>
+<th:block layout:fragment="content_js"></th:block>
 
 </html>
