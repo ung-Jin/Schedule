@@ -52,32 +52,56 @@ body {
   color: #333;
 }
 
-/* 메인 소개 영역 : 세로/가로 모두 가운데 정렬 (남는 세로 공간을 채우면서 중앙에 옴) */
+/* 메인 소개 영역 : hero-banner.jpg를 배경으로 깔고, 텍스트는 이미지 왼쪽(여백이 있는 쪽)에 정렬
+   비율(1024:572)은 이미지 원본 비율과 동일하게 맞춰서 이미지가 눌리거나 늘어나지 않게 함 */
 .hero {
-  flex: 1;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 1024 / 572;
+  max-height: 460px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.4) 38%, rgba(255, 255, 255, 0) 62%),
+    url('/hero-banner.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0 48px;
 }
 
 .hero h2 {
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.4;
   margin-bottom: 16px;
+  color: #10395f;
 }
 
 .hero p {
-  color: #555;
+  color: #3d5876;
   margin-bottom: 24px;
 }
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    aspect-ratio: auto;
+    min-height: 320px;
+    padding: 0 24px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
 }
 
 .btn {
