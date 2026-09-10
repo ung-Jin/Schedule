@@ -10,7 +10,7 @@ public class ResultDTO {
   private Long scheduleNo;
   private LocalDateTime processDate;
   private String processContent;
-  private String resultStatus;
   private String imagePath;
+  private String imagePath2;
   private LocalDateTime createdAt;
 }

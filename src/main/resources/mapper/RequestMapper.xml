@@ -14,7 +14,8 @@
             PRODUCT_TYPE,
             SYMPTOM,
             REQUEST_DATE,
-            WISH_DATE
+            WISH_DATE,
+            STATUS
         ) VALUES (
             #{customerName},
             #{customerTel},
@@ -22,7 +23,8 @@
             #{productType},
             #{symptom},
             #{requestDate},
-            #{wishDate}
+            #{wishDate},
+            #{status}
         )
     </insert>
 
