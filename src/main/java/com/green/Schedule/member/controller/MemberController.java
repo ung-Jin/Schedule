@@ -73,7 +73,8 @@ public class MemberController {
     public String logout(HttpSession session) {
         // 세션에 저장된 정보를 모두 지웁니다.
         session.invalidate();
-        return "redirect:/member/login";
+        // 어느 화면에서 로그아웃을 누르든 메인(첫) 화면으로 이동시킵니다.
+        return "redirect:/";
     }
 
 
