@@ -40,6 +40,16 @@ body {
   text-decoration: none;
 }
 
+.first-top h1 {
+  display: flex;
+  align-items: center;
+}
+
+.first-top .brand-logo {
+  height: 40px;
+  width: auto;
+}
+
 .first-top nav ul {
   display: flex;
   align-items: center;

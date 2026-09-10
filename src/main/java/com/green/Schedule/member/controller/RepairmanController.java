@@ -10,6 +10,6 @@ public class RepairmanController {
 
   @GetMapping("/main")
   public String main() {
-    return "pages/result/result_dashboard";
+    return "redirect:/as-result-dash-board";
   }
 }
