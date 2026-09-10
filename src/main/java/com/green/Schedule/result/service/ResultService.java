@@ -14,19 +14,29 @@ import java.util.List;
 public class ResultService {
   private final ResultMapper resultMapper;
 
-//  오늘 일정 조회
+  // 오늘 일정 조회 (대시보드 화면에 뿌려줄 목록)
   public List<ScheduleTodayDTO> selectToday(int memNo){
     return resultMapper.selectToday(memNo);
   }
 
-//  결과보고 화면 - AS 기본정보 조회
+  // 결과보고 화면 - AS 기본정보 조회 (오른쪽 박스에 채워줄 정보)
   public ScheduleDetailDTO selectScheduleDetail(long scheduleNo){
     return resultMapper.selectScheduleDetail(scheduleNo);
   }
 
-//  as결과보고 삽입
+  // AS결과보고 등록
   public void insertResult(ResultDTO resultDTO){
     resultMapper.insertResult(resultDTO);
+  }
+
+  // 대시보드 "진행예정" 버튼 -> AS_REQUEST 상태를 IN_PROGRESS로 변경
+  public void startProgress(int requestNo){
+    resultMapper.startProgress(requestNo);
+  }
+
+  // 결과보고 등록 완료 -> AS_REQUEST 상태를 COMPLETED로 변경
+  public void completeRequest(int requestNo){
+    resultMapper.completeRequest(requestNo);
   }
 
 }

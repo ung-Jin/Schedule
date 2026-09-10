@@ -97,6 +97,46 @@ body {
 }
 
 
+/* 진행상태 버튼/뱃지 */
+
+.status-btn {
+  width: 100px;
+  height: 42px;
+  border: 1px solid #2878e8;
+  border-radius: 5px;
+  background-color: white;
+  color: #2878e8;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.status-btn:hover {
+  background-color: #eaf2ff;
+}
+
+.status-badge {
+  width: 100px;
+  height: 42px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status-progress {
+  background-color: #fff4e5;
+  color: #e08a00;
+}
+
+.status-done {
+  background-color: #eaf7ee;
+  color: #2e9e4e;
+}
+
+
 /* 오늘 일정 없음 */
 
 .today-empty {

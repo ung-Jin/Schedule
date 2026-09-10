@@ -27,13 +27,18 @@
       <h3>처리 정보</h3>
       <form action="/result/reg"
             method="post"
-            enctype="multipart/form-data"
-            id="resultForm">
+            enctype="multipart/form-data">
         <!-- 나중에 일정 상세화면에서 scheduleNo 전달 -->
         <input
             type="hidden"
             name="scheduleNo"
             th:value="${scheduleInfo != null ? scheduleInfo.scheduleNo : ''}">
+
+        <!-- requestNo도 같이 넘겨줘야 결과 등록할 때 AS_REQUEST 상태를 COMPLETED로 바꿀 수 있음 -->
+        <input
+            type="hidden"
+            name="requestNo"
+            th:value="${scheduleInfo != null ? scheduleInfo.requestNo : ''}">
 
         <!-- 처리 날짜 -->
         <div class="form-row">
@@ -69,10 +74,10 @@
         </div>
 
 
-        <!-- 처리 사진 -->
+        <!-- 처리 사진 1 -->
         <div class="form-row">
           <label for="resultImage">
-            처리사진
+            처리사진 1
           </label>
 
           <div class="image-upload-box">
@@ -96,7 +101,39 @@
             <div class="image-preview-box">
               <img
                   id="imagePreview"
-                  alt="처리사진 미리보기">
+                  alt="처리사진1 미리보기">
+            </div>
+          </div>
+        </div>
+
+        <!-- 처리 사진 2 (최대 2장까지 첨부) -->
+        <div class="form-row">
+          <label for="resultImage2">
+            처리사진 2
+          </label>
+
+          <div class="image-upload-box">
+            <label for="resultImage2" class="image-upload-label">
+              <div class="upload-icon">
+                ↑
+              </div>
+              <p>사진을 클릭하여 첨부해주세요.</p>
+              <span>
+                JPG, PNG 파일
+              </span>
+            </label>
+            <input
+                type="file"
+                id="resultImage2"
+                name="resultImage2"
+                accept="image/jpeg, image/png"
+                hidden>
+
+            <!-- 사진 미리보기 -->
+            <div class="image-preview-box">
+              <img
+                  id="imagePreview2"
+                  alt="처리사진2 미리보기">
             </div>
           </div>
         </div>
@@ -121,7 +158,6 @@
         </div>
 
       </form>
-
     </div>
 
 
@@ -201,51 +237,6 @@
       </div>
 
 
-      <!-- 처리 상태 -->
-      <div class="status-box">
-
-        <h3>처리 상태</h3>
-
-        <div class="status-list">
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatus"
-                form="resultForm"
-                value="완료"
-                checked>
-            완료
-          </label>
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatus"
-                form="resultForm"
-                value="보류">
-            보류
-          </label>
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatus"
-                form="resultForm"
-                value="재방문">
-            재방문
-          </label>
-
-          <label>
-            <input
-                type="radio"
-                name="resultStatus"
-                form="resultForm"
-                value="취소">
-            취소
-          </label>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -254,28 +245,39 @@
 <!--이 곳에 script태그로 js파일을 연결하는 코드 작성-->
 <th:block layout:fragment="content_js">
   <script th:inline="none">
+    // 처리내용 글자수 카운터 (textarea에 입력할 때마다 "0/500" 숫자 갱신)
     const contentTextarea = document.getElementById('processContent');
     const contentCount = document.getElementById('contentCount');
     contentTextarea.addEventListener('input', function () {
       contentCount.textContent = contentTextarea.value.length;
     });
 
-    const imageInput = document.getElementById('resultImage');
-    const imagePreview = document.getElementById('imagePreview');
-    imageInput.addEventListener('change', function () {
-      const file = imageInput.files[0];
-      if (!file) {
-        imagePreview.removeAttribute('src');
-        imagePreview.style.display = 'none';
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        imagePreview.src = e.target.result;
-        imagePreview.style.display = 'block';
-      };
-      reader.readAsDataURL(file);
-    });
+    // 처리사진 미리보기
+    // 파일 선택 input에서 사진을 고르면, 서버에 올리기 전에
+    // FileReader로 브라우저에서 바로 읽어서 <img>에 보여줍니다.
+    // 사진 1, 사진 2 둘 다 똑같은 방식이라 함수 하나로 만들어서 두 번 사용합니다.
+    function setupImagePreview(inputId, previewId) {
+      const imageInput = document.getElementById(inputId);
+      const imagePreview = document.getElementById(previewId);
+
+      imageInput.addEventListener('change', function () {
+        const file = imageInput.files[0];
+        if (!file) {
+          imagePreview.removeAttribute('src');
+          imagePreview.style.display = 'none';
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          imagePreview.src = e.target.result;
+          imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    setupImagePreview('resultImage', 'imagePreview');
+    setupImagePreview('resultImage2', 'imagePreview2');
   </script>
 </th:block>
   

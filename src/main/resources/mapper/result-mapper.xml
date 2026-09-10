@@ -9,19 +9,23 @@
     <result column="SCHEDULE_NO" property="scheduleNo"/>
     <result column="PROCESS_DATE" property="processDate"/>
     <result column="PROCESS_CONTENT" property="processContent"/>
-    <result column="RESULT_STATUS" property="resultStatus"/>
     <result column="IMAGE_PATH" property="imagePath"/>
+    <result column="IMAGE_PATH2" property="imagePath2"/>
     <result column="CREATED_AT" property="createdAt"/>
   </resultMap>
 
+  <!-- 대시보드 "오늘 일정" 목록용 매핑 (AS_SCHEDULE + AS_REQUEST 조인 결과) -->
   <resultMap id="scheduleTodayMap" type="com.green.Schedule.result.dto.ScheduleTodayDTO">
     <id     column="scheduleNo" property="scheduleNo"/>
+    <result column="requestNo" property="requestNo"/>
+    <result column="requestStatus" property="requestStatus"/>
     <result column="startTime" property="startTime"/>
     <result column="endTime" property="endTime"/>
     <result column="customerName" property="customerName"/>
     <result column="symptom" property="symptom"/>
   </resultMap>
 
+  <!-- 결과보고 화면 오른쪽 "AS 기본 정보" 박스용 매핑 (AS_SCHEDULE + AS_REQUEST 조인 결과) -->
   <resultMap id="scheduleDetailMap" type="com.green.Schedule.result.dto.ScheduleDetailDTO">
     <id     column="scheduleNo" property="scheduleNo"/>
     <result column="requestNo" property="requestNo"/>
@@ -36,6 +40,8 @@
   <!--  #대시보드 - 오늘 일정-->
   <select id="selectToday" resultMap="scheduleTodayMap">
     SELECT s.SCHEDULE_NO AS scheduleNo
+    , r.REQUEST_NO AS requestNo
+    , r.STATUS AS requestStatus
     , s.START_TIME AS startTime
     , s.END_TIME AS endTime
     , r.CUSTOMER_NAME AS customerName
@@ -75,21 +81,35 @@
     WHERE s.SCHEDULE_NO = #{scheduleNo};
   </select>
 
+  <!-- 대시보드 "진행예정" 버튼 -> AS_REQUEST 상태를 IN_PROGRESS로 변경 -->
+  <update id="startProgress">
+    UPDATE AS_REQUEST
+    SET STATUS = 'IN_PROGRESS'
+    WHERE REQUEST_NO = #{requestNo};
+  </update>
+
+  <!-- 결과보고 화면 "결과 등록하기" 버튼 -> AS_REQUEST 상태를 COMPLETED로 변경 -->
+  <update id="completeRequest">
+    UPDATE AS_REQUEST
+    SET STATUS = 'COMPLETED'
+    WHERE REQUEST_NO = #{requestNo};
+  </update>
+
   <!--기사 AS결과보고-->
   <insert id="insertResult">
     INSERT INTO AS_RESULT (
     SCHEDULE_NO
     , PROCESS_DATE
     , PROCESS_CONTENT
-    , RESULT_STATUS
     , IMAGE_PATH
+    , IMAGE_PATH2
     )
     VALUES (
     #{scheduleNo}
     , #{processDate}
     , #{processContent}
-    , #{resultStatus}
-    , #{imagePath});
+    , #{imagePath}
+    , #{imagePath2});
   </insert>
 
 </mapper>

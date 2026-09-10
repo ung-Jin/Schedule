@@ -224,31 +224,6 @@ textarea:focus,
 }
 
 
-/* 상태 */
-
-.status-box {
-  margin-top: 25px;
-}
-
-.status-box h3 {
-  margin-bottom: 15px;
-}
-
-.status-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.status-list label {
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.status-list input {
-  accent-color: #2878e8;
-}
-
-
 /* 버튼 */
 
 .button-area {
