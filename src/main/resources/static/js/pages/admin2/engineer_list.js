@@ -1,4 +1,4 @@
-/* 기사관리 화면 JS (목록 + 등록/수정 통합) */
+/* 기사관리 화면 JS (목록 + 등록/수정 통합) - axios 버전 */
 
 //현재 폼 모드 ('insert' 또는 'update')
 let formMode = 'insert';
@@ -29,10 +29,11 @@ function openForm(){
 function openEditForm(engineerNo){
   formMode = 'update';
 
-  //서버에서 기사 정보 조회
-  fetch('/engineer-api/detail/' + engineerNo)
-    .then(response => response.json())
-    .then(engineer => {
+  //서버에서 기사 정보 조회 (axios GET)
+  axios.get('/engineer-api/detail/' + engineerNo)
+    .then(response => {
+      const engineer = response.data;
+
       //폼 초기화
       resetForm();
 
@@ -71,6 +72,10 @@ function openEditForm(engineerNo){
       const formCard = document.getElementById('formCard');
       formCard.style.display = 'block';
       formCard.scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(error => {
+      console.error(error);
+      alert("기사 정보를 불러오지 못했습니다.");
     });
 }
 
@@ -86,23 +91,26 @@ function resetForm(){
   document.getElementById('engineerNo').value = '';
 }
 
-//기사 삭제 (AJAX)
+//기사 삭제 (axios GET)
 function deleteEngineer(engineerNo) {
   if(!confirm("정말 삭제하시겠습니까?")) return;
 
-  fetch('/engineer-api/delete/' + engineerNo)
-    .then(response => response.json())
-    .then(result => {
-      if(result === true){
+  axios.get('/engineer-api/delete/' + engineerNo)
+    .then(response => {
+      if(response.data === true){
         alert("삭제되었습니다.");
         location.reload();
       } else {
         alert("삭제 실패");
       }
+    })
+    .catch(error => {
+      console.error(error);
+      alert("삭제 중 오류가 발생했습니다.");
     });
 }
 
-//기사 등록/수정 (AJAX)
+//기사 등록/수정
 function submitForm(){
   const form = document.getElementById('engineerForm');
 
@@ -136,7 +144,7 @@ function submitForm(){
       return;
     }
 
-    sendRequest('/engineer-api/insert', data, "등록되었습니다.", "등록 실패");
+    sendPost('/engineer-api/insert', data, "등록되었습니다.", "등록 실패");
   } else {
     //수정 시에는 engineerNo 필요
     data.engineerNo = parseInt(document.getElementById('engineerNo').value);
@@ -147,25 +155,24 @@ function submitForm(){
       return;
     }
 
-    sendRequest('/engineer-api/update', data, "수정되었습니다.", "수정 실패");
+    sendPost('/engineer-api/update', data, "수정되었습니다.", "수정 실패");
   }
 }
 
-//공통 요청 처리
-function sendRequest(url, data, successMsg, failMsg){
-  fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-    .then(response => response.json())
-    .then(result => {
-      if(result === true){
+//공통 POST 요청 (axios)
+function sendPost(url, data, successMsg, failMsg){
+  axios.post(url, data)
+    .then(response => {
+      if(response.data === true){
         alert(successMsg);
         location.reload();
       } else {
         alert(failMsg);
       }
+    })
+    .catch(error => {
+      console.error(error);
+      alert(failMsg + " (서버 오류)");
     });
 }
 

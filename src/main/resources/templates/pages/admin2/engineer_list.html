@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>기사관리</title>
-  <link rel="stylesheet" th:href="@{/css/pages/admin2/engineer_list.css}">
-</head>
-<body>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouts/layout}">
 
+<!--이 곳에 link태그로 css파일을 연결하는 코드 작성-->
+<th:block layout:fragment="content_css">
+<link rel="stylesheet" href="/css/pages/admin2/engineer_list.css">
+</th:block>
+
+<!--아래 block에 html 코드 작성-->
+<th:block layout:fragment="content">
+  
 <div class="page-wrap">
 
   <!--기사 목록 카드-->
@@ -33,17 +36,17 @@
       <tbody>
       <!--데이터가 없을 경우-->
       <tr th:if="${#lists.isEmpty(engineerList)}">
-        <td colspan="6" class="empty-row"></td>
+        <td colspan="6" class="empty-row">등록된 기사가 없습니다.</td>
       </tr>
       <!--데이터가 있을 경우-->
       <tr th:each="engineer : ${engineerList}">
-        <td th:text="${engineer.engineerName}"></td>
-        <td th:text="${engineer.engineerTel}"></td>
-        <td th:text="${engineer.specialty}"></td>
+        <td th:text="${engineer.engineerName}">김기사</td>
+        <td th:text="${engineer.engineerTel}">010-1234-5678</td>
+        <td th:text="${engineer.specialty}">에어컨</td>
         <td>
-          <span th:text="${engineer.workStartTime}"></span>
+          <span th:text="${engineer.workStartTime}">09:00</span>
           ~
-          <span th:text="${engineer.workEndTime}"></span>
+          <span th:text="${engineer.workEndTime}">18:00</span>
         </td>
         <td>
           <span th:if="${engineer.status == 'WORK'}" class="badge badge-work">근무중</span>
@@ -99,16 +102,16 @@
         <label>전문분야</label>
         <div class="checkbox-group">
           <label class="checkbox-label">
-            <input type="checkbox" name="specialty" value="에어컨"> 에어컨
+            <input type="checkbox" name="specialty" value="스탠드형 에어컨"> 스탠드형 에어컨
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="specialty" value="시시템 에어컨"> 시스템 에어컨
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="specialty" value="보일러"> 보일러
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" name="specialty" value="냉난방 전체"> 냉난방 전체
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="specialty" value="기타"> 기타
+            <input type="checkbox" name="specialty" value="라디에이터"> 라디에이터
           </label>
         </div>
       </div>
@@ -141,12 +144,19 @@
         <button type="button" class="btn-cancel" onclick="closeForm()">취소</button>
         <button type="button" class="btn-primary" id="submitBtn" onclick="submitForm()">등록하기</button>
       </div>
+
     </form>
   </div>
+
 </div>
 
+</th:block>
+
+
+<th:block layout:fragment="content_js">
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script th:src="@{/js/pages/admin2/engineer_list.js}"></script>
+</th:block>
 
-</body>
 </html>
+

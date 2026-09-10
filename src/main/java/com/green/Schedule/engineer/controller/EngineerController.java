@@ -14,7 +14,7 @@ import java.util.List;
 public class EngineerController {
   private final EngineerService engineerService;
 
-  //기사관리 화면 (목록 + 등록/수정 폼 함께)
+  //기사관리
   @GetMapping("/admin/engineer")
   public String engineerListPage(Model model){
     List<EngineerDTO> engineerList = engineerService.engineerList();
