@@ -1,5 +1,6 @@
 .schedule-container{
   width: 100%;
+  height: 100%;
   margin: 0px auto;
   
 }
@@ -189,3 +190,7 @@
   margin-top: 2px;
 }
 .assign-card button[type="button"]:hover { background: var(--accent-strong); }
+
+
+
+

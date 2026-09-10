@@ -4,10 +4,47 @@
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <!-- namespace에는 xml파일과 연결할 Mapper interface 파일명을 패키지를 포함하여 적어주세요 -->
 <mapper namespace="com.green.Schedule.schedule.mapper.ScheduleMapper">
-	<resultMap id="schedule" type="com.green.Schedule.schedule.dto.ScheduleDTO">
-
+  <!--AS 기사 스케줄 테이블-->
+  <resultMap id="schedule" type="com.green.Schedule.schedule.dto.ScheduleDTO">
+    <id column="SCHEDULE_NO"       property="scheduleNo"/>
+    <result column="REQUEST_NO"    property="requestNo"/>
+    <result column="ENGINEER_NO"   property="engineerNo"/>
+    <result column="FIX_DATE"      property="fixDate"/>
+    <result column="START_TIME"    property="startTime"/>
+    <result column="END_TIME"      property="endTime"/>
+    <result column="STATUS"        property="status"/>
   </resultMap>
 
+  <!--AS 기사 테이블-->
+  <resultMap id="engineer" type="com.green.Schedule.engineer.DTO.EngineerDTO">
+    <id column="ENGINEER_NO"              property="engineerNo"/>
+    <result column="MEM_NO"               property="memNo"/>
+    <result column="ENGINEER_NAME"        property="engineerName"/>
+    <result column="ENGINEER_TEL"         property="engineerTel"/>
+    <result column="SPECIALTY"            property="specialty"/>
+    <result column="WORK_START_TIME"      property="workStartTime"/>
+    <result column="WORK_END_TIME"        property="workEndTime"/>
+    <result column="STATUS"               property="status"/>
+    <result column="MEM_ID"               property="memId"/>
+  </resultMap>
+
+  <!--요청 테이블-->
+  <resultMap id="request" type="com.green.Schedule.request.dto.RequestDTO">
+    <id column="REQUEST_NO"       property="requestNo"/>
+    <result column="CUSTOMER_NAME"   property="customerName"/>
+    <result column="CUSTOMER_TEL"   property="customerTel"/>
+    <result column="CUSTOMER_ADDR"   property="customerAddr"/>
+    <result column="PRODUCT_TYPE"   property="productType"/>
+    <result column="SYMPTOM"   property="symptom"/>
+    <result column="REQUEST_DATE"   property="requestDate"/>
+    <result column="WISH_DATE"   property="wishDate"/>
+    <result column="STATUS"   property="status"/>
+  </resultMap>
+
+  <!--AS 기사 일정 조회-->
+  <!--스케줄, 기사, 요청 테이블 데이터 필요-->
+
+  <!--AS 기사 일정 배정-->
 
 </mapper>
 

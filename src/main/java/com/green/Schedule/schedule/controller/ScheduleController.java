@@ -13,7 +13,7 @@ public class ScheduleController {
   private final ScheduleService scheduleService;
 
   //관리자 AS 일정 관리 페이지
-  @GetMapping("as-schedule")
+  @GetMapping("/as-schedule")
   public String asSchedule(){
 
     return "pages/schedule/admin_schedule";
