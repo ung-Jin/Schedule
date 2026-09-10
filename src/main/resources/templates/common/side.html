@@ -7,28 +7,29 @@
     <div class="side-logo">
       <a th:href="@{/}">❄ 냉·난방 AS</a>
     </div>
+    
+<!-- 일반 사용자(user) 메뉴 -->
+<ul th:if="${session.loginMember?.role == 'user'}">
+  <li><a th:href="@{/pages/user/main}">🏠 홈</a></li>
+  <li><a th:href="@{/request/write}">🛠 A/S 신청</a></li>
+  <!-- 신청 내역 조회 / 고객센터 페이지는 아직 안 만들어서 자리만 잡아둠 -->
+  <li><a href="#">📋 신청 내역 조회</a></li>
+  <li><a href="#">☎ 고객센터</a></li>
+</ul>
+    
 
-    <!-- 일반 사용자(user) 메뉴 -->
-    <ul th:if="${session.loginMember.role == 'user'}">
-      <li><a th:href="@{/pages/user/main}">🏠 홈</a></li>
-      <li><a th:href="@{/request/write}">🛠 A/S 신청</a></li>
-      <!-- 신청 내역 조회 / 고객센터 페이지는 아직 안 만들어서 자리만 잡아둠 -->
-      <li><a href="#">📋 신청 내역 조회</a></li>
-      <li><a href="#">☎ 고객센터</a></li>
-    </ul>
-
-    <!-- 관리자(admin) 메뉴 : 화면은 아직 안 만들어서 전부 자리표시자 -->
-    <ul th:if="${session.loginMember.role == 'admin'}">
-      <li><a th:href="@{/pages/admin/main}">🏠 관리자 홈</a></li>
-      <li><a href="#">📋 전체 요청 목록</a></li>
-      <li><a href="#">👷 기사 배정</a></li>
-    </ul>
-
-    <!-- 기사(repairman) 메뉴 : 화면은 아직 안 만들어서 전부 자리표시자 -->
-    <ul th:if="${session.loginMember.role == 'repairman'}">
-      <li><a th:href="@{/pages/engineer/main}">🏠 기사 홈</a></li>
-      <li><a href="#">📅 오늘 일정</a></li>
-    </ul>
+<!-- 관리자(admin) 메뉴 : 화면은 아직 안 만들어서 전부 자리표시자 -->
+<ul th:if="${session.loginMember?.role == 'admin'}">
+  <li><a th:href="@{/pages/admin/main}">🏠 관리자 홈</a></li>
+  <li><a href="#">📋 전체 요청 목록</a></li>
+  <li><a href="#">👷 기사 배정</a></li>
+</ul>
+    
+<!-- 기사(repairman) 메뉴 : 화면은 아직 안 만들어서 전부 자리표시자 -->
+<ul th:if="${session.loginMember?.role == 'repairman'}">
+  <li><a th:href="@{/pages/engineer/main}">🏠 기사 홈</a></li>
+  <li><a href="#">📅 오늘 일정</a></li>
+</ul>
 
   </nav>
 

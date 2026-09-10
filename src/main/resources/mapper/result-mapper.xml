@@ -3,37 +3,113 @@
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <!-- namespace에는 xml파일과 연결할 Mapper interface 파일명을 패키지를 포함하여 적어주세요 -->
-<mapper namespace="mapper">
-	
+<mapper namespace="com.green.Schedule.result.mapper.ResultMapper">
+  <resultMap id="asResult" type="com.green.Schedule.result.dto.ResultDTO">
+    <id     column="RESULT_NO" property="resultNo"/>
+    <result column="SCHEDULE_NO" property="scheduleNo"/>
+    <result column="PROCESS_DATE" property="processDate"/>
+    <result column="PROCESS_CONTENT" property="processContent"/>
+    <result column="IMAGE_PATH" property="imagePath"/>
+    <result column="IMAGE_PATH2" property="imagePath2"/>
+    <result column="CREATED_AT" property="createdAt"/>
+  </resultMap>
+
+  <!-- 대시보드 "오늘 일정" 목록용 매핑 (AS_SCHEDULE + AS_REQUEST 조인 결과) -->
+  <resultMap id="scheduleTodayMap" type="com.green.Schedule.result.dto.ScheduleTodayDTO">
+    <id     column="scheduleNo" property="scheduleNo"/>
+    <result column="requestNo" property="requestNo"/>
+    <result column="requestStatus" property="requestStatus"/>
+    <result column="startTime" property="startTime"/>
+    <result column="endTime" property="endTime"/>
+    <result column="customerName" property="customerName"/>
+    <result column="symptom" property="symptom"/>
+  </resultMap>
+
+  <!-- 결과보고 화면 오른쪽 "AS 기본 정보" 박스용 매핑 (AS_SCHEDULE + AS_REQUEST 조인 결과) -->
+  <resultMap id="scheduleDetailMap" type="com.green.Schedule.result.dto.ScheduleDetailDTO">
+    <id     column="scheduleNo" property="scheduleNo"/>
+    <result column="requestNo" property="requestNo"/>
+    <result column="customerName" property="customerName"/>
+    <result column="customerTel" property="customerTel"/>
+    <result column="customerAddr" property="customerAddr"/>
+    <result column="productType" property="productType"/>
+    <result column="symptom" property="symptom"/>
+    <result column="requestDate" property="requestDate"/>
+  </resultMap>
+
+  <!--  #대시보드 - 오늘 일정-->
+  <select id="selectToday" resultMap="scheduleTodayMap">
+    SELECT s.SCHEDULE_NO AS scheduleNo
+    , r.REQUEST_NO AS requestNo
+    , r.STATUS AS requestStatus
+    , s.START_TIME AS startTime
+    , s.END_TIME AS endTime
+    , r.CUSTOMER_NAME AS customerName
+    , r.SYMPTOM AS symptom
+    FROM AS_SCHEDULE s
+<!--    고객정보 가져오기-->
+    JOIN AS_REQUEST r ON s.REQUEST_NO = r.REQUEST_NO
+<!--    로그인한 기사 찾기-->
+    JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
+    WHERE e.MEM_NO = #{memNo}
+    AND DATE(s.START_TIME) = CURDATE()
+    ORDER BY s.START_TIME;
+  </select>
+
+  <!--  #대시보드 - 달력-->
+  <select id="selectCalender" resultMap="scheduleTodayMap">
+    SELECT DISTINCT DATE(s.START_TIME) AS scheduleDate
+    FROM AS_SCHEDULE s
+    JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
+    WHERE e.MEM_NO = #{memNo}
+    AND YEAR(s.START_TIME) = #{year}
+    AND MONTH(s.START_TIME) = #{month};
+  </select>
+
+  <!--  #결과보고 화면 - AS 기본정보 (일정 + 접수정보 조인)-->
+  <select id="selectScheduleDetail" resultMap="scheduleDetailMap">
+    SELECT s.SCHEDULE_NO AS scheduleNo
+    , r.REQUEST_NO AS requestNo
+    , r.CUSTOMER_NAME AS customerName
+    , r.CUSTOMER_TEL AS customerTel
+    , r.CUSTOMER_ADDR AS customerAddr
+    , r.PRODUCT_TYPE AS productType
+    , r.SYMPTOM AS symptom
+    , r.REQUEST_DATE AS requestDate
+    FROM AS_SCHEDULE s
+    JOIN AS_REQUEST r ON s.REQUEST_NO = r.REQUEST_NO
+    WHERE s.SCHEDULE_NO = #{scheduleNo};
+  </select>
+
+  <!-- 대시보드 "진행예정" 버튼 -> AS_REQUEST 상태를 IN_PROGRESS로 변경 -->
+  <update id="startProgress">
+    UPDATE AS_REQUEST
+    SET STATUS = 'IN_PROGRESS'
+    WHERE REQUEST_NO = #{requestNo};
+  </update>
+
+  <!-- 결과보고 화면 "결과 등록하기" 버튼 -> AS_REQUEST 상태를 COMPLETED로 변경 -->
+  <update id="completeRequest">
+    UPDATE AS_REQUEST
+    SET STATUS = 'COMPLETED'
+    WHERE REQUEST_NO = #{requestNo};
+  </update>
+
+  <!--기사 AS결과보고-->
+  <insert id="insertResult">
+    INSERT INTO AS_RESULT (
+    SCHEDULE_NO
+    , PROCESS_DATE
+    , PROCESS_CONTENT
+    , IMAGE_PATH
+    , IMAGE_PATH2
+    )
+    VALUES (
+    #{scheduleNo}
+    , #{processDate}
+    , #{processContent}
+    , #{imagePath}
+    , #{imagePath2});
+  </insert>
+
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
