@@ -81,7 +81,7 @@ public class MemberController {
         if ("admin".equals(role)) {
             return "redirect:/pages/admin/main";
         } else if ("repairman".equals(role)) {
-            return "redirect:/pages/result/result_dashboard";
+            return "redirect:/pages/engineer/main";
         } else {
             return "redirect:/pages/user/main";
         }

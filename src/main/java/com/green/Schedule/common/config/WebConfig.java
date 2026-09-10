@@ -21,9 +21,16 @@ public class WebConfig implements WebMvcConfigurer {
                         "/*.css",
                         "/*.js",
                         "/*.ico",
+                        "/*.jpg",
+                        "/*.jpeg",
+                        "/*.png",
+                        "/*.gif",
+                        "/*.svg",
+                        "/*.webp",
                         "/common/**",
                         "/css/**",
-                        "/js/**"
+                        "/js/**",
+                        "/images/**"
                 );
     }
 }
