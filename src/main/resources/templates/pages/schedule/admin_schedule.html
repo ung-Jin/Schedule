@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/layout}">
+
+<!--이 곳에 link태그로 css파일을 연결하는 코드 작성-->
+<th:block layout:fragment="content_css">
+  <link rel="stylesheet" href="/css/pages/schedule/admin_schedule.css">
+</th:block>
+
+<!-- 관리자 로그인한 경우에만 보여지는 화면 -->
+<!--아래 block에 html 코드 작성-->
+<th:block layout:fragment="content">
+  <div class="schedule-container">
+    <div>
+      <h3>일정 관리</h3>
+    </div>
+      <div class="schedule-main">
+        <!-- 왼쪽 캘린더 화면 -->
+        <div class="cal-card">
+          <div class="cal-toolbar">
+            <div class="tb-left">
+              <button id="prevBtn">‹</button>
+              <button id="nextBtn">›</button>
+              <span class="cal-title" id="calTitle"></span>
+            </div>
+            <div class="tb-right">
+              <div class="view-switch" id="viewSwitch">
+                <button data-view="timeGridDay">일</button>
+                <button data-view="timeGridWeek">주</button>
+                <button data-view="dayGridMonth" class="active">월</button>
+              </div>
+              <select id="techFilter">
+                <option value="all">전체 기사</option>
+                <th:block>
+                  <option value=""></option>
+                </th:block>
+              </select>
+            </div>
+          </div>
+          <div id="calendar"></div>
+        </div>
+        <!-- 오른쪽 AS 기사 배정 화면 -->
+        <div class="assign-card">
+          <h4>AS 일정 배정</h4>
+          <form action="" method="post">
+            <div>
+              <p>AS 접수 선택</p>
+              <select name="" id="">
+                <option value="">[선택하세요]</option>
+                <th:block>
+                  <option value=""></option>
+                </th:block>
+              </select>
+            </div>
+            <div>
+              <p>배정할 기사</p>
+              <select name="" id="">
+                <option value="">[선택하세요]</option>
+                <!-- 기사 목록 -->
+                
+                <th:block>
+                  <option value=""></option>
+                </th:block>               
+              </select>
+            </div>
+            <div>
+              <p>배정 날짜</p>
+              <input type="date" name="">
+            </div>
+            <div>
+              <p>시간선택</p>
+              <div>
+                <input type="time" name="">
+                <span> - </span>
+                <input type="time" name="">
+              </div>
+            </div>
+            <div>
+              <button type="button">일정 배정하기</button>
+            </div>
+          </form>
+        </div>
+      </div>
+     
+  </div>
+</th:block>
+
+<!--이 곳에 script태그로 js파일을 연결하는 코드 작성-->
+<th:block layout:fragment="content_js">
+  <script src="/js/pages/schedule/admin_schedule.js"></script>
+</th:block>
+</html>

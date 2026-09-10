@@ -2,6 +2,8 @@ package com.green.Schedule.request.dto;
 
 import lombok.Data;
 
+import java.rmi.StubNotFoundException;
+
 /**
  * REPAIR_REQUEST 테이블 한 행(row)을 담는 DTO입니다.
  *
@@ -28,5 +30,6 @@ public class RequestDTO {
     private String symptom;
     private String requestDate;
     private String wishDate;
+    private String status;
 
 }
