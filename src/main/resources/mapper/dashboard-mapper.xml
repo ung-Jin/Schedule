@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace: xml파일과 연결할 Mapper interface 파일명 (패키지 포함) -->
+<mapper namespace="com.green.Schedule.dashboard.mapper.DashboardMapper">
+
+  <!--최근 AS 목록/상세 공통 resultMap-->
+  <resultMap id="recentAs" type="com.green.Schedule.dashboard.DTO.RecentAsDTO">
+    <id     column="REQUEST_NO"    property="requestNo"/>
+    <result column="CUSTOMER_NAME" property="customerName"/>
+    <result column="CUSTOMER_TEL"  property="customerTel"/>
+    <result column="CUSTOMER_ADDR" property="customerAddr"/>
+    <result column="PRODUCT_TYPE"  property="productType"/>
+    <result column="SYMPTOM"       property="symptom"/>
+    <result column="REQUEST_DATE"  property="requestDate"/>
+    <result column="WISH_DATE"     property="wishDate"/>
+    <result column="STATUS"        property="status"/>
+    <result column="REGION"        property="region"/>
+  </resultMap>
+
+  <!--상태별 건수 조회 (한 번의 쿼리로 4개 상태 집계)
+      COALESCE로 감싼 이유: 테이블이 완전히 비어있으면 SUM이 NULL을 반환해서 int 매핑 시 에러날 수 있음-->
+  <select id="selectStats" resultType="com.green.Schedule.dashboard.DTO.DashboardStatDTO">
+    SELECT
+        COALESCE(SUM(CASE WHEN STATUS = 'RECEIVED'    THEN 1 ELSE 0 END), 0) AS receiptCount
+      , COALESCE(SUM(CASE WHEN STATUS = 'ASSIGNED'    THEN 1 ELSE 0 END), 0) AS assignedCount
+      , COALESCE(SUM(CASE WHEN STATUS = 'IN_PROGRESS' THEN 1 ELSE 0 END), 0) AS progressCount
+      , COALESCE(SUM(CASE WHEN STATUS = 'COMPLETED'   THEN 1 ELSE 0 END), 0) AS completeCount
+    FROM AS_REQUEST
+  </select>
+
+  <!--최근 AS 접수 목록 (접수일 최신순 + 5건씩 페이징)
+      REGION은 CUSTOMER_ADDR의 앞 두 단어만 잘라서 표시 (예: '서울 강남구 테헤란로 123' -> '서울 강남구')-->
+  <select id="selectRecentList" resultMap="recentAs">
+    SELECT REQUEST_NO
+         , CUSTOMER_NAME
+         , SYMPTOM
+         , SUBSTRING_INDEX(CUSTOMER_ADDR, ' ', 2) AS REGION
+         , STATUS
+         , DATE_FORMAT(REQUEST_DATE, '%Y-%m-%d') AS REQUEST_DATE
+    FROM AS_REQUEST
+    ORDER BY REQUEST_DATE DESC
+    LIMIT #{limit} OFFSET #{offset}
+  </select>
+
+  <!--최근 AS 전체 건수 (페이지네이션 계산용)-->
+  <select id="selectRecentCount" resultType="int">
+    SELECT COUNT(*)
+    FROM AS_REQUEST
+  </select>
+
+  <!--AS 접수 상세 조회 (모달용) - AS 요청 고유번호 기준-->
+  <select id="selectRecentDetail" resultMap="recentAs">
+    SELECT REQUEST_NO
+         , CUSTOMER_NAME
+         , CUSTOMER_TEL
+         , CUSTOMER_ADDR
+         , PRODUCT_TYPE
+         , SYMPTOM
+         , DATE_FORMAT(REQUEST_DATE, '%Y-%m-%d %H:%i') AS REQUEST_DATE
+         , DATE_FORMAT(WISH_DATE,    '%Y-%m-%d %H:%i') AS WISH_DATE
+         , STATUS
+    FROM AS_REQUEST
+    WHERE REQUEST_NO = #{requestNo}
+  </select>
+
+</mapper>

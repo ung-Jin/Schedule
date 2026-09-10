@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouts/layout}">
+
+<!--이 곳에 link태그로 css파일을 연결하는 코드 작성-->
+<th:block layout:fragment="content_css">
+  <link rel="stylesheet" href="/css/pages/admin2/dashboard.css">
+</th:block>
+
+<!--아래 block에 html 코드 작성-->
+<th:block layout:fragment="content">
+
+  <div class="dashboard-wrap">
+
+    <!--페이지 제목-->
+    <div class="dashboard-title">대시보드</div>
+
+    <!--상단 상태 카드 4개 (숫자는 axios로 채움)-->
+    <div class="stat-cards">
+
+      <div class="stat-card stat-receipt">
+        <div class="stat-icon">📄</div>
+        <div class="stat-info">
+          <div class="stat-label">접수중</div>
+          <div class="stat-value"><span id="receiptCount">0</span>건</div>
+        </div>
+      </div>
+
+      <div class="stat-card stat-assigned">
+        <div class="stat-icon">📋</div>
+        <div class="stat-info">
+          <div class="stat-label">배정완료</div>
+          <div class="stat-value"><span id="assignedCount">0</span>건</div>
+        </div>
+      </div>
+
+      <div class="stat-card stat-progress">
+        <div class="stat-icon">⚙</div>
+        <div class="stat-info">
+          <div class="stat-label">진행중</div>
+          <div class="stat-value"><span id="progressCount">0</span>건</div>
+        </div>
+      </div>
+
+      <div class="stat-card stat-complete">
+        <div class="stat-icon">✔</div>
+        <div class="stat-info">
+          <div class="stat-label">완료</div>
+          <div class="stat-value"><span id="completeCount">0</span>건</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--최근 AS 접수 현황-->
+    <div class="recent-card">
+
+      <div class="recent-header">
+        <h3 class="recent-title">최근 AS 접수 현황</h3>
+      </div>
+
+      <table class="recent-table">
+        <thead>
+          <tr>
+            <th>접수일</th>
+            <th>고객명</th>
+            <th>요청내용</th>
+            <th>지역</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody id="recentTableBody">
+          <!--axios로 데이터를 채웁니다-->
+        </tbody>
+      </table>
+
+      <!--페이지네이션 (총 5건 초과 시에만 표시됨)-->
+      <div class="pagination" id="pagination"></div>
+
+    </div>
+
+  </div>
+
+  <!--AS 접수 상세 모달 (기본 숨김)-->
+  <div class="modal-overlay" id="detailModal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+
+      <div class="modal-header">
+        <h3 class="modal-title">AS 접수 상세</h3>
+        <button type="button" class="modal-x" onclick="closeModal()">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-row">
+          <div class="modal-label">AS요청 고유번호</div>
+          <div class="modal-value" id="dRequestNo">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">고객명</div>
+          <div class="modal-value" id="dCustomerName">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">고객연락처</div>
+          <div class="modal-value" id="dCustomerTel">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">고객주소</div>
+          <div class="modal-value" id="dCustomerAddr">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">제품종류</div>
+          <div class="modal-value" id="dProductType">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">증상/요청내용</div>
+          <div class="modal-value" id="dSymptom">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">접수일시</div>
+          <div class="modal-value" id="dRequestDate">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">희망방문일</div>
+          <div class="modal-value" id="dWishDate">-</div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-label">상태</div>
+          <div class="modal-value" id="dStatus">-</div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="modal-close-btn" onclick="closeModal()">닫기</button>
+      </div>
+
+    </div>
+  </div>
+
+</th:block>
+
+<!--이 곳에 script태그로 js파일을 연결하는 코드 작성-->
+<th:block layout:fragment="content_js">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script th:src="@{/js/pages/admin2/dashboard.js}"></script>
+</th:block>
+
+</html>

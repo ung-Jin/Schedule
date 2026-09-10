@@ -5,13 +5,13 @@ import com.green.Schedule.engineer.service.EngineerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-@RestController  //비동기 통신만 지원
+@RestController  //비동기
 @RequiredArgsConstructor
 @RequestMapping("/engineer-api")
 public class EngineerApiController {
   private final EngineerService engineerService;
 
-  //기사 상세 조회 (수정 폼에 값 채우기용)
+  //기사 상세 조회
   @GetMapping("/detail/{engineerNo}")
   public EngineerDTO engineerDetail(@PathVariable("engineerNo") int engineerNo){
     return engineerService.engineerDetail(engineerNo);
