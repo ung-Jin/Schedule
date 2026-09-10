@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pages/admin")
-public class EngineerController {
+@RequestMapping("/pages/engineer")
+public class RepairmanController {
 
   @GetMapping("/main")
   public String main() {

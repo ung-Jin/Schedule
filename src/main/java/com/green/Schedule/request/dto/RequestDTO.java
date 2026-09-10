@@ -29,5 +29,4 @@ public class RequestDTO {
     private String requestDate;
     private String wishDate;
 
-
 }

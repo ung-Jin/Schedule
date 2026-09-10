@@ -4,17 +4,26 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "맑은 고딕", sans-serif;
   color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 페이지 전체를 세로로 쌓는 큰 틀 (header - hero - content) */
+/* 페이지 전체를 세로로 쌓는 큰 틀 (header - 본문) */
 .container {
   max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 /* 상단 메뉴 : 로고는 왼쪽, 메뉴는 오른쪽 */
@@ -43,10 +52,12 @@ body {
   color: #333;
 }
 
-/* 메인 소개 영역 : 세로로 정렬 + 가운데 정렬 */
+/* 메인 소개 영역 : 세로/가로 모두 가운데 정렬 (남는 세로 공간을 채우면서 중앙에 옴) */
 .hero {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 60px 20px;
@@ -87,28 +98,44 @@ body {
   color: #2d6cdf;
 }
 
-/* 메인 화면의 "주요 기능 미리보기" 영역 */
+/* 메인 화면의 "주요 기능 미리보기" 영역 (hero 아래, 역시 남는 공간 안에서 가운데 정렬) */
 .features-preview {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 50px 20px;
   border-top: 1px solid #eee;
 }
 
+.features-preview h2 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
 .features-preview .more-link {
   margin-top: 24px;
 }
 
-/* 서비스 소개(/service-intro), 주요 기능(/features) 페이지 공통 레이아웃 */
+/* 서비스 소개(/service-intro), 주요 기능(/features) 페이지 공통 레이아웃
+   -> hero와 동일하게 남는 세로 공간의 가운데에 오도록 정렬 */
 .page-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 60px 20px;
   gap: 16px;
+}
+
+.page-content h2 {
+  font-size: 28px;
+  line-height: 1.4;
 }
 
 .page-content p {
@@ -129,18 +156,119 @@ body {
 }
 
 .feature-card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 24px;
   width: 220px;
+  text-align: left;
+}
+
+/* 카드 위쪽 색 강조 줄 (카드마다 accent-* 클래스로 색만 다르게) */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.feature-card.accent-blue::before   { background: #2d6cdf; }
+.feature-card.accent-green::before  { background: #16a34a; }
+.feature-card.accent-orange::before { background: #f59e0b; }
+
+.feature-card .feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #eaf1fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
 }
 
 .feature-card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .feature-card p {
   color: #666;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* 서비스소개/주요기능 페이지 맨 위 소개 영역 - hero와 비슷한 비율로 맞춤 */
+.page-hero {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.page-hero .page-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.page-hero h2 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.page-hero .page-subtitle {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 서비스 소개 페이지의 4단계 흐름도 */
+.flow-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 32px;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 130px;
+}
+
+.flow-step .flow-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #eaf1fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.flow-step .flow-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+.flow-step .flow-desc {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+.flow-arrow {
+  align-self: center;
+  font-size: 20px;
+  color: #c7d2e3;
+  margin: 0 2px;
+  padding-top: 16px;
 }
