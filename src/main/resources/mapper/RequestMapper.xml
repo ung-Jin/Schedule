@@ -5,35 +5,68 @@
 
 <mapper namespace="com.green.Schedule.request.mapper.RequestMapper">
 
+    <!-- SELECT 결과의 컬럼(대문자, 스네이크케이스)을 DTO 필드(카멜케이스)로 연결해줍니다. -->
+    <resultMap id="requestResultMap" type="com.green.Schedule.request.dto.RequestDTO">
+        <id property="requestNo" column="REQUEST_NO" />
+        <result property="customerName" column="CUSTOMER_NAME" />
+        <result property="customerTel" column="CUSTOMER_TEL" />
+        <result property="customerAddr" column="CUSTOMER_ADDR" />
+        <result property="productType" column="PRODUCT_TYPE" />
+        <result property="symptom" column="SYMPTOM" />
+        <result property="requestDate" column="REQUEST_DATE" />
+        <result property="wishDate" column="WISH_DATE" />
+        <result property="status" column="STATUS" />
+        <result property="memNo" column="MEM_NO" />
+    </resultMap>
+
+    <!-- [수정] MEM_NO 컬럼 추가 - 어떤 회원이 신청했는지 같이 저장합니다. -->
     <insert id="insertRequest" parameterType="com.green.Schedule.request.dto.RequestDTO"
             useGeneratedKeys="true" keyProperty="requestNo">
-        INSERT INTO AS_REQUEST (
-            CUSTOMER_NAME,
-            CUSTOMER_TEL,
-            CUSTOMER_ADDR,
-            PRODUCT_TYPE,
-            SYMPTOM,
-            REQUEST_DATE,
-            WISH_DATE,
-            STATUS
+        INSERT INTO REQUEST (
+        CUSTOMER_NAME,
+        CUSTOMER_TEL,
+        CUSTOMER_ADDR,
+        PRODUCT_TYPE,
+        SYMPTOM,
+        REQUEST_DATE,
+        WISH_DATE,
+        STATUS,
+        MEM_NO
         ) VALUES (
-            #{customerName},
-            #{customerTel},
-            #{customerAddr},
-            #{productType},
-            #{symptom},
-            #{requestDate},
-            #{wishDate},
-            #{status}
+        #{customerName},
+        #{customerTel},
+        #{customerAddr},
+        #{productType},
+        #{symptom},
+        #{requestDate},
+        #{wishDate},
+        #{status},
+        #{memNo}
         )
     </insert>
 
     <!-- 같은 연락처 + 같은 희망 날짜로 접수된 요청이 몇 건인지 (0이면 중복 아님) -->
     <select id="countDuplicate" resultType="int">
         SELECT COUNT(*)
-        FROM AS_REQUEST
+        FROM REQUEST
         WHERE CUSTOMER_TEL = #{customerTel}
-          AND WISH_DATE = #{wishDate}
+        AND WISH_DATE = #{wishDate}
+    </select>
+
+    <!-- 로그인한 회원이 신청한 전체 내역 (최신 접수 순) -->
+    <select id="selectMyRequestList" resultMap="requestResultMap">
+        SELECT *
+        FROM REQUEST
+        WHERE MEM_NO = #{memNo}
+        ORDER BY REQUEST_NO DESC
+    </select>
+
+    <!-- 신청 상세 - 본인이 신청한 건만 조회되도록 MEM_NO도 같이 확인 -->
+    <select id="selectRequestDetail" resultMap="requestResultMap">
+        SELECT *
+        FROM REQUEST
+        WHERE REQUEST_NO = #{requestNo}
+        AND MEM_NO = #{memNo}
     </select>
 
 </mapper>

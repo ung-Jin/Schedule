@@ -10,6 +10,11 @@ public class AdminController {
 
   @GetMapping("/main")
   public String main() {
-    return "pages/admin2/engineer_list";
+    return "pages/admin2/dashboard";
+  }
+
+  @GetMapping("/management")
+  public String management(){
+    return "redirect:/admin/engineer";
   }
 }

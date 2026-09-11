@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>접수 완료 - 냉·난방 AS</title>
 
-  <link rel="stylesheet" th:href="@{/css/request.css}">
+  <link rel="stylesheet" href="/css/pages/request/request.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
     <nav>
       <ul>
         <li><a th:href="@{/request/write}">A/S 신청</a></li>
-        <li><a href="#">신청 내역 조회</a></li>
+        <li><a th:href="@{/request/list}">신청 내역 조회</a></li>
         <li><a href="#">고객센터</a></li>
       </ul>
     </nav>
@@ -33,7 +33,6 @@
 
       <div class="form-buttons complete-buttons">
         <a th:href="@{/pages/user/main}" class="btn btn-outline">홈으로</a>
-        <a th:href="@{/request/write}" class="btn btn-primary">추가 신청하기</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<th:block layout:fragment="content_css">
+
+    <link rel="stylesheet" href="/css/pages/request/request-list.css">
+</th:block>
+
+<th:block layout:fragment="content">
+
+  <h2 class="list-title">신청 상세 내역</h2>
+
+  <div class="detail-box">
+
+    <div class="detail-status-row">
+      <span class="status-badge status-received"  th:if="${requestDetail.status == 'RECEIVED'}">접수완료</span>
+      <span class="status-badge status-assigned"  th:if="${requestDetail.status == 'ASSIGNED'}">기사배정 완료</span>
+      <span class="status-badge status-progress"  th:if="${requestDetail.status == 'IN_PROGRESS'}">수리 진행중</span>
+      <span class="status-badge status-completed" th:if="${requestDetail.status == 'COMPLETED'}">수리 완료</span>
+      <span class="status-badge status-canceled"  th:if="${requestDetail.status == 'CANCELED'}">취소됨</span>
+    </div>
+
+    <table class="detail-table">
+      <tr>
+        <th>접수번호</th>
+        <td th:text="${requestDetail.requestNo}">1</td>
+      </tr>
+      <tr>
+        <th>신청자</th>
+        <td th:text="${requestDetail.customerName}">홍길동</td>
+      </tr>
+      <tr>
+        <th>연락처</th>
+        <td th:text="${requestDetail.customerTel}">010-0000-0000</td>
+      </tr>
+      <tr>
+        <th>주소</th>
+        <td th:text="${requestDetail.customerAddr}">주소</td>
+      </tr>
+      <tr>
+        <th>제품 종류</th>
+        <td th:text="${requestDetail.productType}">에어컨</td>
+      </tr>
+      <tr>
+        <th>증상</th>
+        <td th:text="${requestDetail.symptom}">증상 내용</td>
+      </tr>
+      <tr>
+        <th>접수일</th>
+        <td th:text="${#strings.substring(requestDetail.requestDate, 0, 10)}">2026-09-10</td>
+      </tr>
+      <tr>
+        <th>희망 방문일</th>
+        <td th:text="${#strings.substring(requestDetail.wishDate, 0, 10)}">2026-09-15</td>
+      </tr>
+    </table>
+
+    <a th:href="@{/request/list}" class="btn btn-outline">목록으로</a>
+
+  </div>
+
+</th:block>
+
+<th:block layout:fragment="content_js"></th:block>
+
+</html>
