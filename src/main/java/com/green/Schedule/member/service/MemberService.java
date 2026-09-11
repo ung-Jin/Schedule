@@ -35,4 +35,16 @@ public class MemberService {
         return member;
     }
 
+    // 아이디 중복 확인 (회원가입 시 사용)
+    public boolean isIdDuplicate(String memId) {
+        return memberMapper.countById(memId) > 0;
+    }
+
+    // 회원가입 처리
+    public void join(MemberDTO memberDTO) {
+        memberMapper.insertMember(memberDTO);
+    }
+
+
+
 }

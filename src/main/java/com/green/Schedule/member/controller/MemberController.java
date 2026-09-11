@@ -77,6 +77,62 @@ public class MemberController {
         return "redirect:/";
     }
 
+    /**
+     * 회원가입 화면 (GET)
+     * 주소 예: /member/join
+     * 이미 로그인된 상태라면 가입 화면 대신 원래 화면(role별 홈)으로 보냅니다.
+     */
+    @GetMapping("/join")
+    public String joinForm(HttpSession session) {
+
+        MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");
+        if (loginMember != null) {
+            return redirectByRole(loginMember.getRole());
+        }
+
+        return "member/join";
+    }
+
+    /**
+     *  회원가입 처리 (POST)
+     * join.html의 <form action="/member/join" method="post"> 에서 넘어옵니다.
+     * 화면에는 role 입력을 아예 두지 않고, 여기서 가입하는 사람은 전부 user로만 가입됩니다.
+     * (관리자는 기본 쿼리로, 기사는 별도의 기사등록 기능으로 만들 예정이라 여기서는 다루지 않습니다.)
+     */
+    @PostMapping("/join")
+    public String join(@RequestParam("memId") String memId,
+                       @RequestParam("memPw") String memPw,
+                       @RequestParam("memPwConfirm") String memPwConfirm,
+                       @RequestParam("memName") String memName,
+                       Model model) {
+
+        // 비밀번호 / 비밀번호 확인이 다르면 다시 가입 화면으로
+        if (!memPw.equals(memPwConfirm)) {
+            model.addAttribute("joinError", "비밀번호가 일치하지 않습니다.");
+            model.addAttribute("memId", memId);
+            model.addAttribute("memName", memName);
+            return "member/join";
+        }
+
+        // 이미 있는 아이디면 다시 가입 화면으로
+        if (memberService.isIdDuplicate(memId)) {
+            model.addAttribute("joinError", "이미 사용 중인 아이디입니다.");
+            model.addAttribute("memName", memName);
+            return "member/join";
+        }
+
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setMemId(memId);
+        memberDTO.setMemPw(memPw);
+        memberDTO.setMemName(memName);
+        // role은 세팅하지 않습니다 - MEMBER 테이블의 DEFAULT 'user'가 자동으로 채워줍니다.
+
+        memberService.join(memberDTO);
+
+        // 가입 완료 -> 로그인 화면으로 이동
+        return "redirect:/member/login";
+    }
+
 
     private String redirectByRole(String role) {
         if ("admin".equals(role)) {
@@ -90,4 +146,6 @@ public class MemberController {
 
 
 
+
 }
+
