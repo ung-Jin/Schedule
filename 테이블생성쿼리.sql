@@ -72,6 +72,7 @@ CREATE TABLE AS_SCHEDULE (
    SCHEDULE_NO INT AUTO_INCREMENT               #스케줄 번호(기본키)
    , REQUEST_NO INT NOT NULL                    #AS 요청 고유번호(외래키)
    , ENGINEER_NO INT NOT NULL                   #기사 고유번호(외래키)
+   , FIX_DATE DATE NOT NULL                     #일정 배정 날짜
    , START_TIME DATETIME NOT NULL               #시작 예정 시간
    , END_TIME DATETIME NOT NULL                 #종료 예정 시간
    , STATUS VARCHAR(20) DEFAULT 'ASSIGNED'      #진행 상태
@@ -85,6 +86,7 @@ CREATE TABLE AS_SCHEDULE (
 SELECT * FROM member;
 SELECT * FROM engineer;
 SELECT * FROM as_request;
+SELECT * FROM as_schedule;
 --  테이블 생성 쿼리문 더미 데이터 INSERT문은 해당 파일에 작성해주세요!!
 -- insert 한 더미 데이터로 공유 해주세요
 INSERT INTO member VALUES (1, 'admin', '1234','관리자','admin');

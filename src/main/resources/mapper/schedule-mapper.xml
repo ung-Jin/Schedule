@@ -13,6 +13,8 @@
     <result column="START_TIME"    property="startTime"/>
     <result column="END_TIME"      property="endTime"/>
     <result column="STATUS"        property="status"/>
+    <association property="engineerDTO" resultMap="engineer"/>
+    <association property="requestDTO" resultMap="request"/>
   </resultMap>
 
   <!--AS 기사 테이블-->
@@ -41,10 +43,92 @@
     <result column="STATUS"   property="status"/>
   </resultMap>
 
-  <!--AS 기사 일정 조회-->
+  <!--관리자 AS 일정 관리 페이지-->
   <!--스케줄, 기사, 요청 테이블 데이터 필요-->
+  <!--AS 기사 전체 일정 조회 쿼리-->
+  <select id="selectRequestList" resultMap="request">
+    SELECT REQUEST_NO
+      , CUSTOMER_NAME
+      , CUSTOMER_TEL
+      , CUSTOMER_ADDR
+      , PRODUCT_TYPE
+      , SYMPTOM
+      , REQUEST_DATE
+      , WISH_DATE
+      , STATUS
+    FROM AS_REQUEST
+  </select>
 
-  <!--AS 기사 일정 배정-->
+  <!--배정 전 AS 기사 일정 조회 쿼리-->
+  <!-- status가 receive인 일정들 조회 -->
+  <select id="selectReceiveRequestList" resultMap="request">
+    SELECT REQUEST_NO
+    , CUSTOMER_NAME
+    , CUSTOMER_TEL
+    , CUSTOMER_ADDR
+    , PRODUCT_TYPE
+    , SYMPTOM
+    , REQUEST_DATE
+    , WISH_DATE
+    , STATUS
+    FROM AS_REQUEST
+    WHERE STATUS = 'RECEIVED'
+  </select>
+
+  <!--배정된 스케줄 조회 쿼리-->
+  <!--ENGINEER, AS_REQUEST 조인 필요-->
+  <select id="selectScheduleList" resultMap="schedule">
+    SELECT SCHEDULE_NO
+      , R.REQUEST_NO
+      , E.ENGINEER_NO
+      , FIX_DATE
+      , START_TIME
+      , END_TIME
+      , ENGINEER_NAME
+      , PRODUCT_TYPE
+      , SYMPTOM
+      , S.STATUS AS STATUS
+    FROM AS_SCHEDULE S
+    INNER JOIN ENGINEER E
+    ON S.ENGINEER_NO = E.ENGINEER_NO
+    INNER JOIN AS_REQUEST R
+    ON S.REQUEST_NO = R.REQUEST_NO
+  </select>
+
+  <!-- AS 기사 배정을 위해 기사 전체 조회 쿼리 -->
+  <!-- 일 할수 있는 상태의 기사 조회-->
+  <select id="selectEngineerList" resultMap="engineer">
+    SELECT ENGINEER_NO
+      , ENGINEER_NAME
+    FROM ENGINEER
+    WHERE STATUS = 'WORK'
+  </select>
+
+  <!--관리자 AS 일정 배정-->
+  <!--AS 기사 일정 배정 쿼리-->
+  <insert id="insertSchedule">
+    INSERT INTO AS_SCHEDULE (
+       REQUEST_NO
+      , ENGINEER_NO
+      , START_TIME
+      , END_TIME
+    )
+    VALUES (
+      #{requestNo}
+      , #{engineerNo}
+      , #{startTime}
+      , #{endTime}
+    )
+  </insert>
+
+  <!--신청 일정을 접수에서 배정완료로 수정-->
+  <!-- AS 기사 배정된 경우 AS_REQUEST 테이블 STATUS를 배정으로 업데이트 쿼리-->
+  <update id="updateReceiveRequest">
+    UPDATE AS_REQUEST
+    SET
+    STATUS = 'ASSIGNED'
+    WHERE REQUEST_NO = #{requestNo}
+  </update>
 
 </mapper>
 

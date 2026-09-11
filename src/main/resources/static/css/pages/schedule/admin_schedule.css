@@ -120,8 +120,26 @@
 }
 .cal-card .fc .fc-day-today { background: var(--accent-soft) !important; }
 .cal-card .fc .fc-daygrid-day-frame { min-height: 68px; }
-.cal-card .fc-event { border: none; border-radius: 6px; font-size: 12px; padding: 1px 4px; cursor: pointer; }
+.cal-card .fc-event { border: none; border-radius: 6px; padding: 0; cursor: pointer; }
 .cal-card .fc-theme-standard td, .cal-card .fc-theme-standard th { border-color: var(--border); }
+
+/* 이벤트 안에 기사명/증상/시작시간을 세 줄로 표시 (admin_schedule.js의 eventContent) */
+.fc-event-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 2px 5px;
+  overflow: hidden;
+}
+.fc-event-line {
+  font-size: 10.5px;
+  line-height: 1.3;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fc-event-line.name { font-weight: 700; }
  
 /* ================= 오른쪽: AS 일정 배정 패널 ================= */
 .assign-card {
@@ -191,6 +209,39 @@
 }
 .assign-card button[type="button"]:hover { background: var(--accent-strong); }
 
+.validate{
+  color: red;
+  font-size: 0.8rem;
+}
 
+.schedule-footer{
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  align-self: center;
+}
 
+.schedule-footer > p:first-child{
+  font-size: 1.2rem;
+  
+}
 
+.receive-icon{
+  color: rgb(102, 163, 191);
+}
+
+.assign-icon{
+  color: rgb(51, 104, 160);
+}
+
+.progress-icon{
+  color: rgb(255, 157, 80);
+}
+
+.complete-icon{
+  color: rgb(118, 196, 87);
+}
+
+.cancel-icon{
+  color: rgb(231, 63, 30);
+}

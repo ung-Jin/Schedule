@@ -5,6 +5,7 @@
 
 <!--이 곳에 link태그로 css파일을 연결하는 코드 작성-->
 <th:block layout:fragment="content_css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="/css/pages/schedule/admin_schedule.css">
 </th:block>
 
@@ -32,8 +33,9 @@
               </div>
               <select id="techFilter">
                 <option value="all">전체 기사</option>
-                <th:block>
-                  <option value=""></option>
+                <th:block th:each="engineer:${engineerList}">
+                  <option th:value="${engineer.engineerNo}">
+                    [[${engineer.engineerName}]]</option>
                 </th:block>
               </select>
             </div>
@@ -43,51 +45,82 @@
         <!-- 오른쪽 AS 기사 배정 화면 -->
         <div class="assign-card">
           <h4>AS 일정 배정</h4>
-          <form action="" method="post">
+          <form action="/assign-schedule" method="post" id="schdeule-reg-form">
             <div>
               <p>AS 접수 선택</p>
-              <select name="" id="">
+              <select name="requestNo" id="">
                 <option value="">[선택하세요]</option>
-                <th:block>
-                  <option value=""></option>
+                <th:block th:each="receive:${receiveList}">
+                  <option th:value="${receive.requestNo}">
+                    [[${receive.productType}]]</option>
                 </th:block>
               </select>
             </div>
             <div>
               <p>배정할 기사</p>
-              <select name="" id="">
+              <select name="engineerNo" id="">
                 <option value="">[선택하세요]</option>
-                <!-- 기사 목록 -->
-                
-                <th:block>
-                  <option value=""></option>
+                <!-- 기사 목록 -->               
+                <th:block th:each="engineer:${engineerList}">
+                  <option th:value="${engineer.engineerNo}">
+                    [[${engineer.engineerName}]]</option>
                 </th:block>               
               </select>
             </div>
             <div>
               <p>배정 날짜</p>
-              <input type="date" name="">
+              <input type="date" name="fixDate">
             </div>
             <div>
               <p>시간선택</p>
               <div>
-                <input type="time" name="">
+                <input type="time" name="startTime">
                 <span> - </span>
-                <input type="time" name="">
+                <input type="time" name="endTime">
               </div>
             </div>
             <div>
-              <button type="button">일정 배정하기</button>
+              <p class="validate" id="error-msg"></p>
+              <button type="button" onclick="regSchedule()">일정 배정하기</button>
             </div>
           </form>
         </div>
       </div>
-     
+     <div class="schedule-footer">
+      <p >일정 상태</p>
+      <p>
+        <span class="receive-icon"><i class="bi bi-r-circle"></i></span>
+        접수</p>
+      <p>
+        <span class="assign-icon"><i class="bi bi-c-circle"></i></span>
+        배정완료</p>
+      <p>
+        <span class="progress-icon"><i class="bi bi-wrench-adjustable-circle"></i></span>
+        진행중</p>
+      <p>
+        <span class="complete-icon"><i class="bi bi-check-circle"></i></span>
+        완료</p>
+      <p>
+        <span class="cancel-icon"><i class="bi bi-x-circle"></i></span>
+        취소</p>
+     </div>
   </div>
 </th:block>
 
 <!--이 곳에 script태그로 js파일을 연결하는 코드 작성-->
 <th:block layout:fragment="content_js">
+  <!-- 캘린더 사용을 위해 연결하는 js파일 -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+  <!-- 서버에서 조회한 requestList/scheduleList를 JS 전역 변수로 전달 -->
+  <!-- (admin_schedule.js는 정적 파일이라 th: 표현식을 못 쓰므로, 데이터는 여기서 만들어서 넘겨줍니다) -->
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+    const requestList = /*[[${requestList}]]*/ [];
+    const scheduleList = /*[[${scheduleList}]]*/ [];
+    /*]]>*/
+  </script>
+
   <script src="/js/pages/schedule/admin_schedule.js"></script>
 </th:block>
 </html>
