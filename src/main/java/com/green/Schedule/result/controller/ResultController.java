@@ -3,6 +3,10 @@ package com.green.Schedule.result.controller;
 import com.green.Schedule.member.dto.MemberDTO;
 import com.green.Schedule.result.dto.ResultDTO;
 import com.green.Schedule.result.service.ResultService;
+import com.solapi.sdk.SolapiClient;
+import com.solapi.sdk.message.exception.SolapiMessageNotReceivedException;
+import com.solapi.sdk.message.model.Message;
+import com.solapi.sdk.message.service.DefaultMessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -108,6 +112,34 @@ public class ResultController {
     resultService.completeRequest(requestNo);
 
     // 등록 끝나면 다시 대시보드로 이동
+    //return "redirect:/as-result-dash-board";
+
+    //결과보고를 등록하면 문자 발송하러 이동
+    return "redirect:/to-msg";
+  }
+
+  @GetMapping("/to-msg")
+  public String sendMsg(){
+    DefaultMessageService messageService =  SolapiClient.INSTANCE.createInstance("NCSKUPDBEGMQEN9B", "VQTCMTT3VPSVPMRUAPBOD4JORBQTJ7VC");
+
+    // Message 패키지가 중복될 경우 com.solapi.sdk.message.model.Message로 치환하여 주세요
+    Message message = new Message();
+    message.setFrom("01099365962");
+    message.setTo("01030587733");
+    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\nhttps://docs.google.com/forms/d/1_pmVHDPwPdmsb97M9qEl1YF2wWgl7HoyE7VuMmRPeIg/edit");
+
+    try {
+      System.out.println(111);
+      // send 메소드로 ArrayList<Message> 객체를 넣어도 동작합니다!
+      messageService.send(message);
+    } catch (SolapiMessageNotReceivedException exception) {
+      // 발에 실패한 메시지 목록을 확인할 수 있습니다!
+      System.out.println(exception.getFailedMessageList());
+      System.out.println(exception.getMessage());
+    } catch (Exception exception) {
+      System.out.println(exception.getMessage());
+    }
+
     return "redirect:/as-result-dash-board";
   }
 
@@ -147,13 +179,6 @@ public class ResultController {
     File savedFile = new File(UPLOAD_DIR + savedName);
     image.transferTo(savedFile);
 
-
-    System.out.println(111);
-    System.out.println(111);
-    System.out.println(111);
-    System.out.println(111);
-    System.out.println(111);
-    System.out.println(111);
 
     return "/uploads/result/" + savedName;
   }
