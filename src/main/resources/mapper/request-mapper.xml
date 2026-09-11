@@ -19,29 +19,28 @@
         <result property="memNo" column="MEM_NO" />
     </resultMap>
 
-    <!-- [수정] MEM_NO 컬럼 추가 - 어떤 회원이 신청했는지 같이 저장합니다. -->
     <insert id="insertRequest" parameterType="com.green.Schedule.request.dto.RequestDTO"
             useGeneratedKeys="true" keyProperty="requestNo">
         INSERT INTO REQUEST (
-        CUSTOMER_NAME,
-        CUSTOMER_TEL,
-        CUSTOMER_ADDR,
-        PRODUCT_TYPE,
-        SYMPTOM,
-        REQUEST_DATE,
-        WISH_DATE,
-        STATUS,
-        MEM_NO
+            CUSTOMER_NAME,
+            CUSTOMER_TEL,
+            CUSTOMER_ADDR,
+            PRODUCT_TYPE,
+            SYMPTOM,
+            REQUEST_DATE,
+            WISH_DATE,
+            STATUS,
+            MEM_NO
         ) VALUES (
-        #{customerName},
-        #{customerTel},
-        #{customerAddr},
-        #{productType},
-        #{symptom},
-        #{requestDate},
-        #{wishDate},
-        #{status},
-        #{memNo}
+            #{customerName},
+            #{customerTel},
+            #{customerAddr},
+            #{productType},
+            #{symptom},
+            #{requestDate},
+            #{wishDate},
+            #{status},
+            #{memNo}
         )
     </insert>
 
@@ -50,7 +49,7 @@
         SELECT COUNT(*)
         FROM REQUEST
         WHERE CUSTOMER_TEL = #{customerTel}
-        AND WISH_DATE = #{wishDate}
+          AND WISH_DATE = #{wishDate}
     </select>
 
     <!-- 로그인한 회원이 신청한 전체 내역 (최신 접수 순) -->
@@ -66,7 +65,7 @@
         SELECT *
         FROM REQUEST
         WHERE REQUEST_NO = #{requestNo}
-        AND MEM_NO = #{memNo}
+          AND MEM_NO = #{memNo}
     </select>
 
 </mapper>

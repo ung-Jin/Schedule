@@ -6,28 +6,50 @@
 <!-- namespace는 연결될 매퍼 인터페이스의 전체 경로(패키지+클래스명)와 똑같이 적어야 합니다. -->
 <mapper namespace="com.green.Schedule.member.mapper.MemberMapper">
 
-    <resultMap id="memberResultMap" type="com.green.Schedule.member.dto.MemberDTO">
-        <id property="memNo" column="MEM_NO" />
-        <result property="memId" column="MEM_ID" />
-        <result property="memPw" column="MEM_PW" />
-        <result property="memName" column="MEM_NAME" />
-        <result property="role" column="ROLE" />
-    </resultMap>
+  <resultMap id="memberResultMap" type="com.green.Schedule.member.dto.MemberDTO">
+    <id property="memNo" column="MEM_NO" />
+    <result property="memId" column="MEM_ID" />
+    <result property="memPw" column="MEM_PW" />
+    <result property="memName" column="MEM_NAME" />
+    <result property="role" column="ROLE" />
+  </resultMap>
 
-    <!--
-        아이디로 회원 조회
-        parameterType : 넘어오는 파라미터 타입 (아이디 문자열 하나)
-        resultMap     : 위에서 만든 resultMap 사용
-        #{memId}      : MemberMapper.java에서 넘어온 파라미터 값이 여기에 바인딩됩니다.
-    -->
-    <select id="selectMemberById" parameterType="String" resultMap="memberResultMap">
-        SELECT MEM_NO,
-               MEM_ID,
-               MEM_PW,
-               MEM_NAME,
-               ROLE
-        FROM MEMBER
-        WHERE MEM_ID = #{memId}
-    </select>
+  <!--
+      아이디로 회원 조회
+      parameterType : 넘어오는 파라미터 타입 (아이디 문자열 하나)
+      resultMap     : 위에서 만든 resultMap 사용
+      #{memId}      : MemberMapper.java에서 넘어온 파라미터 값이 여기에 바인딩됩니다.
+  -->
+  <select id="selectMemberById" parameterType="String" resultMap="memberResultMap">
+    SELECT MEM_NO,
+    MEM_ID,
+    MEM_PW,
+    MEM_NAME,
+    ROLE
+    FROM MEMBER
+    WHERE MEM_ID = #{memId}
+  </select>
+
+  <!-- 아이디 중복 확인 - 이미 존재하는 아이디 개수 (0이면 사용 가능) -->
+  <select id="countById" parameterType="String" resultType="int">
+    SELECT COUNT(*)
+    FROM MEMBER
+    WHERE MEM_ID = #{memId}
+  </select>
+
+
+
+  <insert id="insertMember" parameterType="com.green.Schedule.member.dto.MemberDTO"
+          useGeneratedKeys="true" keyProperty="memNo">
+    INSERT INTO MEMBER (
+    MEM_ID,
+    MEM_PW,
+    MEM_NAME
+    ) VALUES (
+    #{memId},
+    #{memPw},
+    #{memName}
+    )
+  </insert>
 
 </mapper>
