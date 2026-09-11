@@ -32,7 +32,7 @@ public class EngineerApiController {
   }
 
   //기사 삭제
-  @GetMapping("/delete/{engineerNo}")
+  @DeleteMapping("/delete/{engineerNo}")
   public boolean deleteEngineer(@PathVariable("engineerNo") int engineerNo){
     engineerService.deleteEngineer(engineerNo);
     return true;

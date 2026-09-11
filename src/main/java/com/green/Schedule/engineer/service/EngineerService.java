@@ -4,6 +4,7 @@ import com.green.Schedule.engineer.DTO.EngineerDTO;
 import com.green.Schedule.engineer.mapper.EngineerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class EngineerService  {
   }
 
   //기사 등록 (MEMBER + ENGINEER 두 테이블 동시 저장)
+  @Transactional
   public void insertEngineer(EngineerDTO engineerDTO){
     //1. MEMBER 먼저 저장 -> memNo가 DTO에 자동으로 채워짐
     engineerMapper.insertMember(engineerDTO);

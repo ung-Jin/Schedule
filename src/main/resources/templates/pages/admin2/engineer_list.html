@@ -40,13 +40,13 @@
       </tr>
       <!--데이터가 있을 경우-->
       <tr th:each="engineer : ${engineerList}">
-        <td th:text="${engineer.engineerName}">김기사</td>
-        <td th:text="${engineer.engineerTel}">010-1234-5678</td>
-        <td th:text="${engineer.specialty}">에어컨</td>
+        <td th:text="${engineer.engineerName}"></td>
+        <td th:text="${engineer.engineerTel}"></td>
+        <td th:text="${engineer.specialty}"></td>
         <td>
-          <span th:text="${engineer.workStartTime}">09:00</span>
+          <span th:text="${engineer.workStartTime}"></span>
           ~
-          <span th:text="${engineer.workEndTime}">18:00</span>
+          <span th:text="${engineer.workEndTime}"></span>
         </td>
         <td>
           <span th:if="${engineer.status == 'WORK'}" class="badge badge-work">근무중</span>
@@ -105,7 +105,7 @@
             <input type="checkbox" name="specialty" value="스탠드형 에어컨"> 스탠드형 에어컨
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" name="specialty" value="시시템 에어컨"> 시스템 에어컨
+            <input type="checkbox" name="specialty" value="시스템 에어컨"> 시스템 에어컨
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="specialty" value="보일러"> 보일러
