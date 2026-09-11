@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>접수 완료 - 냉·난방 AS</title>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/layout}">
 
+<th:block layout:fragment="content_css">
   <link rel="stylesheet" href="/css/pages/request/request.css">
-</head>
-<body>
+</th:block>
 
-  <header class="top-bar">
-    <div class="logo"><a th:href="@{/pages/user/main}">❄ 냉·난방 AS</a></div>
 
-    <nav>
-      <ul>
-        <li><a th:href="@{/request/write}">A/S 신청</a></li>
-        <li><a th:href="@{/request/list}">신청 내역 조회</a></li>
-        <li><a href="#">고객센터</a></li>
-      </ul>
-    </nav>
 
-    <div class="user-area">
-      <span th:text="${session.loginMember.memName} + '님'">회원님</span>
-      <a th:href="@{/member/logout}" class="logout">로그아웃</a>
-    </div>
-  </header>
+<th:block layout:fragment="content">
+
+
+
+
 
   <div class="complete-wrap">
     <div class="complete-box">
@@ -37,5 +25,9 @@
     </div>
   </div>
 
-</body>
+</th:block>
+
+
+<th:block layout:fragment="content_js"></th:block>
+
 </html>

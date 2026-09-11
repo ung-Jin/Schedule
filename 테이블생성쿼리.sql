@@ -21,8 +21,8 @@ CREATE TABLE ENGINEER (
 
 );
 
--- 3. AS_REQUEST (독립)
-CREATE TABLE AS_REQUEST (
+-- 3. REQUEST (독립)
+CREATE TABLE REQUEST (
                             REQUEST_NO INT AUTO_INCREMENT PRIMARY KEY,      -- AS 요청 고유번호 (PK)
                             CUSTOMER_NAME VARCHAR(30) NOT NULL,             -- 고객명
                             CUSTOMER_TEL VARCHAR(20) NOT NULL,              -- 고객 연락처
@@ -32,10 +32,9 @@ CREATE TABLE AS_REQUEST (
                             REQUEST_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,-- 접수일시
                             WISH_DATE DATETIME,                             -- 희망 방문일
                             STATUS VARCHAR(20) DEFAULT 'RECEIVED'           -- 상태 (RECEIVED/ASSIGNED/IN_PROGRESS/COMPLETED/CANCELED)
+                            CONSTRAINT FK_REQUEST_MEMBER (MEM_NO) REFERENCES member (MEM_NO)
 );
 
-
-USE `project-1`;
 
 -- 관리자 1명
 INSERT INTO MEMBER (MEM_ID, MEM_PW, MEM_NAME, ROLE) VALUES
