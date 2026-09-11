@@ -147,6 +147,14 @@ public class ResultController {
     File savedFile = new File(UPLOAD_DIR + savedName);
     image.transferTo(savedFile);
 
+
+    System.out.println(111);
+    System.out.println(111);
+    System.out.println(111);
+    System.out.println(111);
+    System.out.println(111);
+    System.out.println(111);
+
     return "/uploads/result/" + savedName;
   }
 
