@@ -56,7 +56,7 @@
       , REQUEST_DATE
       , WISH_DATE
       , STATUS
-    FROM AS_REQUEST
+    FROM REQUEST
   </select>
 
   <!--배정 전 AS 기사 일정 조회 쿼리-->
@@ -71,7 +71,7 @@
     , REQUEST_DATE
     , WISH_DATE
     , STATUS
-    FROM AS_REQUEST
+    FROM REQUEST
     WHERE STATUS = 'RECEIVED'
   </select>
 
@@ -91,7 +91,7 @@
     FROM AS_SCHEDULE S
     INNER JOIN ENGINEER E
     ON S.ENGINEER_NO = E.ENGINEER_NO
-    INNER JOIN AS_REQUEST R
+    INNER JOIN REQUEST R
     ON S.REQUEST_NO = R.REQUEST_NO
   </select>
 
@@ -124,7 +124,7 @@
   <!--신청 일정을 접수에서 배정완료로 수정-->
   <!-- AS 기사 배정된 경우 AS_REQUEST 테이블 STATUS를 배정으로 업데이트 쿼리-->
   <update id="updateReceiveRequest">
-    UPDATE AS_REQUEST
+    UPDATE REQUEST
     SET
     STATUS = 'ASSIGNED'
     WHERE REQUEST_NO = #{requestNo}
