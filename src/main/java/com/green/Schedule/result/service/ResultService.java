@@ -24,6 +24,12 @@ public class ResultService {
     return resultMapper.selectScheduleDetail(scheduleNo);
   }
 
+  // 이 일정이 로그인한 기사 본인 것이 맞는지 확인
+  // (다른 기사가 남의 scheduleNo를 주소에 직접 넣어서 접근하는 것을 막기 위함)
+  public boolean isMySchedule(long scheduleNo, int memNo){
+    return resultMapper.countMySchedule(scheduleNo, memNo) > 0;
+  }
+
   // AS결과보고 등록
   public void insertResult(ResultDTO resultDTO){
     resultMapper.insertResult(resultDTO);

@@ -45,6 +45,7 @@ body {
   gap: 15px;
 }
 
+/* 카드 전체를 누르면 그 일정의 결과보고 화면으로 이동함 */
 .today-card {
   display: flex;
   align-items: center;
@@ -53,6 +54,11 @@ body {
   border-radius: 10px;
   padding: 20px 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.today-card:hover {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
 }
 
 .today-time {
@@ -75,27 +81,6 @@ body {
   font-size: 13px;
   color: #7b8797;
 }
-
-.today-btn {
-  width: 120px;
-  height: 42px;
-  border: none;
-  border-radius: 5px;
-  background-color: #2878e8;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.today-btn:hover {
-  background-color: #1767d3;
-}
-
 
 /* 진행상태 버튼/뱃지 */
 
