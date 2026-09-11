@@ -45,4 +45,19 @@ public class ResultService {
     resultMapper.completeRequest(requestNo);
   }
 
+  // 결과 등록 후 만족도 문자 발송 - 고객 연락처 조회
+  public String selectCustomerTel(int requestNo){
+    return resultMapper.selectCustomerTel(requestNo);
+  }
+
+  // 결과 등록 후 만족도 문자 발송 - 로그인한 기사의 기사번호 조회
+  public int selectEngineerNo(int memNo){
+    return resultMapper.selectEngineerNo(memNo);
+  }
+
+  //기사번호 조회
+  public void selectAsTel(){
+    resultMapper.selectAsTel();
+  }
+
 }

@@ -1,6 +1,7 @@
 package com.green.Schedule.result.controller;
 
 import com.green.Schedule.member.dto.MemberDTO;
+import com.green.Schedule.request.dto.RequestDTO;
 import com.green.Schedule.result.dto.ResultDTO;
 import com.green.Schedule.result.service.ResultService;
 import com.green.Schedule.result.util.UploadUtil;
@@ -108,26 +109,43 @@ public class ResultController {
     // 등록 끝나면 다시 대시보드로 이동
     //return "redirect:/as-result-dash-board";
 
-    //결과보고를 등록하면 문자 발송하러 이동
-    return "redirect:/to-msg";
+    //결과보고를 등록하면 문자 발송하러 이동 (문자 내용 만들 때 필요한 requestNo를 같이 넘겨줌)
+    return "redirect:/to-msg?requestNo=" + requestNo + "&memNo=" + loginMember.getMemNo();
   }
 
+  // 결과 등록 후 고객한테 만족도 조사 문자 발송
   @GetMapping("/to-msg")
-  public String sendMsg(){
+  public String sendMsg(RequestDTO requestDTO, MemberDTO memberDTO){
     DefaultMessageService messageService =  SolapiClient.INSTANCE.createInstance("NCSKUPDBEGMQEN9B", "VQTCMTT3VPSVPMRUAPBOD4JORBQTJ7VC");
+
+    //접수번호
+    //requestDTO.getRequestNo();
+    //기사번호
+    //memberDTO.getMemNo();
+
+
+    // 문자를 받을 사람 = 이번에 처리한 AS 건의 고객 연락처
+    String customerTel = requestDTO.getCustomerTel();
+    // 만족도 조사 링크 끝에 붙일 기사번호 (누가 처리한 건인지 구분하려고)
+    int engineerNo = memberDTO.getMemNo();
+
+    System.out.println("!!!!!");
+    resultService.selectAsTel();
+    resultService.selectCustomerTel(requestDTO.getRequestNo());
+
+
 
     // Message 패키지가 중복될 경우 com.solapi.sdk.message.model.Message로 치환하여 주세요
     Message message = new Message();
     message.setFrom("01099365962");
-    message.setTo("01030587733");
-    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\nhttps://docs.google.com/forms/d/e/1FAIpQLSesxXDcKtEWoUDW1eQCOUr-bQNgYbwZkGvOX3RkxF50EZFE7w/viewform?usp=publish-editor");
+    message.setTo(customerTel);
+    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\nhttps://docs.google.com/forms/d/e/1FAIpQLSesxXDcKtEWoUDW1eQCOUr-bQNgYbwZkGvOX3RkxF50EZFE7w/viewform?usp=publish-editor&engineerNo=" + engineerNo);
 
     try {
-      System.out.println(111);
       // send 메소드로 ArrayList<Message> 객체를 넣어도 동작합니다!
       messageService.send(message);
     } catch (SolapiMessageNotReceivedException exception) {
-      // 발에 실패한 메시지 목록을 확인할 수 있습니다!
+      // 발송에 실패한 메시지 목록을 확인할 수 있습니다!
       System.out.println(exception.getFailedMessageList());
       System.out.println(exception.getMessage());
     } catch (Exception exception) {

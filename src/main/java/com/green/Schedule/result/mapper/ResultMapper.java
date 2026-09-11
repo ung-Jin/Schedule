@@ -40,4 +40,12 @@ public interface ResultMapper {
   // 결과보고 등록 완료 -> AS_REQUEST 상태를 COMPLETED로 변경
   void completeRequest(int requestNo);
 
+  // 결과 등록 후 만족도 문자 발송 - 고객 연락처 조회
+  String selectCustomerTel(int requestNo);
+
+  // 결과 등록 후 만족도 문자 발송 - 로그인한 기사의 기사번호 조회
+  int selectEngineerNo(int memNo);
+
+  //기사 번호 조회
+  void selectAsTel();
 }
