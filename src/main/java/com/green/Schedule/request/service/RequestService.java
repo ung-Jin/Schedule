@@ -1,6 +1,7 @@
 package com.green.Schedule.request.service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import com.green.Schedule.request.dto.RequestDTO;
 import com.green.Schedule.request.mapper.RequestMapper;
@@ -31,6 +32,16 @@ public class RequestService {
     public boolean isDuplicate(String customerTel, String wishDate) {
         int count = requestMapper.countDuplicate(customerTel, wishDate);
         return count > 0;
+    }
+
+    // 로그인한 회원이 신청한 전체 내역 조회
+    public List<RequestDTO> getMyRequestList(int memNo) {
+        return requestMapper.selectMyRequestList(memNo);
+    }
+
+    // 신청 상세 조회 (본인이 신청한 것만 - requestNo+memNo가 둘 다 맞아야 조회됨)
+    public RequestDTO getRequestDetail(int requestNo, int memNo) {
+        return requestMapper.selectRequestDetail(requestNo, memNo);
     }
 
 }

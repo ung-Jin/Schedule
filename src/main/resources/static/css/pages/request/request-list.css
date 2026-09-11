@@ -1,0 +1,117 @@
+/* /request/list, /request/detail 화면 전용 스타일 - content 안쪽 내용만 담당 */
+
+.list-title {
+  margin-bottom: 20px;
+}
+
+/* 신청 내역이 없을 때 보여주는 안내 박스 */
+.empty-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-box p {
+  color: #777;
+  margin-bottom: 16px;
+}
+
+/* 신청 내역 목록 */
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.request-row {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.request-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.request-no {
+  font-size: 12px;
+  color: #999;
+}
+
+.request-product {
+  font-weight: bold;
+}
+
+.request-symptom {
+  color: #666;
+  font-size: 14px;
+}
+
+.request-date {
+  font-size: 13px;
+  color: #888;
+}
+
+/* 상태 배지 - 상태값마다 색만 다르게 */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.status-received  { background: #eaf1fd; color: #2d6cdf; }
+.status-assigned  { background: #eafaf0; color: #16a34a; }
+.status-progress  { background: #fff7e6; color: #f59e0b; }
+.status-completed { background: #eef0f2; color: #555; }
+.status-canceled  { background: #fdeaea; color: #dc2626; }
+
+.btn-small {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* 상세보기 */
+.detail-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 560px;
+}
+
+.detail-status-row {
+  margin-bottom: 20px;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.detail-table th,
+.detail-table td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.detail-table th {
+  width: 120px;
+  color: #888;
+  font-weight: normal;
+}
