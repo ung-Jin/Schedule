@@ -17,3 +17,8 @@ server:
   servlet:
     session:
       tracking-modes: cookie
+
+#결과보고 처리사진 업로드 폴더 (UploadUtil이 이 경로로 파일을 저장함)
+file:
+  upload:
+    dir: uploads/result/

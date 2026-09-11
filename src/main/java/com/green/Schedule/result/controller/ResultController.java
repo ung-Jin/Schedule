@@ -3,6 +3,7 @@ package com.green.Schedule.result.controller;
 import com.green.Schedule.member.dto.MemberDTO;
 import com.green.Schedule.result.dto.ResultDTO;
 import com.green.Schedule.result.service.ResultService;
+import com.green.Schedule.result.util.UploadUtil;
 import com.solapi.sdk.SolapiClient;
 import com.solapi.sdk.message.exception.SolapiMessageNotReceivedException;
 import com.solapi.sdk.message.model.Message;
@@ -18,19 +19,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.UUID;
-
 @Controller
 @RequiredArgsConstructor
 public class ResultController {
   private final ResultService resultService;
-
-  // 처리사진을 저장할 폴더 (프로젝트 폴더 바로 밑의 uploads/result/)
-  // static 폴더 안에 저장하면 서버를 다시 빌드해야 화면에 보여서, 별도 폴더에 저장하고
-  // WebMvcConfig에서 "/uploads/**" 주소로 그 폴더를 보여주도록 설정해뒀습니다.
-  private static final String UPLOAD_DIR = "uploads/result/";
+  // 처리사진 업로드는 UploadUtil이 전담 (application.yaml의 file.upload.dir 경로 사용)
+  private final UploadUtil uploadUtil;
 
   // a/s기사 대시보드, 로그인 된 상태에서만 보이게 세팅
   @GetMapping("/as-result-dash-board")
@@ -91,7 +85,7 @@ public class ResultController {
                            @RequestParam("requestNo") int requestNo,
                            @RequestParam(value = "resultImage", required = false) MultipartFile resultImage,
                            @RequestParam(value = "resultImage2", required = false) MultipartFile resultImage2,
-                           HttpSession session) throws IOException {
+                           HttpSession session) {
     MemberDTO loginMember = getRepairmanOrNull(session);
     if (loginMember == null) {
       return "redirect:/member/login";
@@ -103,8 +97,8 @@ public class ResultController {
     }
 
     // 사진 1, 사진 2 각각 저장하고 DB에 넣을 경로를 DTO에 담아줌
-    resultDTO.setImagePath(saveImage(resultImage));
-    resultDTO.setImagePath2(saveImage(resultImage2));
+    resultDTO.setImagePath(uploadUtil.fileUpload(resultImage));
+    resultDTO.setImagePath2(uploadUtil.fileUpload(resultImage2));
 
     resultService.insertResult(resultDTO);
 
@@ -126,7 +120,7 @@ public class ResultController {
     Message message = new Message();
     message.setFrom("01099365962");
     message.setTo("01030587733");
-    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\nhttps://docs.google.com/forms/d/1_pmVHDPwPdmsb97M9qEl1YF2wWgl7HoyE7VuMmRPeIg/edit");
+    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\nhttps://docs.google.com/forms/d/e/1FAIpQLSesxXDcKtEWoUDW1eQCOUr-bQNgYbwZkGvOX3RkxF50EZFE7w/viewform?usp=publish-editor");
 
     try {
       System.out.println(111);
@@ -154,33 +148,6 @@ public class ResultController {
       return null;
     }
     return loginMember;
-  }
-
-  // 사진 1장을 uploads/result 폴더에 저장하고, 화면에서 쓸 경로("/uploads/result/파일명")를 돌려주는 메서드
-  // 첨부한 파일이 없으면 null을 돌려줌
-  private String saveImage(MultipartFile image) throws IOException {
-    if (image == null || image.isEmpty()) {
-      return null;
-    }
-    File uploadFolder = new File(UPLOAD_DIR);
-    if (!uploadFolder.exists()) {
-      uploadFolder.mkdirs();
-    }
-
-    // 같은 이름 파일끼리 안 겹치게, UUID로 새 파일명을 만들어서 저장
-    // 예) 사진.jpg -> 3f2a5b90-1c2d-4e3f-9a8b-123456789abc.jpg
-    String originalName = image.getOriginalFilename();
-    String ext = "";
-    if (originalName != null && originalName.contains(".")) {
-      ext = originalName.substring(originalName.lastIndexOf("."));
-    }
-    String savedName = UUID.randomUUID() + ext;
-
-    File savedFile = new File(UPLOAD_DIR + savedName);
-    image.transferTo(savedFile);
-
-
-    return "/uploads/result/" + savedName;
   }
 
 }

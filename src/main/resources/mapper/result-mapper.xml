@@ -14,7 +14,7 @@
     <result column="CREATED_AT" property="createdAt"/>
   </resultMap>
 
-  <!-- 대시보드 "오늘 일정" 목록용 매핑 (AS_SCHEDULE + AS_REQUEST 조인 결과) -->
+  <!-- 대시보드 "오늘 일정" 목록용 매핑 (AS_SCHEDULE + REQUEST 조인 결과) -->
   <resultMap id="scheduleTodayMap" type="com.green.Schedule.result.dto.ScheduleTodayDTO">
     <id     column="scheduleNo" property="scheduleNo"/>
     <result column="requestNo" property="requestNo"/>
@@ -25,7 +25,7 @@
     <result column="symptom" property="symptom"/>
   </resultMap>
 
-  <!-- 결과보고 화면 오른쪽 "AS 기본 정보" 박스용 매핑 (AS_SCHEDULE + AS_REQUEST 조인 결과) -->
+  <!-- 결과보고 화면 오른쪽 "AS 기본 정보" 박스용 매핑 (AS_SCHEDULE + REQUEST 조인 결과) -->
   <resultMap id="scheduleDetailMap" type="com.green.Schedule.result.dto.ScheduleDetailDTO">
     <id     column="scheduleNo" property="scheduleNo"/>
     <result column="requestNo" property="requestNo"/>
@@ -90,16 +90,16 @@
     AND e.MEM_NO = #{memNo};
   </select>
 
-  <!-- 대시보드 "진행예정" 버튼 -> AS_REQUEST 상태를 IN_PROGRESS로 변경 -->
+  <!-- 대시보드 "진행예정" 버튼 -> REQUEST 상태를 IN_PROGRESS로 변경 -->
   <update id="startProgress">
-    UPDATE AS_REQUEST
+    UPDATE REQUEST
     SET STATUS = 'IN_PROGRESS'
     WHERE REQUEST_NO = #{requestNo};
   </update>
 
-  <!-- 결과보고 화면 "결과 등록하기" 버튼 -> AS_REQUEST 상태를 COMPLETED로 변경 -->
+  <!-- 결과보고 화면 "결과 등록하기" 버튼 -> REQUEST 상태를 COMPLETED로 변경 -->
   <update id="completeRequest">
-    UPDATE AS_REQUEST
+    UPDATE REQUEST
     SET STATUS = 'COMPLETED'
     WHERE REQUEST_NO = #{requestNo};
   </update>
