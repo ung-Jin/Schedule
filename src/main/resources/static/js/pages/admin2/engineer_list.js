@@ -91,11 +91,11 @@ function resetForm(){
   document.getElementById('engineerNo').value = '';
 }
 
-//기사 삭제 (axios GET)
+//기사 삭제 
 function deleteEngineer(engineerNo) {
   if(!confirm("정말 삭제하시겠습니까?")) return;
 
-  axios.get('/engineer-api/delete/' + engineerNo)
+  axios.delete('/engineer-api/delete/' + engineerNo)
     .then(response => {
       if(response.data === true){
         alert("삭제되었습니다.");

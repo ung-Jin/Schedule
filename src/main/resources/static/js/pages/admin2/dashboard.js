@@ -62,12 +62,26 @@ function renderRecentTable(list) {
       openDetailModal(item.requestNo);
     };
 
-    tr.innerHTML =
-      '<td>' + safe(item.requestDate) + '</td>' +
-      '<td>' + safe(item.customerName) + '</td>' +
-      '<td>' + safe(item.symptom) + '</td>' +
-      '<td>' + safe(item.region) + '</td>' +
-      '<td>' + statusBadge(item.status) + '</td>';
+    const tdDate = document.createElement("td");
+    tdDate.textContent = safe(item.requestDate);
+
+    const tdName = document.createElement("td");
+    tdName.textContent = safe(item.customerName);
+
+    const tdSymptom = document.createElement("td");
+    tdSymptom.textContent = safe(item.symptom);
+
+    const tdRegion = document.createElement("td");
+    tdRegion.textContent = safe(item.region);
+  
+    const tdStatus = document.createElement("td");
+    tdStatus.innerHTML = statusBadge(item.status);
+
+    tr.appendChild(tdDate);
+    tr.appendChild(tdName);
+    tr.appendChild(tdSymptom);
+    tr.appendChild(tdRegion);
+    tr.appendChild(tdStatus);
 
     tbody.appendChild(tr);
   });
@@ -146,6 +160,12 @@ function openDetailModal(requestNo) {
   axios.get("/dashboard-api/detail/" + requestNo)
     .then(function(response) {
       const data = response.data;
+
+    //데이터가 없으면(존재하지 않는 requestNo) 명확한 안내 후 종료
+      if(!data) {
+        alert("해당 AS 접수 정보를 찾을 수 없습니다.");
+        return;
+      }
 
       document.getElementById("dRequestNo").innerText    = safe(data.requestNo);
       document.getElementById("dCustomerName").innerText = safe(data.customerName);
