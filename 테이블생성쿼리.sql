@@ -1,4 +1,4 @@
--- 1. MEMBER
+-- #1. MEMBER
 CREATE TABLE MEMBER (
                         MEM_NO INT AUTO_INCREMENT PRIMARY KEY,
                         MEM_ID VARCHAR(30) NOT NULL UNIQUE,
@@ -21,6 +21,22 @@ CREATE TABLE ENGINEER (
 );
 
 -- 3. REQUEST (독립)
+CREATE TABLE REQUEST(
+                        REQUEST_NO INT AUTO_INCREMENT PRIMARY KEY,      -- AS 요청 고유번호 (PK)
+                        CUSTOMER_NAME VARCHAR(30) NOT NULL,             -- 고객명
+                        CUSTOMER_TEL VARCHAR(20) NOT NULL,              -- 고객 연락처
+                        CUSTOMER_ADDR VARCHAR(100) NOT NULL,            -- 고객 주소
+                        PRODUCT_TYPE VARCHAR(30),                       -- 제품 종류
+                        SYMPTOM VARCHAR(200),                           -- 증상/요청 내용
+                        REQUEST_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,-- 접수일시
+                        WISH_DATE DATETIME,                             -- 희망 방문일
+                        STATUS VARCHAR(20) DEFAULT 'RECEIVED',           -- 상태 (RECEIVED/ASSIGNED/IN_PROGRESS/COMPLETED)
+                        MEM_NO INT NOT null,
+                        CONSTRAINT FK_REQUEST_MEMBER FOREIGN KEY (MEM_NO) REFERENCES member (MEM_NO)
+);
+
+
+-- #4. 스케쥴
 CREATE TABLE AS_SCHEDULE (
                              SCHEDULE_NO INT AUTO_INCREMENT
     , REQUEST_NO INT NOT NULL
@@ -70,7 +86,7 @@ CREATE TABLE SATISFACTION (
 
 -- ######################INSERT 더미데이터##############
 
--- 멤버
+-- ##멤버##
 INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PW, MEM_NAME, ROLE) VALUES
 (1,  'admin',  'asdf', '관리자', 'admin'),
 
@@ -101,6 +117,9 @@ INSERT INTO ENGINEER (ENGINEER_NO, MEM_NO, ENGINEER_NAME, ENGINEER_TEL, SPECIALT
 
 
 -- ##고장접수##
+-- ========================================
+-- 3. REQUEST (신청 10건)
+-- ========================================
 INSERT INTO REQUEST (REQUEST_NO, CUSTOMER_NAME, CUSTOMER_TEL, CUSTOMER_ADDR, PRODUCT_TYPE, SYMPTOM, WISH_DATE, STATUS, MEM_NO) VALUES
 (1,  '홍길동', '010-1000-0001', '울산광역시 중구 태화로 201',           '에어컨',        '냉방이 전혀 안 됨',       '2026-09-15 14:00:00', 'RECEIVED',    7),
 (2,  '김철수', '010-1000-0002', '울산광역시 중구 번영로 329',           '보일러',        '온수가 안 나옴',          '2026-09-16 10:00:00', 'RECEIVED',    8),
@@ -111,7 +130,7 @@ INSERT INTO REQUEST (REQUEST_NO, CUSTOMER_NAME, CUSTOMER_TEL, CUSTOMER_ADDR, PRO
 (7,  '강나연', '010-1000-0007', '울산광역시 북구 산업로 1426',          '에어컨',        '바람이 미지근함',         '2026-09-20 16:00:00', 'RECEIVED',    13),
 (8,  '조현우', '010-1000-0008', '울산광역시 북구 호계로 300',           '보일러',        '에러코드 E03 표시',       '2026-09-14 09:30:00', 'IN_PROGRESS', 14),
 (9,  '윤서연', '010-1000-0009', '울산광역시 울주군 범서읍 구영로 100',  '시스템 에어컨',  '전원이 아예 안 들어옴',    '2026-09-26 10:00:00', 'ASSIGNED',    15),
-(10, '임도윤', '010-1000-0010', '울산광역시 울주군 언양읍 읍성로 830',  '에어컨',        '필터 청소 후에도 냄새남', '2026-09-22 14:30:00', 'CANCELED',    16);
+(10, '임도윤', '010-1000-0010', '울산광역시 울주군 언양읍 읍성로 830',  '에어컨',        '필터 청소 후에도 냄새남', '2026-09-22 14:30:00', 'RECEIVED',    16);
 
 -- ========================================
 -- 4. AS_SCHEDULE (REQUEST의 ASSIGNED/IN_PROGRESS/COMPLETED 건에 대응하는 배정 일정 5건)
