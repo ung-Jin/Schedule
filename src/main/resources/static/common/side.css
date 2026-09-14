@@ -10,7 +10,13 @@
 .side li a:hover { background: var(--panel); color: var(--text); }
 .side li a[aria-current="page"] { background: var(--blue-soft); border-color: #678bac; color: #e3f2ff; box-shadow: inset 3px 0 #88c9ff; }
 .nav-icon { width: 20px; text-align: center; font-size: 18px; }
-.side-footer { margin-top: auto; padding: 28px 14px 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
-.side-footer strong { color: var(--orange); font-weight: 600; }
+.side-footer { margin-top: auto; padding: 20px 14px; border-top: 1px solid var(--line); }
+.side-footer-admin { display: flex; align-items: flex-start; gap: 10px; }
+.side-footer-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; margin-top: 1px; border-radius: 8px; background: var(--blue-soft); color: var(--blue-light); font-size: 14px; }
+.side-footer-admin-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.side-footer-admin-text strong { color: var(--muted); font-size: 10px; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; }
+.side-footer-admin-name { color: var(--text); font-size: 13px; font-weight: 600; }
+.side-footer-admin-tel { color: var(--orange); font-size: 12.5px; font-weight: 600; text-decoration: none; }
+.side-footer-admin-tel:hover { text-decoration: underline; }
 @media (max-width: 900px) { .side { width: 200px; } .side nav { padding: 24px 10px; } }
 @media (max-width: 700px) { .side { width: 100%; border-right: 0; border-bottom: 1px solid var(--line); } .side nav { position: static; min-height: auto; padding: 16px; } .side-logo { padding: 0 0 16px; } .side ul { flex-direction: row; flex-wrap: wrap; margin-top: 12px; } .side li a { padding: 10px 12px; font-size: 13px; } .nav-label, .side-footer { display: none; } }

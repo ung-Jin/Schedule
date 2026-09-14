@@ -347,3 +347,9 @@ body {
 .menu-link { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; color: var(--blue-light); font-weight: 600; }
 @media (max-width: 1100px) { .menu-grid[data-menu-role="guest"] { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 700px) { .menu-heading { display: block; } .menu-heading > p { margin-top: 10px; } .menu-grid, .menu-grid[data-menu-role] { grid-template-columns: 1fr; } .menu-card { padding: 24px; } .landing-page .hero { min-height: 440px; background-position: 62% center; background-image: linear-gradient(90deg, #253649e6, #25364980), url('/hero-airlink.png'); } .menu-card p br { display: none; } }
+
+/* 기사(repairman) 화면: 안내문구 줄(.menu-heading)을 아래 카드 폭에 맞춰서, 부제 문구가
+   카드 폭만큼만 오른쪽으로 붙게 하고(전체 섹션 폭까지 벌어지지 않도록), 그 폭에서 줄바꿈되지
+   않도록 카드/안내문구 폭을 같이 넓혀둡니다. */
+.features-preview:has(.menu-grid[data-menu-role="repairman"]) .menu-heading { width: 560px; max-width: 100%; }
+.menu-grid[data-menu-role="repairman"] { grid-template-columns: minmax(0, 560px); }
