@@ -20,7 +20,7 @@ public class DashboardApiController {
     return dashboardService.getDashboardStats();
   }
 
-  //최근 AS 접수 목록 조회 (한 페이지에 5건)
+  //최근 AS 접수 목록 조회 (한 페이지에 7건)
   @GetMapping("/recent")
   public Map<String, Object> getRecent(@RequestParam(value = "page", defaultValue = "1") int page) {
     return dashboardService.getRecentAsList(page);

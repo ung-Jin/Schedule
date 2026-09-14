@@ -40,6 +40,9 @@ function loadRecentAs(page) {
     });
 }
 
+//한 페이지에 표시되는 행 수 (페이지 이동 시 표 높이 고정용, 백엔드 PAGE_SIZE와 동일해야 함)
+const PAGE_SIZE = 7;
+
 //테이블 그리기
 function renderRecentTable(list) {
   const tbody = document.getElementById("recentTableBody");
@@ -85,6 +88,14 @@ function renderRecentTable(list) {
 
     tbody.appendChild(tr);
   });
+
+  //마지막 페이지처럼 행 수가 적을 때도 표 높이가 줄어들지 않도록 빈 행으로 채움
+  for(let i = list.length; i < PAGE_SIZE; i++) {
+    const fillerRow = document.createElement("tr");
+    fillerRow.className = "filler-row";
+    fillerRow.innerHTML = '<td colspan="5">&nbsp;</td>';
+    tbody.appendChild(fillerRow);
+  }
 }
 
 //페이지네이션 그리기 (총 페이지가 1개 이하면 표시하지 않음)

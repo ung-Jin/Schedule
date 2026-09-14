@@ -52,6 +52,12 @@
 
 .stat-receipt  .stat-icon { background-color: var(--blue); }  /* 접수중 - 파랑 */
 .stat-assigned .stat-icon { background-color: var(--blue); }  /* 배정완료 - 보라 */
+
+/* 배경색(패널)과 명도가 비슷해 잘 안 보이던 접수완료/기사배정 아이콘 시인성 보완 (테두리로 구분, 배경색은 변경하지 않음) */
+.app-shell .stat-receipt .stat-icon,
+.app-shell .stat-assigned .stat-icon {
+  border: 1px solid var(--blue-light);
+}
 .stat-progress .stat-icon { background-color: var(--orange); }  /* 진행중 - 주황 */
 .stat-complete .stat-icon { background-color: var(--success); }  /* 완료 - 초록 */
 
@@ -98,25 +104,61 @@
 /* 최근 AS 테이블 */
 .recent-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 13px;
+  /* 헤더(약 43px) + 7행(44px * 7)을 채운 표 크기를 최소값으로 고정 (빈 행 렌더링 여부와 무관하게 표 자체가 줄어들지 않도록 보강) */
+  min-height: 351px;
 }
 
-.recent-table th {
+/* 열 너비를 내용과 무관하게 고정 (접수일/고객명/요청내용/지역/상태) */
+.recent-table col.col-date    { width: 14%; }
+.recent-table col.col-name    { width: 12%; }
+.recent-table col.col-symptom { width: 34%; }
+.recent-table col.col-region  { width: 24%; }
+.recent-table col.col-status  { width: 16%; }
+
+.recent-table th,
+.recent-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* layout.css의 th/td padding(16px 12px)과 상세도가 같아 로드 순서상 밀리므로 !important로 확정 */
+.app-shell .recent-table th {
   background-color: var(--panel);
   color: var(--muted);
   font-weight: 600;
-  padding: 10px 8px;
-  text-align: left;
+  padding: 10px 8px !important;
+  text-align: center;
   border-bottom: 1px solid var(--line);
 }
 
-.recent-table td {
-  padding: 12px 8px;
+.app-shell .recent-table td {
+  padding: 12px 8px !important;
+  text-align: center;
   border-bottom: 1px solid var(--line);
+  line-height: 20px;
+}
+
+/* 상태 배지가 있는 행이 일반 텍스트 행보다 미세하게 커져서(inline-block 배지 + 줄간격이 겹치는 렌더링 특성) 페이지 전환 시 표 높이가 흔들리던 문제 보정 */
+/* 배지를 텍스트 셀과 정확히 같은 20px 높이로 고정 (수직 padding 제거 + height/line-height로 대체) */
+.recent-table .badge {
+  height: 20px;
+  line-height: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+/* 상태 셀은 텍스트 없이 배지만 들어가므로 셀 자체의 줄간격(strut)을 제거해 배지 높이만 반영되게 함 */
+.recent-table tbody td:nth-child(5) {
+  font-size: 0;
 }
 
 .recent-table tbody tr {
+  height: 44px;
   cursor: pointer;
 }
 
@@ -135,6 +177,16 @@
   background-color: transparent !important;
 }
 
+/* 마지막 페이지 등 행 수가 적을 때 표 높이를 채우는 빈 행 (페이지 전환 시 표 크기 고정용) */
+.filler-row {
+  cursor: default !important;
+  visibility: hidden;
+}
+
+.filler-row:hover td {
+  background-color: transparent !important;
+}
+
 /* 상태 배지 */
 .badge {
   display: inline-block;
@@ -146,6 +198,14 @@
 
 .badge.receipt  { background-color: var(--blue-soft); color: var(--blue-light); }  /* 접수중 */
 .badge.assigned { background-color: var(--blue-soft); color: var(--blue-light); }  /* 배정완료 */
+
+/* 배경색(패널)과 명도가 비슷해 잘 안 보이던 뱃지 시인성 보완 (테두리로 구분, 배경색은 변경하지 않음) */
+.app-shell .badge.receipt,
+.app-shell .badge.assigned,
+.app-shell .status-received,
+.app-shell .status-assigned {
+  border: 1px solid var(--blue-light);
+}
 .badge.progress { background-color: var(--orange-soft); color: var(--danger); }  /* 진행중 */
 .badge.complete { background-color: var(--success-soft); color: var(--text); }  /* 완료 */
 .badge.canceled { background-color: var(--danger-soft); color: var(--danger); }  /* 취소 */
