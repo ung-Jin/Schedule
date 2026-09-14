@@ -16,7 +16,9 @@ import java.time.LocalDateTime;
  * customerAddr  -> AS_REQUEST.CUSTOMER_ADDR (주소)
  * productType   -> AS_REQUEST.PRODUCT_TYPE  (제품 종류)
  * symptom       -> AS_REQUEST.SYMPTOM       (고장 증상)
- * requestDate   -> AS_REQUEST.REQUEST_DATE  (접수일시)
+ * requestDate   -> AS_REQUEST.REQUEST_DATE  (접수일시 - 고객 요청이 시스템에 접수된 시각)
+ * visitStart     -> AS_SCHEDULE.START_TIME   (실제 배정된 방문 시작 시각)
+ * visitEnd       -> AS_SCHEDULE.END_TIME     (실제 배정된 방문 종료 시각)
  */
 @Data
 public class ScheduleDetailDTO {
@@ -28,4 +30,6 @@ public class ScheduleDetailDTO {
     private String productType;
     private String symptom;
     private LocalDateTime requestDate;
+    private LocalDateTime visitStart;
+    private LocalDateTime visitEnd;
 }

@@ -3,29 +3,41 @@ package com.green.Schedule.result.controller;
 import com.green.Schedule.member.dto.MemberDTO;
 import com.green.Schedule.request.dto.RequestDTO;
 import com.green.Schedule.result.dto.ResultDTO;
+import com.green.Schedule.result.dto.ScheduleCalendarDTO;
 import com.green.Schedule.result.service.ResultService;
 import com.green.Schedule.result.util.UploadUtil;
+import com.green.Schedule.satisfaction.service.SatisfactionService;
 import com.solapi.sdk.SolapiClient;
 import com.solapi.sdk.message.exception.SolapiMessageNotReceivedException;
 import com.solapi.sdk.message.model.Message;
 import com.solapi.sdk.message.service.DefaultMessageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class ResultController {
   private final ResultService resultService;
+  private final SatisfactionService satisfactionService;
   // 처리사진 업로드는 UploadUtil이 전담 (application.yaml의 file.upload.dir 경로 사용)
   private final UploadUtil uploadUtil;
+
+  // 만족도 조사 문자 링크에 쓸 "고객이 실제로 열 수 있는" 공개 주소.
+  // 기사님이 localhost로 개발/테스트하시든 무엇으로 접속하시든 상관없이,
+  // 고객한테 나가는 링크는 항상 이 설정값 하나로 고정됩니다 (application.yaml의 app.public-base-url).
+  @Value("${app.public-base-url:http://localhost:8080}")
+  private String publicBaseUrl;
 
   // a/s기사 대시보드, 로그인 된 상태에서만 보이게 세팅
   @GetMapping("/as-result-dash-board")
@@ -37,8 +49,27 @@ public class ResultController {
     }
     // 로그인한 기사의 회원번호(memNo)로 오늘 일정만 조회해서 화면에 전달
     model.addAttribute("todayList", resultService.selectToday(loginMember.getMemNo()));
+    // "고객 만족도" 카드 제목에 쓸 이름 ("OOO기사님 고객만족도 현황")
+    model.addAttribute("memName", loginMember.getMemName());
+
+    // "오늘의 일정" 아래 "고객 만족도" 카드용 통계 (이번 달/작년 동월 비교 + 올해 추이)
+    // memNo가 아니라 engineerNo 기준으로 집계해야 해서 먼저 engineerNo를 구합니다.
+    int engineerNo = resultService.selectEngineerNo(loginMember.getMemNo());
+    model.addAttribute("satisfactionStats", satisfactionService.getStats(engineerNo));
 
     return "pages/result/result_dashboard";
+  }
+
+  // 대시보드 "이번 달 일정" 달력 - FullCalendar가 보여주는 달이 바뀔 때마다 이 주소를 다시 불러서
+  // 그 연/월에 로그인한 기사에게 배정된 일정(고객명/시간/주소/연락처)을 JSON으로 받아갑니다. (result_dashboard.js 참고)
+  @GetMapping("/as-result-calendar")
+  @ResponseBody
+  public List<ScheduleCalendarDTO> asResultCalendar(@RequestParam int year, @RequestParam int month, HttpSession session){
+    MemberDTO loginMember = getRepairmanOrNull(session);
+    if (loginMember == null) {
+      return List.of();
+    }
+    return resultService.selectCalender(loginMember.getMemNo(), year, month);
   }
 
   // a/s기사 결과보고 화면, 대시보드에서 결과등록 누르면 이쪽으로 옴
@@ -109,37 +140,45 @@ public class ResultController {
     // 등록 끝나면 다시 대시보드로 이동
     //return "redirect:/as-result-dash-board";
 
-    //결과보고를 등록하면 문자 발송하러 이동 (문자 내용 만들 때 필요한 requestNo를 같이 넘겨줌)
-    return "redirect:/to-msg?requestNo=" + requestNo + "&memNo=" + loginMember.getMemNo();
+    //결과보고를 등록하면 문자 발송하러 이동 (문자 내용 만들 때 필요한 requestNo/scheduleNo를 같이 넘겨줌)
+    return "redirect:/to-msg?requestNo=" + requestNo
+        + "&scheduleNo=" + resultDTO.getScheduleNo()
+        + "&memNo=" + loginMember.getMemNo();
   }
 
   // 결과 등록 후 고객한테 만족도 조사 문자 발송
+  // resultReg()에서 "redirect:/to-msg?requestNo=..&scheduleNo=..&memNo=.." 로 넘어올 때
+  // requestNo/scheduleNo는 RequestDTO에, memNo는 MemberDTO에 각각 자동으로 바인딩됩니다.
+  // (RequestDTO/MemberDTO에 있는 다른 필드들은 쿼리 파라미터로 안 넘어와서 전부 기본값(null/0)입니다.)
   @GetMapping("/to-msg")
-  public String sendMsg(RequestDTO requestDTO, MemberDTO memberDTO){
+  public String sendMsg(RequestDTO requestDTO, MemberDTO memberDTO,
+                         @RequestParam(value = "scheduleNo", required = false) Long scheduleNo){
     DefaultMessageService messageService =  SolapiClient.INSTANCE.createInstance("NCSKUPDBEGMQEN9B", "VQTCMTT3VPSVPMRUAPBOD4JORBQTJ7VC");
 
-    //접수번호
-    //requestDTO.getRequestNo();
-    //기사번호
-    //memberDTO.getMemNo();
-
-
     // 문자를 받을 사람 = 이번에 처리한 AS 건의 고객 연락처
-    String customerTel = requestDTO.getCustomerTel();
-    // 만족도 조사 링크 끝에 붙일 기사번호 (누가 처리한 건인지 구분하려고)
-    int engineerNo = memberDTO.getMemNo();
+    // requestDTO.getCustomerTel()은 위 주석처럼 쿼리 파라미터로 안 넘어와서 항상 비어있으므로 쓰면 안 되고,
+    // requestNo로 REQUEST 테이블을 직접 조회해서 실제 연락처를 가져와야 합니다.
+    String customerTel = resultService.selectCustomerTel(requestDTO.getRequestNo());
 
-    System.out.println("!!!!!");
-    resultService.selectAsTel();
-    resultService.selectCustomerTel(requestDTO.getRequestNo());
+    // 만족도 조사 링크에 붙일 기사번호
+    // memberDTO.getMemNo()는 로그인한 "회원"의 번호(MEMBER.MEM_NO)일 뿐, ENGINEER.ENGINEER_NO와는 다른 값이라
+    // 그대로 쓰면 안 되고, MEM_NO로 ENGINEER 테이블을 조회해서 진짜 기사번호로 변환해줘야 합니다.
+    int engineerNo = resultService.selectEngineerNo(memberDTO.getMemNo());
 
-
+    // 만족도 조사는 구글폼이 아니라 우리 서버가 직접 받도록 자체 페이지(/survey)로 링크를 겁니다.
+    // (구글폼 응답은 우리 DB로 안 들어와서 대시보드 만족도 통계에 실시간으로 반영할 수 없었음)
+    // 예전엔 이 요청이 들어온 주소(request.getServerName() 등)를 그대로 썼는데, 그러면 기사님이
+    // localhost로 접속해서 결과 등록을 누르면 고객한테도 localhost 링크가 나가버리는 문제가 있었습니다.
+    // 기사님이 어떤 주소로 접속했는지와, 고객이 받을 주소는 서로 다른 문제라서 분리했습니다.
+    // -> publicBaseUrl(application.yaml의 app.public-base-url)은 고정값으로, 터널/배포 주소가 바뀌면
+    //    그 설정 한 줄만 바꾸면 되고 코드는 안 건드려도 됩니다.
+    String surveyUrl = publicBaseUrl + "/survey?scheduleNo=" + scheduleNo + "&engineerNo=" + engineerNo;
 
     // Message 패키지가 중복될 경우 com.solapi.sdk.message.model.Message로 치환하여 주세요
     Message message = new Message();
     message.setFrom("01099365962");
     message.setTo(customerTel);
-    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\nhttps://docs.google.com/forms/d/e/1FAIpQLSesxXDcKtEWoUDW1eQCOUr-bQNgYbwZkGvOX3RkxF50EZFE7w/viewform?usp=publish-editor&engineerNo=" + engineerNo);
+    message.setText("아래의 링크를 클릭하세요.\n\n만족도 조사 링크\n" + surveyUrl);
 
     try {
       // send 메소드로 ArrayList<Message> 객체를 넣어도 동작합니다!

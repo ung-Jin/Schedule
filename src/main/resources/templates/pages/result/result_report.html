@@ -234,6 +234,19 @@
             2026.09.09
           </span>
         </div>
+
+        <!-- 접수일(REQUEST_DATE, 시스템에 접수된 시각)과 별개로, 실제 이 기사에게 배정된 방문 시간(AS_SCHEDULE) -->
+        <div class="info-row">
+          <span class="info-title">AS 요청 일시</span>
+          <span
+              class="info-value"
+              th:text="${scheduleInfo != null && scheduleInfo.visitStart != null
+                        ? #temporals.format(scheduleInfo.visitStart, 'yyyy.MM.dd HH:mm')
+                          + (scheduleInfo.visitEnd != null ? ' ~ ' + #temporals.format(scheduleInfo.visitEnd, 'HH:mm') : '')
+                        : '-'}">
+            2026.09.14 09:00 ~ 11:00
+          </span>
+        </div>
       </div>
 
 

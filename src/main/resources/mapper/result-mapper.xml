@@ -35,13 +35,9 @@
     <result column="productType" property="productType"/>
     <result column="symptom" property="symptom"/>
     <result column="requestDate" property="requestDate"/>
+    <result column="visitStart" property="visitStart"/>
+    <result column="visitEnd" property="visitEnd"/>
   </resultMap>
-
-  <!-- 이 일정을 배정받은 기사 정보 매핑 (연락처만 조회해서 씀) -->
-  <resultMap id="asTelMap" type="com.green.Schedule.engineer.DTO.EngineerDTO">
-    <result column="ENGINEER_TEL" property="engineerTel"/>
-  </resultMap>
-
 
   <!--  #대시보드 - 오늘 일정-->
   <select id="selectToday" resultMap="scheduleTodayMap">
@@ -62,24 +58,34 @@
     ORDER BY s.START_TIME;
   </select>
 
-  <!--  #대시보드 - 달력-->
-  <select id="selectCalender" resultMap="scheduleTodayMap">
-    SELECT DISTINCT DATE(s.START_TIME) AS scheduleDate
+  <!-- 대시보드 "달력" 이벤트 매핑 (AS_SCHEDULE + REQUEST 조인 결과, selectCalender 전용) -->
+  <resultMap id="scheduleCalendarMap" type="com.green.Schedule.result.dto.ScheduleCalendarDTO">
+    <id     column="scheduleNo" property="scheduleNo"/>
+    <result column="customerName" property="customerName"/>
+    <result column="customerTel" property="customerTel"/>
+    <result column="customerAddr" property="customerAddr"/>
+    <result column="startTime" property="startTime"/>
+    <result column="endTime" property="endTime"/>
+  </resultMap>
+
+  <!--  #대시보드 - 달력 (이 기사의 해당 연/월 일정 목록. 칸 안에 고객명/시간/주소/연락처를 짧게 보여주기 위해
+        REQUEST까지 조인해서 일정 하나하나의 상세정보를 통째로 내려줍니다) -->
+  <select id="selectCalender" resultMap="scheduleCalendarMap">
+    SELECT s.SCHEDULE_NO AS scheduleNo
+    , r.CUSTOMER_NAME AS customerName
+    , r.CUSTOMER_TEL AS customerTel
+    , r.CUSTOMER_ADDR AS customerAddr
+    , s.START_TIME AS startTime
+    , s.END_TIME AS endTime
     FROM AS_SCHEDULE s
+    JOIN REQUEST r ON s.REQUEST_NO = r.REQUEST_NO
     JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
     WHERE e.MEM_NO = #{memNo}
     AND YEAR(s.START_TIME) = #{year}
-    AND MONTH(s.START_TIME) = #{month};
+    AND MONTH(s.START_TIME) = #{month}
+    ORDER BY s.START_TIME;
   </select>
 
-
-  <!--  #결과보고 화면 - 기사번호정보 (이 일정을 배정받은 기사의 연락처)-->
-  <select id="selectAsTel" resultMap="asTelMap">
-    SELECT e.ENGINEER_TEL
-    FROM AS_SCHEDULE s
-    JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
-    WHERE s.SCHEDULE_NO = #{scheduleNo};
-  </select>
 
   <!--  #결과보고 화면 - AS 기본정보 (일정 + 접수정보 조인)-->
   <select id="selectScheduleDetail" resultMap="scheduleDetailMap">
@@ -91,6 +97,8 @@
     , r.PRODUCT_TYPE AS productType
     , r.SYMPTOM AS symptom
     , r.REQUEST_DATE AS requestDate
+    , s.START_TIME AS visitStart
+    , s.END_TIME AS visitEnd
     FROM AS_SCHEDULE s
     JOIN REQUEST r ON s.REQUEST_NO = r.REQUEST_NO
     WHERE s.SCHEDULE_NO = #{scheduleNo};

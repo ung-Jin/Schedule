@@ -1,6 +1,7 @@
 package com.green.Schedule.result.service;
 
 import com.green.Schedule.result.dto.ResultDTO;
+import com.green.Schedule.result.dto.ScheduleCalendarDTO;
 import com.green.Schedule.result.dto.ScheduleDetailDTO;
 import com.green.Schedule.result.dto.ScheduleTodayDTO;
 import com.green.Schedule.result.mapper.ResultMapper;
@@ -22,6 +23,12 @@ public class ResultService {
   // 결과보고 화면 - AS 기본정보 조회 (오른쪽 박스에 채워줄 정보)
   public ScheduleDetailDTO selectScheduleDetail(long scheduleNo){
     return resultMapper.selectScheduleDetail(scheduleNo);
+  }
+
+  // 대시보드 "달력" - 이 기사(memNo)가 해당 연/월에 방문하는 일정 목록 (고객명/시간/주소/연락처 포함)
+  // (프론트에서 달력 칸에 짧게 뿌려줄 일정 상세 -> as-result-calendar 컨트롤러에서 JSON으로 응답)
+  public List<ScheduleCalendarDTO> selectCalender(int memNo, int year, int month){
+    return resultMapper.selectCalender(memNo, year, month);
   }
 
   // 이 일정이 로그인한 기사 본인 것이 맞는지 확인
@@ -53,11 +60,6 @@ public class ResultService {
   // 결과 등록 후 만족도 문자 발송 - 로그인한 기사의 기사번호 조회
   public int selectEngineerNo(int memNo){
     return resultMapper.selectEngineerNo(memNo);
-  }
-
-  //기사번호 조회
-  public void selectAsTel(){
-    resultMapper.selectAsTel();
   }
 
 }
