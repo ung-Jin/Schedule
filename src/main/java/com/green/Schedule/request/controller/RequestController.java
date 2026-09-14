@@ -72,11 +72,8 @@ public class RequestController {
         return "request/complete";
     }
 
-    /**
-     *  내 신청내역 목록
-     * 주소 예: /request/list
-     * 로그인한 회원(memNo) 기준으로 본인이 신청한 내역만 보여줍니다.
-     */
+
+    //본인이 신청한 내역
     @GetMapping("/list")
     public String list(HttpSession session, Model model) {
 
@@ -91,11 +88,8 @@ public class RequestController {
         return "request/list";
     }
 
-    /**
-     * 신청 상세 내역
-     * 주소 예: /request/detail/3
-     * 본인이 신청한 내역이 맞는지(memNo 확인)까지 서비스에서 같이 확인합니다.
-     */
+
+    //상세 신청내역
     @GetMapping("/detail/{requestNo}")
     public String detail(@PathVariable("requestNo") int requestNo, HttpSession session, Model model) {
 

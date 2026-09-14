@@ -19,13 +19,12 @@
     </section>
     <div class="login-box">
 
-      <h1 class="account-brand"><a th:href="@{/}" aria-label="AIR LINK 홈"><img th:src="@{/common/airlink-horizontal.png}" alt="AIR LINK" class="airlink-logo"></a></h1>
-      <p class="subtitle">냉·난방 AS기사 스케줄 관리 시스템</p>
+      <h1 class="account-brand"><a th:href="@{/}" aria-label="AIR LINK 홈"><img th:src="@{/common/airlink-horizontal.png}" alt="AIR LINK · 냉·난방 AS기사 스케줄 관리 시스템" class="airlink-logo"></a></h1>
 
       <!-- 로그인 실패 시에만 보이는 에러 메시지 -->
       <p class="error-msg" th:if="${loginError}" th:text="${loginError}"></p>
 
-      <!-- 구분 없이 하나의 로그인 폼으로 처리 -->
+
       <!-- 서버(MemberController)가 조회한 회원의 role 값을 보고 알아서 이동시켜줌 -->
       <form th:action="@{/member/login}" method="post" id="loginForm">
 

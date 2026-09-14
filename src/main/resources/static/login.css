@@ -27,13 +27,6 @@ body {
   margin-bottom: 4px;
 }
 
-.subtitle {
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 24px;
-}
-
 .error-msg {
   color: var(--danger);
   font-size: 14px;
@@ -112,7 +105,6 @@ body { background: var(--canvas); padding: 32px; }
 .login-box { width: 100%; padding: 40px; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 12px 32px #172a3e20; }
 .logo { font-size: 26px; text-align: left; }
 .logo a { color: var(--text); }
-.subtitle { text-align: left; margin: 8px 0 32px; line-height: 1.7; }
 .input-group input { padding: 13px 14px; border-radius: 8px; }
 .pw-wrap input { padding-right: 48px; }
 .pw-toggle { color: var(--muted); min-width: 32px; min-height: 32px; }

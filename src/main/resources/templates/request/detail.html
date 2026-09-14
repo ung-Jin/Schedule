@@ -22,6 +22,12 @@
       <span class="status-badge status-canceled"  th:if="${requestDetail.status == 'CANCELED'}">취소됨</span>
     </div>
 
+    <!-- 기사 배정이 완료된 건이면(engineerName이 있으면) 담당 기사 이름을 보여줍니다. -->
+    <div class="engineer-box" th:if="${requestDetail.engineerName != null}">
+      <span class="engineer-icon">🛠️</span>
+      <span>담당 기사 <strong class="engineer-name" th:text="${requestDetail.engineerName}">-</strong>님이 배정되었습니다.</span>
+    </div>
+
     <table class="detail-table">
       <tr>
         <th>접수번호</th>
