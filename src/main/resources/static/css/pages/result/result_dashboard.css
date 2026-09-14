@@ -257,10 +257,12 @@ body {
 
 
 /* 고객 만족도 카드 (오늘의 일정 바로 아래) */
-/* flex: 1 로 .dash-today-col 안에서 남는 세로 공간을 이 카드가 전부 흡수합니다.
-   (오른쪽 달력이 커지면 왼쪽 전체 높이가 늘어나는데, 그 늘어난 만큼이 여기로 옴) */
+/* flex: 1로 .dash-today-col 안에서 남는 세로 공간을 흡수하되, max-height로 상한을 둬서
+   달력이 5주까지 길어져도 카드 자체(박스)는 대략 달력 4번째 주 정도까지만 내려오게 함.
+   (달력이 더 늘어나도 이 카드 아래로는 그냥 빈 여백이지, 박스가 계속 따라 늘어나진 않음) */
 .dash-satisfaction-card {
   flex: 1;
+  max-height: 380px;
   display: flex;
   flex-direction: column;
   /* 그래프(.satisfaction-trend)가 max-height에 걸려서 다 못 채운 나머지 공간은

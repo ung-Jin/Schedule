@@ -206,14 +206,13 @@ textarea:focus,
 
 
 /* 오른쪽 정보 */
-/* 왼쪽(.result-form-box)과 stretch로 높이가 맞춰지는데, 내용(.info-table)은 그대로 두고
-   남는 높이만큼을 위아래 여백으로 나눠 가지도록 세로 중앙 정렬 (사진 영역이 짧아진 만큼
-   왼쪽 폼 높이가 줄어도 오른쪽이 어색하게 안 남게) */
+/* 왼쪽(.result-form-box)과 stretch로 높이가 맞춰집니다. 가운데 정렬 대신 위쪽 정렬로 두고,
+   대신 아래 .info-row 간격을 넓혀서 늘어난 높이만큼 내용 자체가 채우게 함 */
 .as-info-box {
   width: 360px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white;
   border-radius: 10px;
   padding: 25px;
@@ -226,17 +225,23 @@ textarea:focus,
 .info-table {
   border-top: 1px solid #e5e9ef;
   border-bottom: 1px solid #e5e9ef;
-  padding: 10px 0;
+  padding: 14px 0;
 }
 
+/* 위쪽 정렬로 바뀐 만큼, 항목 사이 간격을 넉넉하게 줘서 박스 높이를 자연스럽게 채움 */
 .info-row {
   display: flex;
-  padding: 7px 0;
-  font-size: 13px;
+  padding: 19px 0;
+  font-size: 14.5px;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+.info-row:last-child {
+  border-bottom: none;
 }
 
 .info-title {
-  width: 85px;
+  width: 90px;
   color: #7b8797;
 }
 
