@@ -1,73 +1,107 @@
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-display: swap;
+/* Shared control-room palette, including standalone account screens. */
+:root {
+  color-scheme: dark;
+  --canvas: #253649;
+  --panel: #30465c;
+  --panel-raised: #3b536b;
+  --line: #526a80;
+  --text: #f4f7fb;
+  --muted: #d0dce8;
+  --blue: #286bd5;
+  --blue-light: #a6d5ff;
+  --blue-soft: #304f70;
+  --orange: #ffb578;
+  --orange-soft: #594536;
+  --success: #69d4b1;
+  --success-soft: #2c514d;
+  --danger: #ff9298;
+  --danger-soft: #58414c;
+  --chrome: #293e53;
+  --input: #293e53;
 }
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
-    font-weight: 200;
-    font-display: swap;
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--text); font-family: 'Pretendard', 'Segoe UI', 'Malgun Gothic', sans-serif; font-size: 15px; line-height: 1.65; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+input, select, textarea { color: var(--text); background: var(--input); accent-color: var(--blue); max-width: 100%; }
+input::placeholder, textarea::placeholder { color: #becddd; }
+a { color: var(--blue-light); }
+:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 3px; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+::selection { background: #285b9b; color: #fff; }
+.app-shell { display: block; padding: 0; min-height: 100vh; }
+.app-shell > .container { display: flex; min-height: 100vh; width: 100%; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.btn-primary { background: var(--blue); color: #fff; border: 1px solid var(--blue); }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn-outline:hover { background: var(--panel-raised); }
+.app-shell :is(.dashboard-wrap, .dash-container, .schedule-container, .page-wrap, .result-container) { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0; }
+.app-shell :is(.card, .stat-card, .recent-card, .today-card, .today-empty, .dash-calendar-card, .dash-satisfaction-card, .result-form-box, .as-info-box, .modal-box) { border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 4px 14px #172a3e12; }
+.app-shell :is(.dashboard-title, .dash-title h2, .result-title h2) { font-size: 28px; letter-spacing: -.8px; }
+.app-shell :is(.dashboard-title, .dash-title, .result-title) { margin-bottom: 28px; }
+.app-shell .stat-card { padding: 24px; border-top: 2px solid var(--blue); }
+.app-shell .stat-progress { border-top-color: var(--orange); }
+.app-shell .stat-complete { border-top-color: var(--success); }
+.app-shell .stat-value { font-size: 34px; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
+.app-shell .stat-icon { background: var(--blue-soft); color: var(--blue-light); }
+.app-shell .stat-progress .stat-icon { background: var(--orange-soft); color: var(--orange); }
+.app-shell .stat-complete .stat-icon { background: var(--success-soft); color: var(--success); }
+.app-shell .recent-card { overflow-x: auto; }
+.app-shell :is(.recent-table, .engineer-table) th { background: var(--panel-raised); }
+.app-shell :is(.recent-table, .engineer-table) tbody tr:hover td { background: var(--panel-raised); }
+.app-shell :is(.recent-table, .engineer-table) { min-width: 560px; }
+.app-shell :is(.recent-table, .engineer-table) :is(th, td) { padding: 16px 12px; }
+.app-shell .page-wrap > .card { overflow-x: auto; }
+.app-shell .modal-box { max-width: calc(100vw - 32px); max-height: 85dvh; overflow-y: auto; }
+.app-shell .modal-overlay { background: #1f304b99; backdrop-filter: blur(4px); }
+.app-shell .fc { --fc-page-bg-color: var(--panel); --fc-neutral-bg-color: var(--panel-raised); --fc-list-event-hover-bg-color: var(--panel-raised); --fc-today-bg-color: var(--blue-soft); --fc-border-color: var(--line); --fc-neutral-text-color: var(--muted); }
+.app-shell .fc-popover { background: var(--panel); color: var(--text); }
+.app-shell .schedule-footer { flex-wrap: wrap; font-size: 13px; }
+.app-shell .assign-card button[type="button"] { background: var(--orange); color: #20150c; }
+.app-shell .assign-card button[type="button"]:hover { background: #ffb275; }
+.app-shell .validate { color: var(--danger); }
+.app-shell .validate:not(:empty) { background: var(--danger-soft); }
+.app-shell .request-layout { padding: 0; margin: 0 auto; }
+.app-shell .result-form-box { min-width: 0; }
+.app-shell .today-card { border-left: 3px solid var(--blue); }
+.app-shell :is(.badge.receipt, .badge.assigned, .status-received, .status-assigned) { background: var(--blue-soft); color: var(--blue-light); }
+.app-shell :is(.badge.progress, .status-progress) { background: var(--orange-soft); color: var(--orange); }
+.app-shell :is(.badge.complete, .badge-work, .status-completed, .status-done, .diff-up) { background: var(--success-soft); color: var(--success); }
+.app-shell :is(.badge.canceled, .badge-rest, .status-canceled, .diff-down) { background: var(--danger-soft); color: var(--danger); }
+.app-shell .today-card:hover { background: var(--panel-raised); }
+.app-shell .today-middle { align-items: flex-start; text-align: left; }
+.app-shell .dash-main { grid-template-columns: minmax(320px, .9fr) minmax(0, 1.4fr); }
+.app-shell .schedule-container { --accent-soft: var(--blue-soft); --surface-2: var(--panel-raised); }
+.app-shell .receive-icon { color: #83b4ff; }
+.app-shell .assign-icon { color: #83b4ff; }
+.app-shell .progress-icon { color: var(--orange); }
+.app-shell .complete-icon { color: var(--success); }
+.eyebrow { color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+.airlink-logo { display: block; width: 100%; height: 58px; object-fit: cover; object-position: center; border-radius: 8px; }
+.account-brand { margin: 0 0 18px; }
+.account-brand a { display: block; max-width: 300px; margin: 0 auto; }
+.account-brand .airlink-logo { height: 76px; }
+@media (max-width: 1100px) { .app-shell .dash-main { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .app-shell .stat-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .app-shell .result-content { flex-direction: column; } .app-shell .as-info-box { width: 100%; } }
+@media (max-width: 700px) {
+  .app-shell > .container { flex-direction: column; }
+  .app-shell .stat-cards { gap: 12px; }
+  .app-shell .stat-card { padding: 16px; gap: 10px; }
+  .app-shell .stat-icon { width: 34px; height: 34px; font-size: 18px; }
+  .app-shell .stat-value { font-size: 26px; }
+  .app-shell .request-layout { flex-direction: column; }
+  .app-shell :is(.sidebar, .request-form-area) { width: 100%; }
+  .app-shell .request-form-area { padding: 22px; }
+  .app-shell .form-grid-2 { grid-template-columns: 1fr; }
+  .app-shell .form-row { flex-direction: column; gap: 8px; }
+  .app-shell .photo-group-wrap { flex-direction: column; }
+  .app-shell .today-card { flex-wrap: wrap; padding: 16px; }
+  .app-shell .today-time { width: 100%; }
+  .app-shell .cal-toolbar, .app-shell .tb-right { flex-wrap: wrap; }
+  .app-shell #calendar { padding: 8px; }
+  .app-shell .card { padding: 18px; }
 }
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
-    font-weight: 900;
-    font-display: swap;
-}
-
-.container {
-    display: flex;
-
-}
-
-
-*{
- font-family: 'Pretendard';
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }

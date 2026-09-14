@@ -53,8 +53,8 @@ public class MemberController {
         // 로그인 성공 -> 세션에 로그인한 회원 정보를 저장
         session.setAttribute("loginMember", loginMember);
 
-        // role 값에 따라 이동할 첫 화면을 다르게 이동시킵니다.
-        return redirectByRole(loginMember.getRole());
+        // 첫 화면에서 로그인한 회원의 역할에 맞는 업무 바로가기를 제공합니다.
+        return "redirect:/";
     }
 
 

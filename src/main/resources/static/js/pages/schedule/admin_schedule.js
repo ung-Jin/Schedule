@@ -4,10 +4,10 @@
 */
 
 const STATUS_COLORS = {
-  RECEIVED: 'rgb(102, 163, 191)',
-  ASSIGNED: 'rgb(51, 104, 160)',
-  IN_PROGRESS: 'rgb(255, 157, 80)',
-  COMPLETED: 'rgb(118, 196, 87)'
+  RECEIVED: '#345b81',
+  ASSIGNED: '#2563eb',
+  IN_PROGRESS: '#9a4c13',
+  COMPLETED: '#25624e'
 };
 
 // "2026-09-15T14:00:00" 또는 "2026-09-15 14:00:00" 형태의 문자열에서 "14:00"만 추출.

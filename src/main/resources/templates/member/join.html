@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입 - 냉·난방 AS</title>
-  <a href="/css/member/join.css"></a>
+  <link rel="stylesheet" th:href="@{/css/member/join.css}">
+  <link rel="stylesheet" th:href="@{/common/layout.css}">
 </head>
 <body>
 
   <div class="join-container">
 
-    <h1 class="join-logo"><a th:href="@{/}">냉,난방 AS</a></h1>
+    <h1 class="account-brand"><a th:href="@{/}" aria-label="AIR LINK 홈"><img th:src="@{/common/airlink-horizontal.png}" alt="AIR LINK" class="airlink-logo"></a></h1>
 
     <form th:action="@{/member/join}" method="post" class="join-form">
 

@@ -14,13 +14,14 @@
   <div class="dashboard-wrap">
 
     <!--페이지 제목-->
-    <div class="dashboard-title">대시보드</div>
+    <span class="eyebrow">OPERATIONS OVERVIEW</span>
+    <h2 class="dashboard-title">서비스 운영 현황</h2>
 
     <!--상단 상태 카드 4개 (숫자는 axios로 채움)-->
     <div class="stat-cards">
 
       <div class="stat-card stat-receipt">
-        <div class="stat-icon">📄</div>
+        <div class="stat-icon" aria-hidden="true">▤</div>
         <div class="stat-info">
           <div class="stat-label">접수완료</div>
           <div class="stat-value"><span id="receiptCount">0</span>건</div>
@@ -28,7 +29,7 @@
       </div>
 
       <div class="stat-card stat-assigned">
-        <div class="stat-icon">📋</div>
+        <div class="stat-icon" aria-hidden="true">▦</div>
         <div class="stat-info">
           <div class="stat-label">기사배정</div>
           <div class="stat-value"><span id="assignedCount">0</span>건</div>

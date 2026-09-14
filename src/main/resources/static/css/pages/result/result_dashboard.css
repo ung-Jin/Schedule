@@ -4,9 +4,9 @@
 
 body {
   margin: 0;
-  background-color: #f5f7fb;
+  background-color: var(--panel);
   font-family: Arial, "Noto Sans KR", sans-serif;
-  color: #1f2937;
+  color: var(--text);
 }
 
 
@@ -27,13 +27,13 @@ body {
 .dash-title h2 {
   margin: 0 0 7px 0;
   font-size: 26px;
-  color: #173b6c;
+  color: var(--text);
 }
 
 .dash-title p {
   margin: 0;
   font-size: 14px;
-  color: #7b8797;
+  color: var(--muted);
 }
 
 
@@ -64,7 +64,7 @@ body {
 /* 이번 달 일정 달력 */
 
 .dash-calendar-card {
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 10px;
   padding: 16px 18px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -73,33 +73,33 @@ body {
 .dash-calendar-card h3 {
   margin: 0 0 10px 0;
   font-size: 15px;
-  color: #173b6c;
+  color: var(--text);
 }
 
 /* FullCalendar 기본 스타일을 카드 톤 + 좁은 폭에 맞춤 (admin_schedule.css와 같은 방식이되, 더 작게) */
-.dash-calendar-card .fc { --fc-border-color: #edf0f4; font-size: 12px; }
+.dash-calendar-card .fc { --fc-border-color: var(--line); font-size: 12px; }
 .dash-calendar-card .fc .fc-col-header-cell-cushion {
-  color: #7b8797; font-weight: 600; font-size: 10.5px; padding: 4px 2px; text-decoration: none;
+  color: var(--muted); font-weight: 600; font-size: 10.5px; padding: 4px 2px; text-decoration: none;
 }
 .dash-calendar-card .fc .fc-daygrid-day-number {
-  color: #1f2937; font-size: 11px; padding: 3px 4px; text-decoration: none;
+  color: var(--text); font-size: 11px; padding: 3px 4px; text-decoration: none;
 }
-.dash-calendar-card .fc .fc-day-today { background: #eaf2ff !important; }
+.dash-calendar-card .fc .fc-day-today { background: var(--blue-soft) !important; }
 /* 칸 높이는 최소값만 정해두고, dayMaxEvents(2)로 한 칸에 쌓이는 일정 수를 제한해서
    특정 주만 유난히 늘어지지 않게 합니다. 2개 넘게 배정된 날은 "+N개" 링크로 접어서 보여줍니다. */
 .dash-calendar-card .fc .fc-daygrid-day-frame { min-height: 74px; }
-.dash-calendar-card .fc-toolbar-title { font-size: 14px; color: #173b6c; }
+.dash-calendar-card .fc-toolbar-title { font-size: 14px; color: var(--text); }
 .dash-calendar-card .fc-button {
-  background-color: #2878e8 !important;
-  border-color: #2878e8 !important;
+  background-color: var(--blue) !important;
+  border-color: var(--blue) !important;
   padding: 2px 8px !important;
   font-size: 12px !important;
 }
 .dash-calendar-card .fc-event { border: none; border-radius: 5px; padding: 0; cursor: pointer; margin-bottom: 2px; }
-.dash-calendar-card .fc-theme-standard td, .dash-calendar-card .fc-theme-standard th { border-color: #edf0f4; }
-.dash-calendar-card .fc-daygrid-more-link { font-size: 10.5px; color: #2878e8; font-weight: 600; }
+.dash-calendar-card .fc-theme-standard td, .dash-calendar-card .fc-theme-standard th { border-color: var(--line); }
+.dash-calendar-card .fc-daygrid-more-link { font-size: 10.5px; color: var(--blue-light); font-weight: 600; }
 .dash-calendar-card .fc-popover { font-size: 12px; }
-.dash-calendar-card .fc-popover-header { background: #f5f7fb; }
+.dash-calendar-card .fc-popover-header { background: var(--panel); }
 
 /* 일정 블록 안에 고객명/시간/주소/연락처를 네 줄로 짧게 표시 (admin_schedule.js의 eventContent와 같은 방식) */
 .dash-event-lines {
@@ -111,7 +111,7 @@ body {
 .dash-event-line {
   font-size: 10px;
   line-height: 1.2;
-  color: #fff;
+  color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -124,7 +124,7 @@ body {
   gap: 16px;
   margin-top: 10px;
   font-size: 12px;
-  color: #7b8797;
+  color: var(--muted);
 }
 .dash-legend-dot {
   display: inline-block;
@@ -133,9 +133,9 @@ body {
   border-radius: 2px;
   margin-right: 5px;
 }
-.dash-legend-past { background-color: #9aa5ab; }
-.dash-legend-today { background-color: #2878e8; }
-.dash-legend-future { background-color: #0ea5a4; }
+.dash-legend-past { background-color: var(--panel-raised); }
+.dash-legend-today { background-color: var(--blue); }
+.dash-legend-future { background-color: var(--blue); }
 
 
 /* 오늘 일정 목록 */
@@ -151,7 +151,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 10px;
   padding: 20px 22px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -167,7 +167,7 @@ body {
   flex-shrink: 0;
   white-space: nowrap;
   font-weight: bold;
-  color: #2878e8;
+  color: var(--blue-light);
 }
 
 /* 가운데 : 고객명 / 증상을 세로로 쌓아서 중앙정렬로 표시 */
@@ -196,7 +196,7 @@ body {
 .today-symptom {
   width: 100%;
   font-size: 13px;
-  color: #7b8797;
+  color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -208,17 +208,17 @@ body {
   flex-shrink: 0;
   width: 76px;
   height: 42px;
-  border: 1px solid #2878e8;
+  border: 1px solid var(--blue);
   border-radius: 5px;
-  background-color: white;
-  color: #2878e8;
+  background-color: var(--panel);
+  color: var(--blue-light);
   font-weight: bold;
   font-size: 13px;
   cursor: pointer;
 }
 
 .status-btn:hover {
-  background-color: #eaf2ff;
+  background-color: var(--panel);
 }
 
 .status-badge {
@@ -234,24 +234,24 @@ body {
 }
 
 .status-progress {
-  background-color: #fff4e5;
-  color: #e08a00;
+  background-color: var(--panel);
+  color: var(--orange);
 }
 
 .status-done {
-  background-color: #eaf7ee;
-  color: #2e9e4e;
+  background-color: var(--panel);
+  color: var(--success);
 }
 
 
 /* 오늘 일정 없음 */
 
 .today-empty {
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 10px;
   padding: 40px;
   text-align: center;
-  color: #7b8797;
+  color: var(--muted);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -268,7 +268,7 @@ body {
   /* 그래프(.satisfaction-trend)가 max-height에 걸려서 다 못 채운 나머지 공간은
      내용 전체를 위아래로 가운데 정렬해서 채우는 여백으로 씀 (그래프만 계속 길어지지 않게) */
   justify-content: center;
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 10px;
   padding: 20px 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -277,7 +277,7 @@ body {
 .dash-satisfaction-card h3 {
   margin: 0 0 16px 0;
   font-size: 16px;
-  color: #173b6c;
+  color: var(--text);
   text-align: center;
 }
 
@@ -290,7 +290,7 @@ body {
   gap: 22px;
   padding-bottom: 18px;
   margin-bottom: 18px;
-  border-bottom: 1px solid #edf0f4;
+  border-bottom: 1px solid var(--line);
 }
 
 .satisfaction-stat {
@@ -302,13 +302,13 @@ body {
 
 .satisfaction-stat-label {
   font-size: 12.5px;
-  color: #7b8797;
+  color: var(--muted);
 }
 
 .satisfaction-stat-value {
   font-size: 26px;
   font-weight: bold;
-  color: #173b6c;
+  color: var(--text);
 }
 
 .satisfaction-diff {
@@ -320,13 +320,13 @@ body {
 }
 
 .diff-up {
-  color: #2e9e4e;
-  background-color: #eaf7ee;
+  color: var(--success);
+  background-color: var(--panel);
 }
 
 .diff-down {
-  color: #d6483e;
-  background-color: #fdeceb;
+  color: var(--danger);
+  background-color: var(--panel);
 }
 
 /* 올해 월별 추이 막대그래프. 카드(.dash-satisfaction-card)가 늘어난 만큼 같이 커지긴 하되,
@@ -356,7 +356,7 @@ body {
 .trend-bar-score {
   flex-shrink: 0;
   font-size: 10.5px;
-  color: #7b8797;
+  color: var(--muted);
   min-height: 12px;
 }
 
@@ -368,12 +368,16 @@ body {
   width: 100%;
   max-width: 22px;
   min-height: 2px;
-  background-color: #2878e8;
+  background-color: var(--blue);
   border-radius: 4px 4px 0 0;
 }
 
 .trend-bar-label {
   flex-shrink: 0;
   font-size: 10.5px;
-  color: #7b8797;
+  color: var(--muted);
 }
+
+.dash-legend-past { background: #475569; }
+.dash-legend-today { background: #2563eb; }
+.dash-legend-future { background: #25624e; }

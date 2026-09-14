@@ -1,15 +1,16 @@
-.side{
-  border: 1px solid red;
-  width: 20%;
-}
-
-.side-logo {
-  display: flex;
-  align-items: center;
-}
-
-.side-logo .logo-img {
-  width: 160px;
-  max-width: 100%;
-  height: auto;
-}
+.side { width: 240px; flex-shrink: 0; background: var(--chrome); border-right: 1px solid var(--line); }
+.side nav { position: sticky; top: 0; min-height: 100dvh; display: flex; flex-direction: column; padding: 30px 18px; }
+.side-logo { padding: 0 12px 30px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 18px; font-weight: 800; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; background: var(--blue); color: #fff; border-radius: 10px; font-size: 24px; }
+.brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; letter-spacing: 2px; font-weight: 500; }
+.nav-label { color: var(--muted); font-size: 10px; letter-spacing: 2px; padding: 26px 14px 12px; }
+.side ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.side li a { display: flex; align-items: center; gap: 12px; padding: 13px 14px; color: var(--muted); text-decoration: none; font-size: 15px; border: 1px solid transparent; border-radius: 9px; transition: background .15s, color .15s; }
+.side li a:hover { background: var(--panel); color: var(--text); }
+.side li a[aria-current="page"] { background: var(--blue-soft); border-color: #678bac; color: #e3f2ff; box-shadow: inset 3px 0 #88c9ff; }
+.nav-icon { width: 20px; text-align: center; font-size: 18px; }
+.side-footer { margin-top: auto; padding: 28px 14px 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.side-footer strong { color: var(--orange); font-weight: 600; }
+@media (max-width: 900px) { .side { width: 200px; } .side nav { padding: 24px 10px; } }
+@media (max-width: 700px) { .side { width: 100%; border-right: 0; border-bottom: 1px solid var(--line); } .side nav { position: static; min-height: auto; padding: 16px; } .side-logo { padding: 0 0 16px; } .side ul { flex-direction: row; flex-wrap: wrap; margin-top: 12px; } .side li a { padding: 10px 12px; font-size: 13px; } .nav-label, .side-footer { display: none; } }

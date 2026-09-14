@@ -17,8 +17,8 @@
         <div class="cal-card">
           <div class="cal-toolbar">
             <div class="tb-left">
-              <button id="prevBtn">‹</button>
-              <button id="nextBtn">›</button>
+              <button id="prevBtn" aria-label="이전 기간">‹</button>
+              <button id="nextBtn" aria-label="다음 기간">›</button>
               <span class="cal-title" id="calTitle"></span>
             </div>
             <div class="tb-right">
@@ -27,7 +27,7 @@
                 <button data-view="timeGridWeek">주</button>
                 <button data-view="dayGridMonth" class="active">월</button>
               </div>
-              <select id="techFilter">
+              <select id="techFilter" aria-label="담당 기사 필터">
                 <option value="all">전체 기사</option>
                 <th:block th:each="engineer:${engineerList}">
                   <option th:value="${engineer.engineerNo}">

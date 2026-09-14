@@ -10,12 +10,12 @@ html, body {
 
 body {
   font-family: "맑은 고딕", sans-serif;
-  color: #222;
+  color: var(--text);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f7f8fa;
+  background: var(--panel);
 }
 
 .join-container {
@@ -30,14 +30,14 @@ body {
 }
 
 .join-logo a {
-  color: #222;
+  color: var(--text);
   text-decoration: none;
   font-size: 20px;
 }
 
 .join-form {
-  background: #fff;
-  border: 1px solid #eee;
+  background: var(--panel);
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 32px;
 }
@@ -48,8 +48,8 @@ body {
 }
 
 .error-msg {
-  color: #dc2626;
-  background: #fdeaea;
+  color: var(--danger);
+  background: var(--panel);
   border-radius: 6px;
   padding: 10px 12px;
   font-size: 13px;
@@ -64,14 +64,14 @@ body {
 .form-group label {
   display: block;
   font-size: 13px;
-  color: #555;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
 .form-group input {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--line);
   border-radius: 6px;
   font-size: 14px;
 }
@@ -88,11 +88,15 @@ body {
 .login-link {
   text-align: center;
   font-size: 13px;
-  color: #777;
+  color: var(--muted);
   margin-top: 18px;
 }
 
 .login-link a {
-  color: #2d6cdf;
+  color: var(--blue-light);
   text-decoration: none;
 }
+
+body { height: auto; padding: 32px 0; }
+.join-container { max-width: 460px; }
+.join-form { border-radius: 16px; }

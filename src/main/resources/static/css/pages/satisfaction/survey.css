@@ -5,9 +5,9 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #eef2fb;
+  background-color: var(--panel);
   font-family: Arial, "Noto Sans KR", sans-serif;
-  color: #1f2937;
+  color: var(--text);
 }
 
 .survey-container {
@@ -21,7 +21,7 @@ body {
 .survey-box {
   width: 100%;
   max-width: 380px;
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(23, 59, 108, 0.15);
   overflow: hidden;
@@ -29,7 +29,7 @@ body {
 
 /* 위쪽 브랜드 배너 */
 .survey-header {
-  background: linear-gradient(135deg, #2878e8, #1a4faa);
+  background: linear-gradient(135deg, var(--blue), var(--blue));
   padding: 28px 20px 24px;
   text-align: center;
 }
@@ -43,7 +43,7 @@ body {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  color: var(--text);
   letter-spacing: 0.5px;
 }
 
@@ -61,7 +61,7 @@ body {
 .survey-subtitle {
   margin: 0 0 26px 0;
   font-size: 13.5px;
-  color: #7b8797;
+  color: var(--muted);
 }
 
 /* 항목 3개(방문/시간준수, 친절도/응대, A/S 처리결과)를 각각 이모지 5단계로 받습니다 */
@@ -74,7 +74,7 @@ body {
   margin: 0 0 12px 0;
   font-size: 13.5px;
   font-weight: bold;
-  color: #1f2937;
+  color: var(--text);
 }
 
 .emoji-scale {
@@ -112,7 +112,7 @@ body {
 .emoji-option .emoji-label {
   font-size: 9.5px;
   line-height: 1.15;
-  color: #9aa5b1;
+  color: var(--muted);
   text-align: center;
   transition: color 0.15s, font-weight 0.15s;
 }
@@ -122,7 +122,7 @@ body {
 }
 
 .emoji-option:has(input:checked) {
-  background-color: #eaf2ff;
+  background-color: var(--panel);
   transform: translateY(-1px);
 }
 
@@ -133,7 +133,7 @@ body {
 }
 
 .emoji-option:has(input:checked) .emoji-label {
-  color: #2878e8;
+  color: var(--blue-light);
   font-weight: bold;
 }
 
@@ -142,7 +142,7 @@ body {
   min-height: 80px;
   padding: 12px;
   margin-bottom: 18px;
-  border: 1px solid #dde3ea;
+  border: 1px solid var(--line);
   border-radius: 8px;
   font-family: inherit;
   font-size: 13.5px;
@@ -151,14 +151,14 @@ body {
 
 .survey-comment:focus {
   outline: none;
-  border-color: #2878e8;
+  border-color: var(--blue);
 }
 
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #2878e8, #1a4faa);
-  color: white;
+  background: linear-gradient(135deg, var(--blue), var(--blue));
+  color: var(--text);
   border: none;
   border-radius: 10px;
   font-size: 15px;
@@ -192,6 +192,6 @@ body {
 
 .state-desc {
   font-size: 13.5px;
-  color: #7b8797;
+  color: var(--muted);
   margin: 0;
 }
