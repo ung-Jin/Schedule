@@ -150,10 +150,10 @@ body {
 .today-card {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
   background-color: white;
   border-radius: 10px;
-  padding: 20px 25px;
+  padding: 20px 22px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   cursor: pointer;
 }
@@ -171,8 +171,11 @@ body {
 }
 
 /* 가운데 : 고객명 / 증상을 세로로 쌓아서 중앙정렬로 표시 */
+/* min-width:0이 없으면 flex 자식은 내용 길이만큼 안 줄어들어서 today-customer의
+   white-space:nowrap + text-overflow:ellipsis가 안 먹힘 */
 .today-middle {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,27 +183,37 @@ body {
   gap: 4px;
 }
 
+/* 고객명은 절대 줄바꿈되면 안 됨 - 넘칠 땐 버튼 쪽을 줄여서 공간을 확보함(아래 .status-btn/.status-badge) */
 .today-customer {
+  width: 100%;
   font-size: 16px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .today-symptom {
+  width: 100%;
   font-size: 13px;
   color: #7b8797;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* 진행상태 버튼/뱃지 */
+/* 진행상태 버튼/뱃지 - 고객명이 줄바꿈되지 않도록 가운데 칸에 폭을 더 내주기 위해 폭을 줄임 */
 
 .status-btn {
-  width: 100px;
+  flex-shrink: 0;
+  width: 76px;
   height: 42px;
   border: 1px solid #2878e8;
   border-radius: 5px;
   background-color: white;
   color: #2878e8;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -209,14 +222,15 @@ body {
 }
 
 .status-badge {
-  width: 100px;
+  flex-shrink: 0;
+  width: 76px;
   height: 42px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .status-progress {
@@ -249,6 +263,8 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* 그래프(.satisfaction-trend)가 max-height에 걸려서 다 못 채운 나머지 공간은
+     내용 전체를 위아래로 가운데 정렬해서 채우는 여백으로 씀 (그래프만 계속 길어지지 않게) */
   justify-content: center;
   background-color: white;
   border-radius: 10px;
@@ -263,8 +279,9 @@ body {
   text-align: center;
 }
 
-/* 이번 달 vs 작년 동월 비교 */
+/* 이번 달 vs 작년 동월 비교 (그래프처럼 늘어나지 않고 항상 자기 크기만큼만 차지) */
 .satisfaction-compare {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,13 +327,18 @@ body {
   background-color: #fdeceb;
 }
 
-/* 올해 월별 추이 막대그래프 (순수 CSS, 막대 높이는 Thymeleaf에서 avgScore*16px로 계산) */
+/* 올해 월별 추이 막대그래프. 카드(.dash-satisfaction-card)가 늘어난 만큼 같이 커지긴 하되,
+   너무 길쭉해 보이지 않게 max-height로 상한을 둠. 그 상한을 넘는 남는 공간은
+   .dash-satisfaction-card의 justify-content:center가 카드 전체 내용 위아래 여백으로 나눠 가집니다.
+   (막대 높이는 이 영역의 실제 높이 기준 %로 계산 - 아래 .trend-bar) */
 .satisfaction-trend {
+  flex: 1;
+  min-height: 90px;
+  max-height: 170px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 6px;
-  height: 116px;
 }
 
 .trend-bar-wrap {
@@ -330,12 +352,17 @@ body {
 }
 
 .trend-bar-score {
+  flex-shrink: 0;
   font-size: 10.5px;
   color: #7b8797;
   min-height: 12px;
 }
 
+/* 높이는 Thymeleaf에서 calc((100% - 34px) * avgScore/5)로 계산해서 넣습니다.
+   34px는 위아래 점수/월 라벨 + gap이 차지하는 고정 공간이라, 그래프 영역이 커지거나
+   작아져도(.satisfaction-trend가 flex로 늘고 주는 만큼) 막대가 항상 그 비율만큼 꽉 차게 늘어납니다. */
 .trend-bar {
+  flex-shrink: 0;
   width: 100%;
   max-width: 22px;
   min-height: 2px;
@@ -344,6 +371,7 @@ body {
 }
 
 .trend-bar-label {
+  flex-shrink: 0;
   font-size: 10.5px;
   color: #7b8797;
 }

@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initialView: 'dayGridMonth',
     locale: 'ko',
     height: 'auto',
+    // 기본값(true)은 달과 상관없이 항상 6주치 칸을 그려서, 이번 달이 5주만에 끝나도
+    // 다음 달 날짜만 있는 마지막 한 줄이 통째로 남아 달력이 쓸데없이 길어집니다.
+    // false로 하면 그 달에 실제로 필요한 주(대부분 5주, 어떤 달은 4주)만큼만 그립니다.
+    fixedWeekCount: false,
     headerToolbar: { left: 'prev', center: 'title', right: 'next' },
     // 기본값(auto)은 시간이 있는 이벤트를 월간뷰에서 점(dot) 하나로만 그려서 배경색이 안 보입니다.
     // 우리는 색으로 지난/오늘/예정을 구분해야 하니 항상 색칠된 박스로 그리게 강제합니다.

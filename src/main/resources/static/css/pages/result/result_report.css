@@ -38,11 +38,12 @@ body {
 
 
 /* 처리 영역 */
-
+/* stretch: 왼쪽(처리 정보)과 오른쪽(AS 기본정보) 중 더 높은 쪽에 맞춰 양쪽 높이를 같게 함
+   (아래 .as-info-box의 justify-content:center와 세트로, 늘어난 만큼을 정보 영역이 여백으로 흡수) */
 .result-content {
   display: flex;
   gap: 20px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 
@@ -125,17 +126,36 @@ textarea:focus,
 }
 
 
-/* 사진 첨부 */
+/* 사진 첨부 - 사진 1, 2를 같은 줄에 나란히 (처리사진 1 아래 처리사진 2가 오던 것을 합침) */
 
-.image-upload-box {
+.photo-group-wrap {
   flex: 1;
   display: flex;
-  gap: 12px;
+  gap: 16px;
+}
+
+.photo-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.photo-group-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: bold;
+  color: #6c7889;
+}
+
+.image-upload-box {
+  display: flex;
+  gap: 8px;
 }
 
 .image-upload-label {
-  width: 290px;
-  height: 130px;
+  flex: 1;
+  min-width: 0;
+  height: 110px;
   border: 1px dashed #b7c4d6;
   border-radius: 7px;
   cursor: pointer;
@@ -149,17 +169,18 @@ textarea:focus,
 }
 
 .upload-icon {
-  font-size: 30px;
+  font-size: 26px;
   color: #397ce0;
 }
 
 .image-upload-label p {
   margin: 5px 0;
-  font-size: 13px;
+  font-size: 12px;
+  text-align: center;
 }
 
 .image-upload-label span {
-  font-size: 11px;
+  font-size: 10.5px;
   color: #9aa4b2;
 }
 
@@ -167,8 +188,9 @@ textarea:focus,
 /* 사진 미리보기 */
 
 .image-preview-box {
-  width: 130px;
-  height: 130px;
+  flex-shrink: 0;
+  width: 80px;
+  height: 110px;
   border: 1px solid #dce3ec;
   border-radius: 7px;
   overflow: hidden;
@@ -184,9 +206,14 @@ textarea:focus,
 
 
 /* 오른쪽 정보 */
-
+/* 왼쪽(.result-form-box)과 stretch로 높이가 맞춰지는데, 내용(.info-table)은 그대로 두고
+   남는 높이만큼을 위아래 여백으로 나눠 가지도록 세로 중앙 정렬 (사진 영역이 짧아진 만큼
+   왼쪽 폼 높이가 줄어도 오른쪽이 어색하게 안 남게) */
 .as-info-box {
   width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
   border-radius: 10px;
   padding: 25px;

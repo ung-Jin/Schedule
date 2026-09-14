@@ -114,7 +114,13 @@
           <div class="satisfaction-trend">
             <div class="trend-bar-wrap" th:each="m : ${satisfactionStats.monthlyTrend}">
               <span class="trend-bar-score" th:text="${m.avgScore > 0 ? m.avgScore : ''}">4.5</span>
-              <div class="trend-bar" th:style="'height:' + (${m.avgScore} * 16) + 'px'"></div>
+              <!--
+                고정 픽셀이 아니라 그래프 영역의 실제 높이(100%) 기준 비율로 계산합니다.
+                34px는 위 점수(trend-bar-score)/아래 월 라벨(trend-bar-label) + gap이 차지하는 고정 공간이라,
+                그 나머지 공간을 막대가 avgScore/5 비율만큼 채우게 됩니다. (그래프 자체가 카드 높이에 맞춰
+                커지거나 작아지면 막대도 그만큼 같이 늘어나고 줄어듭니다 - .satisfaction-trend가 flex:1인 것과 세트)
+              -->
+              <div class="trend-bar" th:style="'height:calc((100% - 34px) * ' + (${m.avgScore} / 5) + ')'"></div>
               <span class="trend-bar-label" th:text="${m.month} + '월'">1월</span>
             </div>
           </div>
