@@ -1,9 +1,8 @@
 /*
   requestList / scheduleList 는 admin_schedule.html의 인라인 스크립트(th:inline="javascript")에서
-  서버 데이터를 그대로 JS 전역 변수로 내려준 것을 사용합니다. (이 파일 자체는 정적 파일이라 th: 표현식을 못 씀)
+  서버 데이터를 그대로 JS 전역 변수로 내려준 것을 사용합니다.
 */
 
-// 상태별 배경색 — .schedule-footer 범례 아이콘 색과 동일하게 맞췄습니다.
 const STATUS_COLORS = {
   RECEIVED: 'rgb(102, 163, 191)',
   ASSIGNED: 'rgb(51, 104, 160)',
@@ -11,29 +10,26 @@ const STATUS_COLORS = {
   COMPLETED: 'rgb(118, 196, 87)'
 };
 
-/**
- * requestList와 scheduleList를 합쳐서 캘린더 이벤트로 만듭니다.
- * - engineerFilter가 'all'(전체 기사)이면:
- *     · scheduleList 전체를 fixDate 기준으로 표시 (engineerName / symptom / startTime 표시)
- *     · requestList는 wishDate 기준으로 표시하되, 이미 일정 배정(AS_SCHEDULE에 INSERT)되어
- *       scheduleList에도 같은 requestNo로 들어있는 건은 중복이므로 숨김
- * - engineerFilter가 특정 기사(engineerNo)면:
- *     · requestList는 전부 숨기고, scheduleList 중 그 engineerNo로 배정된 것만 fixDate 기준으로 표시
- */
+// "2026-09-15T14:00:00" 또는 "2026-09-15 14:00:00" 형태의 문자열에서 "14:00"만 추출.
+// (DB startTime/endTime이 DATETIME이라 날짜+시간이 함께 내려오므로, 시간 부분만 뽑아 쓰기 위한 헬퍼)
+function extractTimePart(dateTimeStr) {
+  if (!dateTimeStr) return '';
+  const sepIndex = dateTimeStr.indexOf('T') !== -1 ? dateTimeStr.indexOf('T') : dateTimeStr.indexOf(' ');
+  if (sepIndex === -1) return dateTimeStr.slice(0, 5);
+  return dateTimeStr.slice(sepIndex + 1, sepIndex + 6);
+}
+
 function buildEvents(engineerFilter) {
   const isAll = !engineerFilter || engineerFilter === 'all';
   const events = [];
 
-  // scheduleList에 이미 배정되어 있는 requestNo 집합 — "일정 배정하기"를 누르면 AS_SCHEDULE에
-  // INSERT되면서 이 목록에 잡히므로, requestList 쪽 동일 requestNo는 중복 표시하지 않습니다.
   const assignedRequestNos = new Set(
     scheduleList
       .filter(function (s) { return s.requestNo !== null && s.requestNo !== undefined; })
       .map(function (s) { return String(s.requestNo); })
   );
 
-  // 1) AS 접수 목록(requestList) — wishDate 기준. '전체 기사'일 때만 표시하고,
-  //    scheduleList에 이미 배정된 requestNo는 제외합니다.
+  // 1) AS 접수 목록(requestList) — 아직 기사/시간이 없으므로 고객명/종류/증상만 표시
   if (isAll) {
     requestList
       .filter(function (r) { return !!r.wishDate; })
@@ -42,26 +38,22 @@ function buildEvents(engineerFilter) {
         const color = STATUS_COLORS[r.status] || '#9aa5ab';
         events.push({
           id: 'req-' + r.requestNo,
-          // wishDate가 'yyyy-MM-dd HH:mm:ss'(공백 구분, LocalDateTime 형태)로 내려오는 경우가 있어
-          // allDay 이벤트에는 날짜 부분(앞 10자리)만 사용합니다. ('T'가 섞여 와도 동일하게 처리됨)
           start: (r.wishDate || '').slice(0, 10),
           allDay: true,
           backgroundColor: color,
           borderColor: color,
           textColor: '#fff',
           extendedProps: {
-            engineerName: '',
-            symptom: r.symptom || '',
-            startTimeDisplay: '',
-            status: r.status
+            isAssigned: false,
+            customerName: r.customerName || '',
+            productType: r.productType || '',
+            symptom: r.symptom || ''
           }
         });
       });
   }
 
-  // 2) 배정된 스케줄(scheduleList) — fixDate 기준. engineerName / symptom / startTime은
-  //    전부 scheduleList(및 그 안의 engineerDTO/requestDTO)에서 가져옵니다.
-  //    기사가 선택되면 그 engineerNo의 것만 남깁니다.
+  // 2) 배정된 스케줄(scheduleList) — 기사명 + 시간 추가
   scheduleList
     .filter(function (s) { return !!s.fixDate; })
     .filter(function (s) { return isAll || String(s.engineerNo) === engineerFilter; })
@@ -69,19 +61,23 @@ function buildEvents(engineerFilter) {
       const eng = s.engineerDTO || {};
       const req = s.requestDTO || {};
       const color = STATUS_COLORS[s.status] || '#9aa5ab';
+      const startDisplay = extractTimePart(s.startTime || '');
+      const endDisplay = extractTimePart(s.endTime || '');
       events.push({
         id: 'sch-' + s.scheduleNo,
-        start: s.fixDate + 'T' + (s.startTime || '00:00:00'),
-        end: s.endTime ? (s.fixDate + 'T' + s.endTime) : undefined,
+        start: s.fixDate + 'T' + startDisplay,
+        end: s.endTime ? (s.fixDate + 'T' + endDisplay) : undefined,
         allDay: false,
         backgroundColor: color,
         borderColor: color,
         textColor: '#fff',
         extendedProps: {
-          engineerName: eng.engineerName || '',
+          isAssigned: true,
+          customerName: req.customerName || '',
+          productType: req.productType || '',
           symptom: req.symptom || '',
-          startTimeDisplay: (s.startTime || '').slice(0, 5),
-          status: s.status
+          engineerName: eng.engineerName || '',
+          timeRange: startDisplay + (endDisplay ? ('~' + endDisplay) : '')
         }
       });
     });
@@ -91,8 +87,6 @@ function buildEvents(engineerFilter) {
 
 /**
  * 같은 기사(engineerNo)가 같은 날짜(fixDate)에 이미 배정받은 시간과 겹치는지 확인합니다.
- * scheduleList(페이지 로드 시 서버가 내려준 배정 목록)를 기준으로 검사하며, 취소(CANCELED)된
- * 일정은 검사 대상에서 제외합니다. 겹치는 일정이 있으면 그 스케줄 객체를, 없으면 null을 반환합니다.
  */
 function findEngineerConflict(engineerNo, fixDate, startTime, endTime) {
   return scheduleList.find(function (s) {
@@ -100,10 +94,9 @@ function findEngineerConflict(engineerNo, fixDate, startTime, endTime) {
     if (s.fixDate !== fixDate) return false;
     if (s.status === 'CANCELED') return false;
 
-    const existingStart = (s.startTime || '').slice(0, 5);
-    const existingEnd = (s.endTime || '').slice(0, 5);
+    const existingStart = extractTimePart(s.startTime || '');
+    const existingEnd = extractTimePart(s.endTime || '');
 
-    // 시간 범위가 겹치는지: 새 시작 < 기존 종료  &&  기존 시작 < 새 종료
     return startTime < existingEnd && existingStart < endTime;
   }) || null;
 }
@@ -118,24 +111,28 @@ document.addEventListener('DOMContentLoaded', function () {
     initialView: 'dayGridMonth',
     locale: 'ko',
     height: 'auto',
-    headerToolbar: false,   // 기본 상단 UI를 끄고, 아래에서 직접 만든 버튼으로 조작
-
-    // scheduleList 이벤트는 allDay:false(시간 있는 일정)라서, 기본값(eventDisplay:'auto')이면
-    // 월간뷰에서 작은 점(dot) 스타일로 렌더링되어 커스텀 eventContent(3줄 표시)가 거의 안 보이게 됩니다.
-    // 'block'으로 고정하면 requestList(allDay 이벤트)와 동일하게 꽉 찬 박스로 렌더링됩니다.
+    headerToolbar: false,
     eventDisplay: 'block',
 
     events: function (fetchInfo, successCallback) {
       successCallback(buildEvents(currentEngineerFilter));
     },
 
-    // 이벤트 안에 기사명 / 증상 / 시작시간을 세 줄로 표시
     eventContent: function (arg) {
       const p = arg.event.extendedProps;
-      const lines = [];
-      lines.push(p.engineerName || ' ');   // 미배정이면 빈 줄(공백) 유지
-      lines.push(p.symptom || ' ');
-      lines.push(p.startTimeDisplay || ' ');
+      let lines;
+
+      if (p.isAssigned) {
+        // 배정된 일정: 고객명 / 종류·증상 / 기사명·시간
+        lines = [
+          p.customerName || ' ',
+          [p.productType, p.symptom].filter(Boolean).join(' · ') || ' ',
+          [p.engineerName, p.timeRange].filter(Boolean).join(' ') || ' '
+        ];
+      } else {
+        // 미배정 접수: 고객명 / 종류 / 증상
+        lines = [p.customerName || ' ', p.productType || ' ', p.symptom || ' '];
+      }
 
       const wrap = document.createElement('div');
       wrap.className = 'fc-event-lines';
@@ -149,11 +146,9 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     eventClick: function (info) {
-      // TODO: 필요하면 여기서 상세 팝업 등 연결
       console.log('일정 클릭:', info.event.extendedProps);
     },
 
-    // 달이 바뀔 때마다 우리가 만든 제목(span#calTitle)을 갱신
     datesSet: function (info) {
       document.getElementById('calTitle').textContent = info.view.title;
     }
@@ -161,11 +156,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   calendar.render();
 
-  /* 이전 / 다음 이동 */
   document.getElementById('prevBtn').addEventListener('click', () => calendar.prev());
   document.getElementById('nextBtn').addEventListener('click', () => calendar.next());
 
-  /* 일 / 주 / 월 보기 전환 */
   document.querySelectorAll('#viewSwitch button').forEach(function (btn) {
     btn.addEventListener('click', function () {
       calendar.changeView(btn.dataset.view);
@@ -174,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* 기사 필터 — engineerNo(value) 기준으로 해당 기사의 배정 일정만 표시 */
   document.getElementById('techFilter').addEventListener('change', function (e) {
     currentEngineerFilter = e.target.value;
     calendar.refetchEvents();
@@ -187,34 +179,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const requestSelect = assignForm.querySelector('select[name="requestNo"]');
   const engineerSelect = assignForm.querySelector('select[name="engineerNo"]');
-  const dateInput = assignForm.querySelector('input[name="fixDate"]');
-  const startTimeInput = assignForm.querySelector('input[name="startTime"]');
-  const endTimeInput = assignForm.querySelector('input[name="endTime"]');
+  const dateInput = document.getElementById('fixDateInput');
+  const startTimeInput = document.getElementById('startTimeInput');
+  const endTimeInput = document.getElementById('endTimeInput');
+  const startTimeHidden = document.getElementById('startTimeHidden');
+  const endTimeHidden = document.getElementById('endTimeHidden');
 
   assignBtn.addEventListener('click', function () {
     if (!requestSelect.value || !engineerSelect.value || !dateInput.value || !startTimeInput.value || !endTimeInput.value) {
       errorMsg.textContent = '모든 항목을 선택해주세요.';
       return;
     }
-    // 종료 시간이 시작 시간보다 늦어야 정상 — 그렇지 않을 때(같거나 이전일 때)만 에러 처리합니다.
     if (startTimeInput.value >= endTimeInput.value) {
       errorMsg.textContent = '종료 시간은 시작 시간보다 늦어야 합니다.';
       return;
     }
 
-    // 같은 기사가 같은 날짜에 이미 겹치는 시간으로 배정되어 있으면 막습니다.
     const conflict = findEngineerConflict(engineerSelect.value, dateInput.value, startTimeInput.value, endTimeInput.value);
     if (conflict) {
       const engineerName = engineerSelect.options[engineerSelect.selectedIndex].textContent.trim();
-      const conflictStart = (conflict.startTime || '').slice(0, 5);
-      const conflictEnd = (conflict.endTime || '').slice(0, 5);
+      const conflictStart = extractTimePart(conflict.startTime || '');
+      const conflictEnd = extractTimePart(conflict.endTime || '');
       errorMsg.textContent = engineerName + ' 기사님은 ' + conflictStart + ' ~ ' + conflictEnd + '에 다른 일정이 있어 배정할 수 없습니다.';
       return;
     }
 
     errorMsg.textContent = '';
-    // action="/assign-schedule" 로 실제 POST — 서버(ScheduleController#assignSchedule)에서 저장 후
-    // "/as-schedule"로 리다이렉트되면서 화면이 새로 그려집니다.
+    // fixDate + 시간을 합쳐서 LocalDateTime이 파싱 가능한 "yyyy-MM-ddTHH:mm" 형태로 채움
+    startTimeHidden.value = dateInput.value + 'T' + startTimeInput.value;
+    endTimeHidden.value = dateInput.value + 'T' + endTimeInput.value;
+
     assignForm.submit();
   });
 

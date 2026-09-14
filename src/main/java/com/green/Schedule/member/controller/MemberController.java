@@ -19,13 +19,6 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    /**
-     * 로그인 화면 보여주기 (GET 방식)
-     * 주소 예: /member/login
-     *
-     * 이미 로그인이 되어있는 상태로 이 주소에 다시 들어오면(예: 로그인 성공 후 뒤로가기)
-     * 로그인 폼을 또 보여주지 않고, 바로 원래 가는 화면으로 돌려보냅니다.
-     */
     @GetMapping("/login")
     public String loginForm(HttpSession session) {
 
@@ -58,7 +51,6 @@ public class MemberController {
         }
 
         // 로그인 성공 -> 세션에 로그인한 회원 정보를 저장
-        // (이후 다른 페이지에서 session.getAttribute("loginMember")로 꺼내 쓸 수 있습니다.)
         session.setAttribute("loginMember", loginMember);
 
         // role 값에 따라 이동할 첫 화면을 다르게 이동시킵니다.
@@ -137,9 +129,11 @@ public class MemberController {
     private String redirectByRole(String role) {
         if ("admin".equals(role)) {
             return "redirect:/pages/admin/main";
-        } else if ("repairman".equals(role)) {
+        }
+        else if ("repairman".equals(role)) {
             return "redirect:/pages/engineer/main";
-        } else {
+        }
+        else {
             return "redirect:/pages/user/main";
         }
     }
