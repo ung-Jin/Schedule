@@ -8,84 +8,104 @@ const STATUS_COLORS = {
   RECEIVED: 'rgb(102, 163, 191)',
   ASSIGNED: 'rgb(51, 104, 160)',
   IN_PROGRESS: 'rgb(255, 157, 80)',
-  COMPLETED: 'rgb(118, 196, 87)',
-  CANCELED: 'rgb(231, 63, 30)'
+  COMPLETED: 'rgb(118, 196, 87)'
 };
 
 /**
- * requestList + scheduleList를 requestNo 기준으로 병합해서 캘린더 이벤트 배열을 만듭니다.
- * - 기본은 requestList의 wishDate 자리에 표시
- * - 같은 requestNo로 배정된 스케줄이 scheduleList에 있으면, 그 데이터(fixDate/기사/상태)가 우선 적용되어
- *   wishDate 자리 대신 fixDate 자리에 표시됩니다.
- * - engineerFilter가 'all'이 아니면 해당 engineerNo로 배정된 일정만 남깁니다.
+ * requestList와 scheduleList를 합쳐서 캘린더 이벤트로 만듭니다.
+ * - engineerFilter가 'all'(전체 기사)이면:
+ *     · scheduleList 전체를 fixDate 기준으로 표시 (engineerName / symptom / startTime 표시)
+ *     · requestList는 wishDate 기준으로 표시하되, 이미 일정 배정(AS_SCHEDULE에 INSERT)되어
+ *       scheduleList에도 같은 requestNo로 들어있는 건은 중복이므로 숨김
+ * - engineerFilter가 특정 기사(engineerNo)면:
+ *     · requestList는 전부 숨기고, scheduleList 중 그 engineerNo로 배정된 것만 fixDate 기준으로 표시
  */
 function buildEvents(engineerFilter) {
-  const merged = new Map();
+  const isAll = !engineerFilter || engineerFilter === 'all';
+  const events = [];
 
-  // 1) 전체 접수 목록을 wishDate 기준으로 먼저 깔아둠
-  requestList.forEach(function (r) {
-    merged.set(r.requestNo, {
-      requestNo: r.requestNo,
-      date: r.wishDate,
-      allDay: true,
-      engineerNo: null,
-      engineerName: '',
-      symptom: r.symptom || '',
-      startTime: null,
-      startTimeDisplay: '',
-      endTime: null,
-      status: r.status
-    });
-  });
+  // scheduleList에 이미 배정되어 있는 requestNo 집합 — "일정 배정하기"를 누르면 AS_SCHEDULE에
+  // INSERT되면서 이 목록에 잡히므로, requestList 쪽 동일 requestNo는 중복 표시하지 않습니다.
+  const assignedRequestNos = new Set(
+    scheduleList
+      .filter(function (s) { return s.requestNo !== null && s.requestNo !== undefined; })
+      .map(function (s) { return String(s.requestNo); })
+  );
 
-  // 2) 배정된 스케줄로 덮어씀 — fixDate/기사/상태가 우선
-  scheduleList.forEach(function (s) {
-    const req = s.requestDTO || {};
-    const eng = s.engineerDTO || {};
-    merged.set(s.requestNo, {
-      requestNo: s.requestNo,
-      date: s.fixDate,
-      allDay: false,
-      engineerNo: s.engineerNo,
-      engineerName: eng.engineerName || '',
-      symptom: req.symptom || '',
-      startTime: s.startTime,
-      startTimeDisplay: (s.startTime || '').slice(0, 5),
-      endTime: s.endTime,
-      status: s.status
-    });
-  });
-
-  let items = Array.from(merged.values()).filter(function (item) { return !!item.date; });
-
-  // 3) 기사 필터 — 특정 기사를 선택하면 그 기사에게 배정된 일정만
-  if (engineerFilter && engineerFilter !== 'all') {
-    items = items.filter(function (item) {
-      return String(item.engineerNo) === engineerFilter;
-    });
+  // 1) AS 접수 목록(requestList) — wishDate 기준. '전체 기사'일 때만 표시하고,
+  //    scheduleList에 이미 배정된 requestNo는 제외합니다.
+  if (isAll) {
+    requestList
+      .filter(function (r) { return !!r.wishDate; })
+      .filter(function (r) { return !assignedRequestNos.has(String(r.requestNo)); })
+      .forEach(function (r) {
+        const color = STATUS_COLORS[r.status] || '#9aa5ab';
+        events.push({
+          id: 'req-' + r.requestNo,
+          // wishDate가 'yyyy-MM-dd HH:mm:ss'(공백 구분, LocalDateTime 형태)로 내려오는 경우가 있어
+          // allDay 이벤트에는 날짜 부분(앞 10자리)만 사용합니다. ('T'가 섞여 와도 동일하게 처리됨)
+          start: (r.wishDate || '').slice(0, 10),
+          allDay: true,
+          backgroundColor: color,
+          borderColor: color,
+          textColor: '#fff',
+          extendedProps: {
+            engineerName: '',
+            symptom: r.symptom || '',
+            startTimeDisplay: '',
+            status: r.status
+          }
+        });
+      });
   }
 
-  // 4) FullCalendar 이벤트 형식으로 변환
-  return items.map(function (item) {
-    const color = STATUS_COLORS[item.status] || '#9aa5ab';
-    return {
-      id: String(item.requestNo),
-      start: item.allDay ? item.date : (item.date + 'T' + (item.startTime || '00:00:00')),
-      end: (!item.allDay && item.endTime) ? (item.date + 'T' + item.endTime) : undefined,
-      allDay: item.allDay,
-      backgroundColor: color,
-      borderColor: color,
-      textColor: '#fff',
-      extendedProps: {
-        requestNo: item.requestNo,
-        engineerNo: item.engineerNo,
-        engineerName: item.engineerName,
-        symptom: item.symptom,
-        startTimeDisplay: item.startTimeDisplay,
-        status: item.status
-      }
-    };
-  });
+  // 2) 배정된 스케줄(scheduleList) — fixDate 기준. engineerName / symptom / startTime은
+  //    전부 scheduleList(및 그 안의 engineerDTO/requestDTO)에서 가져옵니다.
+  //    기사가 선택되면 그 engineerNo의 것만 남깁니다.
+  scheduleList
+    .filter(function (s) { return !!s.fixDate; })
+    .filter(function (s) { return isAll || String(s.engineerNo) === engineerFilter; })
+    .forEach(function (s) {
+      const eng = s.engineerDTO || {};
+      const req = s.requestDTO || {};
+      const color = STATUS_COLORS[s.status] || '#9aa5ab';
+      events.push({
+        id: 'sch-' + s.scheduleNo,
+        start: s.fixDate + 'T' + (s.startTime || '00:00:00'),
+        end: s.endTime ? (s.fixDate + 'T' + s.endTime) : undefined,
+        allDay: false,
+        backgroundColor: color,
+        borderColor: color,
+        textColor: '#fff',
+        extendedProps: {
+          engineerName: eng.engineerName || '',
+          symptom: req.symptom || '',
+          startTimeDisplay: (s.startTime || '').slice(0, 5),
+          status: s.status
+        }
+      });
+    });
+
+  return events;
+}
+
+/**
+ * 같은 기사(engineerNo)가 같은 날짜(fixDate)에 이미 배정받은 시간과 겹치는지 확인합니다.
+ * scheduleList(페이지 로드 시 서버가 내려준 배정 목록)를 기준으로 검사하며, 취소(CANCELED)된
+ * 일정은 검사 대상에서 제외합니다. 겹치는 일정이 있으면 그 스케줄 객체를, 없으면 null을 반환합니다.
+ */
+function findEngineerConflict(engineerNo, fixDate, startTime, endTime) {
+  return scheduleList.find(function (s) {
+    if (String(s.engineerNo) !== String(engineerNo)) return false;
+    if (s.fixDate !== fixDate) return false;
+    if (s.status === 'CANCELED') return false;
+
+    const existingStart = (s.startTime || '').slice(0, 5);
+    const existingEnd = (s.endTime || '').slice(0, 5);
+
+    // 시간 범위가 겹치는지: 새 시작 < 기존 종료  &&  기존 시작 < 새 종료
+    return startTime < existingEnd && existingStart < endTime;
+  }) || null;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -100,6 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
     height: 'auto',
     headerToolbar: false,   // 기본 상단 UI를 끄고, 아래에서 직접 만든 버튼으로 조작
 
+    // scheduleList 이벤트는 allDay:false(시간 있는 일정)라서, 기본값(eventDisplay:'auto')이면
+    // 월간뷰에서 작은 점(dot) 스타일로 렌더링되어 커스텀 eventContent(3줄 표시)가 거의 안 보이게 됩니다.
+    // 'block'으로 고정하면 requestList(allDay 이벤트)와 동일하게 꽉 찬 박스로 렌더링됩니다.
+    eventDisplay: 'block',
+
     events: function (fetchInfo, successCallback) {
       successCallback(buildEvents(currentEngineerFilter));
     },
@@ -108,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function () {
     eventContent: function (arg) {
       const p = arg.event.extendedProps;
       const lines = [];
-      lines.push(p.engineerName || ' ');   // 미배정이면 빈 줄(공백) 유지
-      lines.push(p.symptom || ' ');
-      lines.push(p.startTimeDisplay || ' ');
+      lines.push(p.engineerName || ' ');   // 미배정이면 빈 줄(공백) 유지
+      lines.push(p.symptom || ' ');
+      lines.push(p.startTimeDisplay || ' ');
 
       const wrap = document.createElement('div');
       wrap.className = 'fc-event-lines';
@@ -171,8 +196,19 @@ document.addEventListener('DOMContentLoaded', function () {
       errorMsg.textContent = '모든 항목을 선택해주세요.';
       return;
     }
+    // 종료 시간이 시작 시간보다 늦어야 정상 — 그렇지 않을 때(같거나 이전일 때)만 에러 처리합니다.
     if (startTimeInput.value >= endTimeInput.value) {
       errorMsg.textContent = '종료 시간은 시작 시간보다 늦어야 합니다.';
+      return;
+    }
+
+    // 같은 기사가 같은 날짜에 이미 겹치는 시간으로 배정되어 있으면 막습니다.
+    const conflict = findEngineerConflict(engineerSelect.value, dateInput.value, startTimeInput.value, endTimeInput.value);
+    if (conflict) {
+      const engineerName = engineerSelect.options[engineerSelect.selectedIndex].textContent.trim();
+      const conflictStart = (conflict.startTime || '').slice(0, 5);
+      const conflictEnd = (conflict.endTime || '').slice(0, 5);
+      errorMsg.textContent = engineerName + ' 기사님은 ' + conflictStart + ' ~ ' + conflictEnd + '에 다른 일정이 있어 배정할 수 없습니다.';
       return;
     }
 
@@ -183,10 +219,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-
-//일정 배정하기 클릭시 함수 실행
-const regSchedule = () => {
-  document.querySelector('#schdeule-reg-form').submit();
-}
-
-//일정 배정하기 유효성 검사 

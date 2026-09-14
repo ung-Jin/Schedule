@@ -13,8 +13,23 @@
     <result column="START_TIME"    property="startTime"/>
     <result column="END_TIME"      property="endTime"/>
     <result column="STATUS"        property="status"/>
-    <association property="engineerDTO" resultMap="engineer"/>
-    <association property="requestDTO" resultMap="request"/>
+    <association property="engineerDTO" resultMap="scheduleEngineer"/>
+    <association property="requestDTO" resultMap="scheduleRequest"/>
+  </resultMap>
+
+  <!--selectScheduleList 전용 nested resultMap — 실제로 SELECT되는 컬럼(ENGINEER_NAME, PRODUCT_TYPE, SYMPTOM)만 매핑합니다.
+      engineer/request resultMap을 그대로 재사용하면 두 resultMap 모두 컬럼명 "STATUS"를 매핑하고 있어서,
+      쿼리에 있는 단 하나의 STATUS 컬럼(스케줄 상태)이 engineerDTO.status / requestDTO.status에도 잘못 들어가는
+      문제가 있었습니다(둘 다 스케줄의 status로 덮어써짐). 아래처럼 전용 resultMap을 쓰면 그 문제가 사라집니다.-->
+  <resultMap id="scheduleEngineer" type="com.green.Schedule.engineer.DTO.EngineerDTO">
+    <id column="ENGINEER_NO"       property="engineerNo"/>
+    <result column="ENGINEER_NAME" property="engineerName"/>
+  </resultMap>
+
+  <resultMap id="scheduleRequest" type="com.green.Schedule.request.dto.RequestDTO">
+    <id column="REQUEST_NO"     property="requestNo"/>
+    <result column="PRODUCT_TYPE" property="productType"/>
+    <result column="SYMPTOM"      property="symptom"/>
   </resultMap>
 
   <!--AS 기사 테이블-->
@@ -89,9 +104,9 @@
       , SYMPTOM
       , S.STATUS AS STATUS
     FROM AS_SCHEDULE S
-    INNER JOIN ENGINEER E
+    LEFT JOIN ENGINEER E
     ON S.ENGINEER_NO = E.ENGINEER_NO
-    INNER JOIN REQUEST R
+    LEFT JOIN REQUEST R
     ON S.REQUEST_NO = R.REQUEST_NO
   </select>
 
@@ -110,12 +125,14 @@
     INSERT INTO AS_SCHEDULE (
        REQUEST_NO
       , ENGINEER_NO
+      , FIX_DATE
       , START_TIME
       , END_TIME
     )
     VALUES (
       #{requestNo}
       , #{engineerNo}
+      , #{fixDate}
       , #{startTime}
       , #{endTime}
     )
