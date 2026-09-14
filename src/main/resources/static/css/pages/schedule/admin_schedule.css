@@ -127,7 +127,7 @@
   display: flex;
   flex-direction: column;
   gap: 1px;
-  padding: 2px 5px;
+  padding: 3px;
   overflow: hidden;
 }
 .fc-event-line {
@@ -223,7 +223,7 @@
   margin-top: 10px;
   display: flex;
   gap: 15px;
-  align-self: center;
+  align-items: center;
 }
 
 .schedule-footer > p:first-child{
@@ -231,18 +231,22 @@
   
 }
 
-.receive-icon{
-  color: #345b81;
+/* common/layout.css에 .app-shell .receive-icon 등으로 더 높은 우선순위(클래스 2개)의 규칙이
+   있어서, 모든 페이지의 <body class="app-shell">에 걸려 이 페이지 값을 덮어쓰고 있었습니다.
+   layout.css는 다른 화면도 같이 쓰는 공용 파일이라 그대로 두고, 이 페이지 전용 래퍼인
+   .schedule-container까지 셀렉터에 포함해서(클래스 3개) 확실히 이 값이 이기도록 했습니다. */
+.schedule-container .schedule-footer .receive-icon{
+  color: #E98B50;
 }
 
-.assign-icon{
+.schedule-container .assign-icon{
   color: #2563eb;
 }
 
-.progress-icon{
+.schedule-container .progress-icon{
   color: #9a4c13;
 }
 
-.complete-icon{
+.schedule-container .complete-icon{
   color: #25624e;
 }
