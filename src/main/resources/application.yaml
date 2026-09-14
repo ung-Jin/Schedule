@@ -22,9 +22,6 @@ server:
   servlet:
     session:
       tracking-modes: cookie
-  # ngrok/cloudflared 같은 터널/리버스프록시를 통해 접속했을 때, 실제 접속 주소(https + 터널 도메인)를
-  # X-Forwarded-* 헤더에서 읽어오게 함 (프록시 뒤에서 동작하는 일반적인 스프링부트 설정)
-  forward-headers-strategy: framework
   tomcat:
     # 톰캣 자체의 폼(멀티파트) 요청 본문 크기 제한. 기본 2MB라서 스마트폰 사진 2장이면 바로 초과됨 (HTTP 413)
     max-http-form-post-size: 30MB

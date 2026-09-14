@@ -43,7 +43,17 @@ body {
   display: grid;
   grid-template-columns: 380px minmax(0, 1fr);
   gap: 20px;
-  align-items: start;
+  /* start가 아니라 stretch: 왼쪽(오늘의 일정+만족도)과 오른쪽(달력) 중 더 높은 쪽에 맞춰
+     양쪽 다 같은 높이가 되게 함. 아래 .dash-today-col / .dash-satisfaction-card와 세트로 동작 */
+  align-items: stretch;
+}
+
+/* 왼쪽 칼럼을 세로 flex로 만들어서, 오른쪽 달력 높이에 맞춰 늘어난 만큼을
+   고객만족도 카드가 흡수하도록 함(오늘의 일정 카드 개수가 바뀌어도 마찬가지) */
+.dash-today-col {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 @media (max-width: 900px) {
@@ -152,19 +162,22 @@ body {
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* 왼쪽 : 시간 위에, 고객명, 증상 순으로 세로로 쌓아서 중앙정렬로 표시 */
-.today-left {
+/* 왼쪽 : 시간 (한 줄로, 줄바꿈되지 않게) */
+.today-time {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #2878e8;
+}
+
+/* 가운데 : 고객명 / 증상을 세로로 쌓아서 중앙정렬로 표시 */
+.today-middle {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 4px;
-}
-
-.today-time {
-  font-weight: bold;
-  color: #2878e8;
 }
 
 .today-customer {
@@ -230,9 +243,13 @@ body {
 
 
 /* 고객 만족도 카드 (오늘의 일정 바로 아래) */
-
+/* flex: 1 로 .dash-today-col 안에서 남는 세로 공간을 이 카드가 전부 흡수합니다.
+   (오른쪽 달력이 커지면 왼쪽 전체 높이가 늘어나는데, 그 늘어난 만큼이 여기로 옴) */
 .dash-satisfaction-card {
-  margin-top: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
   border-radius: 10px;
   padding: 20px 25px;

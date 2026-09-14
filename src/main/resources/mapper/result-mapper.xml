@@ -4,16 +4,6 @@
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <!-- namespace에는 xml파일과 연결할 Mapper interface 파일명을 패키지를 포함하여 적어주세요 -->
 <mapper namespace="com.green.Schedule.result.mapper.ResultMapper">
-  <resultMap id="asResult" type="com.green.Schedule.result.dto.ResultDTO">
-    <id     column="RESULT_NO" property="resultNo"/>
-    <result column="SCHEDULE_NO" property="scheduleNo"/>
-    <result column="PROCESS_DATE" property="processDate"/>
-    <result column="PROCESS_CONTENT" property="processContent"/>
-    <result column="IMAGE_PATH" property="imagePath"/>
-    <result column="IMAGE_PATH2" property="imagePath2"/>
-    <result column="CREATED_AT" property="createdAt"/>
-  </resultMap>
-
   <!-- 대시보드 "오늘 일정" 목록용 매핑 (AS_SCHEDULE + REQUEST 조인 결과) -->
   <resultMap id="scheduleTodayMap" type="com.green.Schedule.result.dto.ScheduleTodayDTO">
     <id     column="scheduleNo" property="scheduleNo"/>

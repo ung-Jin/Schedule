@@ -38,13 +38,15 @@
           <div class="today-card"
                th:each="schedule : ${todayList}"
                th:data-report-url="@{/as-result-report(scheduleNo=${schedule.scheduleNo})}">
-            <!-- 왼쪽 : 시간 / 고객명 / 증상을 한 칸에 세로로 쌓아서 표시 -->
-            <div class="today-left">
-              <div class="today-time">
-                <span th:text="${#temporals.format(schedule.startTime, 'HH:mm')}">09:00</span>
-                <span> ~ </span>
-                <span th:text="${#temporals.format(schedule.endTime, 'HH:mm')}">12:00</span>
-              </div>
+            <!-- 왼쪽 : 시간 -->
+            <div class="today-time">
+              <span th:text="${#temporals.format(schedule.startTime, 'HH:mm')}">09:00</span>
+              <span> ~ </span>
+              <span th:text="${#temporals.format(schedule.endTime, 'HH:mm')}">12:00</span>
+            </div>
+
+            <!-- 가운데 : 고객명 / 증상 -->
+            <div class="today-middle">
               <div class="today-customer" th:text="${schedule.customerName}">고객명</div>
               <div class="today-symptom" th:text="${schedule.symptom}">증상</div>
             </div>
