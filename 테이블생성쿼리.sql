@@ -31,7 +31,7 @@ CREATE TABLE REQUEST (
                             SYMPTOM VARCHAR(200),                           -- 증상/요청 내용
                             REQUEST_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,-- 접수일시
                             WISH_DATE DATETIME,                             -- 희망 방문일
-                            STATUS VARCHAR(20) DEFAULT 'RECEIVED'           -- 상태 (RECEIVED/ASSIGNED/IN_PROGRESS/COMPLETED/CANCELED)
+                            STATUS VARCHAR(20) DEFAULT 'RECEIVED'           -- 상태 (RECEIVED/ASSIGNED/IN_PROGRESS/COMPLETED)
                             CONSTRAINT FK_REQUEST_MEMBER (MEM_NO) REFERENCES member (MEM_NO)
 );
 
@@ -63,7 +63,7 @@ INSERT INTO AS_REQUEST (CUSTOMER_NAME, CUSTOMER_TEL, CUSTOMER_ADDR, PRODUCT_TYPE
                                                                                                                   ('박수현', '010-3333-3333', '인천 남동구',              '에어컨', '실외기 소음',        '2026-09-11 09:00:00', 'ASSIGNED'),
                                                                                                                   ('정하나', '010-4444-4444', '서울 마포구',              '냉난방', '전원이 안 켜짐',     '2026-09-11 15:00:00', 'RECEIVED'),
                                                                                                                   ('최영호', '010-5555-5555', '경기 수원시',              '보일러', '온수가 약함',        '2026-09-09 11:00:00', 'COMPLETED'),
-                                                                                                                  ('한지원', '010-6666-6666', '서울 서초구',              '에어컨', '냄새 발생',          '2026-09-08 16:00:00', 'CANCELED');
+                                                                                                                  ('한지원', '010-6666-6666', '서울 서초구',              '에어컨', '냄새 발생',          '2026-09-08 16:00:00', 'COMPLETED');
 
 
 #AS 기사 스케줄 (ENGINEER, AS_REQUEST 참조)

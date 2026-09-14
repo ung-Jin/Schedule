@@ -130,20 +130,17 @@ function statusBadge(status) {
   let cls = "";
 
   if(status === "RECEIVED") {
-    label = "접수중";
+    label = "접수완료";
     cls = "receipt";
   } else if(status === "ASSIGNED") {
-    label = "배정완료";
+    label = "기사배정";
     cls = "assigned";
   } else if(status === "IN_PROGRESS") {
-    label = "진행중";
+    label = "작업진행";
     cls = "progress";
   } else if(status === "COMPLETED") {
-    label = "완료";
+    label = "작업완료";
     cls = "complete";
-  } else if(status === "CANCELED") {
-    label = "취소";
-    cls = "canceled";
   }
 
   return '<span class="badge ' + cls + '">' + label + '</span>';
