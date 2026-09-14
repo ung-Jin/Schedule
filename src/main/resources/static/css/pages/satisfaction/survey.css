@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #eef2fb;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  color: #1f2937;
+}
+
+.survey-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.survey-box {
+  width: 100%;
+  max-width: 380px;
+  background-color: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(23, 59, 108, 0.15);
+  overflow: hidden;
+}
+
+/* 위쪽 브랜드 배너 */
+.survey-header {
+  background: linear-gradient(135deg, #2878e8, #1a4faa);
+  padding: 28px 20px 24px;
+  text-align: center;
+}
+
+.survey-header-icon {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.logo {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.survey-body {
+  padding: 28px 24px 30px;
+  text-align: center;
+}
+
+.survey-title {
+  margin: 0 0 6px 0;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.survey-subtitle {
+  margin: 0 0 26px 0;
+  font-size: 13.5px;
+  color: #7b8797;
+}
+
+/* 항목 3개(방문/시간준수, 친절도/응대, A/S 처리결과)를 각각 이모지 5단계로 받습니다 */
+.rating-group {
+  margin: 0 0 26px 0;
+  text-align: left;
+}
+
+.rating-question {
+  margin: 0 0 12px 0;
+  font-size: 13.5px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.emoji-scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.emoji-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 2px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.emoji-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.emoji-option .emoji {
+  font-size: 26px;
+  line-height: 1;
+  filter: grayscale(100%);
+  opacity: 0.45;
+  transition: filter 0.15s, opacity 0.15s, transform 0.15s;
+}
+
+.emoji-option .emoji-label {
+  font-size: 9.5px;
+  line-height: 1.15;
+  color: #9aa5b1;
+  text-align: center;
+  transition: color 0.15s, font-weight 0.15s;
+}
+
+.emoji-option:hover .emoji {
+  opacity: 0.75;
+}
+
+.emoji-option:has(input:checked) {
+  background-color: #eaf2ff;
+  transform: translateY(-1px);
+}
+
+.emoji-option:has(input:checked) .emoji {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.emoji-option:has(input:checked) .emoji-label {
+  color: #2878e8;
+  font-weight: bold;
+}
+
+.survey-comment {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13.5px;
+  resize: vertical;
+}
+
+.survey-comment:focus {
+  outline: none;
+  border-color: #2878e8;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2878e8, #1a4faa);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(40, 120, 232, 0.35);
+}
+
+.btn-submit:hover {
+  filter: brightness(1.05);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+.survey-state {
+  padding: 20px 0 4px;
+}
+
+.state-icon {
+  font-size: 44px;
+  margin: 0 0 12px 0;
+}
+
+.state-title {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+}
+
+.state-desc {
+  font-size: 13.5px;
+  color: #7b8797;
+  margin: 0;
+}

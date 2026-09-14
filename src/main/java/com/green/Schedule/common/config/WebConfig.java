@@ -18,6 +18,9 @@ public class WebConfig implements WebMvcConfigurer {
                         "/service-intro",
                         "/features",
                         "/member/**",
+                        // 만족도 조사 페이지: 로그인한 직원이 아니라 문자를 받은 고객이 들어오는 화면이라 제외
+                        "/survey",
+                        "/survey/**",
                         "/*.css",
                         "/*.js",
                         "/*.ico",
