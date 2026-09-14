@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/reset.css">
-  <link rel="stylesheet" href="/common/layout.css">
+  <title>냉·난방 AS | 스케줄 관제</title>
   <link rel="stylesheet" href="/common/main.css">
   <link rel="stylesheet" href="/common/side.css">
   <link rel="stylesheet" href="/common/header.css">
 
   <th:block layout:fragment="content_css"></th:block>
+  <link rel="stylesheet" th:href="@{/common/layout.css}">
 
 </head>
 
-<body>
+<body class="app-shell">
 
   <div class="container">
 
@@ -29,14 +28,27 @@
         <th:block th:replace="~{common/header::headerFragment}"></th:block>
       </div>
 
-      <div class="content">
+      <main class="content" id="main-content">
         <th:block layout:fragment="content"></th:block>
-      </div>
+      </main>
     </div>
 
   </div>
 
 
+  <script>
+    // Highlight the current section, including detail pages and engineer redirects.
+    const path = window.location.pathname;
+    document.querySelectorAll('.side li a').forEach(function (link) {
+      const href = new URL(link.href).pathname;
+      const selected = path === href
+        || (href === '/pages/admin/calendar' && path === '/as-schedule')
+        || (href === '/pages/admin/management' && path === '/admin/engineer')
+        || (href === '/request/list' && path.startsWith('/request/detail/'))
+        || (href === '/pages/engineer/main' && path.startsWith('/as-result'));
+      if (selected) link.setAttribute('aria-current', 'page');
+    });
+  </script>
   <th:block layout:fragment="content_js"></th:block>
 </body>
 

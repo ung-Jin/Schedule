@@ -3,7 +3,7 @@
   layout:decorate="~{layouts/layout}">
 
 <th:block layout:fragment="content_css">
-  <link rel="stylesheet" th:href="@{/main-home.css}">
+  <!-- Home styles are supplied by common/main.css. -->
 </th:block>
 
 <th:block layout:fragment="content">
@@ -11,12 +11,15 @@
   <div class="welcome-card">
     <div class="welcome-icon">❄️</div>
     <div class="welcome-text">
+      <span class="eyebrow">SERVICE DESK</span>
       <h2 th:text="${session.loginMember.memName} + '님, 안녕하세요'">회원님, 안녕하세요</h2>
       <p>냉·난방 AS기사 스케줄 관리 시스템입니다. 제품에 문제가 생기면 바로 A/S를 신청해보세요.</p>
-      <a th:href="@{/request/write}" class="btn btn-primary">A/S 요청하기</a>
+      <a th:href="@{/request/write}" class="btn btn-primary">A/S 요청하기 →</a>
+      <a th:href="@{/request/list}" class="btn btn-outline">신청 내역 확인</a>
     </div>
   </div>
 
+  <h3 class="section-heading">서비스 진행 안내</h3>
   <div class="guide-cards">
     <div class="guide-card accent-blue">
       <div class="guide-icon">📝</div>

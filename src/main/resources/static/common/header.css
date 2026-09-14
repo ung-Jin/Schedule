@@ -1,4 +1,8 @@
-.header{
-  border: 1px solid blue;
-  width: 100%;
-}
+.header { width: 100%; background: var(--chrome); border-bottom: 1px solid var(--line); }
+.header-inner { min-height: 82px; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.header-title { font-size: 15px; font-weight: 600; letter-spacing: -.3px; }
+.header-title small { display: block; color: var(--muted); font-size: 10px; letter-spacing: 1.5px; margin-bottom: 5px; }
+.header-user { display: flex; align-items: center; gap: 18px; font-size: 14px; white-space: nowrap; }
+.logout-btn { border: 1px solid var(--line); border-radius: 7px; padding: 8px 12px; color: var(--muted); text-decoration: none; }
+.logout-btn:hover { color: var(--text); background: var(--panel); }
+@media (max-width: 700px) { .header-inner { min-height: 70px; padding: 16px; flex-wrap: wrap; gap: 12px; } .header-title { font-size: 12px; } .header-user { gap: 10px; } }

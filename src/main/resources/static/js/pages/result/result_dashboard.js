@@ -5,7 +5,7 @@
 // 그때그때 새로 받아옵니다. (admin_schedule.js의 eventContent/eventClick 패턴을 그대로 따릅니다)
 // 일정 날짜가 오늘 기준으로 지난 일정 / 오늘 일정 / 예정된 일정인지에 따라 다른 색을 씁니다.
 // (오늘 일정 색은 왼쪽 "오늘의 일정" 목록의 시간 표시 색(#2878e8)과 맞춰서 서로 같은 의미임을 알 수 있게 했습니다)
-var DASH_EVENT_COLORS = { past: '#9aa5ab', today: '#2878e8', future: '#0ea5a4' };
+var DASH_EVENT_COLORS = { past: '#475569', today: '#2563eb', future: '#25624e' };
 
 function dashEventColor(startTimeStr) {
   const start = new Date(startTimeStr);
