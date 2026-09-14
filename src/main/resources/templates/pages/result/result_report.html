@@ -74,67 +74,70 @@
         </div>
 
 
-        <!-- 처리 사진 1 -->
+        <!-- 처리 사진 1, 2 (같은 줄에 나란히 배치) -->
         <div class="form-row">
-          <label for="resultImage">
-            처리사진 1
+          <label>
+            처리사진
           </label>
 
-          <div class="image-upload-box">
-            <label for="resultImage" class="image-upload-label">
-              <div class="upload-icon">
-                ↑
+          <div class="photo-group-wrap">
+
+            <div class="photo-group">
+              <span class="photo-group-label">사진 1</span>
+              <div class="image-upload-box">
+                <label for="resultImage" class="image-upload-label">
+                  <div class="upload-icon">
+                    ↑
+                  </div>
+                  <p>클릭하여 첨부</p>
+                  <span>
+                    JPG, PNG
+                  </span>
+                </label>
+                <input
+                    type="file"
+                    id="resultImage"
+                    name="resultImage"
+                    accept="image/jpeg, image/png"
+                    hidden>
+
+                <!-- 사진 미리보기 -->
+                <div class="image-preview-box">
+                  <img
+                      id="imagePreview"
+                      alt="처리사진1 미리보기">
+                </div>
               </div>
-              <p>사진을 클릭하여 첨부해주세요.</p>
-              <span>
-                JPG, PNG 파일
-              </span>
-            </label>
-            <input
-                type="file"
-                id="resultImage"
-                name="resultImage"
-                accept="image/jpeg, image/png"
-                hidden>
-
-            <!-- 사진 미리보기 -->
-            <div class="image-preview-box">
-              <img
-                  id="imagePreview"
-                  alt="처리사진1 미리보기">
             </div>
-          </div>
-        </div>
 
-        <!-- 처리 사진 2 (최대 2장까지 첨부) -->
-        <div class="form-row">
-          <label for="resultImage2">
-            처리사진 2
-          </label>
+            <div class="photo-group">
+              <span class="photo-group-label">사진 2</span>
+              <div class="image-upload-box">
+                <label for="resultImage2" class="image-upload-label">
+                  <div class="upload-icon">
+                    ↑
+                  </div>
+                  <p>클릭하여 첨부</p>
+                  <span>
+                    JPG, PNG
+                  </span>
+                </label>
+                <input
+                    type="file"
+                    id="resultImage2"
+                    name="resultImage2"
+                    accept="image/jpeg, image/png"
+                    hidden>
 
-          <div class="image-upload-box">
-            <label for="resultImage2" class="image-upload-label">
-              <div class="upload-icon">
-                ↑
+                <!-- 사진 미리보기 -->
+                <div class="image-preview-box">
+                  <img
+                      id="imagePreview2"
+                      alt="처리사진2 미리보기">
+                </div>
               </div>
-              <p>사진을 클릭하여 첨부해주세요.</p>
-              <span>
-                JPG, PNG 파일
-              </span>
-            </label>
-            <input
-                type="file"
-                id="resultImage2"
-                name="resultImage2"
-                accept="image/jpeg, image/png"
-                hidden>
-
-            <!-- 사진 미리보기 -->
-            <div class="image-preview-box">
-              <img
-                  id="imagePreview2"
-                  alt="처리사진2 미리보기">
             </div>
+
           </div>
         </div>
 
@@ -232,6 +235,19 @@
                         ? #temporals.format(scheduleInfo.requestDate, 'yyyy.MM.dd HH:mm')
                         : '-'}">
             2026.09.09
+          </span>
+        </div>
+
+        <!-- 접수일(REQUEST_DATE, 시스템에 접수된 시각)과 별개로, 실제 이 기사에게 배정된 방문 시간(AS_SCHEDULE) -->
+        <div class="info-row">
+          <span class="info-title">AS 요청 일시</span>
+          <span
+              class="info-value"
+              th:text="${scheduleInfo != null && scheduleInfo.visitStart != null
+                        ? #temporals.format(scheduleInfo.visitStart, 'yyyy.MM.dd HH:mm')
+                          + (scheduleInfo.visitEnd != null ? ' ~ ' + #temporals.format(scheduleInfo.visitEnd, 'HH:mm') : '')
+                        : '-'}">
+            2026.09.14 09:00 ~ 11:00
           </span>
         </div>
       </div>

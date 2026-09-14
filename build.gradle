@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'com.solapi:sdk:1.0.3' //폰 메세지 발송을 위한 추가
 	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16'
 	implementation("org.mybatis:mybatis-typehandlers-jsr310:1.0.2")
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'

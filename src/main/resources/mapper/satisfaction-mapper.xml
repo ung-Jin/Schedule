@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.Schedule.satisfaction.mapper.SatisfactionMapper">
+
+  <resultMap id="monthlyScoreMap" type="com.green.Schedule.satisfaction.dto.MonthlyScoreDTO">
+    <result column="month" property="month"/>
+    <result column="avgScore" property="avgScore"/>
+    <result column="count" property="count"/>
+  </resultMap>
+
+  <!-- 만족도 조사 제출 저장 (/survey POST). 항목 3개(방문/시간준수, 친절도/응대, A/S 처리결과) 각각 저장 -->
+  <insert id="insertSatisfaction">
+    INSERT INTO SATISFACTION (
+      SCHEDULE_NO
+      , ENGINEER_NO
+      , SCORE_VISIT
+      , SCORE_KINDNESS
+      , SCORE_RESULT
+      , COMMENT_TEXT
+    )
+    VALUES (
+      #{scheduleNo}
+      , #{engineerNo}
+      , #{scoreVisit}
+      , #{scoreKindness}
+      , #{scoreResult}
+      , #{commentText}
+    );
+  </insert>
+
+  <!-- 특정 연/월의 평균 점수 (설문 한 건당 3개 항목 평균을 낸 뒤, 그 달 전체를 다시 평균냄. 설문이 없으면 NULL) -->
+  <select id="selectMonthlyAvg" resultType="java.lang.Double">
+    SELECT ROUND(AVG((SCORE_VISIT + SCORE_KINDNESS + SCORE_RESULT) / 3.0), 1)
+    FROM SATISFACTION
+    WHERE ENGINEER_NO = #{engineerNo}
+    AND YEAR(CREATED_AT) = #{year}
+    AND MONTH(CREATED_AT) = #{month};
+  </select>
+
+  <!-- 해당 연도의 월별 평균 점수/건수 (설문 한 건당 3개 항목 평균 -> 달 단위로 다시 평균. 없는 달은 서비스단에서 채웁니다) -->
+  <select id="selectYearlyTrend" resultMap="monthlyScoreMap">
+    SELECT MONTH(CREATED_AT) AS month
+    , ROUND(AVG((SCORE_VISIT + SCORE_KINDNESS + SCORE_RESULT) / 3.0), 1) AS avgScore
+    , COUNT(*) AS count
+    FROM SATISFACTION
+    WHERE ENGINEER_NO = #{engineerNo}
+    AND YEAR(CREATED_AT) = #{year}
+    GROUP BY MONTH(CREATED_AT)
+    ORDER BY month;
+  </select>
+
+</mapper>

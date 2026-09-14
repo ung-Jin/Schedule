@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 해당 파일에 모든 쿼리문을 작성 -->
-<!-- namespace에는 xml파일과 연결할 Mapper interface 파일명을 패키지를 포함하여 적어주세요 -->
 <mapper namespace="com.green.Schedule.schedule.mapper.ScheduleMapper">
-  <!--AS 기사 스케줄 테이블-->
   <resultMap id="schedule" type="com.green.Schedule.schedule.dto.ScheduleDTO">
     <id column="SCHEDULE_NO"       property="scheduleNo"/>
     <result column="REQUEST_NO"    property="requestNo"/>
@@ -13,9 +10,22 @@
     <result column="START_TIME"    property="startTime"/>
     <result column="END_TIME"      property="endTime"/>
     <result column="STATUS"        property="status"/>
+    <association property="engineerDTO" resultMap="scheduleEngineer"/>
+    <association property="requestDTO" resultMap="scheduleRequest"/>
   </resultMap>
 
-  <!--AS 기사 테이블-->
+  <resultMap id="scheduleEngineer" type="com.green.Schedule.engineer.DTO.EngineerDTO">
+    <id column="ENGINEER_NO"       property="engineerNo"/>
+    <result column="ENGINEER_NAME" property="engineerName"/>
+  </resultMap>
+
+  <resultMap id="scheduleRequest" type="com.green.Schedule.request.dto.RequestDTO">
+    <id column="REQUEST_NO"     property="requestNo"/>
+    <result column="CUSTOMER_NAME" property="customerName"/>
+    <result column="PRODUCT_TYPE" property="productType"/>
+    <result column="SYMPTOM"      property="symptom"/>
+  </resultMap>
+
   <resultMap id="engineer" type="com.green.Schedule.engineer.DTO.EngineerDTO">
     <id column="ENGINEER_NO"              property="engineerNo"/>
     <result column="MEM_NO"               property="memNo"/>
@@ -28,7 +38,6 @@
     <result column="MEM_ID"               property="memId"/>
   </resultMap>
 
-  <!--요청 테이블-->
   <resultMap id="request" type="com.green.Schedule.request.dto.RequestDTO">
     <id column="REQUEST_NO"       property="requestNo"/>
     <result column="CUSTOMER_NAME"   property="customerName"/>
@@ -41,40 +50,81 @@
     <result column="STATUS"   property="status"/>
   </resultMap>
 
-  <!--AS 기사 일정 조회-->
-  <!--스케줄, 기사, 요청 테이블 데이터 필요-->
+  <select id="selectRequestList" resultMap="request">
+    SELECT REQUEST_NO
+    , CUSTOMER_NAME
+    , CUSTOMER_TEL
+    , CUSTOMER_ADDR
+    , PRODUCT_TYPE
+    , SYMPTOM
+    , REQUEST_DATE
+    , WISH_DATE
+    , STATUS
+    FROM REQUEST
+  </select>
 
-  <!--AS 기사 일정 배정-->
+  <select id="selectReceiveRequestList" resultMap="request">
+    SELECT REQUEST_NO
+    , CUSTOMER_NAME
+    , CUSTOMER_TEL
+    , CUSTOMER_ADDR
+    , PRODUCT_TYPE
+    , SYMPTOM
+    , REQUEST_DATE
+    , WISH_DATE
+    , STATUS
+    FROM REQUEST
+    WHERE STATUS = 'RECEIVED'
+  </select>
+
+  <select id="selectScheduleList" resultMap="schedule">
+    SELECT SCHEDULE_NO
+    , R.REQUEST_NO
+    , E.ENGINEER_NO
+    , FIX_DATE
+    , START_TIME
+    , END_TIME
+    , ENGINEER_NAME
+    , R.CUSTOMER_NAME
+    , PRODUCT_TYPE
+    , SYMPTOM
+    , S.STATUS AS STATUS
+    FROM AS_SCHEDULE S
+    LEFT JOIN ENGINEER E
+    ON S.ENGINEER_NO = E.ENGINEER_NO
+    LEFT JOIN REQUEST R
+    ON S.REQUEST_NO = R.REQUEST_NO
+  </select>
+
+  <select id="selectEngineerList" resultMap="engineer">
+    SELECT ENGINEER_NO
+    , ENGINEER_NAME
+    FROM ENGINEER
+    WHERE STATUS = 'WORK'
+  </select>
+
+  <insert id="insertSchedule">
+    INSERT INTO AS_SCHEDULE (
+    REQUEST_NO
+    , ENGINEER_NO
+    , FIX_DATE
+    , START_TIME
+    , END_TIME
+    )
+    VALUES (
+    #{requestNo}
+    , #{engineerNo}
+    , #{fixDate}
+    , #{startTime}
+    , #{endTime}
+    )
+  </insert>
+
+  <update id="updateReceiveRequest">
+    UPDATE REQUEST
+    SET
+    STATUS = 'ASSIGNED'
+    WHERE REQUEST_NO = #{requestNo}
+  </update>
 
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

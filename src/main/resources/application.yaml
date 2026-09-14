@@ -7,6 +7,11 @@ spring:
     url: jdbc:log4jdbc:mariadb://localhost:3306/project-1
     username: user
     password: mariadb
+  servlet:
+    multipart:
+      # 기본값(파일당 1MB, 전체 10MB)이 너무 작아서 결과보고 처리사진 2장 업로드 시 HTTP 413이 났던 것을 늘림
+      max-file-size: 15MB
+      max-request-size: 30MB
 
 #쿼리문이 있는 mapper 파일 위치 지정, classpath는 resources 폴더를 의미함
 mybatis:
@@ -17,3 +22,18 @@ server:
   servlet:
     session:
       tracking-modes: cookie
+  tomcat:
+    # 톰캣 자체의 폼(멀티파트) 요청 본문 크기 제한. 기본 2MB라서 스마트폰 사진 2장이면 바로 초과됨 (HTTP 413)
+    max-http-form-post-size: 30MB
+
+#결과보고 처리사진 업로드 폴더 (UploadUtil이 이 경로로 파일을 저장함)
+file:
+  upload:
+    dir: uploads/result/
+
+# 만족도 조사 문자 링크에 쓸 "고객이 실제로 열 수 있는" 공개 주소 (ResultController.sendMsg 참고).
+# 기사님이 어떤 주소로 접속해서 결과 등록을 누르든 상관없이, 고객한테 나가는 링크는 항상 이 값 하나로 고정됩니다.
+# - 평소 로컬 개발 중엔 굳이 안 건드려도 됨 (기본값 http://localhost:8080, 어차피 폰으로는 안 열리는 걸 알고 씀)
+# - 문자 발송을 실제로 폰에서 열어보고 싶을 때만, 지금 띄워둔 터널 주소로 아래 값을 바꿔주면 됩니다
+app:
+  public-base-url: https://feedback-accessible-born-block.trycloudflare.com

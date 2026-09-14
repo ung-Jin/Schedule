@@ -1,6 +1,7 @@
 package com.green.Schedule.result.service;
 
 import com.green.Schedule.result.dto.ResultDTO;
+import com.green.Schedule.result.dto.ScheduleCalendarDTO;
 import com.green.Schedule.result.dto.ScheduleDetailDTO;
 import com.green.Schedule.result.dto.ScheduleTodayDTO;
 import com.green.Schedule.result.mapper.ResultMapper;
@@ -24,6 +25,18 @@ public class ResultService {
     return resultMapper.selectScheduleDetail(scheduleNo);
   }
 
+  // 대시보드 "달력" - 이 기사(memNo)가 해당 연/월에 방문하는 일정 목록 (고객명/시간/주소/연락처 포함)
+  // (프론트에서 달력 칸에 짧게 뿌려줄 일정 상세 -> as-result-calendar 컨트롤러에서 JSON으로 응답)
+  public List<ScheduleCalendarDTO> selectCalender(int memNo, int year, int month){
+    return resultMapper.selectCalender(memNo, year, month);
+  }
+
+  // 이 일정이 로그인한 기사 본인 것이 맞는지 확인
+  // (다른 기사가 남의 scheduleNo를 주소에 직접 넣어서 접근하는 것을 막기 위함)
+  public boolean isMySchedule(long scheduleNo, int memNo){
+    return resultMapper.countMySchedule(scheduleNo, memNo) > 0;
+  }
+
   // AS결과보고 등록
   public void insertResult(ResultDTO resultDTO){
     resultMapper.insertResult(resultDTO);
@@ -37,6 +50,16 @@ public class ResultService {
   // 결과보고 등록 완료 -> AS_REQUEST 상태를 COMPLETED로 변경
   public void completeRequest(int requestNo){
     resultMapper.completeRequest(requestNo);
+  }
+
+  // 결과 등록 후 만족도 문자 발송 - 고객 연락처 조회
+  public String selectCustomerTel(int requestNo){
+    return resultMapper.selectCustomerTel(requestNo);
+  }
+
+  // 결과 등록 후 만족도 문자 발송 - 로그인한 기사의 기사번호 조회
+  public int selectEngineerNo(int memNo){
+    return resultMapper.selectEngineerNo(memNo);
   }
 
 }

@@ -13,7 +13,7 @@ body {
 /* 전체 영역 */
 
 .dash-container {
-  width: 1100px;
+  width: 1240px;
   margin: 50px auto;
 }
 
@@ -37,6 +37,107 @@ body {
 }
 
 
+/* 왼쪽(오늘의 일정) / 오른쪽(달력) 2단 배치. 화면이 좁아지면 세로로 쌓임 */
+
+.dash-main {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 20px;
+  /* start가 아니라 stretch: 왼쪽(오늘의 일정+만족도)과 오른쪽(달력) 중 더 높은 쪽에 맞춰
+     양쪽 다 같은 높이가 되게 함. 아래 .dash-today-col / .dash-satisfaction-card와 세트로 동작 */
+  align-items: stretch;
+}
+
+/* 왼쪽 칼럼을 세로 flex로 만들어서, 오른쪽 달력 높이에 맞춰 늘어난 만큼을
+   고객만족도 카드가 흡수하도록 함(오늘의 일정 카드 개수가 바뀌어도 마찬가지) */
+.dash-today-col {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media (max-width: 900px) {
+  .dash-main { grid-template-columns: 1fr; }
+}
+
+
+/* 이번 달 일정 달력 */
+
+.dash-calendar-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.dash-calendar-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  color: #173b6c;
+}
+
+/* FullCalendar 기본 스타일을 카드 톤 + 좁은 폭에 맞춤 (admin_schedule.css와 같은 방식이되, 더 작게) */
+.dash-calendar-card .fc { --fc-border-color: #edf0f4; font-size: 12px; }
+.dash-calendar-card .fc .fc-col-header-cell-cushion {
+  color: #7b8797; font-weight: 600; font-size: 10.5px; padding: 4px 2px; text-decoration: none;
+}
+.dash-calendar-card .fc .fc-daygrid-day-number {
+  color: #1f2937; font-size: 11px; padding: 3px 4px; text-decoration: none;
+}
+.dash-calendar-card .fc .fc-day-today { background: #eaf2ff !important; }
+/* 칸 높이는 최소값만 정해두고, dayMaxEvents(2)로 한 칸에 쌓이는 일정 수를 제한해서
+   특정 주만 유난히 늘어지지 않게 합니다. 2개 넘게 배정된 날은 "+N개" 링크로 접어서 보여줍니다. */
+.dash-calendar-card .fc .fc-daygrid-day-frame { min-height: 74px; }
+.dash-calendar-card .fc-toolbar-title { font-size: 14px; color: #173b6c; }
+.dash-calendar-card .fc-button {
+  background-color: #2878e8 !important;
+  border-color: #2878e8 !important;
+  padding: 2px 8px !important;
+  font-size: 12px !important;
+}
+.dash-calendar-card .fc-event { border: none; border-radius: 5px; padding: 0; cursor: pointer; margin-bottom: 2px; }
+.dash-calendar-card .fc-theme-standard td, .dash-calendar-card .fc-theme-standard th { border-color: #edf0f4; }
+.dash-calendar-card .fc-daygrid-more-link { font-size: 10.5px; color: #2878e8; font-weight: 600; }
+.dash-calendar-card .fc-popover { font-size: 12px; }
+.dash-calendar-card .fc-popover-header { background: #f5f7fb; }
+
+/* 일정 블록 안에 고객명/시간/주소/연락처를 네 줄로 짧게 표시 (admin_schedule.js의 eventContent와 같은 방식) */
+.dash-event-lines {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 5px;
+  overflow: hidden;
+}
+.dash-event-line {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dash-event-line.name { font-weight: 700; font-size: 11px; }
+
+/* 색상 범례 (지난 일정 / 오늘 일정 / 예정된 일정 - result_dashboard.js의 DASH_EVENT_COLORS와 맞춤) */
+.dash-calendar-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #7b8797;
+}
+.dash-legend-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.dash-legend-past { background-color: #9aa5ab; }
+.dash-legend-today { background-color: #2878e8; }
+.dash-legend-future { background-color: #0ea5a4; }
+
+
 /* 오늘 일정 목록 */
 
 .today-list {
@@ -45,69 +146,74 @@ body {
   gap: 15px;
 }
 
+/* 카드 전체를 누르면 그 일정의 결과보고 화면으로 이동함 */
 .today-card {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
   background-color: white;
   border-radius: 10px;
-  padding: 20px 25px;
+  padding: 20px 22px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
+.today-card:hover {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* 왼쪽 : 시간 (한 줄로, 줄바꿈되지 않게) */
 .today-time {
-  width: 130px;
+  flex-shrink: 0;
+  white-space: nowrap;
   font-weight: bold;
   color: #2878e8;
 }
 
-.today-body {
+/* 가운데 : 고객명 / 증상을 세로로 쌓아서 중앙정렬로 표시 */
+/* min-width:0이 없으면 flex 자식은 내용 길이만큼 안 줄어들어서 today-customer의
+   white-space:nowrap + text-overflow:ellipsis가 안 먹힘 */
+.today-middle {
   flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
 }
 
+/* 고객명은 절대 줄바꿈되면 안 됨 - 넘칠 땐 버튼 쪽을 줄여서 공간을 확보함(아래 .status-btn/.status-badge) */
 .today-customer {
+  width: 100%;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .today-symptom {
+  width: 100%;
   font-size: 13px;
   color: #7b8797;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.today-btn {
-  width: 120px;
-  height: 42px;
-  border: none;
-  border-radius: 5px;
-  background-color: #2878e8;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.today-btn:hover {
-  background-color: #1767d3;
-}
-
-
-/* 진행상태 버튼/뱃지 */
+/* 진행상태 버튼/뱃지 - 고객명이 줄바꿈되지 않도록 가운데 칸에 폭을 더 내주기 위해 폭을 줄임 */
 
 .status-btn {
-  width: 100px;
+  flex-shrink: 0;
+  width: 76px;
   height: 42px;
   border: 1px solid #2878e8;
   border-radius: 5px;
   background-color: white;
   color: #2878e8;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -116,14 +222,15 @@ body {
 }
 
 .status-badge {
-  width: 100px;
+  flex-shrink: 0;
+  width: 76px;
   height: 42px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .status-progress {
@@ -146,4 +253,127 @@ body {
   text-align: center;
   color: #7b8797;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 고객 만족도 카드 (오늘의 일정 바로 아래) */
+/* flex: 1로 .dash-today-col 안에서 남는 세로 공간을 흡수하되, max-height로 상한을 둬서
+   달력이 5주까지 길어져도 카드 자체(박스)는 대략 달력 4번째 주 정도까지만 내려오게 함.
+   (달력이 더 늘어나도 이 카드 아래로는 그냥 빈 여백이지, 박스가 계속 따라 늘어나진 않음) */
+.dash-satisfaction-card {
+  flex: 1;
+  max-height: 380px;
+  display: flex;
+  flex-direction: column;
+  /* 그래프(.satisfaction-trend)가 max-height에 걸려서 다 못 채운 나머지 공간은
+     내용 전체를 위아래로 가운데 정렬해서 채우는 여백으로 씀 (그래프만 계속 길어지지 않게) */
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.dash-satisfaction-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #173b6c;
+  text-align: center;
+}
+
+/* 이번 달 vs 작년 동월 비교 (그래프처럼 늘어나지 않고 항상 자기 크기만큼만 차지) */
+.satisfaction-compare {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.satisfaction-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.satisfaction-stat-label {
+  font-size: 12.5px;
+  color: #7b8797;
+}
+
+.satisfaction-stat-value {
+  font-size: 26px;
+  font-weight: bold;
+  color: #173b6c;
+}
+
+.satisfaction-diff {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.diff-up {
+  color: #2e9e4e;
+  background-color: #eaf7ee;
+}
+
+.diff-down {
+  color: #d6483e;
+  background-color: #fdeceb;
+}
+
+/* 올해 월별 추이 막대그래프. 카드(.dash-satisfaction-card)가 늘어난 만큼 같이 커지긴 하되,
+   너무 길쭉해 보이지 않게 max-height로 상한을 둠. 그 상한을 넘는 남는 공간은
+   .dash-satisfaction-card의 justify-content:center가 카드 전체 내용 위아래 여백으로 나눠 가집니다.
+   (막대 높이는 이 영역의 실제 높이 기준 %로 계산 - 아래 .trend-bar) */
+.satisfaction-trend {
+  flex: 1;
+  min-height: 90px;
+  max-height: 170px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.trend-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  height: 100%;
+}
+
+.trend-bar-score {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  color: #7b8797;
+  min-height: 12px;
+}
+
+/* 높이는 Thymeleaf에서 calc((100% - 34px) * avgScore/5)로 계산해서 넣습니다.
+   34px는 위아래 점수/월 라벨 + gap이 차지하는 고정 공간이라, 그래프 영역이 커지거나
+   작아져도(.satisfaction-trend가 flex로 늘고 주는 만큼) 막대가 항상 그 비율만큼 꽉 차게 늘어납니다. */
+.trend-bar {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 22px;
+  min-height: 2px;
+  background-color: #2878e8;
+  border-radius: 4px 4px 0 0;
+}
+
+.trend-bar-label {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  color: #7b8797;
 }

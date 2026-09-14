@@ -13,6 +13,11 @@ public class AdminController {
     return "pages/admin2/dashboard";
   }
 
+  @GetMapping("/calendar")
+  public String calendar(){
+    return "redirect:/as-schedule";
+  }
+
   @GetMapping("/management")
   public String management(){
     return "redirect:/admin/engineer";

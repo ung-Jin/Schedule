@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>만족도 조사</title>
+  <link rel="stylesheet" href="/css/pages/satisfaction/survey.css">
+</head>
+<body>
+
+  <div class="survey-container">
+    <div class="survey-box">
+
+      <div class="survey-header">
+        <div class="survey-header-icon">🛠️</div>
+        <h1 class="logo">냉·난방 AS</h1>
+      </div>
+
+      <div class="survey-body">
+
+        <!-- 링크에 engineerNo가 없거나 점수 범위를 벗어난 값으로 제출된 경우 -->
+        <div th:if="${invalidLink}" class="survey-state">
+          <p class="state-icon">⚠️</p>
+          <p class="state-title">유효하지 않은 링크입니다</p>
+          <p class="state-desc">문자로 받으신 링크를 다시 확인해주세요.</p>
+        </div>
+
+        <!-- 제출 완료 -->
+        <div th:if="${submitted}" class="survey-state">
+          <p class="state-icon">✅</p>
+          <p class="state-title">소중한 의견 감사합니다!</p>
+          <p class="state-desc">더 나은 서비스로 보답하겠습니다.</p>
+        </div>
+
+        <!-- 설문 폼 (링크가 정상이고 아직 제출 전일 때만) -->
+        <div th:if="${invalidLink == null and submitted == null}">
+          <p class="survey-title">AS 서비스는 어떠셨나요?</p>
+          <p class="survey-subtitle">
+            <span th:text="${engineerName}">기사님</span>의 서비스에 대해 평가해주세요
+          </p>
+
+          <form th:action="@{/survey}" method="post">
+            <input type="hidden" name="scheduleNo" th:value="${scheduleNo}">
+            <input type="hidden" name="engineerNo" th:value="${engineerNo}">
+
+            <!--
+              항목 3개(방문/시간준수, 친절도/응대, A/S 처리결과)를 각각 이모지 5단계로 받습니다.
+              대시보드의 "만족도 점수"는 이 세 값의 평균입니다 (SatisfactionMapper의 AVG 쿼리 참고).
+            -->
+            <div class="rating-group">
+              <p class="rating-question">기사 방문 및 시간 준수 만족도</p>
+              <div class="emoji-scale">
+                <label class="emoji-option">
+                  <input type="radio" name="scoreVisit" value="1" required>
+                  <span class="emoji">😡</span><span class="emoji-label">매우<br>불만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreVisit" value="2">
+                  <span class="emoji">🙁</span><span class="emoji-label">불만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreVisit" value="3">
+                  <span class="emoji">😐</span><span class="emoji-label">보통</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreVisit" value="4">
+                  <span class="emoji">🙂</span><span class="emoji-label">만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreVisit" value="5">
+                  <span class="emoji">😍</span><span class="emoji-label">매우<br>만족</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <p class="rating-question">기사의 친절도 및 응대 만족도</p>
+              <div class="emoji-scale">
+                <label class="emoji-option">
+                  <input type="radio" name="scoreKindness" value="1" required>
+                  <span class="emoji">😡</span><span class="emoji-label">매우<br>불만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreKindness" value="2">
+                  <span class="emoji">🙁</span><span class="emoji-label">불만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreKindness" value="3">
+                  <span class="emoji">😐</span><span class="emoji-label">보통</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreKindness" value="4">
+                  <span class="emoji">🙂</span><span class="emoji-label">만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreKindness" value="5">
+                  <span class="emoji">😍</span><span class="emoji-label">매우<br>만족</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <p class="rating-question">A/S 처리 결과에 대한 전반적인 만족도</p>
+              <div class="emoji-scale">
+                <label class="emoji-option">
+                  <input type="radio" name="scoreResult" value="1" required>
+                  <span class="emoji">😡</span><span class="emoji-label">매우<br>불만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreResult" value="2">
+                  <span class="emoji">🙁</span><span class="emoji-label">불만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreResult" value="3">
+                  <span class="emoji">😐</span><span class="emoji-label">보통</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreResult" value="4">
+                  <span class="emoji">🙂</span><span class="emoji-label">만족</span>
+                </label>
+                <label class="emoji-option">
+                  <input type="radio" name="scoreResult" value="5">
+                  <span class="emoji">😍</span><span class="emoji-label">매우<br>만족</span>
+                </label>
+              </div>
+            </div>
+
+            <textarea name="commentText" class="survey-comment"
+                      placeholder="더 남기고 싶은 말씀이 있다면 적어주세요 (선택)" maxlength="300"></textarea>
+
+            <button type="submit" class="btn-submit">제출하기</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
