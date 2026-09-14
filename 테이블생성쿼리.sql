@@ -21,22 +21,6 @@ CREATE TABLE ENGINEER (
 );
 
 -- 3. REQUEST (독립)
-CREATE TABLE REQUEST(
-                        REQUEST_NO INT AUTO_INCREMENT PRIMARY KEY,      -- AS 요청 고유번호 (PK)
-                        CUSTOMER_NAME VARCHAR(30) NOT NULL,             -- 고객명
-                        CUSTOMER_TEL VARCHAR(20) NOT NULL,              -- 고객 연락처
-                        CUSTOMER_ADDR VARCHAR(100) NOT NULL,            -- 고객 주소
-                        PRODUCT_TYPE VARCHAR(30),                       -- 제품 종류
-                        SYMPTOM VARCHAR(200),                           -- 증상/요청 내용
-                        REQUEST_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,-- 접수일시
-                        WISH_DATE DATETIME,                             -- 희망 방문일
-                        STATUS VARCHAR(20) DEFAULT 'RECEIVED',           -- 상태 (RECEIVED/ASSIGNED/IN_PROGRESS/COMPLETED/CANCELED)
-                        MEM_NO INT NOT null,
-                        CONSTRAINT FK_REQUEST_MEMBER FOREIGN KEY (MEM_NO) REFERENCES member (MEM_NO)
-);
-
-
--- 4. 스케쥴
 CREATE TABLE AS_SCHEDULE (
                              SCHEDULE_NO INT AUTO_INCREMENT
     , REQUEST_NO INT NOT NULL
