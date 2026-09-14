@@ -18,7 +18,7 @@
       <!-- 로그인 실패 시에만 보이는 에러 메시지 -->
       <p class="error-msg" th:if="${loginError}" th:text="${loginError}"></p>
 
-      <!-- 관리자/기사 구분 없이 하나의 로그인 폼으로 처리 -->
+      <!-- 구분 없이 하나의 로그인 폼으로 처리 -->
       <!-- 서버(MemberController)가 조회한 회원의 role 값을 보고 알아서 이동시켜줌 -->
       <form th:action="@{/member/login}" method="post" id="loginForm">
 
