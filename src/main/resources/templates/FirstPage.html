@@ -15,7 +15,7 @@
 
     <!-- 상단 메뉴 -->
     <header class="first-top">
-      <h1><img th:src="@{/common/airlink-horizontal.png}" alt="AIR LINK · 냉·난방 AS 스케줄 관리 시스템" class="brand-logo"></h1>
+      <h1><img th:src="@{/common/airlink-horizontal-light.png}" alt="AIR LINK · 냉·난방 AS 스케줄 관리 시스템" class="brand-logo"></h1>
 
       <nav>
         <ul>
@@ -54,26 +54,26 @@
 
       <!-- 비로그인: 모든 서비스 소개 카드는 로그인으로 연결합니다. -->
       <div class="menu-grid" th:if="${session.loginMember == null}" data-menu-role="guest">
-        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon" aria-hidden="true">▦</span><h3>일정 관리</h3><p>방문 일정과 작업 현황을<br>한눈에 확인하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon warm" aria-hidden="true">⇄</span><h3>배정 관리</h3><p>접수된 요청에 맞춰<br>담당 기사와 시간을 배정하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon" aria-hidden="true">♙</span><h3>기사 관리</h3><p>기사 정보와 근무 현황을<br>체계적으로 관리하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon" aria-hidden="true">▤</span><h3>기사 대시보드</h3><p>나의 방문 일정을 확인하고<br>작업 결과를 등록하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon warm" aria-hidden="true">＋</span><h3>A/S 신청·조회</h3><p>불편한 증상을 접수하고<br>서비스 진행 내역을 확인하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">↗</span></span></a>
+        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#calendar"/></svg></span><h3>일정 관리</h3><p>방문 일정과 작업 현황을<br>한눈에 확인하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon warm" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#assign"/></svg></span><h3>배정 관리</h3><p>접수된 요청에 맞춰<br>담당 기사와 시간을 배정하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#users"/></svg></span><h3>기사 관리</h3><p>기사 정보와 근무 현황을<br>체계적으로 관리하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#dashboard"/></svg></span><h3>기사 대시보드</h3><p>나의 방문 일정을 확인하고<br>작업 결과를 등록하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/member/login}"><span class="menu-icon warm" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#plus"/></svg></span><h3>A/S 신청·조회</h3><p>불편한 증상을 접수하고<br>서비스 진행 내역을 확인하세요.</p><span class="menu-link">로그인하고 시작하기 <span aria-hidden="true">→</span></span></a>
       </div>
 
       <div class="menu-grid" th:if="${session.loginMember?.role == 'admin'}" data-menu-role="admin">
-        <a class="menu-card" th:href="@{/pages/admin/main}"><span class="menu-icon" aria-hidden="true">▤</span><h3>운영 대시보드</h3><p>접수와 처리 현황을 확인하고<br>전체 서비스 흐름을 관리하세요.</p><span class="menu-link">대시보드 열기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/pages/admin/calendar}"><span class="menu-icon warm" aria-hidden="true">▦</span><h3>일정·배정 관리</h3><p>방문 일정을 확인하고<br>담당 기사와 시간을 배정하세요.</p><span class="menu-link">일정 관리 열기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/pages/admin/management}"><span class="menu-icon" aria-hidden="true">♙</span><h3>기사 관리</h3><p>기사 정보와 근무 현황을<br>등록하고 수정하세요.</p><span class="menu-link">기사 관리 열기 <span aria-hidden="true">↗</span></span></a>
+        <a class="menu-card" th:href="@{/pages/admin/main}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#dashboard"/></svg></span><h3>운영 대시보드</h3><p>접수와 처리 현황을 확인하고<br>전체 서비스 흐름을 관리하세요.</p><span class="menu-link">대시보드 열기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/pages/admin/calendar}"><span class="menu-icon warm" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#calendar"/></svg></span><h3>일정·배정 관리</h3><p>방문 일정을 확인하고<br>담당 기사와 시간을 배정하세요.</p><span class="menu-link">일정 관리 열기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/pages/admin/management}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#users"/></svg></span><h3>기사 관리</h3><p>기사 정보와 근무 현황을<br>등록하고 수정하세요.</p><span class="menu-link">기사 관리 열기 <span aria-hidden="true">→</span></span></a>
       </div>
 
       <div class="menu-grid" th:if="${session.loginMember?.role == 'repairman'}" data-menu-role="repairman">
-        <a class="menu-card" th:href="@{/pages/engineer/main}"><span class="menu-icon" aria-hidden="true">▤</span><h3>기사 대시보드</h3><p>오늘 배정된 일정을 확인하고<br>방문 결과를 등록하세요.</p><span class="menu-link">나의 대시보드 열기 <span aria-hidden="true">↗</span></span></a>
+        <a class="menu-card" th:href="@{/pages/engineer/main}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#dashboard"/></svg></span><h3>기사 대시보드</h3><p>오늘 배정된 일정을 확인하고<br>방문 결과를 등록하세요.</p><span class="menu-link">나의 대시보드 열기 <span aria-hidden="true">→</span></span></a>
       </div>
 
       <div class="menu-grid" th:if="${session.loginMember?.role == 'user'}" data-menu-role="user">
-        <a class="menu-card" th:href="@{/request/list}"><span class="menu-icon" aria-hidden="true">▤</span><h3>상세 내역 보기</h3><p>신청한 서비스의 진행 상태와<br>상세 내역을 확인하세요.</p><span class="menu-link">신청 내역 열기 <span aria-hidden="true">↗</span></span></a>
-        <a class="menu-card" th:href="@{/request/write}"><span class="menu-icon warm" aria-hidden="true">＋</span><h3>A/S 신청하기</h3><p>제품의 불편한 증상을 남겨주시면<br>방문 일정을 안내해 드립니다.</p><span class="menu-link">새로운 신청 작성 <span aria-hidden="true">↗</span></span></a>
+        <a class="menu-card" th:href="@{/request/list}"><span class="menu-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#clipboard"/></svg></span><h3>상세 내역 보기</h3><p>신청한 서비스의 진행 상태와<br>상세 내역을 확인하세요.</p><span class="menu-link">신청 내역 열기 <span aria-hidden="true">→</span></span></a>
+        <a class="menu-card" th:href="@{/request/write}"><span class="menu-icon warm" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#plus"/></svg></span><h3>A/S 신청하기</h3><p>제품의 불편한 증상을 남겨주시면<br>방문 일정을 안내해 드립니다.</p><span class="menu-link">새로운 신청 작성 <span aria-hidden="true">→</span></span></a>
       </div>
     </section>
   </div>

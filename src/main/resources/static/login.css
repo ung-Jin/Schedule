@@ -101,7 +101,7 @@ body { background: var(--canvas); padding: 32px; }
 .login-intro h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.4; letter-spacing: -1px; margin: 24px 0; }
 .login-intro em { font-style: normal; color: var(--blue-light); }
 .login-intro p { color: var(--muted); line-height: 1.9; font-size: 14px; }
-.login-flow { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--orange); font-size: 14px; }
+.login-flow { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--orange-ink); font-size: 14px; }
 .login-box { width: 100%; padding: 40px; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 12px 32px #172a3e20; }
 .logo { font-size: 26px; text-align: left; }
 .logo a { color: var(--text); }
@@ -109,7 +109,7 @@ body { background: var(--canvas); padding: 32px; }
 .pw-wrap input { padding-right: 48px; }
 .pw-toggle { color: var(--muted); min-width: 32px; min-height: 32px; }
 .btn-login { border-radius: 8px; padding: 14px; font-weight: 700; }
-.btn-login:hover { background: #1d4ed8; }
+.btn-login:hover { background: #7acbf6; }
 .login-options { margin: 24px 0; }
 .error-msg { color: var(--danger); }
 @media (max-width: 800px) { body { padding: 24px 16px; } .login-container { grid-template-columns: 1fr; max-width: 440px; gap: 32px; } .login-intro h2 { font-size: 30px; } .login-flow { display: none; } .login-box { padding: 28px; } }

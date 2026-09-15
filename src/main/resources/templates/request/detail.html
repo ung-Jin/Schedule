@@ -24,7 +24,7 @@
 
     <!-- 기사 배정이 완료된 건이면(engineerName이 있으면) 담당 기사 이름을 보여줍니다. -->
     <div class="engineer-box" th:if="${requestDetail.engineerName != null}">
-      <span class="engineer-icon">🛠️</span>
+      <span class="engineer-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#wrench"/></svg></span>
       <span>담당 기사 <strong class="engineer-name" th:text="${requestDetail.engineerName}">-</strong>님이 배정되었습니다.</span>
     </div>
 

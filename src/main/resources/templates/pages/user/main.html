@@ -9,7 +9,7 @@
 <th:block layout:fragment="content">
 
   <div class="welcome-card">
-    <div class="welcome-icon">❄️</div>
+    <div class="welcome-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#snow"/></svg></div>
     <div class="welcome-text">
       <span class="eyebrow">SERVICE DESK</span>
       <h2 th:text="${session.loginMember.memName} + '님, 안녕하세요'">회원님, 안녕하세요</h2>
@@ -22,22 +22,22 @@
   <h3 class="section-heading">서비스 진행 안내</h3>
   <div class="guide-cards">
     <div class="guide-card accent-blue">
-      <div class="guide-icon">📝</div>
+      <div class="guide-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#clipboard"/></svg></div>
       <span class="step-num">1</span>
       <p>A/S 요청 정보를 입력해주세요.</p>
     </div>
     <div class="guide-card accent-green">
-      <div class="guide-icon">🗂️</div>
+      <div class="guide-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#assign"/></svg></div>
       <span class="step-num">2</span>
       <p>접수 후 관리자 확인이 진행됩니다.</p>
     </div>
     <div class="guide-card accent-orange">
-      <div class="guide-icon">👷</div>
+      <div class="guide-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#users"/></svg></div>
       <span class="step-num">3</span>
       <p>담당 기사 배정이 완료되면 연락을 드립니다.</p>
     </div>
     <div class="guide-card accent-purple">
-      <div class="guide-icon">🔧</div>
+      <div class="guide-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#wrench"/></svg></div>
       <span class="step-num">4</span>
       <p>배정된 기사님이 방문하여 점검 및 수리를 진행합니다.</p>
     </div>
