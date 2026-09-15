@@ -50,4 +50,7 @@ public interface ResultMapper {
 
   // 결과 등록 후 만족도 문자 발송 - 로그인한 기사의 기사번호 조회
   int selectEngineerNo(int memNo);
+
+  //사이드 결과보고
+  public List<ResultDTO> selectResults();
 }
