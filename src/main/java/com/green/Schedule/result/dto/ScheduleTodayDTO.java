@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
  * startTime     -> AS_SCHEDULE.START_TIME  (방문 시작 시각)
  * endTime       -> AS_SCHEDULE.END_TIME    (방문 종료 시각)
  * customerName  -> AS_REQUEST.CUSTOMER_NAME (고객명)
+ * customerTel   -> AS_REQUEST.CUSTOMER_TEL  (고객 연락처, "진행예정" 카드 클릭 시 뜨는 고객 기본정보 모달에서 씀)
+ * customerAddr  -> AS_REQUEST.CUSTOMER_ADDR (고객 주소, 위와 동일한 용도)
  * symptom       -> AS_REQUEST.SYMPTOM       (고장 증상)
  */
 @Data
@@ -25,5 +27,7 @@ public class ScheduleTodayDTO {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String customerName;
+    private String customerTel;
+    private String customerAddr;
     private String symptom;
 }

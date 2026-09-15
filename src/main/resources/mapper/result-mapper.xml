@@ -12,6 +12,8 @@
     <result column="startTime" property="startTime"/>
     <result column="endTime" property="endTime"/>
     <result column="customerName" property="customerName"/>
+    <result column="customerTel" property="customerTel"/>
+    <result column="customerAddr" property="customerAddr"/>
     <result column="symptom" property="symptom"/>
   </resultMap>
 
@@ -37,6 +39,8 @@
     , s.START_TIME AS startTime
     , s.END_TIME AS endTime
     , r.CUSTOMER_NAME AS customerName
+    , r.CUSTOMER_TEL AS customerTel
+    , r.CUSTOMER_ADDR AS customerAddr
     , r.SYMPTOM AS symptom
     FROM AS_SCHEDULE s
 <!--    고객정보 가져오기-->

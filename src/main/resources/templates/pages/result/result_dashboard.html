@@ -25,27 +25,37 @@
         List<ScheduleTodayDTO> 입니다. th:each로 한 건씩 돌면서 카드 하나씩 그려줍니다.
         비어있으면 아래 today-empty 안내문구가 대신 보입니다.
 
-        카드 상태는 버튼을 눌러서 바꾸는 대신, "배정된 방문 종료 시각(schedule.endTime)"이
+        카드 상태는 버튼을 눌러서 바꾸는 대신, "배정된 방문 시작 시각(schedule.startTime)"이
         지금(now, 컨트롤러가 넘겨준 서버 기준 현재 시각)보다 지났는지로 자동 계산합니다.
-        (시작 시각이 아니라 종료 시각 기준입니다 - 방문이 끝나야 결과보고를 쓸 수 있는 상태가 되는 게 맞음)
-        - 완료(COMPLETED)                       : "완료" - 카드 클릭 시 결과보고 "조회" 화면(읽기전용)으로 이동
-        - 완료 아님 + 아직 방문 종료 전(now < endTime) : "진행예정" - 그냥 표시만, 카드 클릭해도 이동 안 함
-        - 완료 아님 + 방문 종료 시각 지남(now >= endTime) : "결과보고" - 카드 클릭 시 결과보고 "작성" 화면으로 이동
+        (종료 시각이 아니라 시작 시각 기준입니다 - 방문을 시작했으면 결과보고를 쓸 수 있는 상태로 봅니다)
+        - 완료(COMPLETED)                         : "완료" - 카드 클릭 시 결과보고 "조회" 화면(읽기전용)으로 이동
+        - 완료 아님 + 아직 방문 시작 전(now < startTime) : "진행예정" - 카드 클릭 시 달력에서 일정을 클릭한 것과
+          똑같이 "고객 기본정보" 모달을 띄웁니다 (결과보고 화면으로는 이동하지 않음)
+        - 완료 아님 + 방문 시작 시각 지남(now >= startTime) : "결과보고" - 카드 클릭 시 결과보고 "작성" 화면으로 이동
 
         이동할 주소는 data-report-url 속성에 담아두고(진행예정 카드는 비워둠), 아래 content_js의 스크립트에서
-        클릭 이벤트로 읽어서 이동시킵니다. (Thymeleaf는 onclick 같은 이벤트 속성 안에 문자열을 직접 넣는 걸
-        막아둬서, data-* 속성 + JS 조합으로 처리합니다)
+        클릭 이벤트로 읽어서 이동시킵니다. data-report-url이 비어있는(=진행예정) 카드는 대신
+        data-customer-*/data-time-range/data-start-time 등을 읽어서 result_dashboard.js의
+        openCustomerModal()을 그대로 재사용해 모달을 띄웁니다. (Thymeleaf는 onclick 같은 이벤트 속성 안에
+        문자열을 직접 넣는 걸 막아둬서, data-* 속성 + JS 조합으로 처리합니다)
       -->
       <div class="dash-today-col">
         <div class="today-list" th:if="${not #lists.isEmpty(todayList)}">
           <div class="today-card"
                th:each="schedule : ${todayList}"
-               th:classappend="${schedule.requestStatus != 'COMPLETED' and schedule.endTime.isAfter(now)} ? ' today-card-pending' : ''"
+               th:classappend="${schedule.requestStatus != 'COMPLETED' and schedule.startTime.isAfter(now)} ? ' today-card-pending' : ''"
                th:data-report-url="${schedule.requestStatus == 'COMPLETED'}
                                     ? @{/as-result-view(scheduleNo=${schedule.scheduleNo})}
-                                    : (${schedule.endTime.isAfter(now)}
+                                    : (${schedule.startTime.isAfter(now)}
                                        ? ''
-                                       : @{/as-result-report(scheduleNo=${schedule.scheduleNo})})">
+                                       : @{/as-result-report(scheduleNo=${schedule.scheduleNo})})"
+               th:data-schedule-no="${schedule.scheduleNo}"
+               th:data-customer-name="${schedule.customerName}"
+               th:data-customer-tel="${schedule.customerTel}"
+               th:data-customer-addr="${schedule.customerAddr}"
+               th:data-time-range="${#temporals.format(schedule.startTime, 'HH:mm')} + '~' + ${#temporals.format(schedule.endTime, 'HH:mm')}"
+               th:data-start-time="${schedule.startTime}"
+               th:data-status="${schedule.requestStatus}">
             <!-- 왼쪽 : 시간 -->
             <div class="today-time">
               <span th:text="${#temporals.format(schedule.startTime, 'HH:mm')}">09:00</span>
@@ -65,11 +75,11 @@
               완료
             </span>
 
-            <span th:if="${schedule.requestStatus != 'COMPLETED' and schedule.endTime.isAfter(now)}" class="status-badge status-pending">
+            <span th:if="${schedule.requestStatus != 'COMPLETED' and schedule.startTime.isAfter(now)}" class="status-badge status-pending">
               진행예정
             </span>
 
-            <span th:if="${schedule.requestStatus != 'COMPLETED' and !schedule.endTime.isAfter(now)}" class="status-badge status-report">
+            <span th:if="${schedule.requestStatus != 'COMPLETED' and !schedule.startTime.isAfter(now)}" class="status-badge status-report">
               결과보고
             </span>
           </div>
@@ -179,8 +189,8 @@
 
         <!-- 아래 두 버튼은 동시에 보이지 않고 상태에 따라 하나만(또는 둘 다 안) 나타납니다 (result_dashboard.js의 openCustomerModal 참고).
              - 완료(COMPLETED)                                   : "결과보고 보러가기" -> 조회(읽기전용) 화면
-             - 완료 아님 + 방문 종료 시각(endTime) 지남(=결과보고 상태) : "결과보고 작성하기" -> 작성 화면
-             - 완료 아님 + 아직 방문 종료 전(=진행예정)                : 둘 다 숨김, 기존처럼 정보 확인 + 전화연결만 -->
+             - 완료 아님 + 방문 시작 시각(startTime) 지남(=결과보고 상태) : "결과보고 작성하기" -> 작성 화면
+             - 완료 아님 + 아직 방문 시작 전(=진행예정)                : 둘 다 숨김, 기존처럼 정보 확인 + 전화연결만 -->
         <div class="modal-actions">
           <a id="modalWriteResultBtn" class="modal-view-btn" href="#" hidden>결과보고 작성하기</a>
           <a id="modalViewResultBtn" class="modal-view-btn" href="#" hidden>결과보고 보러가기</a>
@@ -195,11 +205,25 @@
 <th:block layout:fragment="content_js">
   <script th:inline="none">
     // 카드(.today-card)를 클릭하면 data-report-url에 적어둔 주소로 이동합니다.
-    // "진행예정" 상태 카드는 data-report-url이 비어있게 서버에서 내려주므로, 그 경우엔 클릭해도 아무 일도 안 합니다.
+    // "진행예정" 상태 카드는 data-report-url이 비어있게 서버에서 내려주는데, 이 경우엔 이동하는 대신
+    // 달력에서 일정을 클릭했을 때와 동일한 "고객 기본정보" 모달을 띄웁니다 (openCustomerModal은
+    // result_dashboard.js에서 정의되고, 이 스크립트보다 나중에 로드되지만 실제 호출은 클릭 시점이라 문제없음).
     document.querySelectorAll('.today-card').forEach(function (card) {
-      if (!card.dataset.reportUrl) return;
       card.addEventListener('click', function () {
-        location.href = card.dataset.reportUrl;
+        if (card.dataset.reportUrl) {
+          location.href = card.dataset.reportUrl;
+          return;
+        }
+        if (typeof openCustomerModal !== 'function') return;
+        var startTime = card.dataset.startTime ? new Date(card.dataset.startTime) : null;
+        openCustomerModal({
+          scheduleNo: card.dataset.scheduleNo,
+          customerName: card.dataset.customerName,
+          customerTel: card.dataset.customerTel,
+          customerAddr: card.dataset.customerAddr,
+          timeRange: card.dataset.timeRange,
+          status: card.dataset.status
+        }, startTime);
       });
     });
   </script>
