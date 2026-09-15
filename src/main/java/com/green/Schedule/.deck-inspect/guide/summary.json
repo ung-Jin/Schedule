@@ -1,0 +1,405 @@
+{
+  "sourcePath": "reference_guide.pptx",
+  "slideCount": 14,
+  "masterCount": 1,
+  "layoutCount": 14,
+  "masters": [
+    {
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": ""
+    }
+  ],
+  "layouts": [
+    {
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "제목 슬라이드",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": "클릭하여 마스터 부제목 스타일 편집"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout2.xml",
+      "name": "제목 및 내용",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "2",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout3.xml",
+      "name": "구역 머리글",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout4.xml",
+      "name": "콘텐츠 2개",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "2",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "3",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout5.xml",
+      "name": "비교",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+        },
+        {
+          "name": "3",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+        },
+        {
+          "name": "5",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout6.xml",
+      "name": "제목만",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout7.xml",
+      "name": "빈 화면",
+      "placeholders": [
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout8.xml",
+      "name": "캡션 있는 콘텐츠",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "2",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout9.xml",
+      "name": "캡션 있는 그림",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "picture",
+          "type": "picture",
+          "text": ""
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout10.xml",
+      "name": "제목 및 세로 텍스트",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout11.xml",
+      "name": "세로 제목 및 텍스트",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": "마스터 제목 스타일 편집"
+        },
+        {
+          "name": "body",
+          "type": "body",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준"
+        },
+        {
+          "name": "dateTime",
+          "type": "dateTime",
+          "text": "2025-05-29 (Thu)"
+        },
+        {
+          "name": "footer",
+          "type": "footer",
+          "text": ""
+        },
+        {
+          "name": "slideNumber",
+          "type": "slideNumber",
+          "text": "‹#›"
+        }
+      ]
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout12.xml",
+      "name": "1_제목 슬라이드",
+      "placeholders": []
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout13.xml",
+      "name": "1_제목 및 내용",
+      "placeholders": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "sourcePath": "D:\\01-STUDY\\dev-01\\workspace_spring\\Schedule\\Schedule-발표.pptx",
+  "slideCount": 12,
+  "masterCount": 1,
+  "layoutCount": 2,
+  "masters": [
+    {
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": ""
+    }
+  ],
+  "layouts": [
+    {
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "",
+      "placeholders": []
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "placeholders": []
+    }
+  ]
+}

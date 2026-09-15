@@ -218,15 +218,13 @@ body {
   width: 76px;
   height: 42px;
   border: 1px solid var(--blue);
-  border-radius: 12px;
+  border-radius: 5px;
   background-color: var(--panel);
   color: var(--blue-light);
-
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-
+}
 
 /* 진행예정 - 아직 방문 시작 시각 전. 표시만 하고 클릭해도 이동하지 않음 */
 .status-pending {
@@ -301,11 +299,12 @@ body {
 
 .modal-box .info-title {
   flex-shrink: 0;
-
   width: 76px;
-  height: 42px;
-  border-radius: 12px;
+  color: var(--muted);
+}
 
+/* "결과보고 작성하기"/"결과보고 보러가기" 버튼 줄 - 오른쪽 정렬로 나란히 배치 */
+.modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
