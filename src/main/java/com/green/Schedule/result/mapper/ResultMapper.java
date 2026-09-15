@@ -39,8 +39,8 @@ public interface ResultMapper {
   // 기사 결과보고 등록 (AS_RESULT INSERT)
   void insertResult(ResultDTO resultDTO);
 
-  // 대시보드 "진행예정" 버튼 -> AS_REQUEST 상태를 IN_PROGRESS로 변경
-  void startProgress(int requestNo);
+  // 기사 결과보고 수정 (AS_RESULT UPDATE, scheduleNo 기준)
+  void updateResult(ResultDTO resultDTO);
 
   // 결과보고 등록 완료 -> AS_REQUEST 상태를 COMPLETED로 변경
   void completeRequest(int requestNo);
@@ -50,4 +50,8 @@ public interface ResultMapper {
 
   // 결과 등록 후 만족도 문자 발송 - 로그인한 기사의 기사번호 조회
   int selectEngineerNo(int memNo);
+
+  // 결과보고 "조회"(읽기전용) 화면 - 이 일정(scheduleNo)에 등록된 AS_RESULT 조회 (없으면 null)
+  ResultDTO selectResultByScheduleNo(long scheduleNo);
+  // (참고: selectResultByScheduleNo의 SELECT 컬럼에 NO_PHOTO_REASON도 포함되어 있어서 이 메서드로 같이 조회됨)
 }

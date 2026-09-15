@@ -33,6 +33,15 @@ public class ResultController {
   // 처리사진 업로드는 UploadUtil이 전담 (application.yaml의 file.upload.dir 경로 사용)
   private final UploadUtil uploadUtil;
 
+  // 결과보고 화면 "사진 미첨부 사유" 라디오 프리셋. 여기 없는 값이면(=기타를 골라 직접 입력한 경우) 화면에서
+  // "기타" 라디오를 선택하고 그 텍스트를 옆 입력칸에 채워줍니다 (asResultReport 참고).
+  private static final java.util.Set<String> NO_PHOTO_REASON_PRESETS = java.util.Set.of(
+      "단순 설정/원격 조치로 사진이 필요 없음",
+      "고객이 촬영을 원하지 않음",
+      "현장 여건상 촬영이 어려움(조명/장소 등)",
+      "촬영을 깜빡함"
+  );
+
   // 만족도 조사 문자 링크에 쓸 "고객이 실제로 열 수 있는" 공개 주소.
   // 기사님이 localhost로 개발/테스트하시든 무엇으로 접속하시든 상관없이,
   // 고객한테 나가는 링크는 항상 이 설정값 하나로 고정됩니다 (application.yaml의 app.public-base-url).
@@ -57,6 +66,11 @@ public class ResultController {
     int engineerNo = resultService.selectEngineerNo(loginMember.getMemNo());
     model.addAttribute("satisfactionStats", satisfactionService.getStats(engineerNo));
 
+    // 카드 상태(진행예정/결과보고/완료)를 화면(Thymeleaf)에서 "배정된 방문 종료 시각(endTime)이 지났는지"로
+    // 직접 판단하기 위한 기준 시각. (버튼을 눌러야 진행중으로 바뀌던 예전 방식 대신, 방문이 끝날 시각이 지나면
+    // 자동으로 "결과보고" 상태로 바뀌도록 함 - 시작 시각이 아니라 종료 시각 기준)
+    model.addAttribute("now", java.time.LocalDateTime.now());
+
     return "pages/result/result_dashboard";
   }
 
@@ -80,6 +94,10 @@ public class ResultController {
     if (loginMember == null) {
       return "redirect:/member/login";
     }
+    // "사진 미첨부 사유" 라디오 기본값 - scheduleNo가 없거나(= 신규 진입) 등록된 결과가 없으면 그냥 기본값(기타 아님/빈 텍스트) 사용
+    model.addAttribute("noPhotoReasonIsEtc", false);
+    model.addAttribute("noPhotoReasonEtcValue", "");
+
     // scheduleNo가 넘어왔으면, 그게 내(로그인한 기사) 일정이 맞는지 먼저 확인하고
     // 맞을 때만 화면 오른쪽 "AS 기본 정보"에 채울 데이터를 조회
     // (다른 기사의 scheduleNo를 주소에 직접 넣어서 남의 정보를 보는 것을 막기 위함)
@@ -88,27 +106,41 @@ public class ResultController {
         return "redirect:/as-result-dash-board";
       }
       model.addAttribute("scheduleInfo", resultService.selectScheduleDetail(scheduleNo));
+      // 이미 등록된 결과가 있으면(= 결과보고 조회 화면의 "수정" 버튼을 눌러서 들어온 경우) 폼에 기존 값을 채워주기 위해 같이 조회.
+      // 없으면 null이 내려가고, 화면(result_report.html)은 그냥 평소대로 빈 폼(등록 모드)을 보여줍니다.
+      ResultDTO resultInfo = resultService.selectResultByScheduleNo(scheduleNo);
+      model.addAttribute("resultInfo", resultInfo);
+
+      // "사진 미첨부 사유" 라디오 - 기존 값이 프리셋 중 하나가 아니면 "기타"로 간주해서, 그 라디오를 선택
+      // 상태로 + 텍스트를 그대로 옆 입력칸에 채워 보여줍니다.
+      boolean noPhotoReasonIsEtc = resultInfo != null && resultInfo.getNoPhotoReason() != null
+          && !NO_PHOTO_REASON_PRESETS.contains(resultInfo.getNoPhotoReason());
+      model.addAttribute("noPhotoReasonIsEtc", noPhotoReasonIsEtc);
+      model.addAttribute("noPhotoReasonEtcValue", noPhotoReasonIsEtc ? resultInfo.getNoPhotoReason() : "");
     }
+    // 처리날짜는 더 이상 기사가 화면에서 직접 입력/수정하는 값이 아닙니다(resultReg 참고 - 서버가 자동으로 채움).
+    // 그래서 화면에는 "등록 시점" 혹은 기존에 등록됐던 처리날짜를 읽기전용으로 보여주기만 합니다.
     return "pages/result/result_report";
   }
 
-  // 대시보드 "진행예정" 버튼 처리
-  // 버튼을 누르면 AS_REQUEST 상태가 RECEIVED/ASSIGNED -> IN_PROGRESS(진행중)로 바뀝니다.
-  @PostMapping("/as-result/start")
-  public String startProgress(@RequestParam("requestNo") int requestNo,
-                               @RequestParam("scheduleNo") long scheduleNo,
-                               HttpSession session){
+  // a/s기사 결과보고 "조회" 화면 (읽기전용) - 대시보드에서 완료(COMPLETED)된 일정의 카드/달력을 클릭하면 이쪽으로 옴
+  // (결과보고 "작성" 화면(/as-result-report)과 달리, 폼이 아니라 이미 등록된 처리 결과를 그대로 보여만 줌)
+  @GetMapping("/as-result-view")
+  public String asResultView(@RequestParam("scheduleNo") long scheduleNo,
+                              HttpSession session, Model model){
     MemberDTO loginMember = getRepairmanOrNull(session);
     if (loginMember == null) {
       return "redirect:/member/login";
     }
+    // 결과보고 작성 화면과 마찬가지로, 남의 일정을 주소로 직접 조회하는 것을 막기 위해 본인 일정인지 먼저 확인
     if (!resultService.isMySchedule(scheduleNo, loginMember.getMemNo())) {
       return "redirect:/as-result-dash-board";
     }
-
-    resultService.startProgress(requestNo);
-
-    return "redirect:/as-result-dash-board";
+    model.addAttribute("scheduleInfo", resultService.selectScheduleDetail(scheduleNo));
+    // 아직 결과가 등록되지 않은 일정(예: 완료 전 상태에서 주소를 직접 넣어 들어온 경우)이면 null이 내려가고,
+    // 화면(result_view.html)에서 null 여부로 "등록된 결과보고 내용이 없습니다" 안내를 보여줌
+    model.addAttribute("resultInfo", resultService.selectResultByScheduleNo(scheduleNo));
+    return "pages/result/result_view";
   }
 
   // a/s기사 결과보고 등록 처리 (처리사진은 최대 2장까지 첨부 가능)
@@ -117,6 +149,9 @@ public class ResultController {
                            @RequestParam("requestNo") int requestNo,
                            @RequestParam(value = "resultImage", required = false) MultipartFile resultImage,
                            @RequestParam(value = "resultImage2", required = false) MultipartFile resultImage2,
+                           // "기타" 라디오를 골랐을 때 옆 텍스트칸에 직접 입력한 사유. name="noPhotoReasonEtc"라
+                           // ResultDTO 필드가 아니라서 @ModelAttribute로는 안 잡히고 따로 받아야 함
+                           @RequestParam(value = "noPhotoReasonEtc", required = false) String noPhotoReasonEtc,
                            HttpSession session) {
     MemberDTO loginMember = getRepairmanOrNull(session);
     if (loginMember == null) {
@@ -128,19 +163,49 @@ public class ResultController {
       return "redirect:/as-result-dash-board";
     }
 
-    // 사진 1, 사진 2 각각 저장하고 DB에 넣을 경로를 DTO에 담아줌
-    resultDTO.setImagePath(uploadUtil.fileUpload(resultImage));
-    resultDTO.setImagePath2(uploadUtil.fileUpload(resultImage2));
+    // 라디오 name="noPhotoReason"은 ResultDTO.noPhotoReason과 이름이 같아서 @ModelAttribute가 이미 채워줬지만,
+    // "기타"를 골랐으면 그 값이 "ETC"라는 표식 문자열로 들어와 있으므로, 실제로는 옆 텍스트칸 값으로 바꿔치기합니다.
+    if ("ETC".equals(resultDTO.getNoPhotoReason())) {
+      resultDTO.setNoPhotoReason(noPhotoReasonEtc);
+    }
 
-    resultService.insertResult(resultDTO);
+    // 이미 등록된 결과가 있는지 확인 - 있으면 "수정"(UPDATE), 없으면 새로 "등록"(INSERT)
+    ResultDTO existing = resultService.selectResultByScheduleNo(resultDTO.getScheduleNo());
 
-    // 결과 등록까지 끝났으니 AS_REQUEST 상태를 IN_PROGRESS(진행중) -> COMPLETED(완료)로 변경
+    // 처리날짜(processDate)는 이제 화면에서 기사가 직접 입력하는 값이 아니라 서버가 자동으로 채웁니다.
+    // - 신규 등록: 지금 이 순간(등록하는 시점)을 처리날짜로 고정
+    // - 수정: 처리날짜는 최초 등록 시점 값 그대로 유지(안 바뀜)하고, 대신 "수정일시"만 지금 시각으로 새로 기록
+    if (existing != null) {
+      resultDTO.setProcessDate(existing.getProcessDate());
+      resultDTO.setUpdatedAt(java.time.LocalDateTime.now());
+    } else {
+      resultDTO.setProcessDate(java.time.LocalDateTime.now());
+    }
+
+    // 사진은 필수 항목이 아니라서, 새 파일을 고르지 않았으면(fileUpload가 null을 돌려줌)
+    // 수정 화면에 미리 보여줬던 기존 사진 경로를 그대로 유지합니다. (새로 등록하는 경우엔 existing이 없으니 그냥 null)
+    String newImagePath = uploadUtil.fileUpload(resultImage);
+    resultDTO.setImagePath(newImagePath != null ? newImagePath : (existing != null ? existing.getImagePath() : null));
+
+    String newImagePath2 = uploadUtil.fileUpload(resultImage2);
+    resultDTO.setImagePath2(newImagePath2 != null ? newImagePath2 : (existing != null ? existing.getImagePath2() : null));
+
+    if (existing != null) {
+      resultService.updateResult(resultDTO);
+    } else {
+      resultService.insertResult(resultDTO);
+    }
+
+    // AS_REQUEST 상태를 COMPLETED(완료)로 변경 (이미 완료 상태였어도 그대로 유지되는 것뿐이라 수정 때도 그냥 호출)
+    // (대시보드에서는 이제 이 값 하나로 카드가 "완료" 상태로 바뀝니다 - result_dashboard.html 참고)
     resultService.completeRequest(requestNo);
 
-    // 등록 끝나면 다시 대시보드로 이동
-    //return "redirect:/as-result-dash-board";
+    // 수정인 경우엔 만족도 조사 문자를 다시 보낼 필요가 없으니, 바로 조회(읽기전용) 화면으로 이동
+    if (existing != null) {
+      return "redirect:/as-result-view?scheduleNo=" + resultDTO.getScheduleNo();
+    }
 
-    //결과보고를 등록하면 문자 발송하러 이동 (문자 내용 만들 때 필요한 requestNo/scheduleNo를 같이 넘겨줌)
+    //결과보고를 새로 등록한 경우에만 문자 발송하러 이동 (문자 내용 만들 때 필요한 requestNo/scheduleNo를 같이 넘겨줌)
     return "redirect:/to-msg?requestNo=" + requestNo
         + "&scheduleNo=" + resultDTO.getScheduleNo()
         + "&memNo=" + loginMember.getMemNo();

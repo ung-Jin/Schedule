@@ -1,11 +1,70 @@
 // 대시보드 "이번 달 일정" 달력.
 // 날짜 칸을 통째로 색칠하는 대신, 일정 하나하나를 칸 안에 짧은 정보 블록(고객명/시간/주소/연락처)으로
-// 보여주고 클릭하면 바로 그 일정의 결과보고 화면으로 이동시킵니다.
+// 보여주고 클릭하면 고객 기본정보 모달을 띄웁니다. (예전엔 바로 결과보고 화면으로 이동시켰지만,
+// 달력은 빠르게 훑어보는 용도라 여기서는 조회/전화연결만 하고, 실제 결과보고는 "오늘의 일정" 카드에서 하도록 분리함)
 // FullCalendar가 보여주는 달이 바뀔 때마다 events 콜백이 그 달의 연/월로 /as-result-calendar를 호출해서
 // 그때그때 새로 받아옵니다. (admin_schedule.js의 eventContent/eventClick 패턴을 그대로 따릅니다)
 // 일정 날짜가 오늘 기준으로 지난 일정 / 오늘 일정 / 예정된 일정인지에 따라 다른 색을 씁니다.
 // (오늘 일정 색은 왼쪽 "오늘의 일정" 목록의 시간 표시 색(#2878e8)과 맞춰서 서로 같은 의미임을 알 수 있게 했습니다)
 var DASH_EVENT_COLORS = { past: '#475569', today: '#2563eb', future: '#25624e' };
+
+/* ---------------- 고객 기본정보 모달 ---------------- */
+
+// 달력 이벤트(extendedProps)를 받아서 모달에 채워 넣고 엽니다.
+// endTime: 이 일정의 방문 종료 시각(Date). "시간이 지났다"는 시작 시각이 아니라 종료 시각 기준으로 판단합니다
+// (오늘의 일정 카드와 동일한 규칙 - result_dashboard.html의 endTime.isAfter(now) 로직 참고).
+function openCustomerModal(props, endTime) {
+  const modal = document.getElementById('customerInfoModal');
+  if (!modal) return;
+
+  document.getElementById('modalCustomerName').textContent = props.customerName || '-';
+  document.getElementById('modalCustomerTel').textContent = props.customerTel || '-';
+  document.getElementById('modalCustomerAddr').textContent = props.customerAddr || '-';
+  document.getElementById('modalTimeRange').textContent = props.timeRange || '-';
+
+  // 전화연결 버튼 - tel: 링크로 바로 통화 연결 (연락처가 없으면 버튼 자체를 숨김)
+  const callBtn = document.getElementById('modalCallBtn');
+  if (props.customerTel) {
+    // tel: 링크는 숫자/+ 외의 문자(하이픈 등)가 있어도 대부분 동작하지만, 안전하게 숫자/+만 남겨서 연결
+    callBtn.href = 'tel:' + props.customerTel.replace(/[^0-9+]/g, '');
+    callBtn.hidden = false;
+  } else {
+    callBtn.hidden = true;
+  }
+
+  // 방문 종료 시각이 지났는지 (진행예정 여부 판단 기준 - 시작 시각이 아니라 종료 시각!)
+  const timeOver = !!endTime && endTime <= new Date();
+
+  // "결과보고 보러가기" 버튼 - 완료(COMPLETED)된 일정만 결과가 등록되어 있으므로, 그때만 보여줌
+  const viewBtn = document.getElementById('modalViewResultBtn');
+  if (viewBtn) {
+    if (props.status === 'COMPLETED') {
+      viewBtn.href = '/as-result-view?scheduleNo=' + props.scheduleNo;
+      viewBtn.hidden = false;
+    } else {
+      viewBtn.hidden = true;
+    }
+  }
+
+  // "결과보고 작성하기" 버튼 - 완료 전이면서 방문 종료 시각이 지난(=오늘의 일정 카드에서 "결과보고" 상태인) 경우에만 보여줌.
+  // 아직 방문 종료 전(진행예정)이면 이 버튼도 숨기고, 기존처럼 정보 확인 + 전화연결만 하는 모달로 둡니다.
+  const writeBtn = document.getElementById('modalWriteResultBtn');
+  if (writeBtn) {
+    if (props.status !== 'COMPLETED' && timeOver) {
+      writeBtn.href = '/as-result-report?scheduleNo=' + props.scheduleNo;
+      writeBtn.hidden = false;
+    } else {
+      writeBtn.hidden = true;
+    }
+  }
+
+  modal.hidden = false;
+}
+
+function closeCustomerModal() {
+  const modal = document.getElementById('customerInfoModal');
+  if (modal) modal.hidden = true;
+}
 
 function dashEventColor(startTimeStr) {
   const start = new Date(startTimeStr);
@@ -64,7 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 customerName: s.customerName,
                 customerTel: s.customerTel,
                 customerAddr: s.customerAddr,
-                timeRange: startDisplay + '~' + endDisplay
+                timeRange: startDisplay + '~' + endDisplay,
+                status: s.status
               }
             };
           }));
@@ -91,11 +151,30 @@ document.addEventListener('DOMContentLoaded', function () {
       return { domNodes: [wrap] };
     },
 
-    // 일정 블록을 클릭하면 그 일정의 결과보고 화면으로 바로 이동
+    // 일정 블록을 클릭하면 결과보고 화면으로 이동하는 대신, 고객 기본정보 모달을 띄웁니다.
+    // info.event.end(방문 종료 시각)를 같이 넘겨서, 모달 안에서 "작성/보러가기" 버튼 노출 여부를 판단합니다.
     eventClick: function (info) {
-      location.href = '/as-result-report?scheduleNo=' + info.event.extendedProps.scheduleNo;
+      openCustomerModal(info.event.extendedProps, info.event.end);
     }
   });
 
   calendar.render();
+
+  /* ---------------- 고객 기본정보 모달 닫기 ---------------- */
+  const customerModal = document.getElementById('customerInfoModal');
+  const customerModalCloseBtn = document.getElementById('customerModalClose');
+
+  if (customerModalCloseBtn) {
+    customerModalCloseBtn.addEventListener('click', closeCustomerModal);
+  }
+  if (customerModal) {
+    // 모달 바깥(반투명 배경) 클릭 시 닫기 - 실제 내용 박스(.modal-box) 클릭은 무시
+    customerModal.addEventListener('click', function (e) {
+      if (e.target === customerModal) closeCustomerModal();
+    });
+  }
+  // ESC 키로도 닫기
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeCustomerModal();
+  });
 });

@@ -95,6 +95,13 @@ body {
   outline: none;
 }
 
+/* 처리날짜/수정일시 - 이제 input이 아니라 서버가 채워주는 읽기전용 텍스트라 폼 필드처럼 보이게만 스타일링 */
+.readonly-value {
+  padding-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 
 /* textarea */
 
@@ -202,6 +209,58 @@ textarea:focus,
   height: 100%;
   object-fit: cover;
   display: none;
+}
+
+
+/* 사진 미첨부 사유 라디오 - 프리셋 4개는 2개씩 한 줄, 맨 아래 "기타"만 혼자 한 줄 전체 차지 */
+
+.no-photo-reason-box {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+}
+
+.reason-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.reason-option input[type="radio"] {
+  flex-shrink: 0;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.reason-option-etc {
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+}
+
+#noPhotoReasonEtc {
+  flex: 1;
+  min-width: 160px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+#noPhotoReasonEtc:focus {
+  border-color: var(--blue);
+}
+
+#noPhotoReasonEtc:disabled {
+  background-color: var(--panel);
+  color: var(--muted);
+  cursor: not-allowed;
 }
 
 
