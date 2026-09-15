@@ -1,0 +1,141 @@
+/* 관리자 "결과내역" 화면(/pages/admin/sideResult) CSS - engineer_list.css 디자인 톤에 맞춤 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: '맑은 고딕', 'Noto Sans KR', sans-serif;
+  background-color: var(--panel);
+  margin: 0;
+  padding: 24px;
+  color: var(--text);
+}
+
+/* 페이지 컨테이너 */
+.page-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* 카드 */
+.card {
+  background-color: var(--panel);
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(12, 34, 54, .08);
+  padding: 20px 24px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.result-count {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* 목록 테이블 */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.result-table th {
+  background-color: var(--panel);
+  color: var(--muted);
+  font-weight: 600;
+  padding: 10px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.result-table td {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.result-table tr:hover td {
+  background-color: var(--panel);
+}
+
+.empty-row {
+  text-align: center;
+  color: var(--muted);
+  padding: 32px 0 !important;
+}
+
+/* 컬럼 폭 배분 (총합 100%) */
+.result-table col.col-no { width: 7%; }
+.result-table col.col-engineer { width: 9%; }
+.result-table col.col-date { width: 13%; }
+.result-table col.col-content { width: 26%; }
+.result-table col.col-photo { width: 16%; }
+.result-table col.col-reason { width: 16%; }
+
+/* 처리내용 - 길어도 줄바꿈 없이 말줄임, 전체 내용은 title 툴팁으로 */
+.col-content {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0; /* table-layout:fixed 에서 ellipsis가 먹히게 함 */
+}
+
+/* 처리사진 - 썸네일 두 장을 나란히, 없으면 "-" */
+.photo-group {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.result-thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+}
+
+.result-thumb:hover {
+  opacity: 0.85;
+}
+
+.no-value {
+  color: var(--muted);
+}
+
+/* 미첨부 사유 - 은은한 배지 형태로 눈에 띄게 */
+.reason-badge {
+  display: inline-block;
+  max-width: 100%;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: var(--panel-raised, var(--panel));
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

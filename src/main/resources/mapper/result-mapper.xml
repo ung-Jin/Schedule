@@ -207,6 +207,7 @@
     <result column="processContent" property="processContent"/>
     <result column="imagePath"      property="imagePath"/>
     <result column="imagePath2"     property="imagePath2"/>
+    <result column="noPhotoReason"  property="noPhotoReason"/>
     <result column="createdAt"      property="createdAt"/>
     <result column="engineerName"   property="engineerName"/>
   </resultMap>
@@ -219,6 +220,7 @@
     , r.PROCESS_CONTENT AS processContent
     , r.IMAGE_PATH AS imagePath
     , r.IMAGE_PATH2 AS imagePath2
+    , r.NO_PHOTO_REASON AS noPhotoReason
     , r.CREATED_AT AS createdAt
     , e.ENGINEER_NAME AS engineerName
     FROM AS_RESULT r

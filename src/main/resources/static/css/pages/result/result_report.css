@@ -5,7 +5,7 @@
 body {
   margin: 0;
   background-color: var(--panel);
-  font-family: Arial, "Noto Sans KR", sans-serif;
+  font-family: 'Pretendard', "Noto Sans KR", sans-serif;
   color: var(--text);
 }
 

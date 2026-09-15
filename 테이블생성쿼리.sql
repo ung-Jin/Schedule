@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS AS_RESULT (
     RESULT_STATUS VARCHAR(20) NOT NULL DEFAULT '완료',
     IMAGE_PATH VARCHAR(200),
     IMAGE_PATH2 VARCHAR(200),
-    NO_PHOTO_REASON VARCHAR(100),
+    NO_PHOTO_REASON VARCHAR(100) NULL,
     CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP,
     UPDATED_AT DATETIME NULL,
     FOREIGN KEY (SCHEDULE_NO) REFERENCES AS_SCHEDULE(SCHEDULE_NO)
@@ -203,7 +203,6 @@ INSERT INTO AS_RESULT (RESULT_NO, SCHEDULE_NO, PROCESS_DATE, PROCESS_CONTENT, RE
 INSERT INTO SATISFACTION (SCHEDULE_NO, ENGINEER_NO, SCORE_VISIT, SCORE_KINDNESS, SCORE_RESULT, COMMENT_TEXT, CREATED_AT) VALUES
                                                                                                                              (NULL, 1, 4, 4, 4, '작년에 방문해주셨을 때도 꼼꼼하게 봐주셨어요', '2025-09-08 10:00:00'),
                                                                                                                              (NULL, 1, 4, 5, 4, '친절하게 설명해주셔서 좋았습니다',           '2025-09-20 15:00:00'),
-
                                                                                                                              (NULL, 1, 4, 4, 3, '방문은 제때 해주셨어요',                    '2026-01-15 10:00:00'),
                                                                                                                              (NULL, 1, 4, 4, 4, '무난하게 잘 고쳐주셨습니다',                 '2026-02-15 10:00:00'),
                                                                                                                              (NULL, 1, 4, 3, 4, '설명이 조금 더 있었으면 좋았을 것 같아요',    '2026-03-15 10:00:00'),

@@ -1,7 +1,7 @@
 .side {
   width: 248px;
   flex-shrink: 0;
-  background: linear-gradient(180deg, #0c2236 0%, #102a42 100%);
+  background: linear-gradient(180deg, #123b5a 0%, #18506f 100%);
   color: #d7e6f0;
   box-shadow: 8px 0 32px rgba(12, 34, 54, .18);
 }
@@ -22,10 +22,33 @@
 
 .side .airlink-logo {
   height: 52px;
-  filter: brightness(1.08);
-  background: rgba(255,255,255,.92);
-  padding: 6px 10px;
-  border-radius: 12px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  border-radius: 0;
+}
+
+.sidebar-brand {
+  position: relative;
+  display: block;
+  height: 52px;
+  max-width: 210px;
+}
+
+.sidebar-brand .airlink-logo {
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+
+.sidebar-logo-base {
+  filter: brightness(0) invert(1);
+  opacity: .96;
+}
+
+.sidebar-logo-accent {
+  clip-path: inset(0 57% 0 0);
+  filter: saturate(1.06) brightness(1.08);
 }
 
 .brand {
@@ -60,7 +83,7 @@
 
 .nav-label {
   color: #7ea0b6;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
   padding: 26px 14px 12px;
   font-weight: 700;
@@ -82,7 +105,7 @@
   padding: 12px 14px;
   color: #c5d8e6;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   border: 1px solid transparent;
   border-radius: 12px;
@@ -116,21 +139,23 @@
 .side-footer-admin {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 11px;
 }
 
+/* 관리자문의 블록(아이콘+텍스트) - 위 구분선(.side-footer의 border-top)은 그대로 두고,
+   이 안쪽 내용만 키움 (원본 대비 약 1.2배로 키웠다가, 요청대로 거기서 다시 10% 줄인 값) */
 .side-footer-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   margin-top: 1px;
-  border-radius: 8px;
+  border-radius: 9px;
   background: rgba(14, 165, 198, .2);
   color: #7ad7ec;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .side-footer-admin-text {
@@ -142,21 +167,21 @@
 
 .side-footer-admin-text strong {
   color: #7ea0b6;
-  font-size: 10px;
-  letter-spacing: 1px;
+  font-size: 12px;
+  letter-spacing: 1.1px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .side-footer-admin-name {
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .side-footer-admin-tel {
   color: #ffc48a;
-  font-size: 12.5px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -171,11 +196,11 @@
 @media (max-width: 700px) {
   .side {
     width: 100%;
-    background: #0c2236;
+    background: #164666;
   }
   .side nav { position: static; min-height: auto; padding: 16px; }
   .side-logo { padding: 0 0 16px; }
   .side ul { flex-direction: row; flex-wrap: wrap; margin-top: 12px; }
-  .side li a { padding: 10px 12px; font-size: 13px; }
+  .side li a { padding: 11px 13px; font-size: 14px; }
   .nav-label, .side-footer { display: none; }
 }

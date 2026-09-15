@@ -9,7 +9,7 @@
   padding: 24px;
   background-color: transparent;
   min-height: 100%;
-  font-family: '맑은 고딕', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   color: var(--text);
 }
 
@@ -50,16 +50,10 @@
   color: var(--text);
 }
 
-.stat-receipt  .stat-icon { background-color: var(--blue); }  /* 접수중 - 파랑 */
-.stat-assigned .stat-icon { background-color: var(--blue); }  /* 배정완료 - 보라 */
-
-/* 배경색(패널)과 명도가 비슷해 잘 안 보이던 접수완료/기사배정 아이콘 시인성 보완 (테두리로 구분, 배경색은 변경하지 않음) */
-.app-shell .stat-receipt .stat-icon,
-.app-shell .stat-assigned .stat-icon {
-  border: 1px solid var(--blue-light);
-}
-.stat-progress .stat-icon { background-color: var(--orange); }  /* 진행중 - 주황 */
-.stat-complete .stat-icon { background-color: var(--success); }  /* 완료 - 초록 */
+.stat-receipt .stat-icon { background-color: var(--status-received-soft); color: var(--status-received-ink); }
+.stat-assigned .stat-icon { background-color: var(--status-assigned-soft); color: var(--status-assigned-ink); }
+.stat-progress .stat-icon { background-color: var(--status-progress-soft); color: var(--status-progress-ink); }
+.stat-complete .stat-icon { background-color: var(--status-complete-soft); color: var(--status-complete-ink); }
 
 .stat-info {
   display: flex;
@@ -196,18 +190,10 @@
   font-weight: 600;
 }
 
-.badge.receipt  { background-color: var(--blue-soft); color: var(--blue-light); }  /* 접수중 */
-.badge.assigned { background-color: var(--blue-soft); color: var(--blue-light); }  /* 배정완료 */
-
-/* 배경색(패널)과 명도가 비슷해 잘 안 보이던 뱃지 시인성 보완 (테두리로 구분, 배경색은 변경하지 않음) */
-.app-shell .badge.receipt,
-.app-shell .badge.assigned,
-.app-shell .status-received,
-.app-shell .status-assigned {
-  border: 1px solid var(--blue-light);
-}
-.badge.progress { background-color: var(--orange-soft); color: var(--danger); }  /* 진행중 */
-.badge.complete { background-color: var(--success-soft); color: var(--text); }  /* 완료 */
+.badge.receipt { background-color: var(--status-received-soft); color: var(--status-received-ink); border: 1px solid #efb8be; }
+.badge.assigned { background-color: var(--status-assigned-soft); color: var(--status-assigned-ink); border: 1px solid #b7d5ee; }
+.badge.progress { background-color: var(--status-progress-soft); color: var(--status-progress-ink); border: 1px solid #efd29d; }
+.badge.complete { background-color: var(--status-complete-soft); color: var(--status-complete-ink); border: 1px solid #bad8bf; }
 .badge.canceled { background-color: var(--danger-soft); color: var(--danger); }  /* 취소 */
 
 /* 페이지네이션 */

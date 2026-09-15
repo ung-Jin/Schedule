@@ -1,0 +1,490 @@
+{"kind":"deck","id":"pr/sjp5vt","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"제목 슬라이드","type":"title","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"subtitle","type":"subtitle","textPreview":"클릭하여 마스터 부제목 스타일 편집"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"제목 및 내용","type":"obj","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"2","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"구역 머리글","type":"secHead","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"콘텐츠 2개","type":"twoObj","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"2","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"3","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"비교","type":"twoTxTwoObj","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭"},{"name":"3","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭"},{"name":"5","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"제목만","type":"titleOnly","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout7.xml","name":"빈 화면","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout8.xml","name":"캡션 있는 콘텐츠","type":"objTx","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"2","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout9.xml","name":"캡션 있는 그림","type":"picTx","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"picture","type":"picture"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout10.xml","name":"제목 및 세로 텍스트","type":"vertTx","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout11.xml","name":"세로 제목 및 텍스트","type":"vertTitleAndTx","placeholders":[{"name":"title","type":"title","textPreview":"마스터 제목 스타일 편집"},{"name":"body","type":"body","textPreview":"마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준"},{"name":"dateTime","type":"dateTime","textPreview":"2025-05-29 (Thu)"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout12.xml","name":"1_제목 슬라이드"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout13.xml","name":"1_제목 및 내용"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"(PPT 작성 시) 아래 경로에 등록된","textShapes":5}
+{"kind":"shape","id":"sh/sryl4zqx","slide":1,"name":"사각형: 둥근 위쪽 모서리 6","bbox":[73.01,48.13,1126.42,635.11]}
+{"kind":"shape","id":"sh/fu94fe98","slide":1,"name":"직사각형 7","bbox":[73.01,667.97,1126.42,15.27]}
+{"kind":"textbox","id":"sh/wzy1szid","slide":1,"name":"TextBox 31","text":"(PPT 작성 시) 아래 경로에 등록된 \n[작성가이드 2. 팀별 프로젝트 결과보고서]\n영상을 참고하여 작성하세요!     ","textPreview":"(PPT 작성 시) 아래 경로에 등록된  | [작성가이드 2. 팀별 프로젝트 결과보고서] | 영상을 참고하여 작성하세요!","textChars":68,"textLines":3,"bbox":[562.32,233.88,630.8,230]}
+{"kind":"textbox","id":"sh/nqxgjqtk","slide":1,"name":"TextBox 43","text":"https://youtu.be/NhJKzqVbwXo","textPreview":"https://youtu.be/NhJKzqVbwXo","textChars":28,"textLines":1,"bbox":[681.76,493.81,409.04,42.01]}
+{"kind":"textbox","id":"sh/mpozalcz","slide":1,"name":"TextBox 44","text":"* 링크를 따라가려면 <ctrl>키를 누른 채 클릭하세요.","textPreview":"* 링크를 따라가려면 <ctrl>키를 누른 채 클릭하세요.","textChars":32,"textLines":1,"bbox":[689.89,544.32,387.01,27.36]}
+{"kind":"textbox","id":"sh/z650ba1k","slide":1,"name":"TextBox 11","text":"PPT 작성 가이드 안내","textPreview":"PPT 작성 가이드 안내","textChars":13,"textLines":1,"bbox":[572.21,161.98,623.44,58.16]}
+{"kind":"textbox","id":"sh/90ve1w7q","slide":1,"name":"TextBox 5","text":"제출 시 본 페이지는 삭제 후 제출하세요","textPreview":"제출 시 본 페이지는 삭제 후 제출하세요","textChars":22,"textLines":1,"bbox":[815.5,662.27,440.46,38.78]}
+{"kind":"image","id":"im/udc3alk7","slide":1,"name":"그래픽 39","bbox":[1017.99,32.11,47.79,35.1]}
+{"kind":"image","id":"im/felkjq1s","slide":1,"name":"그래픽 57","bbox":[140.05,399.21,179.81,67.61]}
+{"kind":"image","id":"im/0vyloz2h","slide":1,"name":"그림 4","bbox":[20.09,299.52,658.52,400.67]}
+{"kind":"image","id":"im/1w7mxkj2","slide":1,"name":"그래픽 67","bbox":[381.31,392.6,11,8]}
+{"kind":"image","id":"im/v2tw3ipg","slide":1,"name":"그래픽 32","bbox":[124.68,117.05,24.35,24.35]}
+{"kind":"image","id":"im/a1kfad8b","slide":1,"name":"그래픽 33","bbox":[633.23,626.82,11.23,11.23]}
+{"kind":"image","id":"im/h4by5s7m","slide":1,"name":"그래픽 34","bbox":[91.38,350.01,33.65,33.65]}
+{"kind":"image","id":"im/w32xcnq1","slide":1,"name":"그래픽 39","bbox":[434.82,320.39,20,28]}
+{"kind":"image","id":"im/j6tg72ps","slide":1,"name":"그래픽 41","bbox":[623.17,491.71,48.27,45.95]}
+{"kind":"image","id":"im/i5kfex87","slide":1,"name":"그래픽 296","bbox":[1065.79,72.72,100.3,100.3]}
+{"kind":"image","id":"im/58vy9s7y","slide":1,"name":"그래픽 298","bbox":[506.71,234.36,37.99,37.99]}
+{"kind":"image","id":"im/47mxg7qd","slide":1,"name":"그래픽 125","bbox":[1142.44,442.85,20,45]}
+{"kind":"image","id":"im/za9wvypo","slide":1,"name":"그래픽 121","bbox":[1162.15,592.98,20,19]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"작성요령","textShapes":22}
+{"kind":"textbox","id":"sh/svedkvup","slide":2,"name":"TextBox 42","text":"작성요령","textPreview":"작성요령","textChars":4,"textLines":1,"bbox":[60.59,64.95,477.35,45.24]}
+{"kind":"shape","id":"sh/v2lc36dw","slide":2,"name":"타원 47","bbox":[59.79,130.62,35.47,35.47]}
+{"kind":"shape","id":"sh/a1cba1wb","slide":2,"name":"그래픽 27","bbox":[65.81,139.24,23.42,18.23]}
+{"kind":"textbox","id":"sh/gzydovul","slide":2,"name":"TextBox 46","text":"작성요령","textPreview":"작성요령","textChars":4,"textLines":1,"bbox":[108.02,132.2,346.48,32.31]}
+{"kind":"shape","id":"sh/et8zmto7","slide":2,"name":"사각형: 둥근 모서리 51","bbox":[65.81,266.45,159.53,51.53]}
+{"kind":"shape","id":"sh/q5ozitov","slide":2,"name":"사각형: 둥근 모서리 55","bbox":[76.28,279.81,24.35,24.35]}
+{"kind":"textbox","id":"sh/r6x0rypg","slide":2,"name":"TextBox 56","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[75.92,283.62,25.07,19.39]}
+{"kind":"textbox","id":"sh/c76hk361","slide":2,"name":"TextBox 53","text":"작성주체","textPreview":"작성주체","textChars":4,"textLines":1,"bbox":[105.77,274.71,111.57,35.54]}
+{"kind":"textbox","id":"sh/d8zit87m","slide":2,"name":"TextBox 54","text":"훈련생이 직접 작성하고, 훈련기관 담당자가 임의로 삭제 혹은 수정하지 않아야 함","textPreview":"훈련생이 직접 작성하고, 훈련기관 담당자가 임의로 삭제 혹은 수정하지 않아야 함","textChars":44,"textLines":1,"bbox":[254,275.46,683.33,61.31]}
+{"kind":"shape","id":"sh/5kfipszu","slide":2,"name":"사각형: 둥근 모서리 59","bbox":[65.81,182.33,159.53,51.53]}
+{"kind":"shape","id":"sh/4r2pwnut","slide":2,"name":"사각형: 둥근 모서리 86","bbox":[76.28,195.69,24.35,24.35]}
+{"kind":"textbox","id":"sh/kry50jap","slide":2,"name":"TextBox 89","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[75.92,199.5,25.07,19.39]}
+{"kind":"textbox","id":"sh/jix0niho","slide":2,"name":"TextBox 61","text":"제출형태","textPreview":"제출형태","textChars":4,"textLines":1,"bbox":[105.77,190.59,111.57,35.54]}
+{"kind":"textbox","id":"sh/ihozedgj","slide":2,"name":"TextBox 62","text":"팀별 프로젝트 결과보고서(PPT)는 팀별로 각각 작성하여 제출해야 함","textPreview":"팀별 프로젝트 결과보고서(PPT)는 팀별로 각각 작성하여 제출해야 함","textChars":38,"textLines":1,"bbox":[254,179.78,667.02,34.16]}
+{"kind":"textbox","id":"sh/zytgbexk","slide":2,"name":"TextBox 70","text":"단, 개별 진행된 경우 개별로 작성하여 제출","textPreview":"단, 개별 진행된 경우 개별로 작성하여 제출","textChars":24,"textLines":1,"bbox":[312.77,212.49,363.67,29.08]}
+{"kind":"shape","id":"sh/0j2xkje5","slide":2,"name":"자유형: 도형 71","bbox":[294.25,220.01,15.86,12.35]}
+{"kind":"shape","id":"sh/mtgn29sf","slide":2,"name":"사각형: 둥근 모서리 95","bbox":[65.81,356.76,159.53,51.53]}
+{"kind":"shape","id":"sh/rq9g7mhs","slide":2,"name":"사각형: 둥근 모서리 108","bbox":[76.28,370.11,24.35,24.35]}
+{"kind":"textbox","id":"sh/0j214bip","slide":2,"name":"TextBox 110","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[75.92,373.93,25.07,19.39]}
+{"kind":"textbox","id":"sh/gjyx87y5","slide":2,"name":"TextBox 101","text":"파 일 명","textPreview":"파 일 명","textChars":5,"textLines":1,"bbox":[105.77,365.02,111.57,35.54]}
+{"kind":"textbox","id":"sh/hk7y1czq","slide":2,"name":"TextBox 102","text":"결과보고서_팀명(팀주제명)","textPreview":"결과보고서_팀명(팀주제명)","textChars":14,"textLines":1,"bbox":[254,354.21,502,34.16]}
+{"kind":"textbox","id":"sh/3mpg3mhw","slide":2,"name":"TextBox 104","text":"예) 결과보고서_1팀(OOO를 활용한 OOOO)","textPreview":"예) 결과보고서_1팀(OOO를 활용한 OOOO)","textChars":26,"textLines":1,"bbox":[312.77,386.92,363.67,29.08]}
+{"kind":"shape","id":"sh/po7y5czm","slide":2,"name":"자유형: 도형 106","bbox":[294.25,394.43,15.86,12.35]}
+{"kind":"shape","id":"sh/wbm1cvix","slide":2,"name":"사각형: 둥근 모서리 118","bbox":[65.81,450.72,159.53,51.53]}
+{"kind":"shape","id":"sh/vulkfep8","slide":2,"name":"사각형: 둥근 모서리 122","bbox":[76.28,464.07,24.35,24.35]}
+{"kind":"textbox","id":"sh/5k32lo7a","slide":2,"name":"TextBox 124","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[75.92,467.88,25.07,19.39]}
+{"kind":"textbox","id":"sh/hg32ho7e","slide":2,"name":"TextBox 120","text":"구성내용","textPreview":"구성내용","textChars":4,"textLines":1,"bbox":[105.77,458.98,111.57,35.54]}
+{"kind":"textbox","id":"sh/on218vil","slide":2,"name":"TextBox 114","text":"제공된 목차 항목/구성/세부내용이 모두 포함되어야 하며, 페이지별 상세 안내 내용을 참고하여 작성","textPreview":"제공된 목차 항목/구성/세부내용이 모두 포함되어야 하며, 페이지별 상세 안내 내용을 참고하여 작성","textChars":54,"textLines":1,"bbox":[254,459.72,928.96,34.16]}
+{"kind":"shape","id":"sh/loj294r6","slide":2,"name":"사각형: 둥근 모서리 128","bbox":[65.81,536.95,159.53,51.53]}
+{"kind":"shape","id":"sh/0rix0re9","slide":2,"name":"사각형: 둥근 모서리 136","bbox":[76.28,550.3,24.35,24.35]}
+{"kind":"textbox","id":"sh/rmpwn2ds","slide":2,"name":"TextBox 137","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[75.92,554.11,25.07,19.39]}
+{"kind":"textbox","id":"sh/mt0f2hwf","slide":2,"name":"TextBox 130","text":"디 자 인","textPreview":"디 자 인","textChars":5,"textLines":1,"bbox":[105.77,545.21,111.57,35.54]}
+{"kind":"textbox","id":"sh/9grexwv6","slide":2,"name":"TextBox 131","text":"참고(예시) 디자인이므로 자유롭게 변경 가능, 기본폰트를 사용하지 않은 경우 PDF로 저장하여 제출","textPreview":"참고(예시) 디자인이므로 자유롭게 변경 가능, 기본폰트를 사용하지 않은 경우 PDF로 저장하여 제출","textChars":55,"textLines":1,"bbox":[254,534.39,928.96,34.16]}
+{"kind":"textbox","id":"sh/ovix4rel","slide":2,"name":"TextBox 132","text":"프로젝트 결과물의 우수성 및 완성도를 잘 나타낼 수 있는 형태로 작성","textPreview":"프로젝트 결과물의 우수성 및 완성도를 잘 나타낼 수 있는 형태로 작성","textChars":38,"textLines":1,"bbox":[312.77,567.98,777.9,29.08]}
+{"kind":"shape","id":"sh/zq9wrmd4","slide":2,"name":"자유형: 도형 133","bbox":[294.25,575.5,15.86,12.35]}
+{"kind":"textbox","id":"sh/epgfyhwj","slide":2,"name":"TextBox 134","text":"저작권 문제로 유료 폰트는 사용 금지","textPreview":"저작권 문제로 유료 폰트는 사용 금지","textChars":20,"textLines":1,"bbox":[312.77,594.03,777.9,29.08]}
+{"kind":"shape","id":"sh/1sretwvu","slide":2,"name":"자유형: 도형 135","bbox":[294.25,601.55,15.86,12.35]}
+{"kind":"textbox","id":"sh/lkbyd4fq","slide":2,"name":"TextBox 5","text":"제출 시 본 페이지는 삭제 후 제출하세요","textPreview":"제출 시 본 페이지는 삭제 후 제출하세요","textChars":22,"textLines":1,"bbox":[815.5,662.27,440.46,38.78]}
+{"kind":"image","id":"im/ru1gjyp0","slide":2,"name":"그래픽 1","bbox":[901.81,200.37,378.19,310.82]}
+{"kind":"image","id":"im/j6lwve9w","slide":2,"name":"그림 50","bbox":[58.36,318,173.08,32.12]}
+{"kind":"image","id":"im/i5cv29sb","slide":2,"name":"그림 58","bbox":[58.36,233.88,173.08,32.12]}
+{"kind":"image","id":"im/58nexor2","slide":2,"name":"그림 93","bbox":[58.36,408.3,173.08,32.12]}
+{"kind":"image","id":"im/k7ud4jah","slide":2,"name":"그림 116","bbox":[58.36,502.26,173.08,32.12]}
+{"kind":"image","id":"im/vilcru9k","slide":2,"name":"그림 127","bbox":[58.36,588.49,173.08,32.12]}
+{"kind":"image","id":"im/ahcvy9sf","slide":2,"name":"그래픽 138","bbox":[9.66,645.27,54.18,76.1]}
+{"kind":"image","id":"im/x43et4rq","slide":2,"name":"그래픽 139","bbox":[5.27,602.95,36,45]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":""}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"○○아카데미(훈련기관명)","textShapes":5}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"TextBox 3","text":"○○아카데미(훈련기관명)","textPreview":"○○아카데미(훈련기관명)","textChars":13,"textLines":1,"bbox":[464.39,143.88,465.02,38.78]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"TextBox 9","text":"팀 프로젝트명\n(주제)","textPreview":"팀 프로젝트명 | (주제)","textChars":12,"textLines":2,"bbox":[458.56,190,747.07,142.18]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"TextBox 10","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[0,0,1280,45.24]}
+{"kind":"shape","id":"sh/ds3ipcvy","slide":3,"name":"자유형: 도형 44","bbox":[41.61,228.59,109.94,109.97]}
+{"kind":"shape","id":"sh/qpczuhc7","slide":3,"name":"자유형: 도형 45","bbox":[75.68,262.69,41.77,41.77]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"TextBox 1","text":"TEAM 1조   어벤져스 (팀명)\n김○○, 박○○, 이○○, 최○○, 정○○","textPreview":"TEAM 1조   어벤져스 (팀명) | 김○○, 박○○, 이○○, 최○○, 정○○","textChars":43,"textLines":2,"bbox":[715.06,422.9,541.58,100.38]}
+{"kind":"textbox","id":"sh/436lcve1","slide":3,"name":"TextBox 79","text":"[멘토] ○○○","textPreview":"[멘토] ○○○","textChars":8,"textLines":1,"bbox":[716.52,537.66,541.58,42.22]}
+{"kind":"image","id":"im/yhsbm94z","slide":3,"name":"그래픽 40","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/lkjah4nq","slide":3,"name":"그래픽 88","bbox":[1084.89,0,195.11,227.85]}
+{"kind":"image","id":"im/0jatozm5","slide":3,"name":"_x278651016","bbox":[1076.91,632.8,123.91,39.45]}
+{"kind":"image","id":"im/nm1sje5w","slide":3,"name":"그래픽 23","bbox":[919.45,632.8,124.99,37.16]}
+{"kind":"image","id":"im/mlsbq94b","slide":3,"name":"그래픽 82","bbox":[-16.8,411.04,784.25,386.64]}
+{"kind":"image","id":"im/983ulo3m","slide":3,"name":"그래픽 34","bbox":[0,129.1,694.63,592.26]}
+{"kind":"image","id":"im/87atsjmh","slide":3,"name":"그래픽 80","bbox":[475.47,578.37,35.25,35.25]}
+{"kind":"image","id":"im/3qhs7a5c","slide":3,"name":"그래픽 84","bbox":[96.59,610.87,33.77,33.77]}
+{"kind":"image","id":"im/2p8re547","slide":3,"name":"그래픽 90","bbox":[708.37,407.56,174.67,74.02]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":""}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"목 차","textShapes":12}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"TextBox 14","text":"목 차","textPreview":"목 차","textChars":3,"textLines":1,"bbox":[91.9,100.53,236.45,87.24]}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[91.43,54.51,236.45,38.78]}
+{"kind":"textbox","id":"sh/v6tsv2xo","slide":4,"name":"TextBox 16","text":"프로젝트 개요","textPreview":"프로젝트 개요","textChars":7,"textLines":1,"bbox":[736.36,264,385.62,32.31]}
+{"kind":"textbox","id":"sh/sri9s7q9","slide":4,"name":"TextBox 28","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[655.34,249.46,78.51,61.39]}
+{"kind":"textbox","id":"sh/g36tgryd","slide":4,"name":"TextBox 17","text":"프로젝트 팀 구성 및 역할","textPreview":"프로젝트 팀 구성 및 역할","textChars":14,"textLines":1,"bbox":[736.36,348.1,336.48,32.31]}
+{"kind":"textbox","id":"sh/ilwf69kv","slide":4,"name":"TextBox 29","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[655.34,333.37,80.26,61.39]}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"name":"TextBox 18","text":"프로젝트 수행 절차 및 방법","textPreview":"프로젝트 수행 절차 및 방법","textChars":15,"textLines":1,"bbox":[736.36,432.21,358.43,32.31]}
+{"kind":"textbox","id":"sh/jm5gze1g","slide":4,"name":"TextBox 30","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[655.34,417.29,80.26,61.39]}
+{"kind":"textbox","id":"sh/p0batw72","slide":4,"name":"TextBox 19","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[736.36,516.31,260.88,32.31]}
+{"kind":"textbox","id":"sh/knex8j21","slide":4,"name":"TextBox 31","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[655.34,501.21,80.26,61.39]}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"name":"TextBox 20","text":"자체 평가 의견","textPreview":"자체 평가 의견","textChars":8,"textLines":1,"bbox":[736.36,600.41,336.48,32.31]}
+{"kind":"textbox","id":"sh/5ony1oj6","slide":4,"name":"TextBox 32","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[655.34,585.12,80.26,61.39]}
+{"kind":"shape","id":"sh/a5kr2xg3","slide":4,"name":"TextBox 15","bbox":[0,708,1280,12]}
+{"kind":"image","id":"im/hs7u9c3a","slide":4,"name":"그래픽 21","bbox":[0,6.65,1280,720]}
+{"kind":"image","id":"im/grytg7mp","slide":4,"name":"그래픽 37","bbox":[792.24,0,487.76,346.11]}
+{"kind":"image","id":"im/fqps72l4","slide":4,"name":"그래픽 41","bbox":[-109.47,450.31,15,15]}
+{"kind":"image","id":"im/upwbex4j","slide":4,"name":"그래픽 49","bbox":[1162.52,163.27,24.5,24.5]}
+{"kind":"image","id":"im/xw3ax8nq","slide":4,"name":"그래픽 51","bbox":[1252.84,31.79,36.08,36.08]}
+{"kind":"image","id":"im/wvut43ml","slide":4,"name":"그래픽 24","bbox":[36.37,109.52,641.6,360.52]}
+{"kind":"image","id":"im/0r2dcb6t","slide":4,"name":"그래픽 39","bbox":[389.45,543.48,25,25]}
+{"kind":"image","id":"im/lsbelgne","slide":4,"name":"그래픽 45","bbox":[476.46,451.29,11.23,11.23]}
+{"kind":"image","id":"im/ypkva1o3","slide":4,"name":"그래픽 47","bbox":[126.37,288.95,33.65,33.65]}
+{"kind":"image","id":"im/zqtwj65o","slide":4,"name":"그래픽 53","bbox":[31.14,191.54,33.65,31.95]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"K-Digital Training","textShapes":19}
+{"kind":"shape","id":"sh/sb6xsvu9","slide":5,"name":"사각형: 둥근 한쪽 모서리 17","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/fe94nm1w","slide":5,"name":"TextBox 21","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/ud0ne10b","slide":5,"name":"TextBox 22","text":"프로젝트 개요","textPreview":"프로젝트 개요","textChars":7,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/4ji5kbid","slide":5,"name":"TextBox 24","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"textbox","id":"sh/kny587i9","slide":5,"name":"TextBox 28","text":"아래 내용이 반드시 포함되도록 작성한다.  ","textPreview":"아래 내용이 반드시 포함되도록 작성한다.","textChars":24,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/atcjidg7","slide":5,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"shape","id":"sh/vu5kbihc","slide":5,"name":"TextBox 30","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/wve1knyx","slide":5,"name":"TextBox 31","bbox":[0,0,140.33,12]}
+{"kind":"shape","id":"sh/ji5kf2ho","slide":5,"name":"사각형: 둥근 위쪽 모서리 34","bbox":[770.5,269.55,222.81,378.97]}
+{"kind":"shape","id":"sh/zmlk3yhk","slide":5,"name":"직사각형 38","bbox":[770.5,633.5,222.81,15.02]}
+{"kind":"shape","id":"sh/gfi5grih","slide":5,"name":"육각형 20","bbox":[860.19,249.18,42.86,36.95]}
+{"kind":"shape","id":"sh/pkr6tgjy","slide":5,"name":"자유형: 도형 23","bbox":[862.86,248.64,32.17,33.66]}
+{"kind":"textbox","id":"sh/2h0ni107","slide":5,"name":"TextBox 26","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[868.2,256.07,26.84,25.85]}
+{"kind":"textbox","id":"sh/tcfel0vu","slide":5,"name":"TextBox 18","text":"프로젝트\n구조","textPreview":"프로젝트 | 구조","textChars":7,"textLines":2,"bbox":[792.45,321.26,178.92,77.23]}
+{"kind":"shape","id":"sh/u14jydk7","slide":5,"name":"사각형: 둥근 위쪽 모서리 88","bbox":[51.64,269.55,222.81,378.97]}
+{"kind":"shape","id":"sh/0vi9cfet","slide":5,"name":"직사각형 89","bbox":[51.64,633.5,222.81,15.02]}
+{"kind":"textbox","id":"sh/dwz21s36","slide":5,"name":"TextBox 81","text":"프로젝트 주제 및 선정 배경, \n기획의도","textPreview":"프로젝트 주제 및 선정 배경,  | 기획의도","textChars":22,"textLines":2,"bbox":[73.59,321.26,178.92,102.95]}
+{"kind":"shape","id":"sh/5sf2xs3u","slide":5,"name":"육각형 85","bbox":[145.83,249.18,42.86,36.95]}
+{"kind":"shape","id":"sh/4r6l4n29","slide":5,"name":"자유형: 도형 86","bbox":[148.5,248.64,32.17,33.66]}
+{"kind":"textbox","id":"sh/v2dkrils","slide":5,"name":"TextBox 87","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[153.84,256.07,26.84,33.85]}
+{"kind":"textbox","id":"sh/3qxkvilo","slide":5,"name":"TextBox 83","text":"프로젝트 주제의\n특화 포인트,\n기존 유사 서비스와\n차별화된 내용 제시 ","textPreview":"프로젝트 주제의 | 특화 포인트, | 기존 유사 서비스와 | 차별화된 내용 제시","textChars":39,"textLines":4,"bbox":[51.64,467.51,222.81,95]}
+{"kind":"shape","id":"sh/ipo32dk3","slide":5,"name":"직선 연결선 84","bbox":[152.11,447.26,21.88,0]}
+{"kind":"shape","id":"sh/e1w7y5w7","slide":5,"name":"사각형: 둥근 위쪽 모서리 99","bbox":[291.26,269.55,222.81,378.97]}
+{"kind":"shape","id":"sh/f25oraxs","slide":5,"name":"직사각형 100","bbox":[291.26,633.5,222.81,15.02]}
+{"kind":"shape","id":"sh/ny98nuxk","slide":5,"name":"육각형 96","bbox":[386.19,249.18,42.86,36.95]}
+{"kind":"shape","id":"sh/o3yp4vel","slide":5,"name":"자유형: 도형 97","bbox":[388.86,248.64,32.17,33.66]}
+{"kind":"textbox","id":"sh/po7qd0f6","slide":5,"name":"TextBox 98","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[394.2,256.07,26.84,25.85]}
+{"kind":"textbox","id":"sh/8z29gfep","slide":5,"name":"TextBox 93","text":"프로젝트\n내용 ","textPreview":"프로젝트 | 내용","textChars":8,"textLines":2,"bbox":[313.21,321.26,178.92,77.23]}
+{"kind":"textbox","id":"sh/9kbqpkfa","slide":5,"name":"TextBox 94","text":"프로젝트 구현 내용, 컨셉, \n훈련내용과의 연관성 등\n포함","textPreview":"프로젝트 구현 내용, 컨셉,  | 훈련내용과의 연관성 등 | 포함","textChars":32,"textLines":3,"bbox":[291.26,467.51,222.81,73.67]}
+{"kind":"shape","id":"sh/mx0repwz","slide":5,"name":"직선 연결선 95","bbox":[391.73,447.26,21.88,0]}
+{"kind":"shape","id":"sh/0ni9wjyh","slide":5,"name":"사각형: 둥근 위쪽 모서리 110","bbox":[530.88,269.55,222.81,378.97]}
+{"kind":"shape","id":"sh/zm98nehc","slide":5,"name":"직사각형 111","bbox":[530.88,633.5,222.81,15.02]}
+{"kind":"shape","id":"sh/i9cnqlwz","slide":5,"name":"육각형 107","bbox":[620.86,249.18,42.86,36.95]}
+{"kind":"shape","id":"sh/jalojqxk","slide":5,"name":"자유형: 도형 108","bbox":[623.53,248.64,32.17,33.66]}
+{"kind":"textbox","id":"sh/lorapoz2","slide":5,"name":"TextBox 109","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[628.87,256.07,26.84,25.85]}
+{"kind":"textbox","id":"sh/36povax4","slide":5,"name":"TextBox 104","text":"활용 장비 및\n재료","textPreview":"활용 장비 및 | 재료","textChars":10,"textLines":2,"bbox":[552.83,321.26,178.92,70.96]}
+{"kind":"textbox","id":"sh/o7yp4fe9","slide":5,"name":"TextBox 105","text":"개발환경 등","textPreview":"개발환경 등","textChars":6,"textLines":1,"bbox":[530.64,467.51,222.81,29.21]}
+{"kind":"shape","id":"sh/ps76xkfu","slide":5,"name":"직선 연결선 106","bbox":[631.11,447.26,21.88,0]}
+{"kind":"shape","id":"sh/ep4zytsb","slide":5,"name":"사각형: 둥근 위쪽 모서리 121","bbox":[1010.12,269.55,222.81,378.97]}
+{"kind":"shape","id":"sh/fqd0rytw","slide":5,"name":"직사각형 122","bbox":[1010.12,633.5,222.81,15.02]}
+{"kind":"shape","id":"sh/ovy9ozyp","slide":5,"name":"육각형 118","bbox":[1100.09,249.18,42.86,36.95]}
+{"kind":"shape","id":"sh/grm103ah","slide":5,"name":"자유형: 도형 119","bbox":[1102.77,248.64,32.17,33.66]}
+{"kind":"textbox","id":"sh/1cvit8b2","slide":5,"name":"TextBox 120","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1108.11,256.07,26.84,25.85]}
+{"kind":"textbox","id":"sh/nqtsryh8","slide":5,"name":"TextBox 115","text":"활용방안 및\n기대 효과","textPreview":"활용방안 및 | 기대 효과","textChars":12,"textLines":2,"bbox":[1031.3,321.26,178.92,70.96]}
+{"kind":"textbox","id":"sh/mp0rytgn","slide":5,"name":"TextBox 116","text":"프로젝트 산출물의\n기대 효용(효과)/\n비즈니스 실무 활용성 제시","textPreview":"프로젝트 산출물의 | 기대 효용(효과)/ | 비즈니스 실무 활용성 제시","textChars":35,"textLines":3,"bbox":[1009.64,467.51,222.81,73.67]}
+{"kind":"shape","id":"sh/pw7qx4zu","slide":5,"name":"직선 연결선 117","bbox":[1110.11,447.26,21.88,0]}
+{"kind":"textbox","id":"sh/ids3mxsb","slide":5,"name":"TextBox 77","text":"프로젝트 목적, 진행 일정, 구체적인 실행 내역 등","textPreview":"프로젝트 목적, 진행 일정, 구체적인 실행 내역 등","textChars":28,"textLines":1,"bbox":[772.5,465.84,222.81,52.35]}
+{"kind":"image","id":"im/5ovipsj6","slide":5,"name":"그래픽 16","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/4nmhwnil","slide":5,"name":"그림 25","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/3md0ni10","slide":5,"name":"그래픽 37","bbox":[0.18,580.64,152.49,96.31]}
+{"kind":"image","id":"im/il4zud0f","slide":5,"name":"그래픽 76","bbox":[905.1,499.97,389.54,196.27]}
+{"kind":"image","id":"im/hkvil8ju","slide":5,"name":"그래픽 1","bbox":[1227.32,332.24,18.75,18.75]}
+{"kind":"image","id":"im/gjmhs3i9","slide":5,"name":"그래픽 2","bbox":[40.63,571.48,19.62,21.8]}
+{"kind":"image","id":"im/6p0f29g7","slide":5,"name":"그래픽 3","bbox":[1156.57,514.77,123.43,81.89]}
+{"kind":"image","id":"im/7q9gvehs","slide":5,"name":"그래픽 4","bbox":[0,342.46,306.03,298.98]}
+{"kind":"image","id":"im/8rix4jyd","slide":5,"name":"그래픽 6","bbox":[0,623.06,1280,96.94]}
+{"kind":"image","id":"im/tsbyxozy","slide":5,"name":"그래픽 7","bbox":[1225.46,235.27,15.68,15.68]}
+{"kind":"image","id":"im/yl0fy9gb","slide":5,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/jm9grehg","slide":5,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":""}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"K-Digital Training","textShapes":12}
+{"kind":"shape","id":"sh/m5076xkj","slide":6,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/zep4byhs","slide":6,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"name":"TextBox 10","text":"프로젝트 팀 구성 및 역할","textPreview":"프로젝트 팀 구성 및 역할","textChars":14,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"name":"TextBox 12","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"textbox","id":"sh/0fy5k3id","slide":6,"name":"TextBox 23","text":"해당 프로젝트를 진행하면서 훈련생 별로 주도적으로 참여한 부분을 중심으로 작성한다.","textPreview":"해당 프로젝트를 진행하면서 훈련생 별로 주도적으로 참여한 부분을 중심으로 작성한다.","textChars":46,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/fq9cfqxc","slide":6,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"shape","id":"sh/yhg7epsj","slide":6,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/87ipkzal","slide":6,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"shape","id":"sh/h4bupgn6","slide":6,"name":"사각형: 둥근 모서리 9","bbox":[54.11,220.22,1177.77,39.78]}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"name":"TextBox 11","text":"* 프로젝트 운영 중 멘토의 지원내역도 간략하게 작성 ","textPreview":"* 프로젝트 운영 중 멘토의 지원내역도 간략하게 작성","textChars":30,"textLines":1,"bbox":[77.05,224.27,574.29,32.31]}
+{"kind":"shape","id":"sh/wbilo7mp","slide":6,"name":"사각형: 둥근 모서리 137","bbox":[475.16,366.67,284.84,37.65]}
+{"kind":"shape","id":"sh/hkj2xsra","slide":6,"name":"타원 139","bbox":[475.16,366.67,37.65,37.65]}
+{"kind":"textbox","id":"sh/axoz69of","slide":6,"name":"TextBox 149","text":"데이터 정제 및 정규화 ","textPreview":"데이터 정제 및 정규화","textChars":13,"textLines":1,"bbox":[527.35,369.45,195.97,29.08]}
+{"kind":"shape","id":"sh/7ehkri98","slide":6,"name":"사각형: 둥근 모서리 145","bbox":[795.74,366.67,284.84,37.65]}
+{"kind":"shape","id":"sh/dc3m5wri","slide":6,"name":"타원 147","bbox":[795.74,366.67,37.65,37.65]}
+{"kind":"textbox","id":"sh/byx0zep0","slide":6,"name":"TextBox 150","text":"모바일 서비스 테스팅","textPreview":"모바일 서비스 테스팅","textChars":11,"textLines":1,"bbox":[853.93,369.45,195.97,29.08]}
+{"kind":"shape","id":"sh/nud0vep4","slide":6,"name":"사각형: 둥근 모서리 154","bbox":[475.16,446.36,284.84,37.65]}
+{"kind":"shape","id":"sh/ovmh4j69","slide":6,"name":"타원 155","bbox":[475.16,446.36,37.65,37.65]}
+{"kind":"textbox","id":"sh/jypoj618","slide":6,"name":"TextBox 159","text":"모바일 플랫폼 구현","textPreview":"모바일 플랫폼 구현","textChars":10,"textLines":1,"bbox":[527.35,449.15,195.97,29.08]}
+{"kind":"shape","id":"sh/4ji5cbit","slide":6,"name":"사각형: 둥근 모서리 162","bbox":[475.16,529.73,284.84,37.65]}
+{"kind":"shape","id":"sh/rm9on61k","slide":6,"name":"타원 163","bbox":[475.16,529.73,37.65,37.65]}
+{"kind":"textbox","id":"sh/fq9orq1g","slide":6,"name":"TextBox 167","text":" 서비스 시스템 설계","textPreview":"서비스 시스템 설계","textChars":11,"textLines":1,"bbox":[527.35,532.52,195.97,29.08]}
+{"kind":"shape","id":"sh/tor6pgja","slide":6,"name":"사각형: 둥근 모서리 165","bbox":[795.74,529.73,284.84,37.65]}
+{"kind":"shape","id":"sh/snipgbi5","slide":6,"name":"타원 166","bbox":[795.74,529.73,37.65,37.65]}
+{"kind":"textbox","id":"sh/ep07il0v","slide":6,"name":"TextBox 168","text":"텍스트 마이닝","textPreview":"텍스트 마이닝","textChars":7,"textLines":1,"bbox":[853.93,532.52,195.97,29.08]}
+{"kind":"shape","id":"sh/6p8jeton","slide":6,"name":"사각형: 둥근 모서리 157","bbox":[795.74,446.36,284.84,37.65]}
+{"kind":"shape","id":"sh/7qh07yp8","slide":6,"name":"타원 158","bbox":[795.74,446.36,37.65,37.65]}
+{"kind":"textbox","id":"sh/ixgna10n","slide":6,"name":"TextBox 160","text":"외부 데이터 수집","textPreview":"외부 데이터 수집","textChars":9,"textLines":1,"bbox":[853.93,449.15,195.97,29.08]}
+{"kind":"shape","id":"sh/xgb610fu","slide":6,"name":"사각형: 둥근 모서리 170","bbox":[475.16,610.11,393.67,37.65]}
+{"kind":"shape","id":"sh/atkn6lg3","slide":6,"name":"타원 171","bbox":[475.16,610.11,37.65,37.65]}
+{"kind":"textbox","id":"sh/2p0n2lg7","slide":6,"name":"TextBox 175","text":"주제 선정 피드백, 프로젝트  질의응답","textPreview":"주제 선정 피드백, 프로젝트  질의응답","textChars":21,"textLines":1,"bbox":[527.35,612.89,404.59,29.08]}
+{"kind":"shape","id":"sh/dcnm98zm","slide":6,"name":"직각 삼각형 20","bbox":[1102.26,526.38,177.74,144.14]}
+{"kind":"table","id":"tb/876xs365","slide":6,"name":"표 86","rows":5,"cols":3,"preview":"훈련생 | 역할 | 담당 업무","bbox":[55.07,285.76,1177.77,384.91]}
+{"kind":"image","id":"im/ep4v69gn","slide":6,"name":"그래픽 190","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/pgfuloza","slide":6,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/w7idc7up","slide":6,"name":"그래픽 98","bbox":[0.18,580.64,152.49,96.31]}
+{"kind":"image","id":"im/x8relcba","slide":6,"name":"그래픽 121","bbox":[1029.34,643.22,11.54,11.54]}
+{"kind":"image","id":"im/a50vaxcz","slide":6,"name":"그래픽 143","bbox":[482.98,374.49,22,22]}
+{"kind":"image","id":"im/b69wj2tk","slide":6,"name":"그래픽 152","bbox":[806.77,374.49,20.07,21.4]}
+{"kind":"image","id":"im/o3id87ut","slide":6,"name":"그래픽 179","bbox":[482.21,455.19,22.77,20.29]}
+{"kind":"image","id":"im/94rehcbe","slide":6,"name":"그래픽 181","bbox":[483.21,537.58,23.08,21.15]}
+{"kind":"image","id":"im/m1gv6xcn","slide":6,"name":"그래픽 183","bbox":[801.93,541.08,25.25,15.78]}
+{"kind":"image","id":"im/n29wf2t8","slide":6,"name":"그래픽 185","bbox":[803.2,453.21,24,23]}
+{"kind":"image","id":"im/0zyd4nux","slide":6,"name":"그래픽 187","bbox":[483.65,619.15,19.62,19.21]}
+{"kind":"image","id":"im/107edsb2","slide":6,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/3a5wnix4","slide":6,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"image","id":"im/i9wfedwj","slide":6,"name":"그래픽 131","bbox":[905.1,499.97,389.54,196.27]}
+{"kind":"image","id":"im/5w7epsfa","slide":6,"name":"그래픽 189","bbox":[1242.31,531.5,16.17,16.17]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"K-Digital Training","textShapes":13}
+{"kind":"shape","id":"sh/kra50jqh","slide":7,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/d4f2t0nm","slide":7,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"name":"TextBox 10","text":"프로젝트 수행 절차 및 방법","textPreview":"프로젝트 수행 절차 및 방법","textChars":15,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"name":"TextBox 12","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"textbox","id":"sh/q143ylov","slide":7,"name":"TextBox 23","text":"프로젝트의 사전 기획과 프로젝트 수행 및 완료 과정으로 나누어서 작성한다. ","textPreview":"프로젝트의 사전 기획과 프로젝트 수행 및 완료 과정으로 나누어서 작성한다.","textChars":42,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/9k3qx8ry","slide":7,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/ydkbm5sv","slide":7,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"TextBox 4","text":"프로젝트 수행 절차를 도식화하여 제시하거나, 더 효과적으로 전달하는 방법 등이 있다면 수정하여 작성 가능\n기획 단계에서 도출된 주제와 아이디어를 기반으로 실제 프로젝트를 수행한 세부적인 기간과 활동 내용 작성","textPreview":"프로젝트 수행 절차를 도식화하여 제시하거나, 더 효과적으로 전달하는 방법 등이 있다면 수정하여 작성 가능 | 기획 단계에서 도출된 주제와 아이디어를 기반으로 실제 프로젝트를 수행한 세부적인 기간과 활동 내용 작성","textChars":116,"textLines":2,"bbox":[49.03,221.45,1037.97,63.01]}
+{"kind":"shape","id":"sh/ulc7qdsj","slide":7,"name":"사각형: 둥근 모서리 41","bbox":[480.22,347.27,257.93,34.32]}
+{"kind":"shape","id":"sh/vm58zi94","slide":7,"name":"타원 42","bbox":[480.22,347.27,35.17,34.32]}
+{"kind":"textbox","id":"sh/mxc7mts7","slide":7,"name":"TextBox 45","text":"프로젝트 기획 및 주제 선정","textPreview":"프로젝트 기획 및 주제 선정","textChars":15,"textLines":1,"bbox":[517.29,350.68,222.75,29.08]}
+{"kind":"shape","id":"sh/pcra1wba","slide":7,"name":"사각형: 둥근 모서리 51","bbox":[775.2,347.27,151.83,34.32]}
+{"kind":"shape","id":"sh/obitsrup","slide":7,"name":"타원 52","bbox":[775.2,347.27,35.17,34.32]}
+{"kind":"textbox","id":"sh/290bq1cz","slide":7,"name":"TextBox 50","text":"기획안 작성","textPreview":"기획안 작성","textChars":6,"textLines":1,"bbox":[812.27,350.68,114.76,29.08]}
+{"kind":"shape","id":"sh/vah4fehw","slide":7,"name":"사각형: 둥근 모서리 60","bbox":[480.22,403.27,257.93,34.32]}
+{"kind":"shape","id":"sh/gbq5ojih","slide":7,"name":"타원 61","bbox":[480.22,403.27,35.17,34.32]}
+{"kind":"textbox","id":"sh/uponm90b","slide":7,"name":"TextBox 59","text":"필요 데이터  및 수집 절차 정의","textPreview":"필요 데이터  및 수집 절차 정의","textChars":18,"textLines":1,"bbox":[517.29,406.68,222.75,48.47]}
+{"kind":"shape","id":"sh/tofmd4z6","slide":7,"name":"사각형: 둥근 모서리 66","bbox":[775.2,403.27,179.2,34.32]}
+{"kind":"shape","id":"sh/yh4nep0j","slide":7,"name":"타원 67","bbox":[775.2,403.27,35.17,34.32]}
+{"kind":"textbox","id":"sh/8n65kzil","slide":7,"name":"TextBox 65","text":"외부 데이터 수집","textPreview":"외부 데이터 수집","textChars":9,"textLines":1,"bbox":[812.27,406.68,158.04,29.08]}
+{"kind":"shape","id":"sh/e9c7ixkv","slide":7,"name":"사각형: 둥근 모서리 72","bbox":[480.22,458.77,257.93,34.32]}
+{"kind":"shape","id":"sh/d8jq9sja","slide":7,"name":"타원 73","bbox":[480.22,458.77,35.17,34.32]}
+{"kind":"textbox","id":"sh/fal8bi1g","slide":7,"name":"TextBox 71","text":"데이터 정제 및 정규화","textPreview":"데이터 정제 및 정규화","textChars":12,"textLines":1,"bbox":[517.29,462.18,206.98,29.08]}
+{"kind":"shape","id":"sh/4japc32t","slide":7,"name":"사각형: 둥근 모서리 78","bbox":[480.22,514.1,257.93,34.32]}
+{"kind":"shape","id":"sh/gj2doje1","slide":7,"name":"타원 79","bbox":[480.22,514.1,35.17,34.32]}
+{"kind":"textbox","id":"sh/54jq58je","slide":7,"name":"TextBox 77","text":"모형 구현","textPreview":"모형 구현","textChars":5,"textLines":1,"bbox":[517.29,517.51,206.98,29.08]}
+{"kind":"shape","id":"sh/povu1ovi","slide":7,"name":"사각형: 둥근 모서리 84","bbox":[480.22,569.77,257.93,34.32]}
+{"kind":"shape","id":"sh/2l4vqtc7","slide":7,"name":"타원 85","bbox":[480.22,569.77,35.17,34.32]}
+{"kind":"textbox","id":"sh/4nmdsjux","slide":7,"name":"TextBox 83","text":"모바일 서비스 시스템 설계","textPreview":"모바일 서비스 시스템 설계","textChars":14,"textLines":1,"bbox":[517.29,573.18,222.75,29.08]}
+{"kind":"shape","id":"sh/m58f2xwb","slide":7,"name":"사각형: 둥근 모서리 90","bbox":[775.2,569.77,179.2,34.32]}
+{"kind":"shape","id":"sh/98zyxcf2","slide":7,"name":"타원 91","bbox":[775.2,569.77,35.17,34.32]}
+{"kind":"textbox","id":"sh/n6hgv2xw","slide":7,"name":"TextBox 89","text":"모바일 플랫폼 구현","textPreview":"모바일 플랫폼 구현","textChars":10,"textLines":1,"bbox":[812.27,573.18,166.28,29.08]}
+{"kind":"table","id":"tb/xc721sr2","slide":7,"name":"표 40","rows":7,"cols":4,"preview":"구분 | 기간 | 활동 | 비고","bbox":[55.07,297.33,1177.77,373.47]}
+{"kind":"image","id":"im/zat8j210","slide":7,"name":"그래픽 118","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/8fm9w72h","slide":7,"name":"그래픽 101","bbox":[-7.41,603.04,124.37,109.55]}
+{"kind":"image","id":"im/9gvqpcj2","slide":7,"name":"그래픽 99","bbox":[915.16,311.79,475.39,254.29]}
+{"kind":"image","id":"im/md4ruxkb","slide":7,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/ned8n21w","slide":7,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/ojipkn2d","slide":7,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"image","id":"im/md8nm983","slide":7,"name":"그래픽 103","bbox":[18.86,575.11,13.12,13.12]}
+{"kind":"image","id":"im/7ehovepo","slide":7,"name":"그래픽 105","bbox":[492.36,355.51,15.73,18.95]}
+{"kind":"image","id":"im/8fa5ojq9","slide":7,"name":"그래픽 106","bbox":[786.36,355.51,15.73,18.95]}
+{"kind":"image","id":"im/9gj6x47e","slide":7,"name":"그래픽 107","bbox":[492.36,411.51,15.73,18.95]}
+{"kind":"image","id":"im/uhsnq98z","slide":7,"name":"그래픽 108","bbox":[786.36,411.51,15.73,18.95]}
+{"kind":"image","id":"im/vi1ozepk","slide":7,"name":"그래픽 109","bbox":[492.36,466.51,15.73,18.95]}
+{"kind":"image","id":"im/wja5sjq5","slide":7,"name":"그래픽 115","bbox":[492.36,521.51,15.73,18.95]}
+{"kind":"image","id":"im/h4j61o7q","slide":7,"name":"그래픽 116","bbox":[492.36,578.01,15.73,18.95]}
+{"kind":"image","id":"im/alonep8v","slide":7,"name":"그래픽 117","bbox":[786.36,578.01,15.73,18.95]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"간트차트\n"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"K-Digital Training","textShapes":19}
+{"kind":"shape","id":"sh/b2hs3il8","slide":8,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/i5wva1o3","slide":8,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/98rehwve","slide":8,"name":"TextBox 10","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"TextBox 12","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"textbox","id":"sh/5sne5wne","slide":8,"name":"TextBox 23","text":"프로젝트 결과물이 도출된 과정을 세부적으로 작성한다. ","textPreview":"프로젝트 결과물이 도출된 과정을 세부적으로 작성한다.","textChars":30,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/up872987","slide":8,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"shape","id":"sh/18byd4zy","slide":8,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/ri9g7uhw","slide":8,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"사각형: 둥근 모서리 2","bbox":[54.11,220.22,1177.77,39.78]}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"name":"TextBox 7","text":"이어지는 예시는 하나의 사례 제공을 위해서 간단하게 제시한 것이므로 프로젝트 성격에 따라 보다 자세하게 작성","textPreview":"이어지는 예시는 하나의 사례 제공을 위해서 간단하게 제시한 것이므로 프로젝트 성격에 따라 보다 자세하게 작성","textChars":60,"textLines":1,"bbox":[108.78,224.27,1143.28,32.31]}
+{"kind":"shape","id":"sh/id0fu50z","slide":8,"name":"타원 8","bbox":[84.26,226.68,24.52,24.52]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"TextBox 11","text":"!","textPreview":"!","textChars":1,"textLines":1,"bbox":[84.53,224.65,24.5,29.08]}
+{"kind":"shape","id":"sh/6h0fypgb","slide":8,"name":"왼쪽 중괄호 4","bbox":[234.7,317.16,30.53,296.84]}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"TextBox 9","text":"프로젝트\n수행 경과","textPreview":"프로젝트 | 수행 경과","textChars":10,"textLines":2,"bbox":[53.93,303.25,182.54,87.24]}
+{"kind":"shape","id":"sh/3u18fepo","slide":8,"name":"사각형: 둥근 모서리 39","bbox":[297.22,384.36,934.66,70.67]}
+{"kind":"shape","id":"sh/cvmdsb2h","slide":8,"name":"육각형 49","bbox":[277.02,400.27,42.86,36.95]}
+{"kind":"shape","id":"sh/xwvelwj2","slide":8,"name":"자유형: 도형 50","bbox":[279.69,399.73,32.17,33.66]}
+{"kind":"textbox","id":"sh/at4vq1kr","slide":8,"name":"TextBox 51","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[285.03,407.15,26.84,25.85]}
+{"kind":"textbox","id":"sh/gjuto3ud","slide":8,"name":"TextBox 60","text":"프로젝트 수행 과정이 잘 드러날 수 있도록 가공 과정부터 활용까지 전체적인 프로세스를 단계별로 작성","textPreview":"프로젝트 수행 과정이 잘 드러날 수 있도록 가공 과정부터 활용까지 전체적인 프로세스를 단계별로 작성","textChars":55,"textLines":1,"bbox":[341.18,403.1,902.89,32.31]}
+{"kind":"shape","id":"sh/2ts769o3","slide":8,"name":"사각형: 둥근 모서리 40","bbox":[297.22,482.72,934.66,70.67]}
+{"kind":"shape","id":"sh/kjmdwbit","slide":8,"name":"육각형 53","bbox":[277.02,498.6,42.86,36.95]}
+{"kind":"shape","id":"sh/lkvepgje","slide":8,"name":"자유형: 도형 54","bbox":[279.69,498.06,32.17,33.66]}
+{"kind":"textbox","id":"sh/yx4vu10n","slide":8,"name":"TextBox 55","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[285.03,505.48,26.84,25.85]}
+{"kind":"textbox","id":"sh/uhsbmtc7","slide":8,"name":"TextBox 62","text":"프로젝트 수행 과정에서의 피드백 내용과 그것을 적용(보완 등)한 내용이 포함되도록 작성","textPreview":"프로젝트 수행 과정에서의 피드백 내용과 그것을 적용(보완 등)한 내용이 포함되도록 작성","textChars":48,"textLines":1,"bbox":[341.18,494.43,858.44,40.79]}
+{"kind":"shape","id":"sh/na1sb2lg","slide":8,"name":"사각형: 둥근 모서리 30","bbox":[297.22,285.99,934.66,70.67]}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"name":"TextBox 17","text":"결과를 서술하는 과정에서는 활용된 기술 및 구현 방법, 핵심기능, 구현 결과* 등을 상세히 작성","textPreview":"결과를 서술하는 과정에서는 활용된 기술 및 구현 방법, 핵심기능, 구현 결과* 등을 상세히 작성","textChars":53,"textLines":1,"bbox":[341.18,292.67,875.86,32.31]}
+{"kind":"textbox","id":"sh/9w3uds36","slide":8,"name":"TextBox 32","text":"빅데이터 직종의 경우 정확도 등","textPreview":"빅데이터 직종의 경우 정확도 등","textChars":17,"textLines":1,"bbox":[403.66,313.48,345.94,36.35]}
+{"kind":"shape","id":"sh/hsjqd47y","slide":8,"name":"육각형 45","bbox":[277.02,301.94,42.86,36.95]}
+{"kind":"shape","id":"sh/grap4zqd","slide":8,"name":"자유형: 도형 46","bbox":[279.69,301.4,32.17,33.66]}
+{"kind":"textbox","id":"sh/72ho7upg","slide":8,"name":"TextBox 47","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[285.03,308.83,26.84,33.85]}
+{"kind":"textbox","id":"sh/2lcbqdcj","slide":8,"name":"사각형: 둥근 모서리 66","text":"예시","textPreview":"예시","textChars":2,"textLines":1,"bbox":[350.97,324.9,52.7,20.89]}
+{"kind":"shape","id":"sh/4vap8j69","slide":8,"name":"사각형: 둥근 모서리 42","bbox":[297.22,581.09,934.66,70.67]}
+{"kind":"shape","id":"sh/0n2dkr2p","slide":8,"name":"육각형 57","bbox":[277.02,596.92,42.86,36.95]}
+{"kind":"shape","id":"sh/1obudcju","slide":8,"name":"자유형: 도형 58","bbox":[279.69,596.39,32.17,33.66]}
+{"kind":"textbox","id":"sh/hk3ah8by","slide":8,"name":"TextBox 59","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[285.03,603.81,26.84,25.85]}
+{"kind":"textbox","id":"sh/4nutsnu9","slide":8,"name":"TextBox 64","text":"프로젝트 수행 결과물을 잘 드러낼 수 있는 자료를 첨부하여 작성","textPreview":"프로젝트 수행 결과물을 잘 드러낼 수 있는 자료를 첨부하여 작성","textChars":35,"textLines":1,"bbox":[341.18,588.07,730.29,32.31]}
+{"kind":"textbox","id":"sh/3mlcjit4","slide":8,"name":"TextBox 65","text":"결과물 사진, 시연 영상, 구동 화면 등 프로젝트의 우수성이 드러날 수 있는 자료","textPreview":"결과물 사진, 시연 영상, 구동 화면 등 프로젝트의 우수성이 드러날 수 있는 자료","textChars":45,"textLines":1,"bbox":[466.33,609.54,750.71,36.35]}
+{"kind":"textbox","id":"sh/dcnupsb6","slide":8,"name":"사각형: 둥근 모서리 67","text":" 첨부 자료 예시","textPreview":"첨부 자료 예시","textChars":9,"textLines":1,"bbox":[350.97,619.9,115.37,20.89]}
+{"kind":"image","id":"im/b6187i98","slide":8,"name":"그래픽 80","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/dwbm9kf2","slide":8,"name":"그래픽 71","bbox":[796.77,492.96,483.23,227.04]}
+{"kind":"image","id":"im/cbil0feh","slide":8,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/ra947axw","slide":8,"name":"그래픽 73","bbox":[-50.03,258.98,151.04,50.99]}
+{"kind":"image","id":"im/q903y5wr","slide":8,"name":"그래픽 75","bbox":[132.78,520.38,11.55,11.55]}
+{"kind":"image","id":"im/10bmdkfe","slide":8,"name":"그래픽 77","bbox":[27.06,449.05,14.92,14.92]}
+{"kind":"image","id":"im/0z2l4fet","slide":8,"name":"그래픽 79","bbox":[210.42,615.4,18,18]}
+{"kind":"image","id":"im/zyt4bax8","slide":8,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/exk32pwn","slide":8,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":""}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"K-Digital Training","textShapes":7}
+{"kind":"shape","id":"sh/rutwv65w","slide":9,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/u9sja98z","slide":9,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/p0ji9kf2","slide":9,"name":"TextBox 10","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"name":"TextBox 12","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"shape","id":"sh/1cfmhgne","slide":9,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/nex4jq5k","slide":9,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"textbox","id":"sh/hcji5o7a","slide":9,"name":"TextBox 23","text":"학습 데이터 소개 (Train/dev set)\n","textPreview":"학습 데이터 소개 (Train/dev set) |","textChars":26,"textLines":2,"bbox":[78.07,150.15,1083.93,67.86]}
+{"kind":"shape","id":"sh/u1cnedcz","slide":9,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"name":"TextBox 15","text":"* 결과 제시 ① 탐색적 분석 및 전처리\n","textPreview":"* 결과 제시 ① 탐색적 분석 및 전처리 |","textChars":23,"textLines":2,"bbox":[872.69,89.69,367.82,54.93]}
+{"kind":"textbox","id":"sh/t8nmx8ri","slide":9,"name":"TextBox 9","text":"Tokenizing : Okt\nRegular Expression : 불용어가 많아 필수 한글, 영어, 숫자만 추출\nEmbedding : 단어 임베딩(Glove) – 단어 사이 문맥상 유사성 이해\nVocabulary ","textPreview":"Tokenizing : Okt | Regular Expression : 불용어가 많아 필수 한글, 영어, 숫자만 추출 | Embedding : 단어 임베딩(Glove) – 단어 사이 문맥상 유사성 이해 | Vocabulary","textChars":120,"textLines":4,"bbox":[552.9,208.8,653.07,164.79]}
+{"kind":"textbox","id":"sh/65c32ds7","slide":9,"name":"TextBox 19","text":"LG CNS KORQUAD 질의응답 형식\n  ·  Context : 10,645개\n  ·  QA 쌍 : 66,181개 ","textPreview":"LG CNS KORQUAD 질의응답 형식 |   ·  Context : 10,645개 |   ·  QA 쌍 : 66,181개","textChars":66,"textLines":3,"bbox":[74.03,208.8,403.81,121.02]}
+{"kind":"image","id":"im/gf2hgb2h","slide":9,"name":"그래픽 98","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/bypgvmlc","slide":9,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/axgf2hk7","slide":9,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/yp8bqt8r","slide":9,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"image","id":"im/zqhsze9c","slide":9,"name":"Picture 2","bbox":[47.03,392.83,431.53,260]}
+{"kind":"image","id":"im/0rqtsjqx","slide":9,"name":"그림 57","bbox":[484.85,395.56,214.77,243.41]}
+{"kind":"image","id":"im/lsza1ori","slide":9,"name":"Picture 2","bbox":[677.19,393.4,223.43,131.5]}
+{"kind":"image","id":"im/qlobm98v","slide":9,"name":"그림 59","bbox":[805.25,478.84,190.73,210.72]}
+{"kind":"image","id":"im/bmxsve9g","slide":9,"name":"그림 60","bbox":[1006.25,439.12,228.23,171.57]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":""}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"K-Digital Training","textShapes":6}
+{"kind":"shape","id":"sh/f2h8jitg","slide":10,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/yxgbilcj","slide":10,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"name":"TextBox 10","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/r6pcv6lw","slide":10,"name":"TextBox 12","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/zelojyl8","slide":10,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"textbox","id":"sh/lk7ut0va","slide":10,"name":"TextBox 23","text":"LSTM(Long short-term memory)\n","textPreview":"LSTM(Long short-term memory) |","textChars":29,"textLines":2,"bbox":[78.07,150.15,1083.93,67.86]}
+{"kind":"shape","id":"sh/ip0f2p0j","slide":10,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"textbox","id":"sh/e9gb61k7","slide":10,"name":"TextBox 15","text":"* 결과 제시 ② 모델 개요\n\n","textPreview":"* 결과 제시 ② 모델 개요 |  |","textChars":17,"textLines":3,"bbox":[872.69,89.69,367.82,77.55]}
+{"kind":"textbox","id":"sh/kjytkvup","slide":10,"name":"TextBox 1","text":"피드백 루프를 순환하면서 주어진 입력에 관한 신경망 출력을 방지하기 위해 고안된 순환 신경망(RNN: Recurrent Neural Network) ","textPreview":"피드백 루프를 순환하면서 주어진 입력에 관한 신경망 출력을 방지하기 위해 고안된 순환 신경망(RNN: Recurrent Neural Network)","textChars":83,"textLines":1,"bbox":[55.94,218.73,1192.63,43.47]}
+{"kind":"image","id":"im/q1czetcr","slide":10,"name":"그래픽 98","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/b2l0nytc","slide":10,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/ozuhcjul","slide":10,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/p03ilob6","slide":10,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":""}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"K-Digital Training","textShapes":6}
+{"kind":"shape","id":"sh/jylwj6lw","slide":11,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/y1czalob","slide":11,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"name":"TextBox 10","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/nehs7iho","slide":11,"name":"TextBox 12","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/n69grmpw","slide":11,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"textbox","id":"sh/l43ilgn2","slide":11,"name":"TextBox 23","text":"LSTM(Long short-term memory)","textPreview":"LSTM(Long short-term memory)","textChars":28,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/u18bit8f","slide":11,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"textbox","id":"sh/epobatgr","slide":11,"name":"TextBox 15","text":"* 결과 제시 ③ 모델 선정 및 분석\n\n","textPreview":"* 결과 제시 ③ 모델 선정 및 분석 |  |","textChars":22,"textLines":3,"bbox":[872.69,89.69,367.82,77.55]}
+{"kind":"textbox","id":"sh/7650nq5s","slide":11,"name":"TextBox 1","text":"2Layer LSTM : 문단, 질문\n코사인 유사도(문서) ","textPreview":"2Layer LSTM : 문단, 질문 | 코사인 유사도(문서)","textChars":33,"textLines":2,"bbox":[84.35,217.24,404.79,82.24]}
+{"kind":"image","id":"im/m9cna1cr","slide":11,"name":"그래픽 98","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/7alo36dc","slide":11,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/k7a58rul","slide":11,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/l8361wv6","slide":11,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"image","id":"im/ni1ormx8","slide":11,"name":"Picture 2","bbox":[86.27,329.76,520.46,226.8]}
+{"kind":"image","id":"im/2hs7ihwn","slide":11,"name":"Picture 2","bbox":[667.21,265.35,408.22,381.93]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":""}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"K-Digital Training","textShapes":6}
+{"kind":"shape","id":"sh/7epczitg","slide":12,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/6t0n6hg7","slide":12,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/xw3q94ne","slide":12,"name":"TextBox 10","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/bulo7u58","slide":12,"name":"TextBox 12","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"shape","id":"sh/1gbm9s3a","slide":12,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/ra943il8","slide":12,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"textbox","id":"sh/tgrm1wzy","slide":12,"name":"TextBox 23","text":"LSTM(Long short-term memory)","textPreview":"LSTM(Long short-term memory)","textChars":28,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/i1c7i5wf","slide":12,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"textbox","id":"sh/mps7a5or","slide":12,"name":"TextBox 15","text":"* 결과 제시 ④ 모델 평가 및 개선\n\n","textPreview":"* 결과 제시 ④ 모델 평가 및 개선 |  |","textChars":22,"textLines":3,"bbox":[872.69,89.69,367.82,77.55]}
+{"kind":"textbox","id":"sh/7u94zmhs","slide":12,"name":"TextBox 20","text":"3Layer LSTM 으로 변경\n옵티마이저 조정\n    : Adam ->‘rmsprop’로 변경 \n          >> 학습속도 및 유사도 개선","textPreview":"3Layer LSTM 으로 변경 | 옵티마이저 조정 |     : Adam ->‘rmsprop’로 변경  |           >> 학습속도 및 유사도 개선","textChars":81,"textLines":4,"bbox":[95.34,226.61,497.18,164.79]}
+{"kind":"image","id":"im/ad436h8r","slide":12,"name":"그래픽 98","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/vedkzmpc","slide":12,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/cj2lwnqt","slide":12,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/dkb2ps7y","slide":12,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"image","id":"im/fehovq9g","slide":12,"name":"Picture 2","bbox":[688.79,279.3,495.88,379.32]}
+{"kind":"image","id":"im/ed8n2lsb","slide":12,"name":"Picture 2","bbox":[113.03,432.63,495.88,190.54]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":""}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"K-Digital Training","textShapes":6}
+{"kind":"shape","id":"sh/mhsje9wz","slide":13,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/3yxgbqdg","slide":13,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/gb6x0zm9","slide":13,"name":"TextBox 10","text":"프로젝트 수행 경과","textPreview":"프로젝트 수행 경과","textChars":10,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/u9ofyp43","slide":13,"name":"TextBox 12","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"shape","id":"sh/q50nydsj","slide":13,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/o3i5w3ad","slide":13,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"textbox","id":"sh/oz6x4vul","slide":13,"name":"TextBox 23","text":"훈련생 발표 영상이 아닌 세부 기능 소개, 화면 구동 및 기능 동작 여부 시연영상으로 제작한다.","textPreview":"훈련생 발표 영상이 아닌 세부 기능 소개, 화면 구동 및 기능 동작 여부 시연영상으로 제작한다.","textChars":53,"textLines":1,"bbox":[78.07,150.15,1083.93,38.78]}
+{"kind":"shape","id":"sh/n6pkrelc","slide":13,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"textbox","id":"sh/7mdg3als","slide":13,"name":"TextBox 15","text":"* 결과 제시 ⑤ 시연 동영상\n","textPreview":"* 결과 제시 ⑤ 시연 동영상 |","textChars":17,"textLines":2,"bbox":[872.69,89.69,361.97,54.93]}
+{"kind":"shape","id":"sh/xozyhkbi","slide":13,"name":"자유형: 도형 20","bbox":[54.17,217.77,1180.5,447.57]}
+{"kind":"shape","id":"sh/p0zyd0b6","slide":13,"name":"자유형: 도형 24","bbox":[618.61,398.28,44.18,51.26]}
+{"kind":"shape","id":"sh/kvy1o325","slide":13,"name":"자유형: 도형 76","bbox":[573.58,359.42,127.69,127.4]}
+{"kind":"shape","id":"sh/q18f65cr","slide":13,"name":"자유형: 도형 21","bbox":[93.12,626.78,13.57,16.04]}
+{"kind":"shape","id":"sh/bmhgfatc","slide":13,"name":"자유형: 도형 22","bbox":[136.71,626.78,13.78,16.04]}
+{"kind":"shape","id":"sh/2xof2lcv","slide":13,"name":"자유형: 도형 25","bbox":[152.39,626.18,2.91,17.42]}
+{"kind":"shape","id":"sh/8vahgzu5","slide":13,"name":"자유형: 도형 27","bbox":[176.99,632.21,47.04,4.8]}
+{"kind":"shape","id":"sh/9wjyp4bq","slide":13,"name":"자유형: 도형 28","bbox":[224.03,632.21,549.14,4.8]}
+{"kind":"shape","id":"sh/5cn2h8vy","slide":13,"name":"자유형: 도형 31","bbox":[773.16,632.21,86.81,4.8]}
+{"kind":"shape","id":"sh/y9cfa50v","slide":13,"name":"자유형: 도형 61","bbox":[220.05,630.44,8.35,8.33]}
+{"kind":"shape","id":"sh/a5gzi9k3","slide":13,"name":"자유형: 도형 78","bbox":[896.55,629.47,6.52,9.91]}
+{"kind":"shape","id":"sh/mlkredwv","slide":13,"name":"자유형: 도형 79","bbox":[904.36,632.33,1.76,7.05]}
+{"kind":"shape","id":"sh/nmtsnidg","slide":13,"name":"자유형: 도형 80","bbox":[908.19,629.63,3.21,9.58]}
+{"kind":"shape","id":"sh/8nm9gne1","slide":13,"name":"자유형: 도형 81","bbox":[914.77,629.47,6.52,9.91]}
+{"kind":"shape","id":"sh/9ovapsvm","slide":13,"name":"자유형: 도형 82","bbox":[928.06,629.12,5.13,10.69]}
+{"kind":"shape","id":"sh/yxkratwz","slide":13,"name":"자유형: 도형 83","bbox":[940.07,629.47,6.13,9.74]}
+{"kind":"shape","id":"sh/zytsjydk","slide":13,"name":"자유형: 도형 84","bbox":[947.76,632.33,1.76,7.05]}
+{"kind":"shape","id":"sh/0z29c3e5","slide":13,"name":"자유형: 도형 85","bbox":[950.67,629.47,6,9.91]}
+{"kind":"shape","id":"sh/lkbal8vq","slide":13,"name":"자유형: 도형 86","bbox":[958.16,629.47,6.52,9.91]}
+{"kind":"shape","id":"sh/7i107edk","slide":13,"name":"자유형: 도형 37","bbox":[1068.9,632.67,51.73,3.88]}
+{"kind":"shape","id":"sh/03e1wjm1","slide":13,"name":"자유형: 도형 41","bbox":[1115,632.63,13.1,3.87]}
+{"kind":"shape","id":"sh/8zexgzix","slide":13,"name":"자유형: 도형 63","bbox":[1031.76,631.67,4.85,6.45]}
+{"kind":"shape","id":"sh/p4jed0zy","slide":13,"name":"자유형: 도형 68","bbox":[1036.61,626.28,4.85,17.26]}
+{"kind":"shape","id":"sh/7y90jy1w","slide":13,"name":"자유형: 도형 69","bbox":[1043.24,626.01,7.46,17.72]}
+{"kind":"shape","id":"sh/t0ril8jm","slide":13,"name":"자유형: 도형 71","bbox":[1043.24,630.58,3.02,8.06]}
+{"kind":"shape","id":"sh/szi1s321","slide":13,"name":"자유형: 도형 72","bbox":[1037.7,634.08,0.04,1.06]}
+{"kind":"shape","id":"sh/jup0fy1k","slide":13,"name":"자유형: 도형 73","bbox":[1156.52,625.24,9.59,9.44]}
+{"kind":"shape","id":"sh/itgjmtkz","slide":13,"name":"자유형: 도형 74","bbox":[1147.91,633.84,9.47,9.6]}
+{"kind":"shape","id":"sh/5wrihojq","slide":13,"name":"자유형: 도형 75","bbox":[1182.76,624.37,20.74,20.69]}
+{"kind":"shape","id":"sh/it4bmxw3","slide":13,"name":"자유형: 도형 87","bbox":[1113.8,630.44,8.35,8.33]}
+{"kind":"textbox","id":"sh/s3mdcrad","slide":13,"name":"TextBox 54","text":"* 용량제한: 팀별 5-10분 내(100MB 이하), 기능별 소개 음성 포함, 별도 파일형태로 제출 가능","textPreview":"* 용량제한: 팀별 5-10분 내(100MB 이하), 기능별 소개 음성 포함, 별도 파일형태로 제출 가능","textChars":58,"textLines":1,"bbox":[57.89,668.86,941.2,32.31]}
+{"kind":"image","id":"im/o3y18v6l","slide":13,"name":"그래픽 98","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/69sf2xo3","slide":13,"name":"그림 34","bbox":[0,201.24,1280,24.52]}
+{"kind":"image","id":"im/7a1wb25o","slide":13,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/8bax4769","slide":13,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":""}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"K-Digital Training","textShapes":10}
+{"kind":"shape","id":"sh/7m94j210","slide":14,"name":"사각형: 둥근 한쪽 모서리 38","bbox":[18.29,7.42,1261.71,128.19]}
+{"kind":"textbox","id":"sh/2t4fyl8z","slide":14,"name":"TextBox 26","text":"K-Digital Training","textPreview":"K-Digital Training","textChars":18,"textLines":1,"bbox":[153.46,38.44,236.45,29.08]}
+{"kind":"textbox","id":"sh/x4ni9ofy","slide":14,"name":"TextBox 10","text":"자체 평가 의견","textPreview":"자체 평가 의견","textChars":8,"textLines":1,"bbox":[153.46,61.42,510.54,54.93]}
+{"kind":"textbox","id":"sh/b2507exs","slide":14,"name":"TextBox 12","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[39.49,34.99,132.98,87.24]}
+{"kind":"textbox","id":"sh/pwvy90rq","slide":14,"name":"TextBox 23","text":"프로젝트 결과물에 대한 프로젝트 기획 의도와의 부합 정도 및 실무 활용 가능 정도, 달성도, 완성도 등\n훈련생의 자체적인 평가 의견과 느낀 점을 작성한다.","textPreview":"프로젝트 결과물에 대한 프로젝트 기획 의도와의 부합 정도 및 실무 활용 가능 정도, 달성도, 완성도 등 | 훈련생의 자체적인 평가 의견과 느낀 점을 작성한다.","textChars":86,"textLines":2,"bbox":[78.07,150.15,1145.04,67.86]}
+{"kind":"shape","id":"sh/25w3excv","slide":14,"name":"그래픽 43","bbox":[56.89,161.58,10.62,11.95]}
+{"kind":"shape","id":"sh/xc7eds76","slide":14,"name":"TextBox 1","bbox":[0,0,1280,12]}
+{"kind":"shape","id":"sh/jepwf2pc","slide":14,"name":"TextBox 3","bbox":[0,0,140.33,12]}
+{"kind":"shape","id":"sh/a1wze9g7","slide":14,"name":"사각형: 둥근 모서리 11","bbox":[56.89,252.82,563.14,183.57]}
+{"kind":"shape","id":"sh/hsvy50re","slide":14,"name":"직사각형 19","bbox":[333.54,24.68,9.85,466.14]}
+{"kind":"textbox","id":"sh/fi5432t4","slide":14,"name":"TextBox 39","text":"사전 기획의 관점에서 \n프로젝트 결과물에 대한 완성도 평가(10점 만점)","textPreview":"사전 기획의 관점에서  | 프로젝트 결과물에 대한 완성도 평가(10점 만점)","textChars":40,"textLines":2,"bbox":[79.58,304.47,530.39,76.05]}
+{"kind":"shape","id":"sh/ls7idofu","slide":14,"name":"사각형: 둥근 모서리 14","bbox":[56.89,471.49,563.14,183.57]}
+{"kind":"shape","id":"sh/365472tg","slide":14,"name":"직사각형 43","bbox":[333.54,243.34,9.85,466.14]}
+{"kind":"textbox","id":"sh/ofq1cja9","slide":14,"name":"TextBox 49","text":"프로젝트 결과물의 \n추후 개선점이나 보완할 점 등 내용 정리","textPreview":"프로젝트 결과물의  | 추후 개선점이나 보완할 점 등 내용 정리","textChars":33,"textLines":2,"bbox":[95.79,526.94,485.34,76.05]}
+{"kind":"shape","id":"sh/z650byxo","slide":14,"name":"사각형: 둥근 모서리 16","bbox":[671.52,471.49,563.14,183.57]}
+{"kind":"shape","id":"sh/p87m9cb6","slide":14,"name":"직사각형 45","bbox":[948.17,243.34,9.85,466.14]}
+{"kind":"textbox","id":"sh/9gji5oru","slide":14,"name":"TextBox 50","text":"프로젝트를 수행하면서\n느낀 점이나 경험한 성과(경력 계획 등과 연관) ","textPreview":"프로젝트를 수행하면서 | 느낀 점이나 경험한 성과(경력 계획 등과 연관)","textChars":39,"textLines":2,"bbox":[708.36,526.94,485.34,78.03]}
+{"kind":"shape","id":"sh/kre1k3y9","slide":14,"name":"사각형: 둥근 모서리 13","bbox":[671.52,252.82,563.14,183.57]}
+{"kind":"shape","id":"sh/gjelc7up","slide":14,"name":"직사각형 42","bbox":[948.17,24.68,9.85,466.14]}
+{"kind":"textbox","id":"sh/47y5g7u1","slide":14,"name":"TextBox 46","text":"개인 또는 우리 팀이 잘한 부분과 아쉬운 점","textPreview":"개인 또는 우리 팀이 잘한 부분과 아쉬운 점","textChars":24,"textLines":1,"bbox":[696.7,304.47,524.48,38.97]}
+{"kind":"textbox","id":"sh/i9c32dcr","slide":14,"name":"TextBox 48","text":"모델 평가 결과, 정확도가 00.00%로\n정확도 향상을 위해 모델 추후 개선 필요","textPreview":"모델 평가 결과, 정확도가 00.00%로 | 정확도 향상을 위해 모델 추후 개선 필요","textChars":45,"textLines":2,"bbox":[816.19,362.95,334.1,48.47]}
+{"kind":"textbox","id":"sh/mt8ja9sj","slide":14,"name":"타원 51","text":"예","textPreview":"예","textChars":1,"textLines":1,"bbox":[792,364.99,24.19,24.19]}
+{"kind":"image","id":"im/cn6d4ve9","slide":14,"name":"그래픽 60","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/zaxwzad0","slide":14,"name":"그래픽 55","bbox":[1117.65,329.17,267.81,56.89]}
+{"kind":"image","id":"im/e9ov65wf","slide":14,"name":"그래픽 53","bbox":[0,554.78,143.77,165.22]}
+{"kind":"image","id":"im/1cze10vq","slide":14,"name":"그림 34","bbox":[0,223.71,1280,24.52]}
+{"kind":"image","id":"im/0bqd8fel","slide":14,"name":"그래픽 57","bbox":[39.7,454.3,14.53,14.53]}
+{"kind":"image","id":"im/nehw3adw","slide":14,"name":"_x278651016","bbox":[1183.11,690.48,49.73,15.83]}
+{"kind":"image","id":"im/md8va5wb","slide":14,"name":"그래픽 23","bbox":[1119.91,690.48,50.17,14.91]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":""}

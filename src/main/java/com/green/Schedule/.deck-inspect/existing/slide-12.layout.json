@@ -1,0 +1,1159 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/8f2psfyx",
+    "id": "8f2psfyx",
+    "slide": 12,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "backgroundColor": "#0B0F16",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Calibri",
+      "Calibri Light",
+      "맑은 고딕"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gbm9s3a",
+      "id": "2",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#2B6BF0"
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0f2lgnmp",
+      "id": "3",
+      "name": "Shape 1",
+      "bbox": [
+        160,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#2196D4"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ra943il8",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        319.99,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#1FBBD1"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q903ad4n",
+      "id": "5",
+      "name": "Shape 3",
+      "bbox": [
+        479.99,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#3CC98A"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcbm583y",
+      "id": "6",
+      "name": "Shape 4",
+      "bbox": [
+        639.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#D2C81A"
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sb2lcnmd",
+      "id": "7",
+      "name": "Shape 5",
+      "bbox": [
+        799.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#F0A500"
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6d4f2lc",
+      "id": "8",
+      "name": "Shape 6",
+      "bbox": [
+        959.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#FF5A1F"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a543mx4r",
+      "id": "9",
+      "name": "Shape 7",
+      "bbox": [
+        1119.97,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#E63A1A"
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wvupgz6t",
+      "id": "10",
+      "name": "Shape 8",
+      "bbox": [
+        52.8,
+        148.8,
+        302.4,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(43, 107, 240, 0.85)"
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xw3q94ne",
+      "id": "11",
+      "name": "Shape 9",
+      "bbox": [
+        120,
+        172.8,
+        388.8,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(33, 150, 212, 0.85)"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atc7epon",
+      "id": "12",
+      "name": "Shape 10",
+      "bbox": [
+        76.8,
+        220.8,
+        244.8,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(31, 187, 209, 0.85)"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bulo7u58",
+      "id": "13",
+      "name": "Shape 11",
+      "bbox": [
+        206.4,
+        238.08,
+        334.08,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(60, 201, 138, 0.85)"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orapcf6h",
+      "id": "14",
+      "name": "Shape 12",
+      "bbox": [
+        157.44,
+        273.6,
+        429.12,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(210, 200, 26, 0.85)"
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9sj65kn2",
+      "id": "15",
+      "name": "Shape 13",
+      "bbox": [
+        276.48,
+        305.28,
+        261.12,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(240, 165, 0, 0.85)"
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mps7a5or",
+      "id": "16",
+      "name": "Shape 14",
+      "bbox": [
+        115.2,
+        353.28,
+        366.72,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(255, 90, 31, 0.85)"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nq1o3a5w",
+      "id": "17",
+      "name": "Shape 15",
+      "bbox": [
+        238.08,
+        379.2,
+        224.64,
+        23.04
+      ],
+      "rotation": -4,
+      "geometry": "roundRect",
+      "fillColor": "rgba(230, 58, 26, 0.85)"
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8zulk7u1",
+      "id": "39",
+      "name": "Image 0",
+      "bbox": [
+        59.52,
+        52.8,
+        40.32,
+        40.32
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image-12-1.png",
+        "contentType": "image/png",
+        "byteLength": 50530
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image-12-1.png",
+        "contentType": "image/png",
+        "byteLength": 50530
+      }
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1oj61kn6",
+      "id": "19",
+      "name": "Text 16",
+      "bbox": [
+        107.52,
+        55.68,
+        288,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "Schedule",
+      "textPreview": "Schedule",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Schedule"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Schedule",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Schedule",
+              "fontSize": 26.67,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hkbm5wzu",
+      "id": "20",
+      "name": "Text 17",
+      "bbox": [
+        107.52,
+        94.08,
+        384,
+        24
+      ],
+      "geometry": "rect",
+      "text": "냉난방 AS 스케줄 관리",
+      "textPreview": "냉난방 AS 스케줄 관리",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "냉난방 AS 스케줄 관리"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "냉난방 AS 스케줄 관리",
+          "runs": [
+            {
+              "index": 1,
+              "text": "냉난방 AS 스케줄 관리",
+              "fontSize": 13.33,
+              "typeface": "맑은 고딕",
+              "color": "#7C8AA0"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gj25cry9",
+      "id": "21",
+      "name": "Text 18",
+      "bbox": [
+        614.4,
+        259.2,
+        614.4,
+        72
+      ],
+      "geometry": "rect",
+      "text": "들어주셔서",
+      "textPreview": "들어주셔서",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "들어주셔서"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "들어주셔서",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "들어주셔서",
+              "fontSize": 56,
+              "typeface": "맑은 고딕",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fit436ho",
+      "id": "22",
+      "name": "Text 19",
+      "bbox": [
+        614.4,
+        328.32,
+        614.4,
+        72
+      ],
+      "geometry": "rect",
+      "text": "감사합니다",
+      "textPreview": "감사합니다",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "감사합니다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "감사합니다",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "감사합니다",
+              "fontSize": 56,
+              "typeface": "맑은 고딕",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uh0na1g3",
+      "id": "23",
+      "name": "Text 20",
+      "bbox": [
+        614.4,
+        410.88,
+        614.4,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "Q & A",
+      "textPreview": "Q & A",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Q & A"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Q & A",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Q & A",
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#00B4D8",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgrm1wzy",
+      "id": "24",
+      "name": "Shape 21",
+      "bbox": [
+        52.8,
+        609.6,
+        1176,
+        0.96
+      ],
+      "geometry": "rect",
+      "fillColor": "#1F2836"
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sfi58ryd",
+      "id": "25",
+      "name": "Text 22",
+      "bbox": [
+        52.8,
+        628.8,
+        288,
+        21.12
+      ],
+      "geometry": "rect",
+      "text": "저장소",
+      "textPreview": "저장소",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "저장소"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "저장소",
+          "runs": [
+            {
+              "index": 1,
+              "text": "저장소",
+              "fontSize": 12.67,
+              "typeface": "맑은 고딕",
+              "color": "#00B4D8",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7u94zmhs",
+      "id": "26",
+      "name": "Text 23",
+      "bbox": [
+        52.8,
+        650.88,
+        384,
+        26.88
+      ],
+      "geometry": "rect",
+      "text": "github.com/ung-Jin/Schedule",
+      "textPreview": "github.com/ung-Jin/Schedule",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "github.com/ung-Jin/Schedule"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "github.com/ung-Jin/Schedule",
+          "runs": [
+            {
+              "index": 1,
+              "text": "github.com/ung-Jin/Schedule",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#E8EDF4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6t0n6hg7",
+      "id": "27",
+      "name": "Text 24",
+      "bbox": [
+        460.8,
+        628.8,
+        288,
+        21.12
+      ],
+      "geometry": "rect",
+      "text": "발표자",
+      "textPreview": "발표자",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "발표자"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "발표자",
+          "runs": [
+            {
+              "index": 1,
+              "text": "발표자",
+              "fontSize": 12.67,
+              "typeface": "맑은 고딕",
+              "color": "#00B4D8",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcv6dgz2",
+      "id": "28",
+      "name": "Text 25",
+      "bbox": [
+        460.8,
+        650.88,
+        432,
+        26.88
+      ],
+      "geometry": "rect",
+      "text": "최준영 — 관리자 대시보드 · 기사관리",
+      "textPreview": "최준영 — 관리자 대시보드 · 기사관리",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "최준영 — 관리자 대시보드 · 기사관리"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "최준영 — 관리자 대시보드 · 기사관리",
+          "runs": [
+            {
+              "index": 1,
+              "text": "최준영 — 관리자 대시보드 · 기사관리",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#E8EDF4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbm5kbyh",
+      "id": "29",
+      "name": "Text 26",
+      "bbox": [
+        902.4,
+        628.8,
+        288,
+        21.12
+      ],
+      "geometry": "rect",
+      "text": "팀",
+      "textPreview": "팀",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "팀"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "팀",
+          "runs": [
+            {
+              "index": 1,
+              "text": "팀",
+              "fontSize": 12.67,
+              "typeface": "맑은 고딕",
+              "color": "#00B4D8",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/alwbitsn",
+      "id": "30",
+      "name": "Text 27",
+      "bbox": [
+        902.4,
+        650.88,
+        316.8,
+        26.88
+      ],
+      "geometry": "rect",
+      "text": "4인 · 화면 단위 분업",
+      "textPreview": "4인 · 화면 단위 분업",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4인 · 화면 단위 분업"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4인 · 화면 단위 분업",
+          "runs": [
+            {
+              "index": 1,
+              "text": "4인 · 화면 단위 분업",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#E8EDF4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm5sryt8",
+      "id": "31",
+      "name": "Shape 28",
+      "bbox": [
+        0,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#2B6BF0"
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wnetkjat",
+      "id": "32",
+      "name": "Shape 29",
+      "bbox": [
+        160,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#2196D4"
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xonutobe",
+      "id": "33",
+      "name": "Shape 30",
+      "bbox": [
+        319.99,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#1FBBD1"
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mhcbe9sr",
+      "id": "34",
+      "name": "Shape 31",
+      "bbox": [
+        479.99,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#3CC98A"
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nilsnetc",
+      "id": "35",
+      "name": "Shape 32",
+      "bbox": [
+        639.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#D2C81A"
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ojutgjah",
+      "id": "36",
+      "name": "Shape 33",
+      "bbox": [
+        799.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#F0A500"
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9k3apob2",
+      "id": "37",
+      "name": "Shape 34",
+      "bbox": [
+        959.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#FF5A1F"
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6dgbqdsv",
+      "id": "38",
+      "name": "Shape 35",
+      "bbox": [
+        1119.97,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#E63A1A"
+    }
+  ],
+  "composeRuns": []
+}

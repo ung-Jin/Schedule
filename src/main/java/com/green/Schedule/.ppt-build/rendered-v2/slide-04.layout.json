@@ -1,0 +1,1538 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jyx0ra1s",
+    "id": "jyx0ra1s",
+    "slide": 4,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Calibri",
+      "Calibri Light",
+      "맑은 고딕"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cj2d8b6",
+      "id": "2",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#2B6BF0"
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0ba143al",
+      "id": "3",
+      "name": "Shape 1",
+      "bbox": [
+        160,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#2196D4"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rm1k7yt4",
+      "id": "4",
+      "name": "Shape 2",
+      "bbox": [
+        319.99,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#1FBBD1"
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ql8jytsj",
+      "id": "5",
+      "name": "Shape 3",
+      "bbox": [
+        479.99,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#3CC98A"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/doj29oba",
+      "id": "6",
+      "name": "Shape 4",
+      "bbox": [
+        639.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#D2C81A"
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sna103ap",
+      "id": "7",
+      "name": "Shape 5",
+      "bbox": [
+        799.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#F0A500"
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ihk3et8",
+      "id": "8",
+      "name": "Shape 6",
+      "bbox": [
+        959.98,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#FF5A1F"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih8ju9sn",
+      "id": "9",
+      "name": "Shape 7",
+      "bbox": [
+        1119.97,
+        713.28,
+        160.96,
+        6.72
+      ],
+      "geometry": "rect",
+      "fillColor": "#E63A1A"
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/lsbelgne",
+      "id": "41",
+      "name": "Image 0",
+      "bbox": [
+        52.8,
+        38.4,
+        21.12,
+        21.12
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image12.png",
+        "contentType": "image/png",
+        "byteLength": 50530
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image12.png",
+        "contentType": "image/png",
+        "byteLength": 50530
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5cva1cfq",
+      "id": "11",
+      "name": "Text 8",
+      "bbox": [
+        78.72,
+        36.48,
+        153.6,
+        24.96
+      ],
+      "geometry": "rect",
+      "text": "Schedule",
+      "textPreview": "Schedule",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Schedule"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Schedule",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Schedule",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "#10151E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i94r6xgz",
+      "id": "12",
+      "name": "Shape 9",
+      "bbox": [
+        52.8,
+        80.64,
+        9.6,
+        9.6
+      ],
+      "geometry": "rect",
+      "fillColor": "#FF5A1F"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jadsz2xk",
+      "id": "13",
+      "name": "Text 10",
+      "bbox": [
+        72,
+        74.88,
+        768,
+        23.04
+      ],
+      "geometry": "rect",
+      "text": "01   프로젝트 개요 · 선정 배경과 차별점",
+      "textPreview": "01   프로젝트 개요 · 선정 배경과 차별점",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01   프로젝트 개요 · 선정 배경과 차별점"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01   프로젝트 개요 · 선정 배경과 차별점",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01   프로젝트 개요 · 선정 배경과 차별점",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#FF5A1F",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w72947yt",
+      "id": "14",
+      "name": "Text 11",
+      "bbox": [
+        52.8,
+        103.68,
+        1113.6,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "전화와 메모로 흩어진 AS 업무를 역할별 화면으로 연결",
+      "textPreview": "전화와 메모로 흩어진 AS 업무를 역할별 화면으로 연결",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "전화와 메모로 흩어진 AS 업무를 역할별 화면으로 연결"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "전화와 메모로 흩어진 AS 업무를 역할별 화면으로 연결",
+          "lineSpacingPercent": 110000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "전화와 메모로 흩어진 AS 업무를 역할별 화면으로 연결",
+              "fontSize": 33.33,
+              "typeface": "맑은 고딕",
+              "color": "#10151E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x8vaxsfe",
+      "id": "15",
+      "name": "Text 12",
+      "bbox": [
+        52.8,
+        679.68,
+        384,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Schedule · 2026 팀 프로젝트",
+      "textPreview": "Schedule · 2026 팀 프로젝트",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Schedule · 2026 팀 프로젝트"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Schedule · 2026 팀 프로젝트",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Schedule · 2026 팀 프로젝트",
+              "fontSize": 12,
+              "typeface": "맑은 고딕",
+              "color": "#8E9AAA"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a5kr2xg3",
+      "id": "16",
+      "name": "Text 13",
+      "bbox": [
+        1174.37,
+        679.68,
+        57.6,
+        24
+      ],
+      "geometry": "rect",
+      "text": "04",
+      "textPreview": "04",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04",
+              "fontSize": 12,
+              "typeface": "맑은 고딕",
+              "color": "#8E9AAA"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6tsv2xo",
+      "id": "17",
+      "name": "Shape 14",
+      "bbox": [
+        52.8,
+        177.6,
+        537.6,
+        436.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F6F8FA",
+      "lineColor": "#DDE3EA",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g36tgryd",
+      "id": "18",
+      "name": "Shape 15",
+      "bbox": [
+        76.8,
+        196.8,
+        57.6,
+        57.6
+      ],
+      "geometry": "ellipse",
+      "fillColor": "rgba(230, 58, 26, 0.15)"
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ypkva1o3",
+      "id": "42",
+      "name": "Image 1",
+      "bbox": [
+        91.2,
+        211.2,
+        28.8,
+        28.8
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image13.png",
+        "contentType": "image/png",
+        "byteLength": 7204
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image13.png",
+        "contentType": "image/png",
+        "byteLength": 7204
+      }
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0batw72",
+      "id": "20",
+      "name": "Text 16",
+      "bbox": [
+        144,
+        204.48,
+        422.4,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "기존 방식의 문제",
+      "textPreview": "기존 방식의 문제",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "기존 방식의 문제"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "기존 방식의 문제",
+          "runs": [
+            {
+              "index": 1,
+              "text": "기존 방식의 문제",
+              "fontSize": 20,
+              "typeface": "맑은 고딕",
+              "color": "#10151E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oz29krqh",
+      "id": "21",
+      "name": "Shape 17",
+      "bbox": [
+        86.4,
+        295.68,
+        7.68,
+        7.68
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E63A1A"
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ytsrmpw",
+      "id": "22",
+      "name": "Text 18",
+      "bbox": [
+        110.4,
+        280.32,
+        441.6,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "신청·배정·방문 결과가 서로 다른 채널에 흩어져 처리 이력을 찾기 어려움",
+      "textPreview": "신청·배정·방문 결과가 서로 다른 채널에 흩어져 처리 이력을 찾기 어려움",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "신청·배정·방문 결과가 서로 다른 채널에 흩어져 처리 이력을"
+          },
+          {
+            "index": 2,
+            "text": "찾기 어려움"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "신청·배정·방문 결과가 서로 다른 채널에 흩어져 처리 이력을 찾기 어려움",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "신청·배정·방문 결과가 서로 다른 채널에 흩어져 처리 이력을 찾기 어려움",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#5D6A7C"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xkrih8b",
+      "id": "23",
+      "name": "Shape 19",
+      "bbox": [
+        86.4,
+        377.28,
+        7.68,
+        7.68
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E63A1A"
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1wbapc7q",
+      "id": "24",
+      "name": "Text 20",
+      "bbox": [
+        110.4,
+        361.92,
+        441.6,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "관리자가 기사별 일정과 접수 상태를 동시에 확인하기 어려움",
+      "textPreview": "관리자가 기사별 일정과 접수 상태를 동시에 확인하기 어려움",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "관리자가 기사별 일정과 접수 상태를 동시에 확인하기 어려움"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "관리자가 기사별 일정과 접수 상태를 동시에 확인하기 어려움",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "관리자가 기사별 일정과 접수 상태를 동시에 확인하기 어려움",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#5D6A7C"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gv29g7q5",
+      "id": "25",
+      "name": "Shape 21",
+      "bbox": [
+        86.4,
+        458.88,
+        7.68,
+        7.68
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E63A1A"
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fu9sn2p0",
+      "id": "26",
+      "name": "Text 22",
+      "bbox": [
+        110.4,
+        443.52,
+        441.6,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "기사는 자신의 오늘 일정과 월간 일정을 별도로 전달받아야 함",
+      "textPreview": "기사는 자신의 오늘 일정과 월간 일정을 별도로 전달받아야 함",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "기사는 자신의 오늘 일정과 월간 일정을 별도로 전달받아야"
+          },
+          {
+            "index": 2,
+            "text": "함"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "기사는 자신의 오늘 일정과 월간 일정을 별도로 전달받아야 함",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "기사는 자신의 오늘 일정과 월간 일정을 별도로 전달받아야 함",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#5D6A7C"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/et0reh8f",
+      "id": "27",
+      "name": "Shape 23",
+      "bbox": [
+        86.4,
+        540.48,
+        7.68,
+        7.68
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E63A1A"
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsrqlc7u",
+      "id": "28",
+      "name": "Text 24",
+      "bbox": [
+        110.4,
+        525.12,
+        441.6,
+        67.2
+      ],
+      "geometry": "rect",
+      "text": "서비스 종료 뒤 고객 피드백이 운영 데이터로 이어지지 않음",
+      "textPreview": "서비스 종료 뒤 고객 피드백이 운영 데이터로 이어지지 않음",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "서비스 종료 뒤 고객 피드백이 운영 데이터로 이어지지 않음"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "서비스 종료 뒤 고객 피드백이 운영 데이터로 이어지지 않음",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "서비스 종료 뒤 고객 피드백이 운영 데이터로 이어지지 않음",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#5D6A7C"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sri9s7q9",
+      "id": "29",
+      "name": "Shape 25",
+      "bbox": [
+        619.2,
+        177.6,
+        537.6,
+        436.8
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#10151E",
+      "lineColor": "#DDE3EA",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ilwf69kv",
+      "id": "30",
+      "name": "Shape 26",
+      "bbox": [
+        643.2,
+        196.8,
+        57.6,
+        57.6
+      ],
+      "geometry": "ellipse",
+      "fillColor": "rgba(255, 90, 31, 0.15)"
+    },
+    {
+      "order": 30,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zqtwj65o",
+      "id": "43",
+      "name": "Image 2",
+      "bbox": [
+        657.6,
+        211.2,
+        28.8,
+        28.8
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image14.png",
+        "contentType": "image/png",
+        "byteLength": 9695
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image14.png",
+        "contentType": "image/png",
+        "byteLength": 9695
+      }
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/knex8j21",
+      "id": "32",
+      "name": "Text 27",
+      "bbox": [
+        710.4,
+        204.48,
+        422.4,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "특화 포인트와 차별점",
+      "textPreview": "특화 포인트와 차별점",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "특화 포인트와 차별점"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "특화 포인트와 차별점",
+          "runs": [
+            {
+              "index": 1,
+              "text": "특화 포인트와 차별점",
+              "fontSize": 20,
+              "typeface": "맑은 고딕",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5ony1oj6",
+      "id": "33",
+      "name": "Text 28",
+      "bbox": [
+        657.6,
+        288,
+        460.8,
+        86.4
+      ],
+      "geometry": "rect",
+      "text": "고객, 관리자, 기사 화면을 역할별로 분리하고 하나의 AS 상태값과 일정 데이터로 연결했습니다.",
+      "textPreview": "고객, 관리자, 기사 화면을 역할별로 분리하고 하나의 AS 상태값과 일정 데이터로 연결했습니다.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "고객, 관리자, 기사 화면을 역할별로 분리하고 하나의 AS"
+          },
+          {
+            "index": 2,
+            "text": "상태값과 일정 데이터로 연결했습니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "고객, 관리자, 기사 화면을 역할별로 분리하고 하나의 AS 상태값과 일정 데이터로 연결했습니다.",
+          "lineSpacingPercent": 135000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "고객, 관리자, 기사 화면을 역할별로 분리하고 하나의 AS 상태값과 일정 데이터로 연결했습니다.",
+              "fontSize": 17.33,
+              "typeface": "맑은 고딕",
+              "color": "#C6D0DE"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axcf29kj",
+      "id": "34",
+      "name": "Shape 29",
+      "bbox": [
+        657.6,
+        393.6,
+        460.8,
+        0.96
+      ],
+      "geometry": "rect",
+      "fillColor": "#2C3646"
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vy5gbe14",
+      "id": "35",
+      "name": "Text 30",
+      "bbox": [
+        657.6,
+        409.92,
+        460.8,
+        24
+      ],
+      "geometry": "rect",
+      "text": "기존 유사 방식과의 차이",
+      "textPreview": "기존 유사 방식과의 차이",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "기존 유사 방식과의 차이"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "기존 유사 방식과의 차이",
+          "runs": [
+            {
+              "index": 1,
+              "text": "기존 유사 방식과의 차이",
+              "fontSize": 13.33,
+              "typeface": "맑은 고딕",
+              "color": "#00B4D8",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wzex4z2p",
+      "id": "36",
+      "name": "Text 31",
+      "bbox": [
+        657.6,
+        444.48,
+        460.8,
+        30.72
+      ],
+      "geometry": "rect",
+      "text": "·  접수부터 결과보고까지 한 시스템에서 추적",
+      "textPreview": "·  접수부터 결과보고까지 한 시스템에서 추적",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "·  접수부터 결과보고까지 한 시스템에서 추적"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "·  접수부터 결과보고까지 한 시스템에서 추적",
+          "runs": [
+            {
+              "index": 1,
+              "text": "·  접수부터 결과보고까지 한 시스템에서 추적",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#C6D0DE"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xknyx4ja",
+      "id": "37",
+      "name": "Text 32",
+      "bbox": [
+        657.6,
+        479.04,
+        460.8,
+        30.72
+      ],
+      "geometry": "rect",
+      "text": "·  관리자·기사 모두 월간 캘린더로 일정 확인",
+      "textPreview": "·  관리자·기사 모두 월간 캘린더로 일정 확인",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "·  관리자·기사 모두 월간 캘린더로 일정 확인"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "·  관리자·기사 모두 월간 캘린더로 일정 확인",
+          "runs": [
+            {
+              "index": 1,
+              "text": "·  관리자·기사 모두 월간 캘린더로 일정 확인",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#C6D0DE"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mtcfypkn",
+      "id": "38",
+      "name": "Text 33",
+      "bbox": [
+        657.6,
+        513.6,
+        460.8,
+        30.72
+      ],
+      "geometry": "rect",
+      "text": "·  결과 등록 후 SMS 설문 링크 자동 발송",
+      "textPreview": "·  결과 등록 후 SMS 설문 링크 자동 발송",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "·  결과 등록 후 SMS 설문 링크 자동 발송"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "·  결과 등록 후 SMS 설문 링크 자동 발송",
+          "runs": [
+            {
+              "index": 1,
+              "text": "·  결과 등록 후 SMS 설문 링크 자동 발송",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#C6D0DE"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nulw7u18",
+      "id": "39",
+      "name": "Text 34",
+      "bbox": [
+        657.6,
+        548.16,
+        460.8,
+        30.72
+      ],
+      "geometry": "rect",
+      "text": "·  고객 응답을 기사별 월간 통계로 즉시 집계",
+      "textPreview": "·  고객 응답을 기사별 월간 통계로 즉시 집계",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "·  고객 응답을 기사별 월간 통계로 즉시 집계"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "·  고객 응답을 기사별 월간 통계로 즉시 집계",
+          "runs": [
+            {
+              "index": 1,
+              "text": "·  고객 응답을 기사별 월간 통계로 즉시 집계",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "#C6D0DE"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fm5c3q54",
+      "id": "40",
+      "name": "Text 35",
+      "bbox": [
+        657.6,
+        571.2,
+        460.8,
+        26.88
+      ],
+      "geometry": "rect",
+      "text": "핵심 목적: 일정 누락과 전달 비용을 줄이고 처리 이력을 남기는 것",
+      "textPreview": "핵심 목적: 일정 누락과 전달 비용을 줄이고 처리 이력을 남기는 것",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "핵심 목적: 일정 누락과 전달 비용을 줄이고 처리 이력을 남기는 것"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "핵심 목적: 일정 누락과 전달 비용을 줄이고 처리 이력을 남기는 것",
+          "runs": [
+            {
+              "index": 1,
+              "text": "핵심 목적: 일정 누락과 전달 비용을 줄이고 처리 이력을 남기는 것",
+              "fontSize": 12.67,
+              "typeface": "맑은 고딕",
+              "color": "#6B7889",
+              "italic": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

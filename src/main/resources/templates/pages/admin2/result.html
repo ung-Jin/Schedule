@@ -3,57 +3,105 @@
   layout:decorate="~{layouts/layout}">
 
 <th:block layout:fragment="content_css">
-  <!-- 이 곳에 link태그로 css파일을 연결하는 코드 작성 -->
+  <link rel="stylesheet" href="/css/pages/admin2/result.css">
 </th:block>
 
 <!-- 아래 bloack에 layout으로 보낼 코드 작성 -->
 <th:block layout:fragment="content">
 
-  <h2>결과화면</h2>
+<div class="page-wrap">
 
-  <table>
-    <thead>
-      <tr>
-        <th>결과번호</th>
-        <th>일정번호</th>
-        <th>처리기사</th>
-        <th>처리일자</th>
-        <th>처리내용</th>
-        <th>처리이미지</th>
-        <th>처리이미지2</th>
-        <th>등록일</th>
-      </tr>
-    </thead>
+  <!-- 결과내역 목록 카드. resultList는 AdminController.result()가 넘겨주는 List<ResultListDTO>
+       (AS_RESULT + AS_SCHEDULE + ENGINEER 조인 결과, PROCESS_DATE 최신순) -->
+  <div class="card">
+    <div class="card-header">
+      <div class="result-heading">
+        <span class="result-heading-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#report"/></svg></span>
+        <div>
+          <span class="result-eyebrow">SERVICE REPORT</span>
+          <h2 class="card-title">결과내역</h2>
+        </div>
+      </div>
+      <span class="result-count" th:text="'총 ' + ${#lists.size(resultList)} + '건'">총 0건</span>
+    </div>
 
-    <tbody>
-      <tr th:each="result : ${resultList}">
+    <div class="result-table-wrap">
+    <table class="result-table">
+      <colgroup>
+        <col class="col-no">
+        <col class="col-no">
+        <col class="col-engineer">
+        <col class="col-date">
+        <col class="col-content">
+        <col class="col-photo">
+        <col class="col-reason">
+        <col class="col-date">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">결과번호</th>
+          <th scope="col">일정번호</th>
+          <th scope="col">처리기사</th>
+          <th scope="col">처리일자</th>
+          <th scope="col">처리내용</th>
+          <th scope="col">처리사진</th>
+          <th scope="col">미첨부사유</th>
+          <th scope="col">등록일</th>
+        </tr>
+      </thead>
 
-        <td th:text="${result.resultNo}"></td>
+      <tbody>
+        <!-- 데이터가 없을 경우 -->
+        <tr th:if="${#lists.isEmpty(resultList)}">
+          <td colspan="8" class="empty-row"><span class="empty-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#report"/></svg></span><strong>등록된 결과보고가 없습니다.</strong><small>기사의 작업 결과가 등록되면 이곳에서 확인할 수 있습니다.</small></td>
+        </tr>
 
-        <td th:text="${result.scheduleNo}"></td>
+        <!-- 데이터가 있을 경우 -->
+        <tr th:each="result : ${resultList}">
 
-        <td th:text="${result.engineerName}"></td>
+          <td class="result-number" th:text="${result.resultNo}"></td>
 
-        <td th:text="${#temporals.format(result.processDate, 'yyyy-MM-dd HH:mm')}"></td>
+          <td class="schedule-number" th:text="${result.scheduleNo}"></td>
 
-        <td th:text="${result.processContent}"></td>
+          <td class="engineer-name" th:text="${result.engineerName}"></td>
 
-        <td>
-          <img th:if="${result.imagePath != null}" th:src="${result.imagePath}" alt="처리 결과 이미지"
-            style="width: 150px; height: 100px; object-fit: cover;">
-        </td>
+          <td th:text="${#temporals.format(result.processDate, 'yyyy-MM-dd HH:mm')}"></td>
 
-        <td>
-          <img th:if="${result.imagePath2 != null}" th:src="${result.imagePath2}" alt="처리 결과 이미지 2"
-            style="width: 150px; height: 100px; object-fit: cover;">
-        </td>
+          <td class="col-content" th:title="${result.processContent}"><span class="content-preview" th:text="${result.processContent}"></span></td>
 
-        <td th:text="${#temporals.format(result.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+          <!-- 처리사진 - 등록된 사진이 있으면 썸네일(클릭 시 원본 새 탭), 없으면 "-" -->
+          <td>
+            <div class="photo-group" th:if="${result.imagePath != null or result.imagePath2 != null}">
+              <a th:if="${result.imagePath != null}" th:href="${result.imagePath}" target="_blank" rel="noopener">
+                <img th:src="${result.imagePath}" alt="처리 사진 1" class="result-thumb">
+              </a>
+              <a th:if="${result.imagePath2 != null}" th:href="${result.imagePath2}" target="_blank" rel="noopener">
+                <img th:src="${result.imagePath2}" alt="처리 사진 2" class="result-thumb">
+              </a>
+            </div>
+            <span class="no-value" th:if="${result.imagePath == null and result.imagePath2 == null}">-</span>
+          </td>
 
-      </tr>
-    </tbody>
+          <!-- 미첨부사유 - 사진이 하나도 없을 때 기사가 남긴 사유. 사진이 있으면 해당 없음(-) -->
+          <td>
+            <span class="reason-badge"
+                  th:if="${result.noPhotoReason != null and !result.noPhotoReason.isBlank()}"
+                  th:text="${result.noPhotoReason}"
+                  th:title="${result.noPhotoReason}">미첨부 사유</span>
+            <span class="no-value"
+                  th:if="${result.noPhotoReason == null or result.noPhotoReason.isBlank()}">-</span>
+          </td>
 
-  </table>
+          <td th:text="${#temporals.format(result.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+
+        </tr>
+      </tbody>
+
+    </table>
+    </div>
+  </div>
+
+</div>
 
 </th:block>
 

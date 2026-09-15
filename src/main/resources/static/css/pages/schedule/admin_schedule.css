@@ -19,7 +19,7 @@
   --text-dim: var(--muted);
  
   padding: 24px;
-  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
 }
  
@@ -122,6 +122,23 @@
 .cal-card .fc-event { border: none; border-radius: 6px; padding: 0; cursor: pointer; }
 .cal-card .fc-theme-standard td, .cal-card .fc-theme-standard th { border-color: var(--border); }
 
+/* 하루에 접수완료(빨강) 외 일정이 몰려서 칸이 계속 늘어나는 것을 막는 "+N" 자리표시.
+   접수완료(빨강)는 절대 여기 접히지 않고 항상 그대로 보입니다 (admin_schedule.js의
+   capEventsPerDay/MAX_VISIBLE_OTHER_PER_DAY 참고). 클릭하면 그 날짜의 일간 화면으로 이동합니다. */
+.cal-card .fc-more-placeholder {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.fc-more-cell {
+  padding: 2px 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
+.fc-more-cell:hover { text-decoration: underline; }
+
 /* 이벤트 안에 기사명/증상/시작시간을 세 줄로 표시 (admin_schedule.js의 eventContent) */
 .fc-event-lines {
   display: flex;
@@ -193,6 +210,73 @@
 }
 .assign-card form > div > div input { flex: 1; width: auto; }
 .assign-card form > div > div span { color: var(--text-dim); font-size: 13px; }
+
+.assign-card .time-range {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.assign-card .time-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #edf7fc;
+  cursor: pointer;
+  transition: border-color .16s, box-shadow .16s, background .16s;
+}
+
+.assign-card .time-field:hover,
+.assign-card .time-field:focus-within {
+  border-color: var(--accent);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(14, 165, 198, .11);
+}
+
+.assign-card .time-field .time-field-caption {
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.assign-card .time-field input {
+  width: 100%;
+  min-height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  box-shadow: none;
+}
+
+.assign-card .time-field input:focus { border: 0; box-shadow: none; }
+
+.assign-card .time-range .time-range-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--blue-light);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.assign-card form > div .time-help {
+  margin-top: 1px;
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+}
  
 .assign-card button[type="button"] {
   width: 100%;
@@ -220,34 +304,36 @@
   border-radius: 6px;
 }
 
-.schedule-footer{
-  margin-top: 10px;
+/* 일정 상태 색상 범례 (달력 위, cal-toolbar와 #calendar 사이).
+   admin_schedule.js의 STATUS_COLORS와 반드시 같은 색을 써야 달력 이벤트 색과 범례가 맞습니다. */
+.cal-legend {
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
 }
 
-.schedule-footer > p:first-child{
-  font-size: 1.2rem;
-  
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dim);
 }
 
-/* common/layout.css에 .app-shell .receive-icon 등으로 더 높은 우선순위(클래스 2개)의 규칙이
-   있어서, 모든 페이지의 <body class="app-shell">에 걸려 이 페이지 값을 덮어쓰고 있었습니다.
-   layout.css는 다른 화면도 같이 쓰는 공용 파일이라 그대로 두고, 이 페이지 전용 래퍼인
-   .schedule-container까지 셀렉터에 포함해서(클래스 3개) 확실히 이 값이 이기도록 했습니다. */
-.schedule-container .schedule-footer .receive-icon{
-  color: #E98B50;
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.schedule-container .assign-icon{
-  color: #2563eb;
-}
-
-.schedule-container .progress-icon{
-  color: #9a4c13;
-}
-
-.schedule-container .complete-icon{
-  color: #25624e;
-}
+/* STATUS_COLORS(admin_schedule.js): RECEIVED/ASSIGNED/IN_PROGRESS/COMPLETED와 동일한 색 */
+.legend-received { background-color: #c95e69; }
+.legend-assigned { background-color: #4f8fc8; }
+.legend-progress { background-color: #d88b27; }
+.legend-complete { background-color: #5f9968; }

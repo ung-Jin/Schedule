@@ -1,0 +1,178 @@
+/* 관리자 "결과내역" 화면(/pages/admin/sideResult) CSS - engineer_list.css 디자인 톤에 맞춤 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  background-color: var(--canvas);
+  margin: 0;
+  padding: 24px;
+  color: var(--text);
+}
+
+/* 페이지 컨테이너 */
+.page-wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* 카드 */
+.card {
+  background-color: var(--panel);
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(12, 34, 54, .08);
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.result-heading { display: flex; align-items: center; gap: 14px; }
+.result-heading-icon { display: grid; place-items: center; width: 48px; height: 48px; flex: 0 0 auto; border-radius: 14px; background: var(--blue-soft); color: var(--blue-light); font-size: 24px; }
+.result-eyebrow { display: block; margin-bottom: 2px; color: var(--blue-light); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+
+.card-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+
+.result-count {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue-light);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.result-table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+
+/* 목록 테이블 */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1080px;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+.result-table th {
+  background-color: var(--blue-soft);
+  color: var(--text);
+  font-weight: 700;
+  padding: 14px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.result-table td {
+  padding: 16px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.result-table tr:hover td {
+  background-color: #edf8fc;
+}
+
+.result-table tbody tr:nth-child(even) td { background: #f4fafd; }
+.result-table tbody tr:nth-child(even):hover td { background: #e8f5fb; }
+
+.empty-row {
+  text-align: center;
+  color: var(--muted);
+  padding: 64px 20px !important;
+}
+
+.empty-row .empty-icon { display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 12px; border-radius: 15px; background: var(--blue-soft); color: var(--blue-light); font-size: 26px; }
+.empty-row strong, .empty-row small { display: block; }
+.empty-row strong { color: var(--text); font-size: 16px; }
+.empty-row small { margin-top: 5px; color: var(--muted); font-size: 13px; font-weight: 400; }
+
+/* 컬럼 폭 배분 (총합 100%) */
+.result-table col.col-no { width: 7%; }
+.result-table col.col-engineer { width: 9%; }
+.result-table col.col-date { width: 13%; }
+.result-table col.col-content { width: 26%; }
+.result-table col.col-photo { width: 16%; }
+.result-table col.col-reason { width: 16%; }
+
+/* 처리내용 - 길어도 줄바꿈 없이 말줄임, 전체 내용은 title 툴팁으로 */
+.col-content {
+  text-align: left;
+}
+
+.content-preview {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--text);
+  line-height: 1.55;
+  text-align: left;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.result-number { color: var(--blue-light); font-weight: 800; font-variant-numeric: tabular-nums; }
+.schedule-number { color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.engineer-name { color: var(--text); font-weight: 700; }
+
+/* 처리사진 - 썸네일 두 장을 나란히, 없으면 "-" */
+.photo-group {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.result-thumb {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+}
+
+.result-thumb:hover {
+  opacity: 0.85;
+}
+
+.no-value {
+  color: var(--muted);
+}
+
+/* 미첨부 사유 - 은은한 배지 형태로 눈에 띄게 */
+.reason-badge {
+  display: inline-block;
+  max-width: 100%;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background-color: var(--panel-raised);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 700px) {
+  .card { padding: 20px 16px; }
+  .card-header { align-items: flex-start; gap: 14px; }
+  .result-heading-icon { width: 42px; height: 42px; font-size: 21px; }
+  .card-title { font-size: 21px; }
+}

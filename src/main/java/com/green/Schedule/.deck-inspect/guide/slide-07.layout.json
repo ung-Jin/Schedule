@@ -1,0 +1,4387 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gnmp4jqx",
+    "id": "gnmp4jqx",
+    "slide": 7,
+    "layoutId": "/ppt/slideLayouts/slideLayout12.xml",
+    "layoutName": "1_제목 슬라이드",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "맑은 고딕"
+      },
+      "minorFont": {
+        "latinTypeface": "맑은 고딕"
+      }
+    },
+    "typefaces": [
+      "+mj-ea",
+      "맑은 고딕",
+      "세방고딕 Bold",
+      "세방고딕 Regular"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout12.xml",
+      "name": "1_제목 슬라이드",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "제목 개체 틀 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "마스터 제목 스타일 편집",
+          "textPreview": "마스터 제목 스타일 편집",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 제목 스타일 편집",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 제목 스타일 편집"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "텍스트 개체 틀 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준",
+          "textPreview": "마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 텍스트 스타일을 편집하려면 클릭",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "두 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "두 번째 수준"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "세 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "세 번째 수준"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "네 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "네 번째 수준"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "다섯 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "다섯 번째 수준"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/4",
+          "id": "4",
+          "name": "날짜 개체 틀 3",
+          "bbox": [
+            88,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "2025-05-29 (Thu)",
+          "textPreview": "2025-05-29 (Thu)",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2025-05-29 (Thu)",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2025-05-29 (Thu)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/5",
+          "id": "5",
+          "name": "바닥글 개체 틀 4",
+          "bbox": [
+            424,
+            667.33,
+            432,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/6",
+          "id": "6",
+          "name": "슬라이드 번호 개체 틀 5",
+          "bbox": [
+            904,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zat8j210",
+      "id": "93",
+      "name": "그래픽 118",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image61.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 339
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image61.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 339
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8fm9w72h",
+      "id": "94",
+      "name": "그래픽 101",
+      "bbox": [
+        -7.41,
+        603.04,
+        124.37,
+        109.55
+      ],
+      "rotation": 270,
+      "horizontalFlip": true,
+      "contentType": "image/svg+xml",
+      "imageCrop": {
+        "left": 0,
+        "top": 0.04365,
+        "right": 0.36132,
+        "bottom": 0
+      },
+      "asset": {
+        "assetId": "/ppt/media/image97.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 547
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image97.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 547
+      }
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9gvqpcj2",
+      "id": "95",
+      "name": "그래픽 99",
+      "bbox": [
+        915.16,
+        311.79,
+        475.39,
+        254.29
+      ],
+      "rotation": 270,
+      "contentType": "image/svg+xml",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "right": 0.16078,
+        "bottom": 0.36588
+      },
+      "asset": {
+        "assetId": "/ppt/media/image98.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1170
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image98.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1170
+      }
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kra50jqh",
+      "id": "39",
+      "name": "사각형: 둥근 한쪽 모서리 38",
+      "bbox": [
+        18.29,
+        7.42,
+        1261.71,
+        128.19
+      ],
+      "horizontalFlip": true,
+      "verticalFlip": true,
+      "geometry": "round1Rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "opacity": 0.5,
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 1.14
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4f2t0nm",
+      "id": "27",
+      "name": "TextBox 26",
+      "bbox": [
+        153.46,
+        38.44,
+        236.45,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "K-Digital Training",
+      "textPreview": "K-Digital Training",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "K-Digital Training"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "K-Digital Training",
+          "runs": [
+            {
+              "index": 1,
+              "text": "K-Digital Training",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": "rgba(51, 120, 200, 0.5)",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a9ojq5kz",
+      "id": "11",
+      "name": "TextBox 10",
+      "bbox": [
+        153.46,
+        61.42,
+        510.54,
+        54.93
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "프로젝트 수행 절차 및 방법",
+      "textPreview": "프로젝트 수행 절차 및 방법",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "프로젝트 수행 절차 및 방법"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "프로젝트 수행 절차 및 방법",
+          "runs": [
+            {
+              "index": 1,
+              "text": "프로젝트 수행 절차 및 방법",
+              "fontSize": 37.33,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbq1sv25",
+      "id": "13",
+      "name": "TextBox 12",
+      "bbox": [
+        39.49,
+        34.99,
+        132.98,
+        87.24
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "03",
+      "textPreview": "03",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 9.6,
+          "bottom": 0,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03",
+          "runs": [
+            {
+              "index": 1,
+              "text": "03",
+              "fontSize": 72,
+              "typeface": "세방고딕 Bold",
+              "color": "#3378C8"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/md4ruxkb",
+      "id": "96",
+      "name": "그림 34",
+      "bbox": [
+        0,
+        201.24,
+        1280,
+        24.52
+      ],
+      "rotation": 180,
+      "verticalFlip": true,
+      "contentType": "image/png",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "assetId": "/ppt/media/image33.png",
+        "contentType": "image/png",
+        "byteLength": 4291
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image33.png",
+        "contentType": "image/png",
+        "byteLength": 4291
+      }
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q143ylov",
+      "id": "24",
+      "name": "TextBox 23",
+      "bbox": [
+        78.07,
+        150.15,
+        1083.93,
+        38.78
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "프로젝트의 사전 기획과 프로젝트 수행 및 완료 과정으로 나누어서 작성한다. ",
+      "textPreview": "프로젝트의 사전 기획과 프로젝트 수행 및 완료 과정으로 나누어서 작성한다.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "프로젝트의 사전 기획과 프로젝트 수행 및 완료 과정으로 나누어서 작성한다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "프로젝트의 사전 기획과 프로젝트 수행 및 완료 과정으로 나누어서 작성한다. ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "프로젝트의 ",
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "사전 기획",
+              "typeface": "+mj-ea",
+              "color": "#3378C8",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "과 ",
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": "프로젝트 수행 및 완료 ",
+              "typeface": "+mj-ea",
+              "color": "#3378C8",
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "과정으로 나누어서 작성한다",
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": ". ",
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9k3qx8ry",
+      "id": "45",
+      "name": "그래픽 43",
+      "bbox": [
+        56.89,
+        161.58,
+        10.62,
+        11.95
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0.21
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ned8n21w",
+      "id": "97",
+      "name": "_x278651016",
+      "bbox": [
+        1183.11,
+        690.48,
+        49.73,
+        15.83
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "assetId": "/ppt/media/image41.png",
+        "contentType": "image/png",
+        "byteLength": 6319
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image41.png",
+        "contentType": "image/png",
+        "byteLength": 6319
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ojipkn2d",
+      "id": "98",
+      "name": "그래픽 23",
+      "bbox": [
+        1119.91,
+        690.48,
+        50.17,
+        14.91
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 5180
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 5180
+      }
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cb2tkvap",
+      "id": "2",
+      "name": "TextBox 1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        12
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#FFD85C"
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ydkbm5sv",
+      "id": "4",
+      "name": "TextBox 3",
+      "bbox": [
+        0,
+        0,
+        140.33,
+        12
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8"
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zedcfa9g",
+      "id": "5",
+      "name": "TextBox 4",
+      "bbox": [
+        49.03,
+        221.45,
+        1037.97,
+        63.01
+      ],
+      "geometry": "rect",
+      "text": "프로젝트 수행 절차를 도식화하여 제시하거나, 더 효과적으로 전달하는 방법 등이 있다면 수정하여 작성 가능\n기획 단계에서 도출된 주제와 아이디어를 기반으로 실제 프로젝트를 수행한 세부적인 기간과 활동 내용 작성",
+      "textPreview": "프로젝트 수행 절차를 도식화하여 제시하거나, 더 효과적으로 전달하는 방법 등이 있다면 수정하여 작성 가능 | 기획 단계에서 도출된 주제와 아이디어를 기반으로 실제 프로젝트를 수행한 세부적인 기간과 활동 내용 작성",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "- 프로젝트 수행 절차를 도식화하여 제시하거나, 더 효과적으로 전달하는 방법 등이 있다면 수정하여 작성 가능"
+          },
+          {
+            "index": 2,
+            "text": "- 기획 단계에서 도출된 주제와 아이디어를 기반으로 실제 프로젝트를 수행한 세부적인 기간과 활동 내용 작성"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "프로젝트 수행 절차를 도식화하여 제시하거나, 더 효과적으로 전달하는 방법 등이 있다면 수정하여 작성 가능",
+          "runs": [
+            {
+              "index": 1,
+              "text": "프로젝트 수행 절차를 ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "도식화하여",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " 제시하거나",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": ", ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": "더 효과적으로 전달하는 방법 ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": "등이 있다면",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": " ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 8,
+              "text": "수정",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 9,
+              "text": "하여 ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 10,
+              "text": "작성",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 11,
+              "text": " 가능",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "기획 단계에서 도출된 주제와 아이디어를 기반으로 실제 프로젝트를 수행한 세부적인 기간과 활동 내용 작성",
+          "runs": [
+            {
+              "index": 1,
+              "text": "기획 단계에서 도출된 주제와 아이디어를 기반으로 ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "실제 프로젝트",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "를",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": " 수행한 세부적인 기간",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "과",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": " 활동 ",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 7,
+              "text": "내용 작성",
+              "fontSize": 18.67,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/xc721sr2",
+      "id": "99",
+      "name": "표 40",
+      "bbox": [
+        55.07,
+        297.33,
+        1177.77,
+        373.33
+      ],
+      "text": "구분 | 기간 | 활동 | 비고\n사전 기획 | O/O(월) ~ O/O(금) | 아이디어 선정\n데이터 수집 | O/O(월) ~ O/O(금) | 협약기업 데이터 협조\n데이터 전처리 | O/O(월) ~ O/O(금)\n모델링 | O/O(월) ~ O/O(금) | 팀별 중간보고 실시\n서비스 구축 | O/O(월) ~ O/O(금) | 최적화, 오류 수정\n총 개발기간 | O/O(월) ~ O/O(금)(총 7주)",
+      "textPreview": "구분 | 기간 | 활동 | 비고 | 사전 기획 | O/O(월) ~ O/O(금) | 아이디어 선정 | 데이터 수집 | O/O(월) ~ O/O(금) | 협약기업 데이터 협조 | 데이터 전처리 | O/O(월) ~ O/O(금) | 모델링 | O/O(월)...",
+      "rows": 7,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            55.07,
+            297.33,
+            156.93,
+            40.19
+          ],
+          "text": "구분",
+          "textPreview": "구분",
+          "fillColor": "rgba(51, 120, 200, 0.3)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "구분",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "구분",
+                  "fontSize": 21.33,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            212,
+            297.33,
+            244,
+            40.19
+          ],
+          "text": "기간",
+          "textPreview": "기간",
+          "fillColor": "rgba(51, 120, 200, 0.2)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "기간",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "기간",
+                  "fontSize": 21.33,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            456,
+            297.33,
+            541,
+            40.19
+          ],
+          "text": "활동",
+          "textPreview": "활동",
+          "fillColor": "rgba(51, 120, 200, 0.1)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "활동",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "활동",
+                  "fontSize": 21.33,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            997,
+            297.33,
+            235.84,
+            40.19
+          ],
+          "text": "비고",
+          "textPreview": "비고",
+          "fillColor": "rgba(51, 120, 200, 0.05)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "비고",
+              "lineSpacingPercent": 100000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "비고",
+                  "fontSize": 21.33,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            55.07,
+            337.52,
+            156.93,
+            55.52
+          ],
+          "text": "사전 기획",
+          "textPreview": "사전 기획",
+          "fillColor": "bg1",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "사전 기획",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "사전 기획",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            212,
+            337.52,
+            244,
+            55.52
+          ],
+          "text": "O/O(월) ~ O/O(금)",
+          "textPreview": "O/O(월) ~ O/O(금)",
+          "fillColor": "rgba(234, 241, 249, 0.25)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "O/O(월) ~ O/O(금)",
+              "lineSpacingPercent": 150000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": "월",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": ") ~ O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 4,
+                  "text": "금",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 5,
+                  "text": ")",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            456,
+            337.52,
+            541,
+            55.52
+          ],
+          "ownedElementAids": [
+            "sh/ulc7qdsj",
+            "sh/vm58zi94",
+            "sh/mxc7mts7",
+            "im/7ehovepo",
+            "sh/pcra1wba",
+            "sh/obitsrup",
+            "sh/290bq1cz",
+            "im/8fa5ojq9"
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            997,
+            337.52,
+            235.84,
+            55.52
+          ],
+          "text": "아이디어 선정",
+          "textPreview": "아이디어 선정",
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "opacity": 0.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "아이디어 선정",
+              "lineSpacingPercent": 100000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "아이디어 선정",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            55.07,
+            393.05,
+            156.93,
+            55.52
+          ],
+          "text": "데이터 수집",
+          "textPreview": "데이터 수집",
+          "fillColor": "bg1",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "데이터 수집",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "데이터 수집",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            212,
+            393.05,
+            244,
+            55.52
+          ],
+          "text": "O/O(월) ~ O/O(금)",
+          "textPreview": "O/O(월) ~ O/O(금)",
+          "fillColor": "rgba(234, 241, 249, 0.25)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "O/O(월) ~ O/O(금)",
+              "lineSpacingPercent": 150000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": "월",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": ") ~ O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 4,
+                  "text": "금",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 5,
+                  "text": ")",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            456,
+            393.05,
+            541,
+            55.52
+          ],
+          "ownedElementAids": [
+            "sh/vah4fehw",
+            "sh/gbq5ojih",
+            "sh/uponm90b",
+            "im/9gj6x47e",
+            "sh/tofmd4z6",
+            "sh/yh4nep0j",
+            "sh/8n65kzil",
+            "im/uhsnq98z"
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            997,
+            393.05,
+            235.84,
+            55.52
+          ],
+          "text": "협약기업 데이터 협조",
+          "textPreview": "협약기업 데이터 협조",
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "opacity": 0.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "협약기업 데이터 협조",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "협약기업 데이터 협조",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            55.07,
+            448.57,
+            156.93,
+            55.52
+          ],
+          "text": "데이터 전처리",
+          "textPreview": "데이터 전처리",
+          "fillColor": "bg1",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "데이터 전처리",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "데이터 전처리",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            212,
+            448.57,
+            244,
+            55.52
+          ],
+          "text": "O/O(월) ~ O/O(금)",
+          "textPreview": "O/O(월) ~ O/O(금)",
+          "fillColor": "rgba(234, 241, 249, 0.25)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "O/O(월) ~ O/O(금)",
+              "lineSpacingPercent": 150000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": "월",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": ") ~ O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 4,
+                  "text": "금",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 5,
+                  "text": ")",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            456,
+            448.57,
+            541,
+            55.52
+          ],
+          "ownedElementAids": [
+            "sh/e9c7ixkv",
+            "sh/d8jq9sja",
+            "sh/fal8bi1g",
+            "im/vi1ozepk"
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            997,
+            448.57,
+            235.84,
+            55.52
+          ],
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "opacity": 0.6
+            }
+          }
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            55.07,
+            504.1,
+            156.93,
+            55.52
+          ],
+          "text": "모델링",
+          "textPreview": "모델링",
+          "fillColor": "bg1",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "모델링",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "모델링",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            212,
+            504.1,
+            244,
+            55.52
+          ],
+          "text": "O/O(월) ~ O/O(금)",
+          "textPreview": "O/O(월) ~ O/O(금)",
+          "fillColor": "rgba(234, 241, 249, 0.25)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "O/O(월) ~ O/O(금)",
+              "lineSpacingPercent": 150000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": "월",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": ") ~ O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 4,
+                  "text": "금",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 5,
+                  "text": ")",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            456,
+            504.1,
+            541,
+            55.52
+          ],
+          "ownedElementAids": [
+            "sh/4japc32t",
+            "sh/gj2doje1",
+            "sh/54jq58je",
+            "im/wja5sjq5"
+          ]
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "bbox": [
+            997,
+            504.1,
+            235.84,
+            55.52
+          ],
+          "text": "팀별 중간보고 실시",
+          "textPreview": "팀별 중간보고 실시",
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "opacity": 0.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "팀별 중간보고 실시",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "팀별 중간보고 실시",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            55.07,
+            559.62,
+            156.93,
+            55.52
+          ],
+          "text": "서비스 구축",
+          "textPreview": "서비스 구축",
+          "fillColor": "bg1",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "서비스 구축",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "서비스 구축",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            212,
+            559.62,
+            244,
+            55.52
+          ],
+          "text": "O/O(월) ~ O/O(금)",
+          "textPreview": "O/O(월) ~ O/O(금)",
+          "fillColor": "rgba(234, 241, 249, 0.25)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "O/O(월) ~ O/O(금)",
+              "lineSpacingPercent": 150000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": "월",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": ") ~ O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 4,
+                  "text": "금",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 5,
+                  "text": ")",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            456,
+            559.62,
+            541,
+            55.52
+          ],
+          "ownedElementAids": [
+            "sh/povu1ovi",
+            "sh/2l4vqtc7",
+            "sh/4nmdsjux",
+            "im/h4j61o7q",
+            "sh/m58f2xwb",
+            "sh/98zyxcf2",
+            "sh/n6hgv2xw",
+            "im/alonep8v"
+          ]
+        },
+        {
+          "index": 24,
+          "row": 6,
+          "column": 4,
+          "bbox": [
+            997,
+            559.62,
+            235.84,
+            55.52
+          ],
+          "text": "최적화, 오류 수정",
+          "textPreview": "최적화, 오류 수정",
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "opacity": 0.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "최적화, 오류 수정",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "최적화",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": ", ",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": "오류 수정",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            55.07,
+            615.14,
+            156.93,
+            55.52
+          ],
+          "text": "총 개발기간",
+          "textPreview": "총 개발기간",
+          "fillColor": "bg1",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "총 개발기간",
+              "lineSpacingPercent": 120000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "총 개발기간",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            212,
+            615.14,
+            244,
+            55.52
+          ],
+          "text": "O/O(월) ~ O/O(금)(총 7주)",
+          "textPreview": "O/O(월) ~ O/O(금)(총 7주)",
+          "fillColor": "rgba(234, 241, 249, 0.25)",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "O/O(월) ~ O/O(금)(총 7주)",
+              "lineSpacingPercent": 150000,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 2,
+                  "text": "월",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 3,
+                  "text": ") ~ O/O(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 4,
+                  "text": "금",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 5,
+                  "text": ")(",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 6,
+                  "text": "총 ",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 7,
+                  "text": "7",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 8,
+                  "text": "주",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                },
+                {
+                  "index": 9,
+                  "text": ")",
+                  "fontSize": 16,
+                  "typeface": "맑은 고딕",
+                  "color": {
+                    "type": "theme",
+                    "value": "bg2",
+                    "transform": {
+                      "darken": 0.75
+                    }
+                  },
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "row": 7,
+          "column": 3,
+          "bbox": [
+            456,
+            615.14,
+            541,
+            55.52
+          ]
+        },
+        {
+          "index": 28,
+          "row": 7,
+          "column": 4,
+          "bbox": [
+            997,
+            615.14,
+            235.84,
+            55.52
+          ],
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "opacity": 0.6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/md8nm983",
+      "id": "100",
+      "name": "그래픽 103",
+      "bbox": [
+        18.86,
+        575.11,
+        13.12,
+        13.12
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image100.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 610
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image100.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 610
+      }
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulc7qdsj",
+      "id": "42",
+      "name": "사각형: 둥근 모서리 41",
+      "bbox": [
+        480.22,
+        347.27,
+        257.93,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vm58zi94",
+      "id": "43",
+      "name": "타원 42",
+      "bbox": [
+        480.22,
+        347.27,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mxc7mts7",
+      "id": "46",
+      "name": "TextBox 45",
+      "bbox": [
+        517.29,
+        350.68,
+        222.75,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "프로젝트 기획 및 주제 선정",
+      "textPreview": "프로젝트 기획 및 주제 선정",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "프로젝트 기획 및 주제 선정"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "프로젝트 기획 및 주제 선정",
+          "runs": [
+            {
+              "index": 1,
+              "text": "프로젝트 기획 및 주제 선정",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 21,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/7ehovepo",
+      "id": "101",
+      "name": "그래픽 105",
+      "bbox": [
+        492.36,
+        355.51,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcra1wba",
+      "id": "52",
+      "name": "사각형: 둥근 모서리 51",
+      "bbox": [
+        775.2,
+        347.27,
+        151.83,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obitsrup",
+      "id": "53",
+      "name": "타원 52",
+      "bbox": [
+        775.2,
+        347.27,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/290bq1cz",
+      "id": "51",
+      "name": "TextBox 50",
+      "bbox": [
+        812.27,
+        350.68,
+        114.76,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "기획안 작성",
+      "textPreview": "기획안 작성",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "기획안 작성"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "기획안 작성",
+          "runs": [
+            {
+              "index": 1,
+              "text": "기획안 작성",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 25,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8fa5ojq9",
+      "id": "102",
+      "name": "그래픽 106",
+      "bbox": [
+        786.36,
+        355.51,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 7,
+        "row": 2,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vah4fehw",
+      "id": "61",
+      "name": "사각형: 둥근 모서리 60",
+      "bbox": [
+        480.22,
+        403.27,
+        257.93,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbq5ojih",
+      "id": "62",
+      "name": "타원 61",
+      "bbox": [
+        480.22,
+        403.27,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uponm90b",
+      "id": "60",
+      "name": "TextBox 59",
+      "bbox": [
+        517.29,
+        406.68,
+        222.75,
+        48.47
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "필요 데이터  및 수집 절차 정의",
+      "textPreview": "필요 데이터  및 수집 절차 정의",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "필요 데이터  및 수집 절차"
+          },
+          {
+            "index": 2,
+            "text": "정의"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "필요 데이터  및 수집 절차 정의",
+          "runs": [
+            {
+              "index": 1,
+              "text": "필요 데이터  및 수집 절차 정의",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 0.86
+      }
+    },
+    {
+      "order": 29,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9gj6x47e",
+      "id": "103",
+      "name": "그래픽 107",
+      "bbox": [
+        492.36,
+        411.51,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tofmd4z6",
+      "id": "67",
+      "name": "사각형: 둥근 모서리 66",
+      "bbox": [
+        775.2,
+        403.27,
+        179.2,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yh4nep0j",
+      "id": "68",
+      "name": "타원 67",
+      "bbox": [
+        775.2,
+        403.27,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8n65kzil",
+      "id": "66",
+      "name": "TextBox 65",
+      "bbox": [
+        812.27,
+        406.68,
+        158.04,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "외부 데이터 수집",
+      "textPreview": "외부 데이터 수집",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "외부 데이터 수집"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "외부 데이터 수집",
+          "runs": [
+            {
+              "index": 1,
+              "text": "외부 ",
+              "fontSize": 16,
+              "typeface": "세방고딕 Regular",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "데이터 ",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "수집",
+              "fontSize": 16,
+              "typeface": "세방고딕 Regular",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 33,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/uhsnq98z",
+      "id": "104",
+      "name": "그래픽 108",
+      "bbox": [
+        786.36,
+        411.51,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 11,
+        "row": 3,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e9c7ixkv",
+      "id": "73",
+      "name": "사각형: 둥근 모서리 72",
+      "bbox": [
+        480.22,
+        458.77,
+        257.93,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 15,
+        "row": 4,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d8jq9sja",
+      "id": "74",
+      "name": "타원 73",
+      "bbox": [
+        480.22,
+        458.77,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 15,
+        "row": 4,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fal8bi1g",
+      "id": "72",
+      "name": "TextBox 71",
+      "bbox": [
+        517.29,
+        462.18,
+        206.98,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "데이터 정제 및 정규화",
+      "textPreview": "데이터 정제 및 정규화",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "데이터 정제 및 정규화"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "데이터 정제 및 정규화",
+          "runs": [
+            {
+              "index": 1,
+              "text": "데이터 정제 및 정규화",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 15,
+        "row": 4,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 37,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vi1ozepk",
+      "id": "105",
+      "name": "그래픽 109",
+      "bbox": [
+        492.36,
+        466.51,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 15,
+        "row": 4,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4japc32t",
+      "id": "79",
+      "name": "사각형: 둥근 모서리 78",
+      "bbox": [
+        480.22,
+        514.1,
+        257.93,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 19,
+        "row": 5,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gj2doje1",
+      "id": "80",
+      "name": "타원 79",
+      "bbox": [
+        480.22,
+        514.1,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 19,
+        "row": 5,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54jq58je",
+      "id": "78",
+      "name": "TextBox 77",
+      "bbox": [
+        517.29,
+        517.51,
+        206.98,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "모형 구현",
+      "textPreview": "모형 구현",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "모형 구현"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "모형 구현",
+          "runs": [
+            {
+              "index": 1,
+              "text": "모형 구현",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 19,
+        "row": 5,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 41,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/wja5sjq5",
+      "id": "106",
+      "name": "그래픽 115",
+      "bbox": [
+        492.36,
+        521.51,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 19,
+        "row": 5,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/povu1ovi",
+      "id": "85",
+      "name": "사각형: 둥근 모서리 84",
+      "bbox": [
+        480.22,
+        569.77,
+        257.93,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2l4vqtc7",
+      "id": "86",
+      "name": "타원 85",
+      "bbox": [
+        480.22,
+        569.77,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4nmdsjux",
+      "id": "84",
+      "name": "TextBox 83",
+      "bbox": [
+        517.29,
+        573.18,
+        222.75,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "모바일 서비스 시스템 설계",
+      "textPreview": "모바일 서비스 시스템 설계",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "모바일 서비스 시스템 설계"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "모바일 서비스 시스템 설계",
+          "runs": [
+            {
+              "index": 1,
+              "text": "모바일 서비스 시스템 설계",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 45,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/h4j61o7q",
+      "id": "107",
+      "name": "그래픽 116",
+      "bbox": [
+        492.36,
+        578.01,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m58f2xwb",
+      "id": "91",
+      "name": "사각형: 둥근 모서리 90",
+      "bbox": [
+        775.2,
+        569.77,
+        179.2,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.05
+        }
+      },
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 47,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98zyxcf2",
+      "id": "92",
+      "name": "타원 91",
+      "bbox": [
+        775.2,
+        569.77,
+        35.17,
+        34.32
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0,
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 48,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6hgv2xw",
+      "id": "90",
+      "name": "TextBox 89",
+      "bbox": [
+        812.27,
+        573.18,
+        166.28,
+        29.08
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "모바일 플랫폼 구현",
+      "textPreview": "모바일 플랫폼 구현",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "모바일 플랫폼 구현"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "모바일 플랫폼 구현",
+          "runs": [
+            {
+              "index": 1,
+              "text": "모바일 플랫폼 구현",
+              "fontSize": 16,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "bg2",
+                "transform": {
+                  "darken": 0.75
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    },
+    {
+      "order": 49,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/alonep8v",
+      "id": "108",
+      "name": "그래픽 117",
+      "bbox": [
+        786.36,
+        578.01,
+        15.73,
+        18.95
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image102.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 859
+      },
+      "tableCell": {
+        "tableAid": "tb/xc721sr2",
+        "cellIndex": 23,
+        "row": 6,
+        "column": 3,
+        "overlap": 1
+      }
+    }
+  ],
+  "composeRuns": []
+}

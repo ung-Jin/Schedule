@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: '맑은 고딕', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   background-color: var(--panel);
   margin: 0;
   padding: 24px;
@@ -14,7 +14,7 @@ body {
 
 /* 페이지 컨테이너 */
 .page-wrap {
-  max-width: 780px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@ body {
   background-color: var(--panel);
   border-radius: 18px;
   box-shadow: 0 14px 32px rgba(12, 34, 54, .08);
-  padding: 20px 24px;
+  padding: 26px 30px;
   margin-bottom: 20px;
 }
 
@@ -31,18 +31,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   color: var(--text);
   margin: 0;
 }
 
 .form-title {
-  font-size: 15px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text);
   margin: 0;
@@ -53,9 +53,10 @@ body {
   background-color: var(--blue);
   color: #fff;
   border: none;
-  padding: 7px 14px;
+  min-height: 42px;
+  padding: 9px 18px;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
   font-weight: 600;
 }
@@ -65,7 +66,7 @@ body {
 }
 
 .btn-add {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .btn-close {
@@ -85,20 +86,26 @@ body {
 .engineer-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 15px;
+}
+
+/* 공통 레이아웃의 14px 표 규칙보다 우선해 기사관리 화면의 목록 가독성을 확보합니다. */
+.app-shell .page-wrap .engineer-table :is(th, td) {
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .engineer-table th {
-  background-color: var(--panel);
+  background-color: var(--blue-soft);
   color: var(--muted);
   font-weight: 600;
-  padding: 10px 8px;
+  padding: 14px 10px;
   text-align: center;
   border-bottom: 1px solid var(--line);
 }
 
 .engineer-table td {
-  padding: 10px 8px;
+  padding: 15px 10px;
   text-align: center;
   border-bottom: 1px solid var(--line);
 }
@@ -108,7 +115,7 @@ body {
 }
 
 .engineer-table tr:hover td {
-  background-color: var(--panel);
+  background-color: #edf8fc;
 }
 
 .empty-row {
@@ -120,37 +127,43 @@ body {
 /* 상태 배지 */
 .badge {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 6px 12px;
   border-radius: 12px;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 600;
 }
+
+.app-shell .page-wrap .engineer-table .badge { font-size: 14px; }
 
 .badge-work {
   background-color: var(--success-soft);
   color: var(--text);
+  border: 1px solid var(--success);
 }
 
 .badge-rest {
   background-color: var(--panel);
   color: var(--danger);
+  border: 1px solid var(--danger);
 }
 
-/* 관리 - 수정 버튼 */
+/* 관리 - 수정 버튼 (진한 파랑 단색 대신, 페이지 다른 요소들과 같은 옅은 파랑 톤으로) */
 .btn-edit {
-  background-color: var(--blue);
-  color: var(--text);
-  border: none;
-  padding: 5px 12px;
+  background-color: var(--blue-soft);
+  color: var(--blue-light);
+  border: 1px solid var(--blue-light);
+  min-height: 38px;
+  padding: 7px 14px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
 }
 
 .btn-edit:hover {
-  opacity: 0.9;
+  background-color: var(--blue);
+  color: #fff;
 }
 
 /* 등록/수정 폼 */
@@ -161,8 +174,8 @@ body {
 .form-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
 .form-item {
@@ -171,24 +184,25 @@ body {
 }
 
 .form-item-full {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .form-item label {
   display: block;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--muted);
-  margin-bottom: 4px;
+  margin-bottom: 7px;
 }
 
 .form-item input[type="text"],
 .form-item input[type="password"],
 .form-item input[type="time"] {
-  padding: 7px 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 16px;
   background-color: var(--panel);
 }
 
@@ -205,16 +219,28 @@ body {
   padding: 4px 0;
 }
 
-.checkbox-label {
-  font-size: 13px;
+.form-item .checkbox-label {
+  font-size: 15px;
   color: var(--muted);
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  margin: 0;
+  line-height: 1.4;
 }
 
+/* common/layout.css의 전역 input 스타일(min-height:44px, border/border-radius/max-width:100% 등)이
+   체크박스에도 그대로 걸려서 체크박스가 텍스트보다 훨씬 큰 사각 박스로 보이고, 그래서 줄이
+   맞지 않는 것처럼 보였습니다. 체크박스만 원래 크기의 작은 정사각형으로 되돌립니다. */
 .checkbox-label input {
+  width: 17px;
+  height: 17px;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  border-radius: 4px;
+  flex-shrink: 0;
   cursor: pointer;
 }
 
@@ -226,36 +252,55 @@ body {
 }
 
 .time-group input[type="time"] {
-  padding: 7px 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 16px;
   background-color: var(--panel);
 }
 
 .time-group span {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 /* 라디오 그룹 */
 .radio-group {
   display: flex;
-  gap: 20px;
-  padding: 4px 0;
-}
-
-.radio-label {
-  font-size: 13px;
-  color: var(--muted);
-  cursor: pointer;
-  display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 24px;
+  padding: 6px 0;
 }
 
-.radio-label input {
+.app-shell .page-wrap .form-item > label { font-size: 15px; }
+.app-shell .page-wrap .form-item :is(input[type="text"], input[type="password"], input[type="time"]) { font-size: 16px; }
+.app-shell .page-wrap :is(.btn-add, .btn-edit, .btn-cancel, .btn-retire, #submitBtn) { font-size: 15px; }
+
+.form-item .radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
   cursor: pointer;
+}
+
+/* 체크박스와 같은 이유로(전역 input 스타일) 라디오도 커져 있던 것을 원래 크기로 되돌립니다. */
+.radio-label input {
+  width: 17px;
+  height: 17px;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  border-radius: 50%;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--blue);
 }
 
 /* 폼 버튼 그룹 */
@@ -270,9 +315,10 @@ body {
   background-color: var(--panel);
   color: var(--muted);
   border: 1px solid var(--line);
-  padding: 7px 16px;
+  min-height: 42px;
+  padding: 9px 18px;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   font-weight: 600;
 }
@@ -286,9 +332,10 @@ body {
   background-color: var(--panel);
   color: var(--danger);
   border: 1px solid var(--danger);
-  padding: 7px 16px;
+  min-height: 42px;
+  padding: 9px 18px;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   font-weight: 600;
   margin-right: auto;

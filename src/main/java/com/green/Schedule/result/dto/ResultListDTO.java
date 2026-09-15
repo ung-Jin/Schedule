@@ -14,6 +14,7 @@ public class ResultListDTO {
   private String processContent;
   private String imagePath;
   private String imagePath2;
+  private String noPhotoReason;
   private LocalDateTime createdAt;
   private String engineerName;
 }

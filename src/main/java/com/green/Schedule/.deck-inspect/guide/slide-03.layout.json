@@ -1,0 +1,1297 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ofy9wn61",
+    "id": "ofy9wn61",
+    "slide": 3,
+    "layoutId": "/ppt/slideLayouts/slideLayout12.xml",
+    "layoutName": "1_제목 슬라이드",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "맑은 고딕"
+      },
+      "minorFont": {
+        "latinTypeface": "맑은 고딕"
+      }
+    },
+    "typefaces": [
+      "+mj-ea",
+      "맑은 고딕"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout12.xml",
+      "name": "1_제목 슬라이드",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "제목 개체 틀 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "마스터 제목 스타일 편집",
+          "textPreview": "마스터 제목 스타일 편집",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 제목 스타일 편집",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 제목 스타일 편집"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "텍스트 개체 틀 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": "마스터 텍스트 스타일을 편집하려면 클릭\n두 번째 수준\n세 번째 수준\n네 번째 수준\n다섯 번째 수준",
+          "textPreview": "마스터 텍스트 스타일을 편집하려면 클릭 | 두 번째 수준 | 세 번째 수준 | 네 번째 수준 | 다섯 번째 수준",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 텍스트 스타일을 편집하려면 클릭",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 텍스트 스타일을 편집하려면 클릭"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "두 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "두 번째 수준"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "세 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "세 번째 수준"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "네 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "네 번째 수준"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "다섯 번째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "다섯 번째 수준"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/4",
+          "id": "4",
+          "name": "날짜 개체 틀 3",
+          "bbox": [
+            88,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "2025-05-29 (Thu)",
+          "textPreview": "2025-05-29 (Thu)",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2025-05-29 (Thu)",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2025-05-29 (Thu)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/5",
+          "id": "5",
+          "name": "바닥글 개체 틀 4",
+          "bbox": [
+            424,
+            667.33,
+            432,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/6",
+          "id": "6",
+          "name": "슬라이드 번호 개체 틀 5",
+          "bbox": [
+            904,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/yhsbm94z",
+      "id": "81",
+      "name": "그래픽 40",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image32.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 378
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image32.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 378
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/lkjah4nq",
+      "id": "82",
+      "name": "그래픽 88",
+      "bbox": [
+        1084.89,
+        0,
+        195.11,
+        227.85
+      ],
+      "contentType": "image/svg+xml",
+      "imageCrop": {
+        "left": 0,
+        "top": 0.37985,
+        "right": 0.48349,
+        "bottom": 0
+      },
+      "asset": {
+        "assetId": "/ppt/media/image34.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 5649
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image34.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 5649
+      }
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/298ryl4v",
+      "id": "4",
+      "name": "TextBox 3",
+      "bbox": [
+        464.39,
+        143.88,
+        465.02,
+        38.78
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "○○아카데미(훈련기관명)",
+      "textPreview": "○○아카데미(훈련기관명)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "○○아카데미(훈련기관명)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "○○아카데미(훈련기관명)",
+          "runs": [
+            {
+              "index": 1,
+              "text": "○○아카데미",
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "(",
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "훈련기관명",
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": ")",
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n2l4fq98",
+      "id": "10",
+      "name": "TextBox 9",
+      "bbox": [
+        458.56,
+        190,
+        747.07,
+        142.18
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "팀 프로젝트명\n(주제)",
+      "textPreview": "팀 프로젝트명 | (주제)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 9.6,
+          "bottom": 0,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "팀 프로젝트명"
+          },
+          {
+            "index": 2,
+            "text": "(주제)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "팀 프로젝트명\n(주제)",
+          "runs": [
+            {
+              "index": 1,
+              "text": "팀 프로젝트명",
+              "fontSize": 64,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "\n"
+            },
+            {
+              "index": 4,
+              "text": "(",
+              "fontSize": 53.33,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "주제",
+              "fontSize": 53.33,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": ")",
+              "fontSize": 53.33,
+              "typeface": "+mj-ea",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1c3mlsn",
+      "id": "11",
+      "name": "TextBox 10",
+      "bbox": [
+        0,
+        0,
+        1280,
+        45.24
+      ],
+      "geometry": "rect",
+      "text": "K-Digital Training",
+      "textPreview": "K-Digital Training",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "K-Digital Training"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "K-Digital Training",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "K-Digital Training",
+              "fontSize": 21.33,
+              "typeface": "맑은 고딕",
+              "color": "#3378C8",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#FFD85C"
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0jatozm5",
+      "id": "83",
+      "name": "_x278651016",
+      "bbox": [
+        1076.91,
+        632.8,
+        123.91,
+        39.45
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "assetId": "/ppt/media/image19.png",
+        "contentType": "image/png",
+        "byteLength": 7624
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image19.png",
+        "contentType": "image/png",
+        "byteLength": 7624
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nm1sje5w",
+      "id": "84",
+      "name": "그래픽 23",
+      "bbox": [
+        919.45,
+        632.8,
+        124.99,
+        37.16
+      ],
+      "rotation": 0,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 5180
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 5180
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/mlsbq94b",
+      "id": "85",
+      "name": "그래픽 82",
+      "bbox": [
+        -16.8,
+        411.04,
+        784.25,
+        386.64
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 805
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 805
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/983ulo3m",
+      "id": "86",
+      "name": "그래픽 34",
+      "bbox": [
+        0,
+        129.1,
+        694.63,
+        592.26
+      ],
+      "contentType": "image/svg+xml",
+      "imageCrop": {
+        "left": 0.21662,
+        "top": 0.00001,
+        "right": 0,
+        "bottom": 0.17379
+      },
+      "asset": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1034
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1034
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ds3ipcvy",
+      "id": "45",
+      "name": "자유형: 도형 44",
+      "bbox": [
+        41.61,
+        228.59,
+        109.94,
+        109.97
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#FFD85C",
+      "lineWidth": 0.66
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qpczuhc7",
+      "id": "46",
+      "name": "자유형: 도형 45",
+      "bbox": [
+        75.68,
+        262.69,
+        41.77,
+        41.77
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#3378C8",
+      "lineWidth": 0.66
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/87atsjmh",
+      "id": "87",
+      "name": "그래픽 80",
+      "bbox": [
+        475.47,
+        578.37,
+        35.25,
+        35.25
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image43.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 463
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image43.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 463
+      }
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3qhs7a5c",
+      "id": "88",
+      "name": "그래픽 84",
+      "bbox": [
+        96.59,
+        610.87,
+        33.77,
+        33.77
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image45.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 380
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image45.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 380
+      }
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/2p8re547",
+      "id": "89",
+      "name": "그래픽 90",
+      "bbox": [
+        708.37,
+        407.56,
+        174.67,
+        74.02
+      ],
+      "rotation": 0,
+      "verticalFlip": true,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image47.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 374
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image47.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 374
+      }
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cza94vmx",
+      "id": "2",
+      "name": "TextBox 1",
+      "bbox": [
+        715.06,
+        422.9,
+        541.58,
+        100.38
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "TEAM 1조   어벤져스 (팀명)\n김○○, 박○○, 이○○, 최○○, 정○○",
+      "textPreview": "TEAM 1조   어벤져스 (팀명) | 김○○, 박○○, 이○○, 최○○, 정○○",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 9.6,
+          "bottom": 0,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TEAM 1조   어벤져스 (팀명)"
+          },
+          {
+            "index": 2,
+            "text": "김○○, 박○○, 이○○, 최○○, 정○○"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TEAM 1조   어벤져스 (팀명)",
+          "lineSpacingPercent": 150000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "TEAM 1",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": "bg1",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "조",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": "bg1",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "   ",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": "어벤져스",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": " ",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": "(",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 7,
+              "text": "팀명",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 8,
+              "text": ")",
+              "fontSize": 32,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "김○○, 박○○, 이○○, 최○○, 정○○",
+          "lineSpacingPercent": 150000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "김○○",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": ", ",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "박○○",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": ", ",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "이○○",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": ", ",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 7,
+              "text": "최○○",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 8,
+              "text": ", ",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 9,
+              "text": "정○○",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/436lcve1",
+      "id": "80",
+      "name": "TextBox 79",
+      "bbox": [
+        716.52,
+        537.66,
+        541.58,
+        42.22
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "[멘토] ○○○",
+      "textPreview": "[멘토] ○○○",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "맑은 고딕",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 9.6,
+          "bottom": 0,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "[멘토] ○○○"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "[멘토] ○○○",
+          "lineSpacingPercent": 150000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "[",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "멘토",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "] ",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": "○○○",
+              "fontSize": 26.67,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.25
+                }
+              },
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

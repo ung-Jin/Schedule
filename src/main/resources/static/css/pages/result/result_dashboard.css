@@ -5,7 +5,7 @@
 body {
   margin: 0;
   background-color: var(--panel);
-  font-family: Arial, "Noto Sans KR", sans-serif;
+  font-family: 'Pretendard', "Noto Sans KR", sans-serif;
   color: var(--text);
 }
 
@@ -118,27 +118,107 @@ body {
 }
 .dash-event-line.name { font-weight: 700; font-size: 11px; }
 
-/* 색상 범례 (지난 일정 / 오늘 일정 / 예정된 일정 - result_dashboard.js의 DASH_EVENT_COLORS와 맞춤) */
-.dash-calendar-legend {
+/* 하루에 몰려서 접힌 "작업완료" 건 자리표시 "+N" (result_dashboard.js의 capDashEventsPerDay 참고).
+   기사배정/작업진행 건은 여기 절대 접히지 않고, 작업완료 건만 이 자리표시로 접힙니다. */
+.dash-calendar-card .dash-more-placeholder {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.dash-more-cell {
+  padding: 2px 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--blue-light);
+  text-align: center;
+  cursor: pointer;
+}
+.dash-more-cell:hover { text-decoration: underline; }
+
+/* "+N" 클릭 시 뜨는 접힌 작업완료 목록 팝오버 */
+.dash-more-popover {
+  position: fixed;
+  z-index: 1200;
+  min-width: 160px;
+  max-width: 230px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(12, 34, 54, .18);
+  padding: 6px;
+}
+.dash-more-popover-item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dash-more-popover-item:hover { background-color: var(--blue-soft); }
+.dash-more-popover-item .name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+.dash-more-popover-item .time {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* 색상 범례 (달력 위, 제목과 달력 사이) - 관리자 "일정관리" 화면(admin_schedule.css의 .cal-legend)과
+   같은 상태별 색(STATUS_COLORS)을 써서 통일성 있게 맞춥니다 (result_dashboard.js 참고) */
+.cal-legend {
   display: flex;
-  gap: 16px;
-  margin-top: 10px;
-  font-size: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
   color: var(--muted);
 }
-.dash-legend-dot {
+
+.legend-dot {
   display: inline-block;
   width: 9px;
   height: 9px;
-  border-radius: 2px;
-  margin-right: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
-.dash-legend-past { background-color: var(--panel-raised); }
-.dash-legend-today { background-color: var(--blue); }
-.dash-legend-future { background-color: var(--blue); }
+
+/* STATUS_COLORS(admin_schedule.js / result_dashboard.js)와 동일한 색 */
+.legend-assigned { background-color: #4f8fc8; }
+.legend-progress { background-color: #d88b27; }
+.legend-complete { background-color: #5f9968; }
 
 
 /* 오늘 일정 목록 */
+
+.today-section-header {
+  margin-bottom: -9px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+
+.today-section-header h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -.3px;
+}
+
+.today-section-header p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
 
 .today-list {
   display: flex;
@@ -218,15 +298,13 @@ body {
   width: 76px;
   height: 42px;
   border: 1px solid var(--blue);
-  border-radius: 12px;
+  border-radius: 5px;
   background-color: var(--panel);
   color: var(--blue-light);
-
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-
+}
 
 /* 진행예정 - 아직 방문 시작 시각 전. 표시만 하고 클릭해도 이동하지 않음 */
 .status-pending {
@@ -301,11 +379,12 @@ body {
 
 .modal-box .info-title {
   flex-shrink: 0;
-
   width: 76px;
-  height: 42px;
-  border-radius: 12px;
+  color: var(--muted);
+}
 
+/* "결과보고 작성하기"/"결과보고 보러가기" 버튼 줄 - 오른쪽 정렬로 나란히 배치 */
+.modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
@@ -508,7 +587,3 @@ body {
   font-size: 10.5px;
   color: var(--muted);
 }
-
-.dash-legend-past { background: #7ea0b6; }
-.dash-legend-today { background: #0ea5c6; }
-.dash-legend-future { background: #1b8a68; }
