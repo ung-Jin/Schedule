@@ -1,0 +1,282 @@
+{"kind":"deck","id":"pr/9t71pa","name":"Deck"}
+{"kind":"layout","layoutId":"9a60aee4-8bfd-4ba8-a374-9b3e0b1b367b","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"68582bb2-d9fb-44ac-b223-19cacb614642","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/6xbynj","slide":1,"title":"Schedule","textShapes":5}
+{"kind":"shape","id":"sh/0nmpsji5","slide":1,"bbox":[0,0,760,720]}
+{"kind":"shape","id":"sh/1ovqlojq","slide":1,"bbox":[66,104,72,7]}
+{"kind":"textbox","id":"sh/qhk7m903","slide":1,"text":"Schedule","textPreview":"Schedule","textChars":8,"textLines":1,"bbox":[66,150,650,88]}
+{"kind":"textbox","id":"sh/ridofe1o","slide":1,"text":"냉난방기기 AS 운영관리 시스템","textPreview":"냉난방기기 AS 운영관리 시스템","textChars":17,"textLines":1,"bbox":[68,246,610,42]}
+{"kind":"textbox","id":"sh/sjmpoji9","slide":1,"text":"접수부터 고객 평가까지 이어지는 현장 서비스 운영","textPreview":"접수부터 고객 평가까지 이어지는 현장 서비스 운영","textChars":27,"textLines":1,"bbox":[68,318,595,76]}
+{"kind":"textbox","id":"sh/dkv6h4ju","slide":1,"text":"TEAM PROJECT  ·  2026.09.08–09.15","textPreview":"TEAM PROJECT  ·  2026.09.08–09.15","textChars":33,"textLines":1,"bbox":[68,580,480,26]}
+{"kind":"textbox","id":"sh/itk7ip0r","slide":1,"text":"팀명·발표자 입력","textPreview":"팀명·발표자 입력","textChars":9,"textLines":1,"bbox":[68,620,420,30]}
+{"kind":"image","id":"im/29wvylsb","slide":1,"name":"","geometry":"rect","alt":"landing","bbox":[760,0,520,720]}
+{"kind":"notes","id":"nt/6xbynj","slide":1,"text":"[0:00~0:35] 안녕하세요. 저희가 개발한 Schedule은 냉난방기기 AS 운영을 하나의 흐름으로 관리하는 웹 서비스입니다. 고객 접수, 관리자 배정, 기사 방문과 결과보고, 고객 만족도 수집까지 실제 업무 순서대로 연결했습니다. 오늘은 기능 나열보다 어떤 운영 문제를 해결했고 실제로 어떻게 동작하는지 중심으로 말씀드리겠습니다."}
+{"kind":"slide","id":"sl/6ja350","slide":2,"title":"SCHEDULE","textShapes":29}
+{"kind":"shape","id":"sh/98bqx8f2","slide":2,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/m5kr2twb","slide":2,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/76t8vyxw","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/wb298ned","slide":2,"text":"PROJECT OVERVIEW","textPreview":"PROJECT OVERVIEW","textChars":16,"textLines":1,"bbox":[66,58,740,25]}
+{"kind":"textbox","id":"sh/hcva1sfy","slide":2,"text":"AS 업무 전체를 하나의 데이터 흐름으로 연결","textPreview":"AS 업무 전체를 하나의 데이터 흐름으로 연결","textChars":25,"textLines":1,"bbox":[66,92,1135,70]}
+{"kind":"textbox","id":"sh/u9kr6dw7","slide":2,"text":"전화·메모 중심의 분절된 업무를 역할별 화면과 공통 상태 데이터로 통합했습니다.","textPreview":"전화·메모 중심의 분절된 업무를 역할별 화면과 공통 상태 데이터로 통합했습니다.","textChars":44,"textLines":1,"bbox":[66,168,1020,35]}
+{"kind":"textbox","id":"sh/vat8zixs","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[66,255,60,34]}
+{"kind":"textbox","id":"sh/4fm9cnep","slide":2,"text":"고객 접수","textPreview":"고객 접수","textChars":5,"textLines":1,"bbox":[66,298,240,42]}
+{"kind":"textbox","id":"sh/5gva5sfu","slide":2,"text":"제품·증상·희망일 입력","textPreview":"제품·증상·희망일 입력","textChars":12,"textLines":1,"bbox":[66,350,230,46]}
+{"kind":"textbox","id":"sh/lsnixwn2","slide":2,"text":"›","textPreview":"›","textChars":1,"textLines":1,"bbox":[316,300,30,42]}
+{"kind":"textbox","id":"sh/k7ehobmh","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[360,255,60,34]}
+{"kind":"textbox","id":"sh/z65gv65w","slide":2,"text":"기사 배정","textPreview":"기사 배정","textChars":5,"textLines":1,"bbox":[360,298,240,42]}
+{"kind":"textbox","id":"sh/y5wz214b","slide":2,"text":"담당 기사와 방문시간 확정","textPreview":"담당 기사와 방문시간 확정","textChars":14,"textLines":1,"bbox":[360,350,230,46]}
+{"kind":"textbox","id":"sh/9w7i1g3y","slide":2,"text":"›","textPreview":"›","textChars":1,"textLines":1,"bbox":[610,300,30,42]}
+{"kind":"textbox","id":"sh/8vyhsbmt","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[654,255,60,34]}
+{"kind":"textbox","id":"sh/7up0z658","slide":2,"text":"현장 처리","textPreview":"현장 처리","textChars":5,"textLines":1,"bbox":[654,298,240,42]}
+{"kind":"textbox","id":"sh/mtgzq14n","slide":2,"text":"작업 결과와 사진 기록","textPreview":"작업 결과와 사진 기록","textChars":12,"textLines":1,"bbox":[654,350,230,46]}
+{"kind":"textbox","id":"sh/p03ypcnu","slide":2,"text":"›","textPreview":"›","textChars":1,"textLines":1,"bbox":[904,300,30,42]}
+{"kind":"textbox","id":"sh/ozuhw7m9","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[948,255,60,34]}
+{"kind":"textbox","id":"sh/gjyhcru5","slide":2,"text":"고객 평가","textPreview":"고객 평가","textChars":5,"textLines":1,"bbox":[948,298,240,42]}
+{"kind":"textbox","id":"sh/hk7i5wvq","slide":2,"text":"SMS 설문과 월간 통계","textPreview":"SMS 설문과 월간 통계","textChars":13,"textLines":1,"bbox":[948,350,230,46]}
+{"kind":"shape","id":"sh/uhgzahcz","slide":2,"bbox":[66,456,1148,1]}
+{"kind":"textbox","id":"sh/fipg3mdk","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[66,492,190,58]}
+{"kind":"textbox","id":"sh/o7ihgruh","slide":2,"text":"사용자 역할","textPreview":"사용자 역할","textChars":6,"textLines":1,"bbox":[66,548,205,44]}
+{"kind":"textbox","id":"sh/p8ri9wvm","slide":2,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[350,492,190,58]}
+{"kind":"textbox","id":"sh/2lgzehcb","slide":2,"text":"핵심 DB 테이블","textPreview":"핵심 DB 테이블","textChars":9,"textLines":1,"bbox":[350,548,205,44]}
+{"kind":"textbox","id":"sh/3mp07mdw","slide":2,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[650,492,190,58]}
+{"kind":"textbox","id":"sh/cbihkbud","slide":2,"text":"자동 테스트 통과","textPreview":"자동 테스트 통과","textChars":9,"textLines":1,"bbox":[650,548,205,44]}
+{"kind":"textbox","id":"sh/dcridgvy","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[950,492,190,58]}
+{"kind":"textbox","id":"sh/n6dk3ax0","slide":2,"text":"통합 처리 흐름","textPreview":"통합 처리 흐름","textChars":8,"textLines":1,"bbox":[950,548,205,44]}
+{"kind":"textbox","id":"sh/m5kja5wf","slide":2,"text":"개발 근거  ·  실제 저장소, 작업일지, localhost 구동 화면 기준","textPreview":"개발 근거  ·  실제 저장소, 작업일지, localhost 구동 화면 기준","textChars":42,"textLines":1,"bbox":[66,646,700,22]}
+{"kind":"notes","id":"nt/6ja350","slide":2,"text":"[0:35~1:20] 프로젝트의 핵심은 네 단계입니다. 고객이 신청하면 관리자가 기사를 배정하고, 기사가 현장에서 결과를 등록하면 고객에게 설문 링크가 발송됩니다. 각 역할은 서로 다른 화면을 사용하지만 같은 접수번호와 일정 데이터를 공유합니다. 현재 구현은 사용자 역할 3종, 핵심 테이블 6개이며 자동 테스트 4개가 통과했습니다. 이 숫자는 성공률이 아니라 저장소에서 확인한 테스트 개수입니다."}
+{"kind":"slide","id":"sl/lv61ol","slide":3,"title":"SCHEDULE","textShapes":13}
+{"kind":"shape","id":"sh/y9wn690n","slide":3,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/lcnm1oje","slide":3,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/kbe58jit","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/6dwnat0z","slide":3,"text":"WHY THIS PROJECT","textPreview":"WHY THIS PROJECT","textChars":16,"textLines":1,"bbox":[66,76,500,24]}
+{"kind":"textbox","id":"sh/tg7m5ozq","slide":3,"text":"운영 정보가 흩어지면\n일정과 책임도 함께 흐려집니다","textPreview":"운영 정보가 흩어지면 | 일정과 책임도 함께 흐려집니다","textChars":28,"textLines":2,"bbox":[66,116,570,112]}
+{"kind":"textbox","id":"sh/8fy5cji5","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[66,278,44,28]}
+{"kind":"textbox","id":"sh/nil4ru10","slide":3,"text":"접수 이력","textPreview":"접수 이력","textChars":5,"textLines":1,"bbox":[126,276,180,30]}
+{"kind":"textbox","id":"sh/mhc3yp0v","slide":3,"text":"전화와 메모에 남은 요청은 검색과 상태 추적이 어렵습니다.","textPreview":"전화와 메모에 남은 요청은 검색과 상태 추적이 어렵습니다.","textChars":32,"textLines":1,"bbox":[126,312,474,52]}
+{"kind":"textbox","id":"sh/wba9gnup","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[66,390,44,28]}
+{"kind":"textbox","id":"sh/hcjapsva","slide":3,"text":"배정 현황","textPreview":"배정 현황","textChars":5,"textLines":1,"bbox":[126,388,180,30]}
+{"kind":"textbox","id":"sh/u9sredcz","slide":3,"text":"관리자는 기사별 일정과 미배정 요청을 함께 보기 어렵습니다.","textPreview":"관리자는 기사별 일정과 미배정 요청을 함께 보기 어렵습니다.","textChars":33,"textLines":1,"bbox":[126,424,474,52]}
+{"kind":"textbox","id":"sh/va1snidk","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[66,502,44,28]}
+{"kind":"textbox","id":"sh/4futk7u1","slide":3,"text":"고객 피드백","textPreview":"고객 피드백","textChars":6,"textLines":1,"bbox":[126,500,180,30]}
+{"kind":"textbox","id":"sh/5g3atsvm","slide":3,"text":"처리 후 평가는 별도 채널에 남아 운영 지표로 축적되지 않습니다.","textPreview":"처리 후 평가는 별도 채널에 남아 운영 지표로 축적되지 않습니다.","textChars":36,"textLines":1,"bbox":[126,536,474,52]}
+{"kind":"image","id":"im/m5cfah47","slide":3,"name":"","geometry":"roundRect","alt":"request-list","bbox":[690,86,524,568]}
+{"kind":"notes","id":"nt/lv61ol","slide":3,"text":"[1:20~2:25] 선정 배경은 현장 서비스 업무의 정보 단절입니다. 접수 내용이 전화나 메모로 들어오면 상태를 다시 확인해야 하고, 관리자는 미배정 요청과 기사 일정을 따로 봐야 합니다. 기사는 일정을 전달받은 뒤 다시 결과를 남겨야 하며, 고객 평가는 운영 데이터로 축적되기 어렵습니다. Schedule은 이 세 가지 단절을 하나의 접수 상태와 일정 데이터로 연결하는 데서 출발했습니다."}
+{"kind":"slide","id":"sl/miax1u","slide":4,"title":"SCHEDULE","textShapes":16}
+{"kind":"shape","id":"sh/hwjmt0v2","slide":4,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/utsnylwb","slide":4,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/vu14rqdw","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/8rq5wvel","slide":4,"text":"SERVICE MODEL","textPreview":"SERVICE MODEL","textChars":13,"textLines":1,"bbox":[66,58,740,25]}
+{"kind":"textbox","id":"sh/tsjmpgvq","slide":4,"text":"역할은 분리하고 업무 상태는 공유","textPreview":"역할은 분리하고 업무 상태는 공유","textChars":18,"textLines":1,"bbox":[66,92,1135,70]}
+{"kind":"textbox","id":"sh/6583ulwf","slide":4,"text":"각 사용자는 필요한 화면만 보지만 REQUEST와 AS_SCHEDULE을 중심으로 같은 진행 상태를 사용합니다.","textPreview":"각 사용자는 필요한 화면만 보지만 REQUEST와 AS_SCHEDULE을 중심으로 같은 진행 상태를 사용합니다.","textChars":62,"textLines":1,"bbox":[66,166,1080,40]}
+{"kind":"textbox","id":"sh/7qh4nqd0","slide":4,"text":"CUSTOMER","textPreview":"CUSTOMER","textChars":8,"textLines":1,"bbox":[66,256,300,24]}
+{"kind":"textbox","id":"sh/cnu58fup","slide":4,"text":"고객","textPreview":"고객","textChars":2,"textLines":1,"bbox":[66,292,300,50]}
+{"kind":"shape","id":"sh/do3m1kva","slide":4,"bbox":[66,352,300,2]}
+{"kind":"textbox","id":"sh/twf69ovu","slide":4,"text":"신청\n내역 확인\n만족도 응답","textPreview":"신청 | 내역 확인 | 만족도 응답","textChars":15,"textLines":3,"bbox":[66,376,300,120]}
+{"kind":"textbox","id":"sh/sv650jup","slide":4,"text":"ADMIN","textPreview":"ADMIN","textChars":5,"textLines":1,"bbox":[452,256,300,24]}
+{"kind":"textbox","id":"sh/7uxo7ed4","slide":4,"text":"관리자","textPreview":"관리자","textChars":3,"textLines":1,"bbox":[452,292,300,50]}
+{"kind":"shape","id":"sh/69onytcj","slide":4,"bbox":[452,352,300,2]}
+{"kind":"textbox","id":"sh/58f65ovy","slide":4,"text":"접수 현황\n기사 관리\n일정 배정","textPreview":"접수 현황 | 기사 관리 | 일정 배정","textChars":17,"textLines":3,"bbox":[452,376,300,120]}
+{"kind":"textbox","id":"sh/k765wjud","slide":4,"text":"ENGINEER","textPreview":"ENGINEER","textChars":8,"textLines":1,"bbox":[838,256,300,24]}
+{"kind":"textbox","id":"sh/j6x43eds","slide":4,"text":"기사","textPreview":"기사","textChars":2,"textLines":1,"bbox":[838,292,300,50]}
+{"kind":"shape","id":"sh/i54nu9c7","slide":4,"bbox":[838,352,300,2]}
+{"kind":"textbox","id":"sh/p4z6h8v2","slide":4,"text":"오늘 일정\n현장 처리\n결과보고","textPreview":"오늘 일정 | 현장 처리 | 결과보고","textChars":16,"textLines":3,"bbox":[838,376,300,120]}
+{"kind":"shape","id":"sh/43q583uh","slide":4,"bbox":[66,550,1148,70]}
+{"kind":"textbox","id":"sh/8jih0b65","slide":4,"text":"공통 데이터","textPreview":"공통 데이터","textChars":6,"textLines":1,"bbox":[92,570,160,28]}
+{"kind":"textbox","id":"sh/9krytgnq","slide":4,"text":"접수 상태 · 기사 일정 · 처리 결과 · 만족도","textPreview":"접수 상태 · 기사 일정 · 처리 결과 · 만족도","textChars":27,"textLines":1,"bbox":[258,566,780,36]}
+{"kind":"notes","id":"nt/miax1u","slide":4,"text":"[2:25~3:25] 서비스 구조는 고객, 관리자, 기사 세 역할로 나뉩니다. 고객은 신청과 자신의 내역, 만족도 설문을 사용합니다. 관리자는 접수 현황과 기사 관리, 일정 배정을 담당합니다. 기사는 본인 일정과 결과보고만 확인합니다. 화면과 권한은 분리했지만 접수 상태, 기사 일정, 처리 결과와 만족도 데이터는 순차적으로 이어집니다. 역할별 접근 제어와 본인 소유 데이터 확인도 적용했습니다."}
+{"kind":"slide","id":"sl/18tql9","slide":5,"title":"SCHEDULE","textShapes":13}
+{"kind":"shape","id":"sh/l0nedcb6","slide":5,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/yxcv2xsv","slide":5,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/zylcb2t0","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/xw3u9sba","slide":5,"text":"CUSTOMER EXPERIENCE","textPreview":"CUSTOMER EXPERIENCE","textChars":19,"textLines":1,"bbox":[860,94,330,24]}
+{"kind":"textbox","id":"sh/a9cvyxsj","slide":5,"text":"고객 접수","textPreview":"고객 접수","textChars":5,"textLines":1,"bbox":[860,132,340,50]}
+{"kind":"textbox","id":"sh/balc72t4","slide":5,"text":"필요한 정보만 입력하고\n처리 상태를 직접 확인","textPreview":"필요한 정보만 입력하고 | 처리 상태를 직접 확인","textChars":25,"textLines":2,"bbox":[860,196,340,74]}
+{"kind":"textbox","id":"sh/grydcrat","slide":5,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[860,328,38,26]}
+{"kind":"textbox","id":"sh/hs7e5wre","slide":5,"text":"제품·증상·희망일 입력","textPreview":"제품·증상·희망일 입력","textChars":12,"textLines":1,"bbox":[910,327,292,36]}
+{"kind":"textbox","id":"sh/5szel8ze","slide":5,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[860,400,38,26]}
+{"kind":"textbox","id":"sh/4rqds3yt","slide":5,"text":"중복 신청 사전 확인","textPreview":"중복 신청 사전 확인","textChars":11,"textLines":1,"bbox":[910,399,292,36]}
+{"kind":"textbox","id":"sh/jqxwjyh8","slide":5,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[860,472,38,26]}
+{"kind":"textbox","id":"sh/ipovqtg3","slide":5,"text":"본인 신청내역과 상세 조회","textPreview":"본인 신청내역과 상세 조회","textChars":14,"textLines":1,"bbox":[910,471,292,36]}
+{"kind":"shape","id":"sh/hofeh8zi","slide":5,"bbox":[860,566,320,2]}
+{"kind":"textbox","id":"sh/wn6do3yx","slide":5,"text":"REQUEST","textPreview":"REQUEST","textChars":7,"textLines":1,"bbox":[860,585,100,24]}
+{"kind":"textbox","id":"sh/vmxcfyhc","slide":5,"text":"접수 데이터의 시작점","textPreview":"접수 데이터의 시작점","textChars":11,"textLines":1,"bbox":[970,581,220,30]}
+{"kind":"image","id":"im/58vm9szi","slide":5,"name":"","geometry":"roundRect","alt":"request-form","bbox":[44,92,770,548]}
+{"kind":"notes","id":"nt/18tql9","slide":5,"text":"[3:25~4:25] 고객 화면은 접수 데이터의 시작점입니다. 고객은 제품 종류, 증상, 주소와 희망일을 입력합니다. 같은 조건의 중복 신청을 확인하고, 로그인한 고객은 자신의 신청내역과 상세만 조회할 수 있습니다. 이 화면에서 만들어진 REQUEST 데이터가 관리자 배정과 기사 일정으로 이어집니다."}
+{"kind":"slide","id":"sl/pjwhjp","slide":6,"title":"SCHEDULE","textShapes":10}
+{"kind":"shape","id":"sh/ryx4rilk","slide":6,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/cz650n25","slide":6,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/d0fmts3q","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/2943udk3","slide":6,"text":"ADMIN OPERATIONS","textPreview":"ADMIN OPERATIONS","textChars":16,"textLines":1,"bbox":[66,62,420,24]}
+{"kind":"textbox","id":"sh/3ad4nilo","slide":6,"text":"관리자가 먼저 보는 운영 현황","textPreview":"관리자가 먼저 보는 운영 현황","textChars":16,"textLines":1,"bbox":[66,98,760,56]}
+{"kind":"textbox","id":"sh/pcfmps3u","slide":6,"text":"상태 통계","textPreview":"상태 통계","textChars":5,"textLines":1,"bbox":[66,592,150,25]}
+{"kind":"textbox","id":"sh/u543qtk7","slide":6,"text":"접수·배정·처리 상태를 즉시 확인","textPreview":"접수·배정·처리 상태를 즉시 확인","textChars":18,"textLines":1,"bbox":[66,620,340,40]}
+{"kind":"textbox","id":"sh/f6d4jyls","slide":6,"text":"최근 요청","textPreview":"최근 요청","textChars":5,"textLines":1,"bbox":[448,592,150,25]}
+{"kind":"textbox","id":"sh/n214byh0","slide":6,"text":"신규 접수의 우선순위를 빠르게 판단","textPreview":"신규 접수의 우선순위를 빠르게 판단","textChars":19,"textLines":1,"bbox":[448,620,340,40]}
+{"kind":"textbox","id":"sh/21s32t0f","slide":6,"text":"상세 조회","textPreview":"상세 조회","textChars":5,"textLines":1,"bbox":[830,592,150,25]}
+{"kind":"textbox","id":"sh/pojmdoz6","slide":6,"text":"고객 정보와 증상을 한 화면에서 확인","textPreview":"고객 정보와 증상을 한 화면에서 확인","textChars":20,"textLines":1,"bbox":[830,620,340,40]}
+{"kind":"image","id":"im/lwneho7e","slide":6,"name":"","geometry":"roundRect","alt":"admin-dashboard","bbox":[66,186,1148,378]}
+{"kind":"notes","id":"nt/pjwhjp","slide":6,"text":"[4:25~5:30] 관리자는 로그인 직후 대시보드에서 전체 운영 상태를 확인합니다. 상태별 건수와 최근 접수 목록을 함께 보고, 상세 화면에서 고객 정보와 증상을 확인합니다. 운영자가 여러 메뉴를 오가며 숫자를 맞추지 않아도 현재 요청이 어느 단계에 있는지 파악할 수 있도록 구성했습니다."}
+{"kind":"slide","id":"sl/fuux66","slide":7,"title":"SCHEDULE","textShapes":15}
+{"kind":"shape","id":"sh/29k7ut4j","slide":7,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/pwb658na","slide":7,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/4b2pw3mp","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/f69ozy5s","slide":7,"text":"SCHEDULING","textPreview":"SCHEDULING","textChars":10,"textLines":1,"bbox":[66,58,740,25]}
+{"kind":"textbox","id":"sh/u50nqt4n","slide":7,"text":"미배정 요청을 기사 일정으로 전환","textPreview":"미배정 요청을 기사 일정으로 전환","textChars":18,"textLines":1,"bbox":[66,92,1135,70]}
+{"kind":"textbox","id":"sh/h8r61ony","slide":7,"text":"관리자는 요청을 선택한 뒤 담당 기사와 방문 시간을 확정합니다.","textPreview":"관리자는 요청을 선택한 뒤 담당 기사와 방문 시간을 확정합니다.","textChars":35,"textLines":1,"bbox":[66,164,800,34]}
+{"kind":"textbox","id":"sh/729ove5w","slide":7,"text":"배정 로직","textPreview":"배정 로직","textChars":5,"textLines":1,"bbox":[884,234,290,34]}
+{"kind":"textbox","id":"sh/610nm94b","slide":7,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[884,300,36,34]}
+{"kind":"textbox","id":"sh/onu9cn6l","slide":7,"text":"미배정 접수 선택","textPreview":"미배정 접수 선택","textChars":9,"textLines":1,"bbox":[934,300,260,30]}
+{"kind":"textbox","id":"sh/po3q5sn6","slide":7,"text":"REQUEST 상태와 고객 요청일 확인","textPreview":"REQUEST 상태와 고객 요청일 확인","textChars":21,"textLines":1,"bbox":[934,334,280,45]}
+{"kind":"textbox","id":"sh/2lsraxof","slide":7,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[884,396,36,34]}
+{"kind":"textbox","id":"sh/nm183250","slide":7,"text":"기사·시간 지정","textPreview":"기사·시간 지정","textChars":8,"textLines":1,"bbox":[934,396,260,30]}
+{"kind":"textbox","id":"sh/0ja98n6p","slide":7,"text":"기사 목록과 시작·종료시간 입력","textPreview":"기사 목록과 시작·종료시간 입력","textChars":17,"textLines":1,"bbox":[934,430,280,45]}
+{"kind":"textbox","id":"sh/1kjq1sna","slide":7,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[884,492,36,34]}
+{"kind":"textbox","id":"sh/exs76doj","slide":7,"text":"일정 생성","textPreview":"일정 생성","textChars":5,"textLines":1,"bbox":[934,492,260,30]}
+{"kind":"textbox","id":"sh/fi18zi54","slide":7,"text":"AS_SCHEDULE 저장 후 상태를 ASSIGNED로 변경","textPreview":"AS_SCHEDULE 저장 후 상태를 ASSIGNED로 변경","textChars":33,"textLines":1,"bbox":[934,526,280,45]}
+{"kind":"image","id":"im/9wfe98b2","slide":7,"name":"","geometry":"roundRect","alt":"admin-schedule","bbox":[66,224,770,410]}
+{"kind":"notes","id":"nt/fuux66","slide":7,"text":"[5:30~6:35] 일정관리 화면에서는 미배정 요청을 선택하고 담당 기사와 방문 시간을 입력합니다. 저장하면 AS_SCHEDULE에 일정이 생성되고 REQUEST 상태가 ASSIGNED로 변경됩니다. 월간 캘린더에서 기사별 배정 결과를 색상으로 확인할 수 있습니다. 현재 핵심 배정 흐름은 구현됐고, 같은 기사에게 겹치는 시간을 배정하지 않도록 하는 충돌 검증은 다음 보완 과제로 남았습니다."}
+{"kind":"slide","id":"sl/mp8tg3","slide":8,"title":"SCHEDULE","textShapes":8}
+{"kind":"shape","id":"sh/ru9g3edw","slide":8,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/svihwjeh","slide":8,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/dgry5ov2","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/ipgzq9wf","slide":8,"text":"FIELD EXECUTION","textPreview":"FIELD EXECUTION","textChars":15,"textLines":1,"bbox":[66,58,400,24]}
+{"kind":"textbox","id":"sh/jqpgzudk","slide":8,"text":"기사는 일정 확인부터 결과보고까지 한 흐름으로 처리","textPreview":"기사는 일정 확인부터 결과보고까지 한 흐름으로 처리","textChars":28,"textLines":1,"bbox":[66,92,1100,56]}
+{"kind":"textbox","id":"sh/ulgfmpw3","slide":8,"text":"TODAY & MONTH","textPreview":"TODAY & MONTH","textChars":13,"textLines":1,"bbox":[66,602,180,22]}
+{"kind":"textbox","id":"sh/vmpgvudo","slide":8,"text":"오늘 일정과 월간 캘린더","textPreview":"오늘 일정과 월간 캘린더","textChars":13,"textLines":1,"bbox":[244,598,350,30]}
+{"kind":"textbox","id":"sh/jyxc7uxc","slide":8,"text":"RESULT REPORT","textPreview":"RESULT REPORT","textChars":13,"textLines":1,"bbox":[666,602,180,22]}
+{"kind":"textbox","id":"sh/yxovy9gr","slide":8,"text":"처리 내용과 사진 2장 기록","textPreview":"처리 내용과 사진 2장 기록","textChars":15,"textLines":1,"bbox":[846,598,350,30]}
+{"kind":"image","id":"im/1kvup0zu","slide":8,"name":"","geometry":"roundRect","alt":"engineer-dashboard","bbox":[66,180,548,402]}
+{"kind":"image","id":"im/gjmtwvy9","slide":8,"name":"","geometry":"roundRect","alt":"result-report","bbox":[666,180,548,402]}
+{"kind":"notes","id":"nt/mp8tg3","slide":8,"text":"[6:35~8:05] 기사 화면은 현장 업무 순서에 맞췄습니다. 대시보드에서 오늘 배정과 월간 일정을 확인하고, 방문이 끝나면 결과보고 화면에서 처리 내용과 사진을 최대 두 장까지 등록합니다. 다른 기사의 scheduleNo를 직접 입력해 접근하지 못하도록 소유권을 확인하며, 처리 시각은 브라우저가 아니라 서버가 기록합니다. 신규 결과 등록이 완료되면 해당 접수 상태도 COMPLETED로 변경됩니다."}
+{"kind":"slide","id":"sl/r939x7","slide":9,"title":"SCHEDULE","textShapes":14}
+{"kind":"shape","id":"sh/qx4ra98j","slide":9,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/dkfaloru","slide":9,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/cz69cjq9","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/2t4r6987","slide":9,"text":"CUSTOMER FEEDBACK","textPreview":"CUSTOMER FEEDBACK","textChars":17,"textLines":1,"bbox":[66,72,500,24]}
+{"kind":"textbox","id":"sh/pwvah4ry","slide":9,"text":"결과보고 뒤\n고객 평가가 운영 데이터가 됩니다","textPreview":"결과보고 뒤 | 고객 평가가 운영 데이터가 됩니다","textChars":25,"textLines":2,"bbox":[66,110,580,110]}
+{"kind":"textbox","id":"sh/4vm98jqd","slide":9,"text":"차별화 포인트","textPreview":"차별화 포인트","textChars":7,"textLines":1,"bbox":[66,256,220,28]}
+{"kind":"textbox","id":"sh/nqxsry9w","slide":9,"text":"외부 설문으로 끝내지 않고 서비스 내부 DB에 응답을 저장해 기사별 월간 지표로 연결했습니다.","textPreview":"외부 설문으로 끝내지 않고 서비스 내부 DB에 응답을 저장해 기사별 월간 지표로 연결했습니다.","textChars":52,"textLines":1,"bbox":[66,300,558,82]}
+{"kind":"textbox","id":"sh/mporit8r","slide":9,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[66,440,40,28]}
+{"kind":"textbox","id":"sh/4jut4fy5","slide":9,"text":"결과 등록","textPreview":"결과 등록","textChars":5,"textLines":1,"bbox":[116,438,220,36]}
+{"kind":"textbox","id":"sh/pknadkfq","slide":9,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[351,440,40,28]}
+{"kind":"textbox","id":"sh/2hcr25gf","slide":9,"text":"SMS 링크 발송","textPreview":"SMS 링크 발송","textChars":9,"textLines":1,"bbox":[401,438,220,36]}
+{"kind":"textbox","id":"sh/3ilsbah0","slide":9,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[66,522,40,28]}
+{"kind":"textbox","id":"sh/gfu90fy9","slide":9,"text":"3항목 평가","textPreview":"3항목 평가","textChars":6,"textLines":1,"bbox":[116,520,220,36]}
+{"kind":"textbox","id":"sh/hg3a90zu","slide":9,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[351,522,40,28]}
+{"kind":"textbox","id":"sh/udcry5g3","slide":9,"text":"월별 평균·전년 비교","textPreview":"월별 평균·전년 비교","textChars":11,"textLines":1,"bbox":[401,520,220,36]}
+{"kind":"image","id":"im/a54vmtgz","slide":9,"name":"","geometry":"roundRect","alt":"satisfaction-survey","bbox":[708,80,506,566]}
+{"kind":"notes","id":"nt/r939x7","slide":9,"text":"[8:05~9:20] 결과보고가 끝나면 Solapi를 통해 고객에게 만족도 설문 링크를 발송합니다. 초기에는 Google Form을 검토했지만 응답을 시스템 통계로 연결하기 어려워 자체 설문으로 변경했습니다. 고객은 세 항목을 평가하고, 응답은 만족도 테이블에 저장됩니다. 기사 대시보드는 월간 평균, 전년 동월 비교와 월별 추이를 보여줍니다. 결과 등록에서 고객 피드백까지 이어지는 흐름이 Schedule의 가장 큰 차별점입니다."}
+{"kind":"slide","id":"sl/hda6m6","slide":10,"title":"SCHEDULE","textShapes":29}
+{"kind":"shape","id":"sh/axojep8r","slide":10,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/x0zi9kri","slide":10,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/czq1gfqx","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/nux03a9g","slide":10,"text":"DELIVERY MODEL","textPreview":"DELIVERY MODEL","textChars":14,"textLines":1,"bbox":[66,58,420,24]}
+{"kind":"textbox","id":"sh/2toja58v","slide":10,"text":"화면 단위 오너십으로 6일 안에 통합","textPreview":"화면 단위 오너십으로 6일 안에 통합","textChars":20,"textLines":1,"bbox":[66,92,800,54]}
+{"kind":"shape","id":"sh/pwfi5kr6","slide":10,"bbox":[66,205,178,3]}
+{"kind":"textbox","id":"sh/ov61cfq1","slide":10,"text":"09.08","textPreview":"09.08","textChars":5,"textLines":1,"bbox":[66,224,185,30]}
+{"kind":"textbox","id":"sh/f6d0zq94","slide":10,"text":"기획","textPreview":"기획","textChars":2,"textLines":1,"bbox":[66,266,185,34]}
+{"kind":"textbox","id":"sh/e54z658j","slide":10,"text":"역할·화면 범위와 Git 전략","textPreview":"역할·화면 범위와 Git 전략","textChars":16,"textLines":1,"bbox":[66,310,190,66]}
+{"kind":"shape","id":"sh/cvqd8ve9","slide":10,"bbox":[296,205,178,3]}
+{"kind":"textbox","id":"sh/xwju10fu","slide":10,"text":"09.09","textPreview":"09.09","textChars":5,"textLines":1,"bbox":[296,224,185,30]}
+{"kind":"textbox","id":"sh/at8b6lw3","slide":10,"text":"기반","textPreview":"기반","textChars":2,"textLines":1,"bbox":[296,266,185,34]}
+{"kind":"textbox","id":"sh/buhczqxo","slide":10,"text":"DB와 공통 화면 뼈대","textPreview":"DB와 공통 화면 뼈대","textChars":12,"textLines":1,"bbox":[296,310,190,66]}
+{"kind":"shape","id":"sh/orqt4vex","slide":10,"bbox":[526,205,178,3]}
+{"kind":"textbox","id":"sh/pszux0fi","slide":10,"text":"09.10–11","textPreview":"09.10–11","textChars":8,"textLines":1,"bbox":[526,224,185,30]}
+{"kind":"textbox","id":"sh/2p8b2lw7","slide":10,"text":"연결","textPreview":"연결","textChars":2,"textLines":1,"bbox":[526,266,185,34]}
+{"kind":"textbox","id":"sh/nqhcvqxc","slide":10,"text":"일정·결과·SMS·설문","textPreview":"일정·결과·SMS·설문","textChars":12,"textLines":1,"bbox":[526,310,190,66]}
+{"kind":"shape","id":"sh/8nudgfeh","slide":10,"bbox":[756,205,178,3]}
+{"kind":"textbox","id":"sh/to3u9kfm","slide":10,"text":"09.14","textPreview":"09.14","textChars":5,"textLines":1,"bbox":[756,224,185,30]}
+{"kind":"textbox","id":"sh/h4zutk76","slide":10,"text":"개선","textPreview":"개선","textChars":2,"textLines":1,"bbox":[756,266,185,34]}
+{"kind":"textbox","id":"sh/g3qt0f6l","slide":10,"text":"오류 수정·통계·디자인 통합","textPreview":"오류 수정·통계·디자인 통합","textChars":15,"textLines":1,"bbox":[756,310,190,66]}
+{"kind":"shape","id":"sh/f2hcrap0","slide":10,"bbox":[986,205,178,3]}
+{"kind":"textbox","id":"sh/u1oby5of","slide":10,"text":"09.15","textPreview":"09.15","textChars":5,"textLines":1,"bbox":[986,224,185,30]}
+{"kind":"textbox","id":"sh/tgfup07u","slide":10,"text":"검증","textPreview":"검증","textChars":2,"textLines":1,"bbox":[986,266,185,34]}
+{"kind":"textbox","id":"sh/sf6twv69","slide":10,"text":"더미 데이터·빌드·테스트","textPreview":"더미 데이터·빌드·테스트","textChars":13,"textLines":1,"bbox":[986,310,190,66]}
+{"kind":"shape","id":"sh/7excnapo","slide":10,"bbox":[66,414,1148,1]}
+{"kind":"textbox","id":"sh/6dobu5oj","slide":10,"text":"ROLE OWNERSHIP","textPreview":"ROLE OWNERSHIP","textChars":14,"textLines":1,"bbox":[66,446,190,24]}
+{"kind":"textbox","id":"sh/5cful07y","slide":10,"text":"공통·로그인·통합","textPreview":"공통·로그인·통합","textChars":9,"textLines":1,"bbox":[66,492,250,32]}
+{"kind":"textbox","id":"sh/kb6tsv6d","slide":10,"text":"팀장명 입력","textPreview":"팀장명 입력","textChars":6,"textLines":1,"bbox":[66,530,240,24]}
+{"kind":"textbox","id":"sh/ahkrm14b","slide":10,"text":"관리자 대시보드·기사관리","textPreview":"관리자 대시보드·기사관리","textChars":13,"textLines":1,"bbox":[350,492,260,32]}
+{"kind":"textbox","id":"sh/bitsv65g","slide":10,"text":"최준영","textPreview":"최준영","textChars":3,"textLines":1,"bbox":[350,530,240,24]}
+{"kind":"textbox","id":"sh/wjm9obm1","slide":10,"text":"관리자 일정관리","textPreview":"관리자 일정관리","textChars":8,"textLines":1,"bbox":[648,492,240,32]}
+{"kind":"textbox","id":"sh/xkvaxwnm","slide":10,"text":"김성준","textPreview":"김성준","textChars":3,"textLines":1,"bbox":[648,530,240,24]}
+{"kind":"textbox","id":"sh/mdkrih4z","slide":10,"text":"기사·결과·SMS·만족도","textPreview":"기사·결과·SMS·만족도","textChars":13,"textLines":1,"bbox":[922,492,278,32]}
+{"kind":"textbox","id":"sh/net8rm5k","slide":10,"text":"박성인","textPreview":"박성인","textChars":3,"textLines":1,"bbox":[922,530,240,24]}
+{"kind":"textbox","id":"sh/of29krm5","slide":10,"text":"멘토 지원 내역은 실제 피드백 내용 입력 필요","textPreview":"멘토 지원 내역은 실제 피드백 내용 입력 필요","textChars":25,"textLines":1,"bbox":[66,624,600,24]}
+{"kind":"notes","id":"nt/hda6m6","slide":10,"text":"[9:20~10:40] 개발은 9월 8일부터 15일까지 6개 작업일 동안 진행했습니다. 팀은 화면 단위로 오너십을 나눴습니다. 팀장은 공통 화면과 로그인, 통합을 맡았고 최준영은 관리자 대시보드와 기사관리, 김성준은 관리자 일정관리, 박성인은 기사 대시보드와 결과보고, SMS와 만족도를 담당했습니다. 각 담당자가 Controller, Service, Mapper, HTML과 JavaScript까지 하나의 기능 흐름을 완결했습니다. 저장소에 없는 팀장명과 실제 멘토 지원 내용은 제출 전에 입력해야 합니다."}
+{"kind":"slide","id":"sl/a75ef7","slide":11,"title":"SCHEDULE","textShapes":23}
+{"kind":"shape","id":"sh/l0vep0ju","slide":11,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/ydkfulk3","slide":11,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/jedwnq1o","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/cb2dsv2d","slide":11,"text":"ENGINEERING","textPreview":"ENGINEERING","textChars":11,"textLines":1,"bbox":[66,58,740,25]}
+{"kind":"textbox","id":"sh/xcbel0ji","slide":11,"text":"교육과정의 기술을 실제 서비스 흐름으로 구현","textPreview":"교육과정의 기술을 실제 서비스 흐름으로 구현","textChars":24,"textLines":1,"bbox":[66,92,1135,70]}
+{"kind":"textbox","id":"sh/a9kvqlk7","slide":11,"text":"Java 17 · Spring Boot 4.0.8 · Thymeleaf · MyBatis · MariaDB · FullCalendar · Solapi","textPreview":"Java 17 · Spring Boot 4.0.8 · Thymeleaf · MyBatis · MariaDB · FullCalendar · Solapi","textChars":83,"textLines":1,"bbox":[66,165,1130,34]}
+{"kind":"textbox","id":"sh/batwjq1s","slide":11,"text":"구현 근거","textPreview":"구현 근거","textChars":5,"textLines":1,"bbox":[66,234,220,30]}
+{"kind":"textbox","id":"sh/g76x4fih","slide":11,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[66,278,190,58]}
+{"kind":"textbox","id":"sh/h8fexkj2","slide":11,"text":"연결된 DB 테이블","textPreview":"연결된 DB 테이블","textChars":10,"textLines":1,"bbox":[66,334,205,44]}
+{"kind":"textbox","id":"sh/t47ih8n2","slide":11,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[300,278,190,58]}
+{"kind":"textbox","id":"sh/s3eho36h","slide":11,"text":"자동 테스트 통과","textPreview":"자동 테스트 통과","textChars":9,"textLines":1,"bbox":[300,334,205,44]}
+{"kind":"textbox","id":"sh/7250fy5w","slide":11,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[534,278,190,58]}
+{"kind":"textbox","id":"sh/61wzmtob","slide":11,"text":"결과 사진 최대 첨부","textPreview":"결과 사진 최대 첨부","textChars":11,"textLines":1,"bbox":[534,334,205,44]}
+{"kind":"shape","id":"sh/50nido7q","slide":11,"bbox":[66,414,675,1]}
+{"kind":"textbox","id":"sh/kzehkj65","slide":11,"text":"피드백을 반영한 개선","textPreview":"피드백을 반영한 개선","textChars":11,"textLines":1,"bbox":[66,446,300,30]}
+{"kind":"textbox","id":"sh/jy50bepk","slide":11,"text":"기사번호 혼동","textPreview":"기사번호 혼동","textChars":7,"textLines":1,"bbox":[66,494,190,26]}
+{"kind":"textbox","id":"sh/ixwzi9of","slide":11,"text":"MEMBER 번호와 ENGINEER 번호를 분리 조회","textPreview":"MEMBER 번호와 ENGINEER 번호를 분리 조회","textChars":29,"textLines":1,"bbox":[272,494,440,32]}
+{"kind":"textbox","id":"sh/pwripsnu","slide":11,"text":"외부 설문 한계","textPreview":"외부 설문 한계","textChars":8,"textLines":1,"bbox":[66,548,190,26]}
+{"kind":"textbox","id":"sh/4vi1wn6p","slide":11,"text":"자체 설문으로 전환해 DB 통계까지 연결","textPreview":"자체 설문으로 전환해 DB 통계까지 연결","textChars":22,"textLines":1,"bbox":[272,548,440,32]}
+{"kind":"shape","id":"sh/obqt8bix","slide":11,"bbox":[798,234,416,350]}
+{"kind":"textbox","id":"sh/9czuhgzi","slide":11,"text":"운영 전 보완","textPreview":"운영 전 보완","textChars":7,"textLines":1,"bbox":[832,268,320,30]}
+{"kind":"textbox","id":"sh/m98b6l0r","slide":11,"text":"비밀번호 해시 저장","textPreview":"비밀번호 해시 저장","textChars":10,"textLines":1,"bbox":[832,322,320,28]}
+{"kind":"textbox","id":"sh/nahcfqhc","slide":11,"text":"SMS 인증정보 환경변수화","textPreview":"SMS 인증정보 환경변수화","textChars":14,"textLines":1,"bbox":[832,374,330,28]}
+{"kind":"textbox","id":"sh/0nqt4bi1","slide":11,"text":"배정 트랜잭션·충돌 검증","textPreview":"배정 트랜잭션·충돌 검증","textChars":13,"textLines":1,"bbox":[832,426,330,28]}
+{"kind":"textbox","id":"sh/1ozadgz6","slide":11,"text":"상태값 Enum·운영 로그","textPreview":"상태값 Enum·운영 로그","textChars":14,"textLines":1,"bbox":[832,478,330,28]}
+{"kind":"textbox","id":"sh/el8b210v","slide":11,"text":"현재 단계: 기능 검증 완료, 운영 보안 강화 필요","textPreview":"현재 단계: 기능 검증 완료, 운영 보안 강화 필요","textChars":28,"textLines":1,"bbox":[832,536,340,30]}
+{"kind":"notes","id":"nt/a75ef7","slide":11,"text":"[10:40~12:05] 기술 구성은 Java 17, Spring Boot 4.0.8, Thymeleaf, MyBatis와 MariaDB입니다. FullCalendar로 일정을 표시하고 Solapi SMS와 Cloudflare Tunnel을 연동했습니다. 교육에서 배운 MVC 구조, 데이터베이스 조인, 파일 업로드와 비동기 처리를 하나의 서비스 흐름에 적용했습니다. 개발 중 MEMBER 번호와 ENGINEER 번호를 혼동한 오류는 기사번호를 별도로 조회하도록 수정했고, 외부 설문은 자체 설문으로 바꿨습니다. 현재 빌드와 자동 테스트는 통과했지만 비밀번호 해시, 비밀정보 외부화와 배정 충돌 검증은 운영 전에 보완해야 합니다."}
+{"kind":"slide","id":"sl/aj8oww","slide":12,"title":"SCHEDULE","textShapes":21}
+{"kind":"shape","id":"sh/eh4vqx4z","slide":12,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/1kfu1cna","slide":12,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/0j6ds7mp","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/nmxc3m5g","slide":12,"text":"BUSINESS VALUE","textPreview":"BUSINESS VALUE","textChars":14,"textLines":1,"bbox":[66,58,420,24]}
+{"kind":"textbox","id":"sh/mlovuh4v","slide":12,"text":"소규모 AS센터가 바로 이해할 수 있는 운영 기반","textPreview":"소규모 AS센터가 바로 이해할 수 있는 운영 기반","textChars":27,"textLines":1,"bbox":[66,92,950,56]}
+{"kind":"textbox","id":"sh/9ofu5cnm","slide":12,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[66,220,50,30]}
+{"kind":"textbox","id":"sh/on6dw7m1","slide":12,"text":"운영 가시성","textPreview":"운영 가시성","textChars":6,"textLines":1,"bbox":[138,216,230,34]}
+{"kind":"textbox","id":"sh/3qtcri5c","slide":12,"text":"관리자와 기사가 같은 배정 정보를 확인해 전달 누락 가능성을 줄입니다.","textPreview":"관리자와 기사가 같은 배정 정보를 확인해 전달 누락 가능성을 줄입니다.","textChars":39,"textLines":1,"bbox":[386,218,520,58]}
+{"kind":"textbox","id":"sh/2pkbid4r","slide":12,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[66,330,50,30]}
+{"kind":"textbox","id":"sh/knil8vmx","slide":12,"text":"처리 이력","textPreview":"처리 이력","textChars":5,"textLines":1,"bbox":[138,326,230,34]}
+{"kind":"textbox","id":"sh/58r2h0ni","slide":12,"text":"접수부터 결과와 평가까지 한 고객 건의 기록이 이어집니다.","textPreview":"접수부터 결과와 평가까지 한 고객 건의 기록이 이어집니다.","textChars":32,"textLines":1,"bbox":[386,328,520,58]}
+{"kind":"textbox","id":"sh/il036l4r","slide":12,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[66,440,50,30]}
+{"kind":"textbox","id":"sh/jm9kfq5c","slide":12,"text":"고객 피드백","textPreview":"고객 피드백","textChars":6,"textLines":1,"bbox":[138,436,230,34]}
+{"kind":"textbox","id":"sh/sbilcvmt","slide":12,"text":"결과 등록 뒤 설문을 발송해 별도 입력 없이 만족도를 축적합니다.","textPreview":"결과 등록 뒤 설문을 발송해 별도 입력 없이 만족도를 축적합니다.","textChars":36,"textLines":1,"bbox":[386,438,520,58]}
+{"kind":"shape","id":"sh/tcbml0ne","slide":12,"bbox":[960,204,254,332]}
+{"kind":"textbox","id":"sh/6903al43","slide":12,"text":"NEXT","textPreview":"NEXT","textChars":4,"textLines":1,"bbox":[992,238,160,24]}
+{"kind":"textbox","id":"sh/7a94jq58","slide":12,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[992,282,42,40]}
+{"kind":"textbox","id":"sh/8fyl0b6p","slide":12,"text":"일정 충돌 검증","textPreview":"일정 충돌 검증","textChars":8,"textLines":1,"bbox":[1042,286,140,30]}
+{"kind":"textbox","id":"sh/9g729gna","slide":12,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[992,354,42,40]}
+{"kind":"textbox","id":"sh/pczidsfy","slide":12,"text":"보안·배포 강화","textPreview":"보안·배포 강화","textChars":8,"textLines":1,"bbox":[1042,358,150,30]}
+{"kind":"textbox","id":"sh/obq14nyd","slide":12,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[992,426,42,40]}
+{"kind":"textbox","id":"sh/nah0b2xs","slide":12,"text":"모바일·알림 개선","textPreview":"모바일·알림 개선","textChars":9,"textLines":1,"bbox":[1042,430,160,30]}
+{"kind":"textbox","id":"sh/298j2xgn","slide":12,"text":"효과는 실제 운영 수치가 아닌 기대 효과로 제시","textPreview":"효과는 실제 운영 수치가 아닌 기대 효과로 제시","textChars":26,"textLines":1,"bbox":[66,622,600,24]}
+{"kind":"notes","id":"nt/aj8oww","slide":12,"text":"[12:05~13:25] 활용 대상은 소규모 AS센터입니다. 관리자는 접수와 배정 현황을 한눈에 보고, 기사는 자신에게 배정된 일정과 처리 이력에 집중할 수 있습니다. 고객 평가까지 같은 DB에 쌓이기 때문에 기사별 서비스 품질을 월간 단위로 확인할 기반도 생깁니다. 다음 단계는 일정 충돌 검증, 보안과 배포 환경 강화, 모바일 화면과 알림 개선입니다. 아직 실제 사업장에서 측정한 운영 수치는 없으므로 이 슬라이드의 내용은 검증된 성과가 아니라 기대 효과입니다."}
+{"kind":"slide","id":"sl/uhel1t","slide":13,"title":"SCHEDULE","textShapes":17}
+{"kind":"shape","id":"sh/tsn2x4ve","slide":13,"bbox":[0,0,1280,7]}
+{"kind":"textbox","id":"sh/65wj29cn","slide":13,"text":"SCHEDULE","textPreview":"SCHEDULE","textChars":8,"textLines":1,"bbox":[66,28,160,24]}
+{"kind":"textbox","id":"sh/765kvud8","slide":13,"text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1190,668,40,20]}
+{"kind":"textbox","id":"sh/k3u10zuh","slide":13,"text":"SELF ASSESSMENT","textPreview":"SELF ASSESSMENT","textChars":15,"textLines":1,"bbox":[66,58,420,24]}
+{"kind":"textbox","id":"sh/l43294v2","slide":13,"text":"핵심 업무 흐름은 완성, 운영 수준까지는 한 단계 남았습니다","textPreview":"핵심 업무 흐름은 완성, 운영 수준까지는 한 단계 남았습니다","textChars":33,"textLines":1,"bbox":[66,92,1120,60]}
+{"kind":"textbox","id":"sh/y1cjypcr","slide":13,"text":"8.0","textPreview":"8.0","textChars":3,"textLines":1,"bbox":[66,202,210,96]}
+{"kind":"textbox","id":"sh/j2lk7udc","slide":13,"text":"/ 10","textPreview":"/ 10","textChars":4,"textLines":1,"bbox":[222,250,90,34]}
+{"kind":"textbox","id":"sh/4zylcju1","slide":13,"text":"기능 완성도","textPreview":"기능 완성도","textChars":6,"textLines":1,"bbox":[66,302,220,30]}
+{"kind":"shape","id":"sh/50725ovm","slide":13,"bbox":[66,352,520,10]}
+{"kind":"shape","id":"sh/x4jytofm","slide":13,"bbox":[66,352,416,10]}
+{"kind":"textbox","id":"sh/w3ahkjy1","slide":13,"text":"평가 근거","textPreview":"평가 근거","textChars":5,"textLines":1,"bbox":[650,202,220,28]}
+{"kind":"textbox","id":"sh/v2hgrexg","slide":13,"text":"고객 접수부터 만족도까지 실제 화면으로 연결","textPreview":"고객 접수부터 만족도까지 실제 화면으로 연결","textChars":24,"textLines":1,"bbox":[650,248,520,34]}
+{"kind":"textbox","id":"sh/a18zi9gv","slide":13,"text":"역할별 접근 제어와 기사 일정 소유권 확인","textPreview":"역할별 접근 제어와 기사 일정 소유권 확인","textChars":23,"textLines":1,"bbox":[650,298,520,34]}
+{"kind":"textbox","id":"sh/90zyp4fq","slide":13,"text":"현재 빌드와 자동 테스트 4개 통과","textPreview":"현재 빌드와 자동 테스트 4개 통과","textChars":19,"textLines":1,"bbox":[650,348,520,34]}
+{"kind":"shape","id":"sh/8zqhgzy5","slide":13,"bbox":[66,430,1148,1]}
+{"kind":"textbox","id":"sh/nyhgnuxk","slide":13,"text":"배운 점","textPreview":"배운 점","textChars":4,"textLines":1,"bbox":[66,466,160,28]}
+{"kind":"textbox","id":"sh/mx8zepgz","slide":13,"text":"테이블별 PK를 명확히 구분해야 서비스 로직이 안정됩니다","textPreview":"테이블별 PK를 명확히 구분해야 서비스 로직이 안정됩니다","textChars":31,"textLines":1,"bbox":[66,508,540,38]}
+{"kind":"textbox","id":"sh/tw3i18fu","slide":13,"text":"처리시각과 권한 검증은 화면보다 서버가 책임져야 합니다","textPreview":"처리시각과 권한 검증은 화면보다 서버가 책임져야 합니다","textChars":30,"textLines":1,"bbox":[66,558,540,38]}
+{"kind":"textbox","id":"sh/svuhs3y9","slide":13,"text":"Q&A","textPreview":"Q&A","textChars":3,"textLines":1,"bbox":[900,490,250,56]}
+{"kind":"textbox","id":"sh/cb2tkrqh","slide":13,"text":"실제 화면과 코드 흐름을 기준으로 답변드리겠습니다","textPreview":"실제 화면과 코드 흐름을 기준으로 답변드리겠습니다","textChars":27,"textLines":1,"bbox":[780,554,400,52]}
+{"kind":"textbox","id":"sh/dcvadwr2","slide":13,"text":"팀명 · 발표자 · 멘토 정보 입력 필요","textPreview":"팀명 · 발표자 · 멘토 정보 입력 필요","textChars":22,"textLines":1,"bbox":[66,646,500,22]}
+{"kind":"notes","id":"nt/uhel1t","slide":13,"text":"[13:25~15:00] 자체 완성도는 10점 만점에 8점으로 평가했습니다. 고객 접수에서 관리자 배정, 기사 처리와 만족도까지 핵심 흐름이 실제 화면에서 동작하고, 현재 빌드와 자동 테스트도 통과했습니다. 반면 비밀번호 해시 저장, SMS 인증정보 환경변수화, 일정 배정 충돌 검증은 운영 전에 반드시 보완해야 합니다. 프로젝트를 통해 테이블마다 다른 기본키를 정확히 구분하는 중요성, 처리 시각과 권한은 서버가 책임져야 한다는 점을 배웠습니다. 이상으로 발표를 마치겠습니다. 질문 주시면 실제 화면과 코드 흐름을 기준으로 답변드리겠습니다."}

@@ -4,7 +4,6 @@
   layout:decorate="~{layouts/layout}">
 
 <th:block layout:fragment="content_css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="/css/pages/schedule/admin_schedule.css">
 </th:block>
 
@@ -36,6 +35,16 @@
               </select>
             </div>
           </div>
+
+          <!-- 일정 상태 색상 범례. STATUS_COLORS(admin_schedule.js)와 색을 맞춰서, 달력에 찍힌
+               이벤트 색깔만 보고도 바로 어떤 상태인지 알 수 있게 합니다. 아이콘 대신 색상 점 + 텍스트만 사용. -->
+          <div class="cal-legend">
+            <span class="legend-item"><i class="legend-dot legend-received"></i>접수완료</span>
+            <span class="legend-item"><i class="legend-dot legend-assigned"></i>기사배정</span>
+            <span class="legend-item"><i class="legend-dot legend-progress"></i>작업진행</span>
+            <span class="legend-item"><i class="legend-dot legend-complete"></i>작업완료</span>
+          </div>
+
           <div id="calendar"></div>
         </div>
         <div class="assign-card">
@@ -61,17 +70,24 @@
                 </th:block>
               </select>
             </div>
-            <div>
+            <div data-picker-field>
               <p>배정 날짜</p>
               <input type="date" id="fixDateInput" name="fixDate">
             </div>
             <div>
-              <p>시간선택</p>
-              <div>
-                <input type="time" id="startTimeInput">
-                <span> - </span>
-                <input type="time" id="endTimeInput">
+              <p>방문 시간</p>
+              <div class="time-range">
+                <label class="time-field" for="startTimeInput" data-picker-field>
+                  <span class="time-field-caption">시작 시간</span>
+                  <input type="time" id="startTimeInput" value="09:00" aria-label="방문 시작 시간">
+                </label>
+                <span class="time-range-arrow" aria-hidden="true">→</span>
+                <label class="time-field" for="endTimeInput" data-picker-field>
+                  <span class="time-field-caption">종료 시간</span>
+                  <input type="time" id="endTimeInput" value="10:00" aria-label="방문 종료 시간">
+                </label>
               </div>
+              <p class="time-help">각 입력 상자를 눌러 방문 예정 시간을 조정하세요.</p>
               <!-- fixDate + 시간을 합쳐 LocalDateTime 형식("yyyy-MM-ddTHH:mm")으로 실제 전송하는 hidden input -->
               <input type="hidden" name="startTime" id="startTimeHidden">
               <input type="hidden" name="endTime" id="endTimeHidden">
@@ -83,21 +99,6 @@
           </form>
         </div>
       </div>
-     <div class="schedule-footer">
-      <p >일정 상태</p>
-      <p>
-        <span class="receive-icon"><i class="bi bi-r-circle"></i></span>
-        접수완료</p>
-      <p>
-        <span class="assign-icon"><i class="bi bi-c-circle"></i></span>
-        기사배정</p>
-      <p>
-        <span class="progress-icon"><i class="bi bi-wrench-adjustable-circle"></i></span>
-        작업진행</p>
-      <p>
-        <span class="complete-icon"><i class="bi bi-check-circle"></i></span>
-        작업완료</p>
-     </div>
   </div>
 </th:block>
 

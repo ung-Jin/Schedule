@@ -4,10 +4,10 @@
 */
 
 const STATUS_COLORS = {
-  RECEIVED: '#E98B50',
-  ASSIGNED: '#2563eb',
-  IN_PROGRESS: '#9a4c13',
-  COMPLETED: '#25624e'
+  RECEIVED: '#c95e69',
+  ASSIGNED: '#4f8fc8',
+  IN_PROGRESS: '#d88b27',
+  COMPLETED: '#5f9968'
 };
 
 // "2026-09-15T14:00:00" 또는 "2026-09-15 14:00:00" 형태의 문자열에서 "14:00"만 추출.
@@ -45,6 +45,7 @@ function buildEvents(engineerFilter) {
           textColor: '#fff',
           extendedProps: {
             isAssigned: false,
+            status: r.status,
             customerName: r.customerName || '',
             productType: r.productType || '',
             symptom: r.symptom || ''
@@ -73,6 +74,7 @@ function buildEvents(engineerFilter) {
         textColor: '#fff',
         extendedProps: {
           isAssigned: true,
+          status: s.status,
           customerName: req.customerName || '',
           productType: req.productType || '',
           symptom: req.symptom || '',
@@ -83,6 +85,57 @@ function buildEvents(engineerFilter) {
     });
 
   return events;
+}
+
+// 하루에 "접수완료"(RECEIVED, 빨강 - 아직 기사 배정 안 된 건이라 빨리 처리해야 하는 고객)가 아닌
+// 일정이 몇 개까지 바로 보일지. 이걸 넘어가면 나머지는 "+N" 자리표시 이벤트 하나로 묶습니다.
+const MAX_VISIBLE_OTHER_PER_DAY = 1;
+
+/**
+ * 월간 달력(dayGridMonth) 전용 - 하루에 일정이 너무 많이 몰려서 그 날짜 칸 때문에
+ * 달력 전체 높이가 늘어지는 걸 막기 위한 처리입니다.
+ * RECEIVED(빨강, 미배정 접수)는 배정을 빨리 해줘야 하는 건이라 절대 생략하지 않고 전부 보여주고,
+ * 그 외 상태(배정완료/진행중/완료)만 하루 MAX_VISIBLE_OTHER_PER_DAY개까지 보여준 뒤 나머지는
+ * "+N"(N=그 날짜에 숨겨진 개수) 자리표시 이벤트로 접습니다. 이 자리표시를 클릭하면(eventClick 참고)
+ * 그 날짜의 일간(timeGridDay) 화면으로 이동해서 전체를 볼 수 있습니다.
+ * 일/주간 뷰(timeGridDay/timeGridWeek)에서는 칸 높이 문제가 없으므로 이 처리를 적용하지 않습니다.
+ */
+function capEventsPerDay(events) {
+  const byDate = new Map();
+  events.forEach(function (ev) {
+    const dateKey = (ev.start || '').slice(0, 10);
+    if (!byDate.has(dateKey)) byDate.set(dateKey, []);
+    byDate.get(dateKey).push(ev);
+  });
+
+  const result = [];
+  byDate.forEach(function (dayEvents, dateKey) {
+    const redEvents = dayEvents.filter(function (ev) { return ev.extendedProps.status === 'RECEIVED'; });
+    const otherEvents = dayEvents.filter(function (ev) { return ev.extendedProps.status !== 'RECEIVED'; });
+
+    result.push.apply(result, redEvents);
+
+    if (otherEvents.length <= MAX_VISIBLE_OTHER_PER_DAY) {
+      result.push.apply(result, otherEvents);
+      return;
+    }
+
+    result.push.apply(result, otherEvents.slice(0, MAX_VISIBLE_OTHER_PER_DAY));
+
+    const hiddenCount = otherEvents.length - MAX_VISIBLE_OTHER_PER_DAY;
+    result.push({
+      id: 'more-' + dateKey,
+      start: dateKey,
+      allDay: true,
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      textColor: 'inherit',
+      classNames: ['fc-more-placeholder'],
+      extendedProps: { isMoreLink: true, moreCount: hiddenCount, moreDate: dateKey }
+    });
+  });
+
+  return result;
 }
 
 /**
@@ -114,12 +167,29 @@ document.addEventListener('DOMContentLoaded', function () {
     headerToolbar: false,
     eventDisplay: 'block',
 
+    // 우리가 직접 배열 순서(빨강 먼저, 그다음 나머지, 마지막에 "+N")를 관리하므로
+    // FullCalendar 기본 정렬(eventOrder)이 순서를 다시 섞지 않도록 끕니다.
+    eventOrder: false,
+
     events: function (fetchInfo, successCallback) {
-      successCallback(buildEvents(currentEngineerFilter));
+      const raw = buildEvents(currentEngineerFilter);
+      // 월간(dayGridMonth) 뷰에서만 하루 개수 제한을 적용합니다. 일/주간 뷰는 칸이 늘어지는
+      // 문제가 없어서(시간축 스크롤) 전체를 다 보여줍니다.
+      const viewType = calendar.view ? calendar.view.type : 'dayGridMonth';
+      successCallback(viewType === 'dayGridMonth' ? capEventsPerDay(raw) : raw);
     },
 
     eventContent: function (arg) {
       const p = arg.event.extendedProps;
+
+      // 하루에 몰린 일정을 접어둔 "+N" 자리표시 (capEventsPerDay 참고)
+      if (p.isMoreLink) {
+        const moreEl = document.createElement('div');
+        moreEl.className = 'fc-more-cell';
+        moreEl.textContent = '+' + p.moreCount;
+        return { domNodes: [moreEl] };
+      }
+
       let lines;
 
       if (p.isAssigned) {
@@ -146,6 +216,18 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     eventClick: function (info) {
+      const p = info.event.extendedProps;
+
+      // "+N" 자리표시 클릭 - 팝오버 대신, 그 날짜의 일간(timeGridDay) 화면으로 이동시켜서
+      // 접혀 있던 일정까지 전부 보여줍니다.
+      if (p.isMoreLink) {
+        calendar.changeView('timeGridDay', p.moreDate);
+        document.querySelectorAll('#viewSwitch button').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.view === 'timeGridDay');
+        });
+        return;
+      }
+
       console.log('일정 클릭:', info.event.extendedProps);
     },
 

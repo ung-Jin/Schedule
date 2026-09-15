@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: "맑은 고딕", sans-serif;
+  font-family: 'Pretendard', "맑은 고딕", sans-serif;
   color: var(--text);
-  background: var(--panel);
+  background: var(--canvas);
 }
 
 /* 로그인 후 상단 메뉴 */
@@ -35,14 +35,14 @@ body {
 .top-bar nav a {
   text-decoration: none;
   color: var(--text);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .top-bar .user-area {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .top-bar .user-area .logout {
@@ -51,7 +51,7 @@ body {
   padding: 6px 14px;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* 버튼 (write / complete 페이지 공용) */
@@ -59,7 +59,7 @@ body {
   padding: 10px 22px;
   border-radius: 12px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   display: inline-block;
   border: none;
   cursor: pointer;
@@ -106,9 +106,20 @@ body {
   font-size: 15px;
 }
 
+.support-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.support-title .ui-icon {
+  color: var(--blue-light);
+  font-size: 20px;
+}
+
 .info-box ol {
   padding-left: 18px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -121,7 +132,7 @@ body {
 }
 
 .info-box p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
 }
 
@@ -139,7 +150,7 @@ body {
 
 .sub-desc {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 20px;
 }
 
@@ -148,7 +159,7 @@ body {
   display: flex;
   gap: 8px;
   margin-bottom: 24px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
 }
 
@@ -173,7 +184,7 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .form-group input,
@@ -183,7 +194,7 @@ body {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
 }
 

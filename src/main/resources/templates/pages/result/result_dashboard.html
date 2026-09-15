@@ -40,6 +40,11 @@
         문자열을 직접 넣는 걸 막아둬서, data-* 속성 + JS 조합으로 처리합니다)
       -->
       <div class="dash-today-col">
+        <div class="today-section-header">
+          <h3>오늘의 일정</h3>
+          <p>오늘 배정된 방문 일정입니다.</p>
+        </div>
+
         <div class="today-list" th:if="${not #lists.isEmpty(todayList)}">
           <div class="today-card"
                th:each="schedule : ${todayList}"
@@ -146,12 +151,13 @@
       -->
       <div class="dash-calendar-card">
         <h3>이번 달 일정</h3>
-        <div id="dashCalendar"></div>
-        <div class="dash-calendar-legend">
-          <span><i class="dash-legend-dot dash-legend-past"></i>지난 일정</span>
-          <span><i class="dash-legend-dot dash-legend-today"></i>오늘 일정</span>
-          <span><i class="dash-legend-dot dash-legend-future"></i>예정된 일정</span>
+        <!-- 색상 범례 (달력 위) - 관리자 "일정관리" 화면과 같은 색 기준(STATUS_COLORS)으로 통일 -->
+        <div class="cal-legend">
+          <span class="legend-item"><i class="legend-dot legend-assigned"></i>기사배정</span>
+          <span class="legend-item"><i class="legend-dot legend-progress"></i>작업진행</span>
+          <span class="legend-item"><i class="legend-dot legend-complete"></i>작업완료</span>
         </div>
+        <div id="dashCalendar"></div>
       </div>
 
     </div>

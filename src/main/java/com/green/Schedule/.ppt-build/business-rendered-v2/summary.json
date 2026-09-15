@@ -1,0 +1,24 @@
+{
+  "sourcePath": ".ppt-build\\business-review-v2.pptx",
+  "slideCount": 13,
+  "masterCount": 1,
+  "layoutCount": 2,
+  "masters": [
+    {
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master"
+    }
+  ],
+  "layouts": [
+    {
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "placeholders": []
+    },
+    {
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "placeholders": []
+    }
+  ]
+}

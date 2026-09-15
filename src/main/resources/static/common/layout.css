@@ -1,31 +1,52 @@
-/* 눈누(noonnu.cc) 무료 폰트 - Pretendard 웹폰트 로드 (CDN) */
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/static/pretendard.min.css");
+/* 눈누 프리텐다드: https://noonnu.cc/font_page/694 */
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2'); font-weight: 100; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2'); font-weight: 200; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2'); font-weight: 900; font-display: swap; }
 
 /* Cool navy + cyan operations theme, shared by every screen. */
 :root {
   color-scheme: light;
   --navy: #0c2236;
   --navy-2: #14324c;
-  --canvas: #edf3f8;
-  --panel: #ffffff;
-  --panel-raised: #f4f9fc;
-  --line: #d5e3ee;
+  --canvas: #e8f4fb;
+  --panel: #f8fcff;
+  --panel-raised: #e0f0f8;
+  --line: #bdd9e8;
   --text: #12293d;
   --muted: #5b7388;
   --blue: #0ea5c6;
   --blue-light: #087a96;
-  --blue-soft: #e6f7fb;
+  --blue-soft: #dff3fb;
   --orange: #f59a4a;
   --orange-soft: #fff3e6;
   --success: #1b8a68;
   --success-soft: #e5f6ee;
   --danger: #c4455a;
   --danger-soft: #ffeef0;
-  --chrome: #ffffff;
-  --input: #ffffff;
+  /* AS 상태 전용 팔레트: 밝은 아이스블루 화면에서도 의미가 즉시 구분되도록 조정 */
+  --status-received: #d87882;
+  --status-received-soft: #fdebed;
+  --status-received-ink: #9d3f4a;
+  --status-assigned: #609fd6;
+  --status-assigned-soft: #e6f1fb;
+  --status-assigned-ink: #2f6fa7;
+  --status-progress: #e5a03f;
+  --status-progress-soft: #fff2dc;
+  --status-progress-ink: #94601b;
+  --status-complete: #70aa79;
+  --status-complete-soft: #e8f4ea;
+  --status-complete-ink: #477c50;
+  --chrome: #f2faff;
+  --input: #fbfeff;
   --orange-ink: #9a4e12;
   --on-accent: #ffffff;
-  --glass: rgba(255, 255, 255, .88);
+  --glass: rgba(240, 249, 254, .9);
   --shadow: 0 18px 40px rgba(12, 34, 54, .08);
   --radius: 18px;
 }
@@ -42,14 +63,17 @@ body {
     var(--canvas);
   color: var(--text);
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
 button, input, select, textarea { font: inherit; }
+button, input, select { min-height: 44px; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
+[data-picker-field],
+input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]) { cursor: pointer; }
 input, select, textarea {
   color: var(--text);
   background: var(--input);
@@ -76,7 +100,11 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   width: 1em;
   height: 1em;
   display: block;
-  fill: currentColor;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .app-shell { display: block; padding: 0; min-height: 100vh; }
@@ -89,7 +117,7 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   gap: 8px;
   padding: 11px 20px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: -.2px;
   text-decoration: none;
@@ -121,16 +149,19 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 }
 .app-shell :is(.dashboard-title, .dash-title h2, .result-title h2) { font-size: 28px; letter-spacing: -.8px; }
 .app-shell :is(.dashboard-title, .dash-title, .result-title) { margin-bottom: 28px; }
-.app-shell .stat-card { padding: 24px; border-top: 3px solid var(--blue); }
-.app-shell .stat-progress { border-top-color: var(--orange); }
-.app-shell .stat-complete { border-top-color: var(--success); }
+.app-shell .stat-card { padding: 24px; border-top: 3px solid var(--line); }
+.app-shell .stat-receipt { border-top-color: var(--status-received); }
+.app-shell .stat-assigned { border-top-color: var(--status-assigned); }
+.app-shell .stat-progress { border-top-color: var(--status-progress); }
+.app-shell .stat-complete { border-top-color: var(--status-complete); }
 .app-shell .stat-value { font-size: 34px; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
-.app-shell .stat-icon { background: var(--blue-soft); color: var(--blue-light); }
-.app-shell .stat-progress .stat-icon { background: var(--orange-soft); color: var(--orange-ink); }
-.app-shell .stat-complete .stat-icon { background: var(--success-soft); color: var(--success); }
+.app-shell .stat-receipt .stat-icon { background: var(--status-received-soft); color: var(--status-received-ink); }
+.app-shell .stat-assigned .stat-icon { background: var(--status-assigned-soft); color: var(--status-assigned-ink); }
+.app-shell .stat-progress .stat-icon { background: var(--status-progress-soft); color: var(--status-progress-ink); }
+.app-shell .stat-complete .stat-icon { background: var(--status-complete-soft); color: var(--status-complete-ink); }
 .app-shell .recent-card { overflow-x: auto; }
-.app-shell :is(.recent-table, .engineer-table) th { background: var(--panel-raised); }
-.app-shell :is(.recent-table, .engineer-table) tbody tr:hover td { background: #f3fafd; }
+.app-shell :is(.recent-table, .engineer-table) th { background: #dceef7; }
+.app-shell :is(.recent-table, .engineer-table) tbody tr:hover td { background: #eaf6fb; }
 .app-shell :is(.recent-table, .engineer-table) { min-width: 560px; }
 .app-shell :is(.recent-table, .engineer-table) :is(th, td) { padding: 16px 12px; }
 .app-shell .page-wrap > .card { overflow-x: auto; }
@@ -146,22 +177,23 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .app-shell .request-layout { padding: 0; margin: 0 auto; }
 .app-shell .result-form-box { min-width: 0; }
 .app-shell .today-card { border-left: 3px solid var(--blue); }
-.app-shell :is(.badge.receipt, .badge.assigned, .status-received, .status-assigned) { background: var(--blue-soft); color: var(--blue-light); }
-.app-shell :is(.badge.progress, .status-progress) { background: var(--orange-soft); color: var(--orange-ink); }
-.app-shell :is(.badge.complete, .badge-work, .status-completed, .status-done, .diff-up) { background: var(--success-soft); color: var(--success); }
+.app-shell :is(.badge.receipt, .status-received) { background: var(--status-received-soft); color: var(--status-received-ink); border-color: #efb8be; }
+.app-shell :is(.badge.assigned, .status-assigned) { background: var(--status-assigned-soft); color: var(--status-assigned-ink); border-color: #b7d5ee; }
+.app-shell :is(.badge.progress, .status-progress) { background: var(--status-progress-soft); color: var(--status-progress-ink); border-color: #efd29d; }
+.app-shell :is(.badge.complete, .badge-work, .status-completed, .status-done, .diff-up) { background: var(--status-complete-soft); color: var(--status-complete-ink); border-color: #bad8bf; }
 .app-shell :is(.badge.canceled, .badge-rest, .status-canceled, .diff-down) { background: var(--danger-soft); color: var(--danger); }
 .app-shell .today-card:hover { background: var(--panel-raised); }
 .app-shell .today-middle { align-items: flex-start; text-align: left; }
 .app-shell .dash-main { grid-template-columns: minmax(320px, .9fr) minmax(0, 1.4fr); }
 .app-shell .schedule-container { --accent-soft: var(--blue-soft); --surface-2: var(--panel-raised); }
-.app-shell .receive-icon { color: var(--blue-light); }
-.app-shell .assign-icon { color: var(--blue-light); }
-.app-shell .progress-icon { color: var(--orange-ink); }
-.app-shell .complete-icon { color: var(--success); }
+.app-shell .receive-icon { color: var(--status-received-ink); }
+.app-shell .assign-icon { color: var(--status-assigned-ink); }
+.app-shell .progress-icon { color: var(--status-progress-ink); }
+.app-shell .complete-icon { color: var(--status-complete-ink); }
 
 .eyebrow {
   color: var(--blue-light);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 2.2px;
   text-transform: uppercase;
@@ -212,9 +244,9 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 
 .landing-page, .account-page, .service-page {
   background:
-    radial-gradient(ellipse at 8% 0%, #cfeaf6 0%, transparent 46%),
-    radial-gradient(ellipse at 100% 100%, #ffe8d2 0%, transparent 38%),
-    #f6fbfe;
+    radial-gradient(ellipse at 8% 0%, #c6e7f6 0%, transparent 46%),
+    radial-gradient(ellipse at 100% 100%, #dceff8 0%, transparent 42%),
+    #eaf6fc;
 }
 
 .account-page :is(.login-box, .join-form),
@@ -226,7 +258,7 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   border-radius: 22px;
 }
 
-.app-shell :is(.card, .recent-card, .cal-card, .assign-card, .dash-calendar-card, .dash-satisfaction-card, .result-form-box, .as-info-box) { background: #fff; }
+.app-shell :is(.card, .recent-card, .cal-card, .assign-card, .dash-calendar-card, .dash-satisfaction-card, .result-form-box, .as-info-box) { background: var(--panel); }
 
 .btn-primary, .btn-login, .submit-btn, .btn-submit, .assign-card button { color: var(--on-accent); }
 .fc-event-line, .dash-event-line { color: #fff; }
@@ -236,20 +268,10 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .account-page .login-flow { color: var(--orange-ink); }
 .account-page .login-box { box-shadow: 0 24px 60px rgba(12, 34, 54, .12); }
 
-.app-shell .stat-receipt .stat-icon,
-.app-shell .stat-assigned .stat-icon {
-  background: linear-gradient(180deg, #3ec8e2, #0ea5c6);
-  color: #fff;
-  border: 0;
-}
-.app-shell .stat-progress .stat-icon {
-  background: linear-gradient(180deg, #ffb56a, #f59a4a);
-  color: #fff;
-}
-.app-shell .stat-complete .stat-icon {
-  background: linear-gradient(180deg, #36c08f, #1b8a68);
-  color: #fff;
-}
+.app-shell .stat-receipt .stat-icon { background: var(--status-received-soft); color: var(--status-received-ink); border: 1px solid #efb8be; }
+.app-shell .stat-assigned .stat-icon { background: var(--status-assigned-soft); color: var(--status-assigned-ink); border: 1px solid #b7d5ee; }
+.app-shell .stat-progress .stat-icon { background: var(--status-progress-soft); color: var(--status-progress-ink); border: 1px solid #efd29d; }
+.app-shell .stat-complete .stat-icon { background: var(--status-complete-soft); color: var(--status-complete-ink); border: 1px solid #bad8bf; }
 
 .app-shell .pagination button.active {
   background: var(--blue);
@@ -268,7 +290,7 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  background: #fff;
+  background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 18px;
   overflow: hidden;
@@ -279,7 +301,7 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   padding: 14px 12px;
   text-align: left;
   border-bottom: 1px solid var(--line);
-  font-size: 13px;
+  font-size: 14px;
 }
 .app-shell .content > table th {
   background: var(--panel-raised);
@@ -289,4 +311,29 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .app-shell .content > table tr:last-child td { border-bottom: 0; }
 .app-shell .content > table tbody tr:hover td { background: #f3fafd; }
 .app-shell .content > table img { max-width: 72px; height: auto; border-radius: 8px; }
+
+/* Readability baseline shared by customer, admin and engineer screens. */
+.menu-icon .ui-icon,
+.feature-icon .ui-icon,
+.flow-icon .ui-icon,
+.guide-icon .ui-icon,
+.stat-icon .ui-icon,
+.engineer-icon .ui-icon,
+.nav-icon .ui-icon,
+.side-footer-icon .ui-icon { width: 1em; height: 1em; }
+
+.app-shell :is(label, .stat-label, .recent-sub, .dash-sub, .result-title p, .schedule-footer, .info-title) { font-size: 14px; }
+.app-shell :is(input:not([type="hidden"]), select, textarea, button) { font-size: 15px; }
+.app-shell :is(input:not([type="hidden"]), select) { min-height: 44px; }
+.app-shell :is(.badge, .status-badge, .status-btn) { font-size: 13px; line-height: 1.35; }
+.app-shell :is(.recent-table, .engineer-table, .detail-table) :is(th, td) { font-size: 14px; line-height: 1.5; }
+.app-shell .fc { font-size: 13px; }
+.app-shell .fc :is(.fc-col-header-cell-cushion, .fc-daygrid-day-number) { font-size: 13px; }
+.app-shell .fc :is(.fc-event-title, .fc-event-time, .fc-daygrid-more-link) { font-size: 12px; }
+.app-shell :is(.dash-event-line, .trend-bar-score, .trend-bar-label) { font-size: 12px; }
+
+@media (max-width: 700px) {
+  body { font-size: 15px; }
+  .app-shell :is(.recent-table, .engineer-table, .detail-table) :is(th, td) { font-size: 13px; }
+}
 

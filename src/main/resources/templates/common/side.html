@@ -6,7 +6,10 @@
   <nav th:fragment="sideFragment" aria-label="주 메뉴">
 
     <div class="side-logo">
-      <a th:href="@{/}" class="brand" aria-label="AIR LINK 홈"><img th:src="@{/common/airlink-horizontal-light.png}" alt="AIR LINK" class="airlink-logo"></a>
+      <a th:href="@{/}" class="brand sidebar-brand" aria-label="AIR LINK 홈">
+        <img th:src="@{/common/airlink-horizontal-transparent.png}" alt="AIR LINK" class="airlink-logo sidebar-logo-base">
+        <img th:src="@{/common/airlink-horizontal-transparent.png}" alt="" aria-hidden="true" class="airlink-logo sidebar-logo-accent">
+      </a>
     </div>
 
    
@@ -28,7 +31,7 @@
       <li><a th:href="@{/pages/admin/calendar}"><span class="nav-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#calendar"/></svg></span> 일정관리</a></li>
       <li><a th:href="@{/pages/admin/management}"><span class="nav-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#users"/></svg></span> 기사관리</a></li>
       <li>
-        <a href="/pages/admin/sideResult"><span aria-hidden="true">결과내역</span></a>
+        <a th:href="@{/pages/admin/sideResult}"><span class="nav-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#report"/></svg></span> 결과내역</a>
       </li>
     </ul>
 

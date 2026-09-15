@@ -62,21 +62,56 @@
 
 .guide-card {
   position: relative;
-  padding: 24px;
-  background: #fff;
+  padding: 26px 24px;
+  background: var(--panel);
   border: 1px solid var(--line);
   border-top: 3px solid var(--line);
   border-radius: 18px;
   box-shadow: 0 10px 24px rgba(16, 42, 66, .05);
 }
 
-.guide-icon { color: var(--blue-light); font-size: 24px; margin-bottom: 20px; }
-.step-num { position: absolute; top: 24px; right: 24px; color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; }
-.guide-card p { font-size: 15px; line-height: 1.7; color: var(--text); }
+.guide-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  border: 1px solid #b7ddeb;
+  border-radius: 14px;
+  background: var(--blue-soft);
+  color: var(--blue-light);
+  font-size: 24px;
+}
+.step-num {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid #b7ddeb;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue-light);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .7px;
+}
+.guide-card h4 { margin: 0 0 8px; color: var(--text); font-size: 17px; letter-spacing: -.2px; }
+.guide-card p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--muted); word-break: keep-all; }
 .guide-card.accent-blue { border-top-color: var(--blue); }
-.guide-card.accent-green { border-top-color: var(--success); }
+.guide-card.accent-coral { border-top-color: var(--status-received); }
+.guide-card.accent-assigned { border-top-color: var(--status-assigned); }
 .guide-card.accent-orange { border-top-color: var(--orange); }
-.guide-card.accent-purple { border-top-color: #9b7dff; }
+
+.guide-card.accent-coral .guide-icon,
+.guide-card.accent-coral .step-num { background: var(--status-received-soft); color: var(--status-received-ink); border-color: #efb8be; }
+.guide-card.accent-assigned .guide-icon,
+.guide-card.accent-assigned .step-num { background: var(--status-assigned-soft); color: var(--status-assigned-ink); border-color: #b7d5ee; }
+.guide-card.accent-orange .guide-icon,
+.guide-card.accent-orange .step-num { background: var(--status-progress-soft); color: var(--status-progress-ink); border-color: #efd29d; }
 
 .guide-card:not(:last-child)::after {
   content: "\2192";

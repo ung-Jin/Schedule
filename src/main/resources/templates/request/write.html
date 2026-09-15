@@ -59,7 +59,7 @@
             required></textarea>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-picker-field>
           <label for="wishDate">희망 날짜 *</label>
           <input type="date" id="wishDate" name="wishDate" required>
         </div>
@@ -85,7 +85,7 @@
       </div>
 
       <div class="info-box">
-        <h3>☎ 고객센터</h3>
+        <h3 class="support-title"><svg class="ui-icon" aria-hidden="true"><use href="/common/ui-icons.svg#phone"/></svg> 고객센터</h3>
         <p class="tel">1588-1234</p>
         <p>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</p>
       </div>
@@ -95,5 +95,5 @@
 </th:block>
 
 <th:block layout:fragment="content_js">
-  <script th:src="@{/js/request.js}"></script>
+  <script th:src="@{/request.js}"></script>
 </th:block>

@@ -4,9 +4,16 @@
 // 달력은 빠르게 훑어보는 용도라 여기서는 조회/전화연결만 하고, 실제 결과보고는 "오늘의 일정" 카드에서 하도록 분리함)
 // FullCalendar가 보여주는 달이 바뀔 때마다 events 콜백이 그 달의 연/월로 /as-result-calendar를 호출해서
 // 그때그때 새로 받아옵니다. (admin_schedule.js의 eventContent/eventClick 패턴을 그대로 따릅니다)
-// 일정 날짜가 오늘 기준으로 지난 일정 / 오늘 일정 / 예정된 일정인지에 따라 다른 색을 씁니다.
-// (오늘 일정 색은 왼쪽 "오늘의 일정" 목록의 시간 표시 색(#2878e8)과 맞춰서 서로 같은 의미임을 알 수 있게 했습니다)
-var DASH_EVENT_COLORS = { past: '#475569', today: '#2563eb', future: '#25624e' };
+// 일정 상태(접수완료/기사배정/작업진행/작업완료)에 따라 다른 색을 씁니다.
+// 관리자 "일정관리" 화면(admin_schedule.js의 STATUS_COLORS)과 반드시 같은 색을 써서 통일성 있게 맞춥니다.
+// (이 달력은 이미 나에게 배정된 일정만 보여주므로 실제로는 ASSIGNED/IN_PROGRESS/COMPLETED만 나오지만,
+// 혹시 모를 다른 상태값도 대비해 RECEIVED 색도 같이 정의해둡니다)
+var STATUS_COLORS = {
+  RECEIVED: '#c95e69',
+  ASSIGNED: '#4f8fc8',
+  IN_PROGRESS: '#d88b27',
+  COMPLETED: '#5f9968'
+};
 
 /* ---------------- 고객 기본정보 모달 ---------------- */
 
@@ -67,16 +74,6 @@ function closeCustomerModal() {
   if (modal) modal.hidden = true;
 }
 
-function dashEventColor(startTimeStr) {
-  const start = new Date(startTimeStr);
-  const startDay = new Date(start.getFullYear(), start.getMonth(), start.getDate());
-  const today = new Date();
-  const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-
-  if (startDay.getTime() === todayDay.getTime()) return DASH_EVENT_COLORS.today;
-  return startDay < todayDay ? DASH_EVENT_COLORS.past : DASH_EVENT_COLORS.future;
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   const calendarEl = document.getElementById('dashCalendar');
   if (!calendarEl) return;
@@ -111,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
           successCallback(schedules.map(function (s) {
             const startDisplay = (s.startTime || '').slice(11, 16);
             const endDisplay = (s.endTime || '').slice(11, 16);
-            const color = dashEventColor(s.startTime);
+            const color = STATUS_COLORS[s.status] || '#9aa5ab';
             return {
               id: String(s.scheduleNo),
               start: s.startTime,
