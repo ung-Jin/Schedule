@@ -10,10 +10,11 @@ var DASH_EVENT_COLORS = { past: '#475569', today: '#2563eb', future: '#25624e' }
 
 /* ---------------- 고객 기본정보 모달 ---------------- */
 
-// 달력 이벤트(extendedProps)를 받아서 모달에 채워 넣고 엽니다.
-// endTime: 이 일정의 방문 종료 시각(Date). "시간이 지났다"는 시작 시각이 아니라 종료 시각 기준으로 판단합니다
-// (오늘의 일정 카드와 동일한 규칙 - result_dashboard.html의 endTime.isAfter(now) 로직 참고).
-function openCustomerModal(props, endTime) {
+// 달력 이벤트(extendedProps)를 받아서 모달에 채워 넣고 엽니다. "오늘의 일정"의 진행예정 카드를 클릭했을 때도
+// 이 함수를 그대로 재사용합니다 (result_dashboard.html의 인라인 스크립트 참고).
+// startTime: 이 일정의 방문 시작 시각(Date). "시간이 지났다"는 종료 시각이 아니라 시작 시각 기준으로 판단합니다
+// (오늘의 일정 카드와 동일한 규칙 - result_dashboard.html의 startTime.isAfter(now) 로직 참고).
+function openCustomerModal(props, startTime) {
   const modal = document.getElementById('customerInfoModal');
   if (!modal) return;
 
@@ -32,8 +33,8 @@ function openCustomerModal(props, endTime) {
     callBtn.hidden = true;
   }
 
-  // 방문 종료 시각이 지났는지 (진행예정 여부 판단 기준 - 시작 시각이 아니라 종료 시각!)
-  const timeOver = !!endTime && endTime <= new Date();
+  // 방문 시작 시각이 지났는지 (진행예정 여부 판단 기준 - 종료 시각이 아니라 시작 시각!)
+  const timeOver = !!startTime && startTime <= new Date();
 
   // "결과보고 보러가기" 버튼 - 완료(COMPLETED)된 일정만 결과가 등록되어 있으므로, 그때만 보여줌
   const viewBtn = document.getElementById('modalViewResultBtn');
@@ -46,8 +47,8 @@ function openCustomerModal(props, endTime) {
     }
   }
 
-  // "결과보고 작성하기" 버튼 - 완료 전이면서 방문 종료 시각이 지난(=오늘의 일정 카드에서 "결과보고" 상태인) 경우에만 보여줌.
-  // 아직 방문 종료 전(진행예정)이면 이 버튼도 숨기고, 기존처럼 정보 확인 + 전화연결만 하는 모달로 둡니다.
+  // "결과보고 작성하기" 버튼 - 완료 전이면서 방문 시작 시각이 지난(=오늘의 일정 카드에서 "결과보고" 상태인) 경우에만 보여줌.
+  // 아직 방문 시작 전(진행예정)이면 이 버튼도 숨기고, 기존처럼 정보 확인 + 전화연결만 하는 모달로 둡니다.
   const writeBtn = document.getElementById('modalWriteResultBtn');
   if (writeBtn) {
     if (props.status !== 'COMPLETED' && timeOver) {
@@ -152,9 +153,9 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     // 일정 블록을 클릭하면 결과보고 화면으로 이동하는 대신, 고객 기본정보 모달을 띄웁니다.
-    // info.event.end(방문 종료 시각)를 같이 넘겨서, 모달 안에서 "작성/보러가기" 버튼 노출 여부를 판단합니다.
+    // info.event.start(방문 시작 시각)를 같이 넘겨서, 모달 안에서 "작성/보러가기" 버튼 노출 여부를 판단합니다.
     eventClick: function (info) {
-      openCustomerModal(info.event.extendedProps, info.event.end);
+      openCustomerModal(info.event.extendedProps, info.event.start);
     }
   });
 

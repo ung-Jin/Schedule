@@ -66,9 +66,9 @@ public class ResultController {
     int engineerNo = resultService.selectEngineerNo(loginMember.getMemNo());
     model.addAttribute("satisfactionStats", satisfactionService.getStats(engineerNo));
 
-    // 카드 상태(진행예정/결과보고/완료)를 화면(Thymeleaf)에서 "배정된 방문 종료 시각(endTime)이 지났는지"로
-    // 직접 판단하기 위한 기준 시각. (버튼을 눌러야 진행중으로 바뀌던 예전 방식 대신, 방문이 끝날 시각이 지나면
-    // 자동으로 "결과보고" 상태로 바뀌도록 함 - 시작 시각이 아니라 종료 시각 기준)
+    // 카드 상태(진행예정/결과보고/완료)를 화면(Thymeleaf)에서 "배정된 방문 시작 시각(startTime)이 지났는지"로
+    // 직접 판단하기 위한 기준 시각. (버튼을 눌러야 진행중으로 바뀌던 예전 방식 대신, 방문을 시작할 시각이 지나면
+    // 자동으로 "결과보고" 상태로 바뀌도록 함 - 종료 시각이 아니라 시작 시각 기준)
     model.addAttribute("now", java.time.LocalDateTime.now());
 
     return "pages/result/result_dashboard";
@@ -270,18 +270,6 @@ public class ResultController {
       return null;
     }
     return loginMember;
-  }
-
-  //사이드 결과보고
-  @GetMapping("/sideResult")
-  public String sideResult(Model model){
-
-    List<ResultDTO> resultList = resultService.selectResults();
-
-    model.addAttribute("resultList", resultList);
-
-    return "pages/admin2/result";
-
   }
 
 }
