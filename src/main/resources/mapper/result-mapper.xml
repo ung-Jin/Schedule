@@ -60,7 +60,8 @@
     ORDER BY s.START_TIME;
   </select>
 
-  <!-- 대시보드 "달력" 이벤트 매핑 (AS_SCHEDULE + REQUEST 조인 결과, selectCalender 전용) -->
+  <!-- 대시보드 "달력" 이벤트 매핑 (AS_SCHEDULE + REQUEST 조인 결과, selectCalender 전용)
+       status: 완료된 일정(COMPLETED)은 클릭 시 결과보고 "조회"(읽기전용) 화면으로 보내기 위해 추가 -->
   <resultMap id="scheduleCalendarMap" type="com.green.Schedule.result.dto.ScheduleCalendarDTO">
     <id     column="scheduleNo" property="scheduleNo"/>
     <result column="customerName" property="customerName"/>
@@ -68,6 +69,7 @@
     <result column="customerAddr" property="customerAddr"/>
     <result column="startTime" property="startTime"/>
     <result column="endTime" property="endTime"/>
+    <result column="status" property="status"/>
   </resultMap>
 
   <!--  #대시보드 - 달력 (이 기사의 해당 연/월 일정 목록. 칸 안에 고객명/시간/주소/연락처를 짧게 보여주기 위해
@@ -79,6 +81,7 @@
     , r.CUSTOMER_ADDR AS customerAddr
     , s.START_TIME AS startTime
     , s.END_TIME AS endTime
+    , r.STATUS AS status
     FROM AS_SCHEDULE s
     JOIN REQUEST r ON s.REQUEST_NO = r.REQUEST_NO
     JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
@@ -117,13 +120,6 @@
     AND e.MEM_NO = #{memNo};
   </select>
 
-  <!-- 대시보드 "진행예정" 버튼 -> REQUEST 상태를 IN_PROGRESS로 변경 -->
-  <update id="startProgress">
-    UPDATE REQUEST
-    SET STATUS = 'IN_PROGRESS'
-    WHERE REQUEST_NO = #{requestNo};
-  </update>
-
   <!-- 결과보고 화면 "결과 등록하기" 버튼 -> REQUEST 상태를 COMPLETED로 변경 -->
   <update id="completeRequest">
     UPDATE REQUEST
@@ -153,14 +149,63 @@
     , PROCESS_CONTENT
     , IMAGE_PATH
     , IMAGE_PATH2
+    , NO_PHOTO_REASON
     )
     VALUES (
     #{scheduleNo}
     , #{processDate}
     , #{processContent}
     , #{imagePath}
-    , #{imagePath2});
+    , #{imagePath2}
+    , #{noPhotoReason});
   </insert>
+
+
+  <!-- 결과보고 수정 - 이미 등록된 AS_RESULT 내용을 갱신.
+       사진을 새로 안 골랐으면 ResultController.resultReg()가 기존 imagePath/imagePath2를 그대로 다시 담아서
+       넘겨주므로, 여기서는 그냥 넘어온 값 그대로 SET 하면 됩니다.
+       PROCESS_DATE는 여기서 일부러 안 건드립니다 - 최초 처리 시각으로 고정, 수정해도 안 바뀝니다
+       (ResultController.resultReg가 기존 값을 그대로 다시 담아서 넘겨주긴 하지만, 혹시라도 값이 바뀌어 들어와도
+       여기서 아예 SET 절에서 빼뒀으니 안전합니다). 대신 수정한 시각은 UPDATED_AT에 새로 기록합니다. -->
+  <update id="updateResult">
+    UPDATE AS_RESULT
+    SET PROCESS_CONTENT = #{processContent}
+    , IMAGE_PATH = #{imagePath}
+    , IMAGE_PATH2 = #{imagePath2}
+    , NO_PHOTO_REASON = #{noPhotoReason}
+    , UPDATED_AT = #{updatedAt}
+    WHERE SCHEDULE_NO = #{scheduleNo}
+  </update>
+
+  <!-- 결과보고 "조회"(읽기전용) 화면용 매핑 (AS_RESULT 단건 조회) -->
+  <resultMap id="resultViewMap" type="com.green.Schedule.result.dto.ResultDTO">
+    <id     column="RESULT_NO"        property="resultNo"/>
+    <result column="SCHEDULE_NO"      property="scheduleNo"/>
+    <result column="PROCESS_DATE"     property="processDate"/>
+    <result column="PROCESS_CONTENT"  property="processContent"/>
+    <result column="IMAGE_PATH"       property="imagePath"/>
+    <result column="IMAGE_PATH2"      property="imagePath2"/>
+    <result column="NO_PHOTO_REASON"  property="noPhotoReason"/>
+    <result column="CREATED_AT"       property="createdAt"/>
+    <result column="UPDATED_AT"       property="updatedAt"/>
+  </resultMap>
+
+  <!-- 결과보고 "조회"(읽기전용) 화면 - 이 일정(scheduleNo)에 이미 등록된 AS_RESULT 내용 조회
+       (한 일정에 결과가 하나만 등록되는 구조지만, 혹시 몰라 최신 1건만 가져오도록 방어) -->
+  <select id="selectResultByScheduleNo" resultMap="resultViewMap">
+    SELECT RESULT_NO
+    , SCHEDULE_NO
+    , PROCESS_DATE
+    , PROCESS_CONTENT
+    , IMAGE_PATH
+    , IMAGE_PATH2
+    , NO_PHOTO_REASON
+    , CREATED_AT
+    , UPDATED_AT
+    FROM AS_RESULT
+    WHERE SCHEDULE_NO = #{scheduleNo}
+    ORDER BY RESULT_NO DESC
+    LIMIT 1;
 
 
   <select id="selectResults" resultMap="selectResult">
@@ -179,6 +224,7 @@
     LEFT JOIN ENGINEER E
     ON S.ENGINEER_NO = E.ENGINEER_NO
     ORDER BY R.PROCESS_DATE DESC
+
   </select>
 
 </mapper>
