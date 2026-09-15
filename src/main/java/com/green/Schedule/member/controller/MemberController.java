@@ -32,10 +32,9 @@ public class MemberController {
         return "member/login";
     }
 
-    /**
-     * 로그인 처리 (POST 방식)
-     * login.html의 <form action="/member/login" method="post"> 에서 넘어옵니다.
-     */
+
+
+    // 로그인
     @PostMapping("/login")
     public String login(@RequestParam("memId") String memId,
                         @RequestParam("memPw") String memPw,
@@ -58,26 +57,22 @@ public class MemberController {
     }
 
 
-    /* 로그아웃
-     * 주소 예: /member/logout      */
 
+    //로그아웃
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        // 세션에 저장된 정보를 모두 지웁니다.
+
         session.invalidate();
-        // 어느 화면에서 로그아웃을 누르든 메인(첫) 화면으로 이동시킵니다.
+
         return "redirect:/";
     }
 
-    /**
-     * 회원가입 화면 (GET)
-     * 주소 예: /member/join
-     * 이미 로그인된 상태라면 가입 화면 대신 원래 화면(role별 홈)으로 보냅니다.
-     */
+    //회원가입 하러 가는 페이지
     @GetMapping("/join")
     public String joinForm(HttpSession session) {
 
         MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");
+
         if (loginMember != null) {
             return redirectByRole(loginMember.getRole());
         }
@@ -85,12 +80,8 @@ public class MemberController {
         return "member/join";
     }
 
-    /**
-     *  회원가입 처리 (POST)
-     * join.html의 <form action="/member/join" method="post"> 에서 넘어옵니다.
-     * 화면에는 role 입력을 아예 두지 않고, 여기서 가입하는 사람은 전부 user로만 가입됩니다.
-     * (관리자는 기본 쿼리로, 기사는 별도의 기사등록 기능으로 만들 예정이라 여기서는 다루지 않습니다.)
-     */
+
+    //회원가입처리
     @PostMapping("/join")
     public String join(@RequestParam("memId") String memId,
                        @RequestParam("memPw") String memPw,

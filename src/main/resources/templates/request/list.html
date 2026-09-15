@@ -18,8 +18,15 @@
   </div>
 
   <!-- 신청한 내역이 있을 때 -->
+  <p class="list-summary" th:unless="${#lists.isEmpty(requestList)}"
+     th:text="'총 ' + ${#lists.size(requestList)} + '건의 신청 내역이 있습니다.'">총 1건의 신청 내역이 있습니다.</p>
+
   <div class="request-list" th:unless="${#lists.isEmpty(requestList)}">
-    <div class="request-row" th:each="req : ${requestList}">
+
+    <!-- 카드(행) 전체가 링크입니다. 상세보기 버튼뿐 아니라 어디를 눌러도 상세 화면으로 이동합니다. -->
+    <a class="request-row" th:each="req : ${requestList}"
+       th:href="@{/request/detail/{no}(no=${req.requestNo})}"
+       th:classappend="${req.status == 'RECEIVED'} ? 'row-received' : (${req.status == 'ASSIGNED'} ? 'row-assigned' : (${req.status == 'IN_PROGRESS'} ? 'row-progress' : (${req.status == 'COMPLETED'} ? 'row-completed' : 'row-canceled')))">
 
       <div class="request-info">
         <span class="request-no" th:text="'접수번호 ' + ${req.requestNo}">접수번호 1</span>
@@ -28,16 +35,19 @@
         <span class="request-date" th:text="'희망일 ' + ${#strings.substring(req.wishDate, 0, 10)}">희망일 2026-09-15</span>
       </div>
 
-      <!-- 상태값(status)에 따라 배지 하나만 보이도록 각각 th:if로 나눴습니다. -->
-      <span class="status-badge status-received"  th:if="${req.status == 'RECEIVED'}">접수완료</span>
-      <span class="status-badge status-assigned"  th:if="${req.status == 'ASSIGNED'}">기사배정 완료</span>
-      <span class="status-badge status-progress"  th:if="${req.status == 'IN_PROGRESS'}">수리 진행중</span>
-      <span class="status-badge status-completed" th:if="${req.status == 'COMPLETED'}">수리 완료</span>
-      <span class="status-badge status-canceled"  th:if="${req.status == 'CANCELED'}">취소됨</span>
+      <div class="request-row-side">
+        <!-- 상태값(status)에 따라 배지 하나만 보이도록 각각 th:if로 나눴습니다. -->
+        <span class="status-badge status-received"  th:if="${req.status == 'RECEIVED'}">접수완료</span>
+        <span class="status-badge status-assigned"  th:if="${req.status == 'ASSIGNED'}">기사배정 완료</span>
+        <span class="status-badge status-progress"  th:if="${req.status == 'IN_PROGRESS'}">수리 진행중</span>
+        <span class="status-badge status-completed" th:if="${req.status == 'COMPLETED'}">수리 완료</span>
+        <span class="status-badge status-canceled"  th:if="${req.status == 'CANCELED'}">취소됨</span>
 
-      <a th:href="@{/request/detail/{no}(no=${req.requestNo})}" class="btn btn-outline btn-small">상세보기</a>
+        <span class="request-row-arrow" aria-hidden="true">→</span>
+      </div>
 
-    </div>
+    </a>
+
   </div>
 
 </th:block>

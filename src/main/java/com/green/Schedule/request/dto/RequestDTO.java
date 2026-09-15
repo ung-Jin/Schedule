@@ -33,4 +33,7 @@ public class RequestDTO {
     private String status;
     private int memNo;
 
+    // 배정된 기사 이름 (AS_SCHEDULE/ENGINEER 조인 결과, 미배정이면 null)
+    private String engineerName;
+
 }

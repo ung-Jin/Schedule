@@ -8,7 +8,7 @@
   <link rel="stylesheet" th:href="@{/FirstPage.css}">
   <link rel="stylesheet" th:href="@{/common/layout.css}">
 </head>
-<body>
+<body class="service-page">
 
   <div class="container">
 
@@ -21,7 +21,7 @@
           <li><a th:href="@{/service-intro}">서비스소개</a></li>
           <li><a th:href="@{/features}">주요기능</a></li>
           <li>
-            <a th:href="@{/member/login}"
+            <a th:href="@{/member/login}" class="nav-cta"
                th:text="${session.loginMember == null} ? '로그인' : (${session.loginMember.memName} + '님')">로그인</a>
           </li>
           <li th:if="${session.loginMember != null}"><a th:href="@{/member/logout}">로그아웃</a></li>
