@@ -22,4 +22,9 @@ public class AdminController {
   public String management(){
     return "redirect:/admin/engineer";
   }
+
+  @GetMapping("/sideResult")
+  public String result(){
+    return "redirect:/sideResult";
+  }
 }

@@ -19,4 +19,6 @@ public class ResultDTO {
   // 결과보고를 등록한 뒤 내용을 "수정"한 시각. 등록 시점엔 null이고, 수정할 때마다 그 순간으로 갱신됩니다.
   // (처리날짜(processDate)는 최초 처리 시각으로 고정되고 수정해도 안 바뀌므로, 수정 이력은 이 필드로 따로 확인합니다)
   private LocalDateTime updatedAt;
+  private String engineerName;
+
 }

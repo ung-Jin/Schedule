@@ -272,4 +272,16 @@ public class ResultController {
     return loginMember;
   }
 
+  //사이드 결과보고
+  @GetMapping("/sideResult")
+  public String sideResult(Model model){
+
+    List<ResultDTO> resultList = resultService.selectResults();
+
+    model.addAttribute("resultList", resultList);
+
+    return "pages/admin2/result";
+
+  }
+
 }

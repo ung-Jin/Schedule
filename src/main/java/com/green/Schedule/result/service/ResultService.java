@@ -62,9 +62,15 @@ public class ResultService {
     return resultMapper.selectEngineerNo(memNo);
   }
 
+
   // 결과보고 "조회"(읽기전용) - 이 일정에 등록된 AS_RESULT 조회
   public ResultDTO selectResultByScheduleNo(long scheduleNo){
     return resultMapper.selectResultByScheduleNo(scheduleNo);
+  }
+
+
+  public List<ResultDTO> selectResults(){
+    return resultMapper.selectResults();
   }
 
 }
