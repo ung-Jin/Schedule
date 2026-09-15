@@ -65,9 +65,9 @@ body {
 
 .dash-calendar-card {
   background-color: var(--panel);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 16px 18px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 32px rgba(12, 34, 54, .08);
 }
 
 .dash-calendar-card h3 {
@@ -152,9 +152,9 @@ body {
   align-items: center;
   gap: 14px;
   background-color: var(--panel);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 20px 22px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(12, 34, 54, .06);
   cursor: pointer;
 }
 
@@ -217,13 +217,16 @@ body {
   flex-shrink: 0;
   width: 76px;
   height: 42px;
+  border: 1px solid var(--blue);
+  border-radius: 12px;
+  background-color: var(--panel);
+  color: var(--blue-light);
+
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 13px;
-}
+
 
 /* 진행예정 - 아직 방문 시작 시각 전. 표시만 하고 클릭해도 이동하지 않음 */
 .status-pending {
@@ -298,19 +301,11 @@ body {
 
 .modal-box .info-title {
   flex-shrink: 0;
-  width: 70px;
-  color: var(--muted);
-}
 
-.modal-box .info-value {
-  flex: 1;
-  font-weight: 500;
-  word-break: keep-all;
-}
+  width: 76px;
+  height: 42px;
+  border-radius: 12px;
 
-/* "결과보고 보러가기" 버튼 (완료된 건일 때만 표시) */
-.modal-actions {
-  margin-top: 18px;
   display: flex;
   justify-content: flex-end;
   gap: 8px;
@@ -384,11 +379,11 @@ body {
 
 .today-empty {
   background-color: var(--panel);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 40px;
   text-align: center;
   color: var(--muted);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(12, 34, 54, .06);
 }
 
 
@@ -405,9 +400,9 @@ body {
      내용 전체를 위아래로 가운데 정렬해서 채우는 여백으로 씀 (그래프만 계속 길어지지 않게) */
   justify-content: center;
   background-color: var(--panel);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 32px rgba(12, 34, 54, .08);
 }
 
 .dash-satisfaction-card h3 {
@@ -514,6 +509,6 @@ body {
   color: var(--muted);
 }
 
-.dash-legend-past { background: #475569; }
-.dash-legend-today { background: #2563eb; }
-.dash-legend-future { background: #25624e; }
+.dash-legend-past { background: #7ea0b6; }
+.dash-legend-today { background: #0ea5c6; }
+.dash-legend-future { background: #1b8a68; }

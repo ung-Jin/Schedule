@@ -57,7 +57,7 @@ body {
 /* 버튼 (write / complete 페이지 공용) */
 .btn {
   padding: 10px 22px;
-  border-radius: 6px;
+  border-radius: 12px;
   text-decoration: none;
   font-size: 14px;
   display: inline-block;
@@ -67,7 +67,7 @@ body {
 
 .btn-primary {
   background: var(--blue);
-  color: var(--text);
+  color: #fff;
 }
 
 .btn-outline {
@@ -97,7 +97,7 @@ body {
 .info-box {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 18px;
   padding: 20px;
 }
 
@@ -129,7 +129,7 @@ body {
   flex: 1;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 32px;
 }
 
@@ -146,15 +146,24 @@ body {
 /* 단계 표시 (보기용, 클릭해도 아무 동작 안 함) */
 .step-bar {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   margin-bottom: 24px;
   font-size: 13px;
   color: var(--muted);
 }
 
+.step-bar .step {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+}
+
 .step-bar .step.active {
-  color: var(--blue-light);
+  color: #fff;
   font-weight: bold;
+  background: var(--blue);
+  border-color: var(--blue);
 }
 
 .form-group {
@@ -173,7 +182,7 @@ body {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 12px;
   font-size: 14px;
   font-family: inherit;
 }
@@ -203,7 +212,7 @@ body {
 .complete-box {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 22px;
   padding: 48px;
   text-align: center;
   max-width: 420px;

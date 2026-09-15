@@ -9,13 +9,13 @@ html, body {
 }
 
 body {
-  font-family: "맑은 고딕", sans-serif;
+  font-family: 'Pretendard', "맑은 고딕", sans-serif;
   color: var(--text);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--panel);
+  background: var(--canvas);
 }
 
 .join-container {
@@ -36,10 +36,11 @@ body {
 }
 
 .join-form {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 32px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid #d5e6f1;
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 24px 60px rgba(12, 34, 54, .1);
 }
 
 .join-form h2 {
@@ -49,8 +50,8 @@ body {
 
 .error-msg {
   color: var(--danger);
-  background: var(--panel);
-  border-radius: 6px;
+  background: var(--danger-soft);
+  border-radius: 12px;
   padding: 10px 12px;
   font-size: 13px;
   margin-bottom: 16px;
@@ -70,9 +71,9 @@ body {
 
 .form-group input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 14px;
 }
 
