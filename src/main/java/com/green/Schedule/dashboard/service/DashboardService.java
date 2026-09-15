@@ -15,8 +15,8 @@ import java.util.Map;
 public class DashboardService {
   private final DashboardMapper dashboardMapper;
 
-  //한 페이지에 보여줄 건수 (요구사항: 5)
-  private static final int PAGE_SIZE = 5;
+  //한 페이지에 보여줄 건수 (요구사항: 7)
+  private static final int PAGE_SIZE = 7;
 
   //상단 상태별 건수 조회
   public DashboardStatDTO getDashboardStats() {
