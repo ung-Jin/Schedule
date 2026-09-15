@@ -29,6 +29,7 @@
           , m.MEM_ID
     FROM ENGINEER e
     JOIN MEMBER m ON e.MEM_NO = m.MEM_NO
+    WHERE e.STATUS != 'RETIRED'
     ORDER BY e.ENGINEER_NO
   </select>
 
@@ -96,10 +97,11 @@
     WHERE ENGINEER_NO = #{engineerNo}
   </update>
 
-  <!--기사 삭제-->
-  <delete id="deleteEngineer">
-    DELETE FROM ENGINEER
+  <!--기사 퇴사 처리 (실제 삭제 대신 STATUS를 RETIRED로 변경)-->
+  <update id="retireEngineer">
+    UPDATE ENGINEER
+    SET STATUS = 'RETIRED'
     WHERE ENGINEER_NO = #{engineerNo}
-  </delete>
+  </update>
 
 </mapper>
