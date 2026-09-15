@@ -59,7 +59,28 @@ body {
 
 .first-top nav a {
   text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -.1px;
+  transition: color .15s;
+}
+
+.first-top nav a:hover {
+  color: var(--blue-light);
+}
+
+.first-top nav .nav-cta {
   color: var(--text);
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.first-top nav .nav-cta:hover {
+  background: var(--panel-raised);
+  color: var(--text);
+  border-color: var(--blue-light);
 }
 
 /* 메인 소개 영역 : hero-banner.jpg를 배경으로 깔고, 텍스트는 이미지 왼쪽(여백이 있는 쪽)에 정렬
@@ -325,7 +346,7 @@ body {
 @media (max-width: 650px) { .container { padding: 0 16px; } .first-top { flex-direction: column; gap: 18px; } .first-top nav ul { gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 13px; } .hero { padding: 28px; aspect-ratio: auto; } .hero-buttons { flex-wrap: wrap; } }
 
 /* AIR LINK originals adapted to the softer slate theme. */
-.first-top .brand-logo { width: 270px; height: 68px; object-fit: cover; object-position: center; border-radius: 8px; }
+.first-top .brand-logo { height: 68px; width: auto; object-fit: contain; object-position: center; border-radius: 8px; }
 .landing-page .hero { min-height: 460px; background-image: linear-gradient(90deg, #253649d9, #25364985 40%, transparent 75%), url('/hero-airlink.png'); background-position: center; }
 .landing-page .hero h2 { color: #f4f7fb; text-shadow: 0 2px 10px #25364930; }
 .landing-page .hero p { color: #e2edf7; }
@@ -340,7 +361,7 @@ body {
 .menu-grid[data-menu-role="user"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .menu-card { display: flex; flex-direction: column; align-items: flex-start; padding: 24px 20px; min-width: 0; color: var(--text); text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; transition: background .18s, border-color .18s, transform .18s; }
 .menu-card:hover { background: var(--panel-raised); border-color: var(--blue-light); transform: translateY(-3px); }
-.menu-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--blue-soft); color: var(--blue-light); font-size: 25px; margin-bottom: 22px; }
+.menu-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--blue-soft); color: var(--blue-light); font-size: 25px; line-height: 1; margin-bottom: 22px; }
 .menu-icon.warm { background: var(--orange-soft); color: var(--orange); }
 .menu-card h3 { font-size: 18px; margin: 0 0 10px; }
 .menu-card p { font-size: 14px; line-height: 1.8; color: var(--muted); margin: 0 0 26px; word-break: keep-all; }
@@ -348,8 +369,26 @@ body {
 @media (max-width: 1100px) { .menu-grid[data-menu-role="guest"] { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 700px) { .menu-heading { display: block; } .menu-heading > p { margin-top: 10px; } .menu-grid, .menu-grid[data-menu-role] { grid-template-columns: 1fr; } .menu-card { padding: 24px; } .landing-page .hero { min-height: 440px; background-position: 62% center; background-image: linear-gradient(90deg, #253649e6, #25364980), url('/hero-airlink.png'); } .menu-card p br { display: none; } }
 
+
 /* 기사(repairman) 화면: 안내문구 줄(.menu-heading)을 아래 카드 폭에 맞춰서, 부제 문구가
    카드 폭만큼만 오른쪽으로 붙게 하고(전체 섹션 폭까지 벌어지지 않도록), 그 폭에서 줄바꿈되지
    않도록 카드/안내문구 폭을 같이 넓혀둡니다. */
 .features-preview:has(.menu-grid[data-menu-role="repairman"]) .menu-heading { width: 560px; max-width: 100%; }
 .menu-grid[data-menu-role="repairman"] { grid-template-columns: minmax(0, 560px); }
+=======
+/* 서비스 소개(/service-intro) 페이지 전용 - 전체적인 비율 확대 */
+.service-page .page-hero { margin-bottom: 48px; }
+.service-page .page-icon { font-size: 56px; margin-bottom: 18px; }
+.service-page .page-hero h2 { font-size: 36px; }
+.service-page .page-hero .page-subtitle { font-size: 17px; line-height: 1.85; }
+.service-page .flow-row { gap: 14px; margin: 20px 0 44px; }
+.service-page .flow-step { width: 165px; gap: 10px; }
+.service-page .flow-step .flow-icon { width: 68px; height: 68px; font-size: 30px; }
+.service-page .flow-step .flow-label { font-size: 15px; }
+.service-page .flow-step .flow-desc { font-size: 13px; line-height: 1.5; }
+.service-page .flow-arrow { font-size: 26px; padding-top: 20px; }
+.service-page .page-content .btn { padding: 13px 28px; font-size: 16px; margin-top: 30px; }
+@media (max-width: 650px) {
+  .service-page .page-icon { font-size: 44px; }
+  .service-page .page-hero h2 { font-size: 26px; }
+}
