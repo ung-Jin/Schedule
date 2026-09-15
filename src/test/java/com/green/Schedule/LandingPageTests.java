@@ -11,6 +11,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+import org.springframework.test.web.servlet.ResultMatcher;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -34,44 +40,51 @@ class LandingPageTests {
         return member;
     }
 
+    // Inspect rendered HTML rather than parsing HTML5 void elements as XML.
+    private ResultMatcher menus(String role, List<String> destinations) {
+        return result -> {
+            String html = result.getResponse().getContentAsString();
+            List<String> links = new ArrayList<>();
+            var anchors = Pattern.compile("<a\\b[^>]*class=\"menu-card\"[^>]*>").matcher(html);
+            while (anchors.find()) {
+                var href = Pattern.compile("href=\"([^\"]*)\"").matcher(anchors.group());
+                if (href.find()) links.add(href.group(1));
+            }
+            assertEquals(destinations, links);
+            var roles = Pattern.compile("data-menu-role=\"([^\"]*)\"").matcher(html);
+            List<String> visibleRoles = new ArrayList<>();
+            while (roles.find()) visibleRoles.add(roles.group(1));
+            assertEquals(List.of(role), visibleRoles);
+            assertFalse(html.contains("more-link"));
+        };
+    }
+
     @Test
     void guestSeesFiveCardsLeadingOnlyToLogin() throws Exception {
         mvc.perform(get("/"))
             .andExpect(status().isOk())
-            .andExpect(xpath("//a[@class='menu-card']").nodeCount(5))
-            .andExpect(xpath("//a[@class='menu-card' and @href='/member/login']").nodeCount(5))
-            .andExpect(xpath("//div[@data-menu-role]").nodeCount(1))
-            .andExpect(xpath("//a[contains(@class,'more-link')]").doesNotExist());
+            .andExpect(menus("guest", java.util.Collections.nCopies(5, "/member/login")));
     }
 
     @Test
     void adminSeesOnlyThreeAdminDestinations() throws Exception {
         mvc.perform(get("/").sessionAttr("loginMember", member("admin")))
             .andExpect(status().isOk())
-            .andExpect(xpath("//a[@class='menu-card']").nodeCount(3))
-            .andExpect(xpath("//div[@data-menu-role]").nodeCount(1))
-            .andExpect(xpath("//div[@data-menu-role='admin']/a[@href='/pages/admin/main']").exists())
-            .andExpect(xpath("//div[@data-menu-role='admin']/a[@href='/pages/admin/calendar']").exists())
-            .andExpect(xpath("//div[@data-menu-role='admin']/a[@href='/pages/admin/management']").exists());
+            .andExpect(menus("admin", List.of("/pages/admin/main", "/pages/admin/calendar", "/pages/admin/management")));
     }
 
     @Test
     void repairmanSeesOnlyTheirDashboard() throws Exception {
         mvc.perform(get("/").sessionAttr("loginMember", member("repairman")))
             .andExpect(status().isOk())
-            .andExpect(xpath("//a[@class='menu-card']").nodeCount(1))
-            .andExpect(xpath("//div[@data-menu-role]").nodeCount(1))
-            .andExpect(xpath("//div[@data-menu-role='repairman']/a[@href='/pages/engineer/main']").exists());
+            .andExpect(menus("repairman", List.of("/pages/engineer/main")));
     }
 
     @Test
     void userSeesRequestHistoryAndNewRequest() throws Exception {
         mvc.perform(get("/").sessionAttr("loginMember", member("user")))
             .andExpect(status().isOk())
-            .andExpect(xpath("//a[@class='menu-card']").nodeCount(2))
-            .andExpect(xpath("//div[@data-menu-role]").nodeCount(1))
-            .andExpect(xpath("//div[@data-menu-role='user']/a[@href='/request/list']").exists())
-            .andExpect(xpath("//div[@data-menu-role='user']/a[@href='/request/write']").exists());
+            .andExpect(menus("user", List.of("/request/list", "/request/write")));
     }
 
     @Test

@@ -1,7 +1,7 @@
 .main { flex: 1; min-width: 0; }
 .content { width: 100%; padding: 32px; }
 .eyebrow { color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
-.welcome-card { display: flex; align-items: center; gap: 28px; padding: 48px; border: 1px solid var(--line); border-radius: 18px; background: radial-gradient(ellipse at top right, #496d8c, transparent 75%), var(--panel); }
+.welcome-card { display: flex; align-items: center; gap: 28px; padding: 48px; border: 1px solid var(--line); border-radius: 18px; background: radial-gradient(ellipse at top right, #d9efff, transparent 75%), var(--panel); }
 .welcome-icon { display: grid; place-items: center; flex-shrink: 0; width: 84px; height: 84px; border-radius: 24px; background: var(--blue-soft); color: var(--blue-light); font-size: 42px; }
 .welcome-text h2 { margin: 8px 0 14px; font-size: clamp(24px, 3vw, 36px); letter-spacing: -1px; }
 .welcome-text p { max-width: 600px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; word-break: keep-all; overflow-wrap: break-word; }

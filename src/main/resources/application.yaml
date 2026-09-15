@@ -36,4 +36,4 @@ file:
 # - 평소 로컬 개발 중엔 굳이 안 건드려도 됨 (기본값 http://localhost:8080, 어차피 폰으로는 안 열리는 걸 알고 씀)
 # - 문자 발송을 실제로 폰에서 열어보고 싶을 때만, 지금 띄워둔 터널 주소로 아래 값을 바꿔주면 됩니다
 app:
-  public-base-url: https://screenshot-interstate-ethics-bat.trycloudflare.com
+  public-base-url: https://director-liabilities-bit-happy.trycloudflare.com
