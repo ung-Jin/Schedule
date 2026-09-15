@@ -19,6 +19,9 @@ function openForm(){
   document.getElementById('memId').required = true;
   document.getElementById('memPw').required = true;
 
+  //퇴사처리 버튼 숨김 (등록 모드에서는 사용 불가)
+  document.getElementById('retireBtn').style.display = 'none';
+
   //폼 표시 + 스크롤
   const formCard = document.getElementById('formCard');
   formCard.style.display = 'block';
@@ -45,6 +48,9 @@ function openEditForm(engineerNo){
       document.getElementById('accountRow').style.display = 'none';
       document.getElementById('memId').required = false;
       document.getElementById('memPw').required = false;
+
+      //퇴사처리 버튼 노출 (수정 모드에서만 사용 가능)
+      document.getElementById('retireBtn').style.display = '';
 
       //hidden값에 engineerNo 설정
       document.getElementById('engineerNo').value = engineer.engineerNo;
@@ -91,22 +97,25 @@ function resetForm(){
   document.getElementById('engineerNo').value = '';
 }
 
-//기사 삭제 
-function deleteEngineer(engineerNo) {
-  if(!confirm("정말 삭제하시겠습니까?")) return;
+//기사 퇴사 처리 (수정 폼 안에서 호출)
+function retireEngineerFromForm() {
+  const engineerNo = document.getElementById('engineerNo').value;
+  const engineerName = document.getElementById('engineerName').value;
 
-  axios.delete('/engineer-api/delete/' + engineerNo)
+  if(!confirm(engineerName + " 기사를 퇴사 처리하시겠습니까?")) return;
+
+  axios.post('/engineer-api/retire/' + engineerNo)
     .then(response => {
       if(response.data === true){
-        alert("삭제되었습니다.");
+        alert("퇴사 처리되었습니다.");
         location.reload();
       } else {
-        alert("삭제 실패");
+        alert("퇴사 처리 실패");
       }
     })
     .catch(error => {
       console.error(error);
-      alert("삭제 중 오류가 발생했습니다.");
+      alert("퇴사 처리 중 오류가 발생했습니다.");
     });
 }
 
