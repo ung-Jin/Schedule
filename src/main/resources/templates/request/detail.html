@@ -35,31 +35,31 @@
       </tr>
       <tr>
         <th>신청자</th>
-        <td th:text="${requestDetail.customerName}">홍길동</td>
+        <td th:text="${requestDetail.customerName}"></td>
       </tr>
       <tr>
         <th>연락처</th>
-        <td th:text="${requestDetail.customerTel}">010-0000-0000</td>
+        <td th:text="${requestDetail.customerTel}"></td>
       </tr>
       <tr>
         <th>주소</th>
-        <td th:text="${requestDetail.customerAddr}">주소</td>
+        <td th:text="${requestDetail.customerAddr}"></td>
       </tr>
       <tr>
         <th>제품 종류</th>
-        <td th:text="${requestDetail.productType}">에어컨</td>
+        <td th:text="${requestDetail.productType}"></td>
       </tr>
       <tr>
         <th>증상</th>
-        <td th:text="${requestDetail.symptom}">증상 내용</td>
+        <td th:text="${requestDetail.symptom}"> </td>
       </tr>
       <tr>
         <th>접수일</th>
-        <td th:text="${#strings.substring(requestDetail.requestDate, 0, 10)}">2026-09-10</td>
+        <td th:text="${#strings.substring(requestDetail.requestDate, 0, 10)}"></td>
       </tr>
       <tr>
         <th>희망 방문일</th>
-        <td th:text="${#strings.substring(requestDetail.wishDate, 0, 10)}">2026-09-15</td>
+        <td th:text="${#strings.substring(requestDetail.wishDate, 0, 10)}"></td>
       </tr>
     </table>
 

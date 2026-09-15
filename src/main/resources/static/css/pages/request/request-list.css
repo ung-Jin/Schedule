@@ -2,6 +2,7 @@
 
 .list-title {
   margin-bottom: 8px;
+  letter-spacing: -.5px;
 }
 
 .list-summary {
@@ -13,10 +14,11 @@
 /* 신청 내역이 없을 때 보여주는 안내 박스 */
 .empty-box {
   background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  border: 1px dashed #c7dcea;
+  border-radius: 20px;
   padding: 90px 20px;
   text-align: center;
+  box-shadow: var(--shadow);
 }
 
 .empty-box p {
@@ -31,10 +33,10 @@
   flex-direction: column;
   gap: 12px;
   max-width: 880px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 
 .request-row {
@@ -44,20 +46,22 @@
   gap: 20px;
   flex-wrap: wrap;
   padding: 22px 24px;
-  background: var(--panel-raised);
+  background: #fff;
   border: 1px solid var(--line);
   border-left: 4px solid var(--line);
-  border-radius: 12px;
+  border-radius: 16px;
   text-decoration: none;
   color: var(--text);
-  transition: border-color .15s, box-shadow .15s;
+  box-shadow: 0 10px 24px rgba(12, 34, 54, .05);
+  transition: border-color .15s, box-shadow .15s, transform .15s;
 }
 
 .request-row:hover {
   border-top-color: var(--blue-light);
   border-right-color: var(--blue-light);
   border-bottom-color: var(--blue-light);
-  box-shadow: 0 6px 18px #172a3e2e;
+  box-shadow: 0 16px 32px rgba(14, 165, 198, .12);
+  transform: translateY(-2px);
 }
 
 .request-row.row-received  { border-left-color: var(--blue-light); }

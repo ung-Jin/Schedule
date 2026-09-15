@@ -5,8 +5,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--panel);
-  font-family: Arial, "Noto Sans KR", sans-serif;
+  background:
+    radial-gradient(ellipse at 10% 0%, #cfeaf6, transparent 46%),
+    radial-gradient(ellipse at 100% 100%, #ffe8d2, transparent 40%),
+    var(--canvas);
+  font-family: 'Pretendard', "Noto Sans KR", sans-serif;
   color: var(--text);
 }
 
@@ -20,16 +23,16 @@ body {
 
 .survey-box {
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   background-color: var(--panel);
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(23, 59, 108, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(12, 34, 54, .14);
   overflow: hidden;
 }
 
 /* 위쪽 브랜드 배너 */
 .survey-header {
-  background: linear-gradient(135deg, var(--blue), var(--blue));
+  background: linear-gradient(135deg, #0c2236, #0ea5c6);
   padding: 28px 20px 24px;
   text-align: center;
 }
@@ -43,7 +46,7 @@ body {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
-  color: var(--text);
+  color: #fff;
   letter-spacing: 0.5px;
 }
 
@@ -122,7 +125,7 @@ body {
 }
 
 .emoji-option:has(input:checked) {
-  background-color: var(--panel);
+  background-color: var(--blue-soft);
   transform: translateY(-1px);
 }
 
@@ -143,7 +146,7 @@ body {
   padding: 12px;
   margin-bottom: 18px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 12px;
   font-family: inherit;
   font-size: 13.5px;
   resize: vertical;
@@ -157,14 +160,14 @@ body {
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, var(--blue), var(--blue));
-  color: var(--text);
+  background: linear-gradient(180deg, #1bb8d6, #0ea5c6);
+  color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(40, 120, 232, 0.35);
+  box-shadow: 0 10px 22px rgba(14, 165, 198, .28);
 }
 
 .btn-submit:hover {

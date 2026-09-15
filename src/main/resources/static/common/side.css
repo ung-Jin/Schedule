@@ -1,22 +1,181 @@
-.side { width: 240px; flex-shrink: 0; background: var(--chrome); border-right: 1px solid var(--line); }
-.side nav { position: sticky; top: 0; min-height: 100dvh; display: flex; flex-direction: column; padding: 30px 18px; }
-.side-logo { padding: 0 12px 30px; border-bottom: 1px solid var(--line); }
-.brand { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 18px; font-weight: 800; text-decoration: none; }
-.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; background: var(--blue); color: #fff; border-radius: 10px; font-size: 24px; }
-.brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; letter-spacing: 2px; font-weight: 500; }
-.nav-label { color: var(--muted); font-size: 10px; letter-spacing: 2px; padding: 26px 14px 12px; }
-.side ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-.side li a { display: flex; align-items: center; gap: 12px; padding: 13px 14px; color: var(--muted); text-decoration: none; font-size: 15px; border: 1px solid transparent; border-radius: 9px; transition: background .15s, color .15s; }
-.side li a:hover { background: var(--panel); color: var(--text); }
-.side li a[aria-current="page"] { background: var(--blue-soft); border-color: #b4dff6; color: var(--text); box-shadow: inset 3px 0 var(--blue); }
-.nav-icon { width: 20px; text-align: center; font-size: 18px; }
-.side-footer { margin-top: auto; padding: 20px 14px; border-top: 1px solid var(--line); }
-.side-footer-admin { display: flex; align-items: flex-start; gap: 10px; }
-.side-footer-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; margin-top: 1px; border-radius: 8px; background: var(--blue-soft); color: var(--blue-light); font-size: 14px; }
-.side-footer-admin-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.side-footer-admin-text strong { color: var(--muted); font-size: 10px; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; }
-.side-footer-admin-name { color: var(--text); font-size: 13px; font-weight: 600; }
-.side-footer-admin-tel { color: var(--orange-ink); font-size: 12.5px; font-weight: 600; text-decoration: none; }
+.side {
+  width: 248px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #0c2236 0%, #102a42 100%);
+  color: #d7e6f0;
+  box-shadow: 8px 0 32px rgba(12, 34, 54, .18);
+}
+
+.side nav {
+  position: sticky;
+  top: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 16px;
+}
+
+.side-logo {
+  padding: 4px 10px 26px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.side .airlink-logo {
+  height: 52px;
+  filter: brightness(1.08);
+  background: rgba(255,255,255,.92);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.brand small {
+  display: block;
+  margin-top: 3px;
+  color: #9bb4c6;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.nav-label {
+  color: #7ea0b6;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 26px 14px 12px;
+  font-weight: 700;
+}
+
+.side ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.side li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: #c5d8e6;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background .15s, color .15s;
+}
+
+.side li a:hover {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.side li a[aria-current="page"] {
+  background: rgba(14, 165, 198, .22);
+  border-color: rgba(14, 165, 198, .45);
+  color: #fff;
+  box-shadow: inset 3px 0 #0ea5c6;
+}
+
+.nav-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.side-footer {
+  margin-top: auto;
+  padding: 18px 12px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.side-footer-admin {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.side-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  border-radius: 8px;
+  background: rgba(14, 165, 198, .2);
+  color: #7ad7ec;
+  font-size: 14px;
+}
+
+.side-footer-admin-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.side-footer-admin-text strong {
+  color: #7ea0b6;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.side-footer-admin-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.side-footer-admin-tel {
+  color: #ffc48a;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .side-footer-admin-tel:hover { text-decoration: underline; }
-@media (max-width: 900px) { .side { width: 200px; } .side nav { padding: 24px 10px; } }
-@media (max-width: 700px) { .side { width: 100%; border-right: 0; border-bottom: 1px solid var(--line); } .side nav { position: static; min-height: auto; padding: 16px; } .side-logo { padding: 0 0 16px; } .side ul { flex-direction: row; flex-wrap: wrap; margin-top: 12px; } .side li a { padding: 10px 12px; font-size: 13px; } .nav-label, .side-footer { display: none; } }
+
+@media (max-width: 900px) {
+  .side { width: 210px; }
+  .side nav { padding: 20px 10px; }
+}
+
+@media (max-width: 700px) {
+  .side {
+    width: 100%;
+    background: #0c2236;
+  }
+  .side nav { position: static; min-height: auto; padding: 16px; }
+  .side-logo { padding: 0 0 16px; }
+  .side ul { flex-direction: row; flex-wrap: wrap; margin-top: 12px; }
+  .side li a { padding: 10px 12px; font-size: 13px; }
+  .nav-label, .side-footer { display: none; }
+}
