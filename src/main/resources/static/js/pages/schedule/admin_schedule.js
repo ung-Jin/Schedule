@@ -4,7 +4,7 @@
 */
 
 const STATUS_COLORS = {
-  RECEIVED: '#345b81',
+  RECEIVED: '#E98B50',
   ASSIGNED: '#2563eb',
   IN_PROGRESS: '#9a4c13',
   COMPLETED: '#25624e'
