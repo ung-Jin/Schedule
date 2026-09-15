@@ -62,4 +62,7 @@ public class ResultService {
     return resultMapper.selectEngineerNo(memNo);
   }
 
+  public List<ResultDTO> selectResults(){
+    return resultMapper.selectResults();
+  }
 }
