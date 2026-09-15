@@ -29,18 +29,6 @@
     <result column="visitEnd" property="visitEnd"/>
   </resultMap>
 
-  <!-- AS 결과 조회용 매핑 -->
-  <resultMap id="selectResult" type="com.green.Schedule.result.dto.ResultDTO">
-    <id     column="resultNo" property="resultNo"/>
-    <result column="scheduleNo" property="scheduleNo"/>
-    <result column="processDate" property="processDate"/>
-    <result column="processContent" property="processContent"/>
-    <result column="imagePath" property="imagePath"/>
-    <result column="imagePath2" property="imagePath2"/>
-    <result column="createdAt" property="createdAt"/>
-    <result column="engineerName" property="engineerName"/>
-  </resultMap>
-
   <!--  #대시보드 - 오늘 일정-->
   <select id="selectToday" resultMap="scheduleTodayMap">
     SELECT s.SCHEDULE_NO AS scheduleNo
@@ -94,21 +82,19 @@
 
   <!--  #결과보고 화면 - AS 기본정보 (일정 + 접수정보 조인)-->
   <select id="selectScheduleDetail" resultMap="scheduleDetailMap">
-    SELECT
-    R.RESULT_NO,
-    R.SCHEDULE_NO,
-    R.PROCESS_DATE,
-    R.PROCESS_CONTENT,
-    R.RESULT_STATUS,
-    R.IMAGE_PATH,
-    R.IMAGE_PATH2,
-    R.CREATED_AT,
-    E.ENGINEER_NAME
-    FROM AS_RESULT R
-    LEFT JOIN AS_SCHEDULE S
-    ON R.SCHEDULE_NO = S.SCHEDULE_NO
-    LEFT JOIN ENGINEER E
-    ON S.ENGINEER_NO = E.ENGINEER_NO
+    SELECT s.SCHEDULE_NO AS scheduleNo
+    , r.REQUEST_NO AS requestNo
+    , r.CUSTOMER_NAME AS customerName
+    , r.CUSTOMER_TEL AS customerTel
+    , r.CUSTOMER_ADDR AS customerAddr
+    , r.PRODUCT_TYPE AS productType
+    , r.SYMPTOM AS symptom
+    , r.REQUEST_DATE AS requestDate
+    , s.START_TIME AS visitStart
+    , s.END_TIME AS visitEnd
+    FROM AS_SCHEDULE s
+    JOIN REQUEST r ON s.REQUEST_NO = r.REQUEST_NO
+    WHERE s.SCHEDULE_NO = #{scheduleNo};
   </select>
 
   <!-- 이 일정이 로그인한 기사 본인 것인지 확인 (일치하는 행이 있으면 1, 없으면 0) -->
@@ -206,25 +192,35 @@
     WHERE SCHEDULE_NO = #{scheduleNo}
     ORDER BY RESULT_NO DESC
     LIMIT 1;
+  </select>
 
+  <!-- 관리자 "결과내역" 화면(/pages/admin/sideResult, pages/admin2/result.html) 전용 매핑 -
+       전체 AS_RESULT 목록을 처리기사 이름과 함께 보여줍니다. -->
+  <resultMap id="resultListMap" type="com.green.Schedule.result.dto.ResultListDTO">
+    <id     column="resultNo"       property="resultNo"/>
+    <result column="scheduleNo"     property="scheduleNo"/>
+    <result column="processDate"    property="processDate"/>
+    <result column="processContent" property="processContent"/>
+    <result column="imagePath"      property="imagePath"/>
+    <result column="imagePath2"     property="imagePath2"/>
+    <result column="createdAt"      property="createdAt"/>
+    <result column="engineerName"   property="engineerName"/>
+  </resultMap>
 
-  <select id="selectResults" resultMap="selectResult">
-    SELECT
-    R.RESULT_NO AS resultNo,
-    R.SCHEDULE_NO AS scheduleNo,
-    R.PROCESS_DATE AS processDate,
-    R.PROCESS_CONTENT AS processContent,
-    R.IMAGE_PATH AS imagePath,
-    R.IMAGE_PATH2 AS imagePath2,
-    R.CREATED_AT AS createdAt,
-    E.ENGINEER_NAME AS engineerName
-    FROM AS_RESULT R
-    LEFT JOIN AS_SCHEDULE S
-    ON R.SCHEDULE_NO = S.SCHEDULE_NO
-    LEFT JOIN ENGINEER E
-    ON S.ENGINEER_NO = E.ENGINEER_NO
-    ORDER BY R.PROCESS_DATE DESC
-
+  <!-- 관리자 "결과내역" 화면 - 전체 결과보고 목록 (AS_RESULT -> AS_SCHEDULE -> ENGINEER 조인해서 처리기사 이름까지) -->
+  <select id="selectResultList" resultMap="resultListMap">
+    SELECT r.RESULT_NO AS resultNo
+    , r.SCHEDULE_NO AS scheduleNo
+    , r.PROCESS_DATE AS processDate
+    , r.PROCESS_CONTENT AS processContent
+    , r.IMAGE_PATH AS imagePath
+    , r.IMAGE_PATH2 AS imagePath2
+    , r.CREATED_AT AS createdAt
+    , e.ENGINEER_NAME AS engineerName
+    FROM AS_RESULT r
+    LEFT JOIN AS_SCHEDULE s ON r.SCHEDULE_NO = s.SCHEDULE_NO
+    LEFT JOIN ENGINEER e ON s.ENGINEER_NO = e.ENGINEER_NO
+    ORDER BY r.PROCESS_DATE DESC;
   </select>
 
 </mapper>

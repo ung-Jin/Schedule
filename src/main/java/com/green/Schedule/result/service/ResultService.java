@@ -1,6 +1,7 @@
 package com.green.Schedule.result.service;
 
 import com.green.Schedule.result.dto.ResultDTO;
+import com.green.Schedule.result.dto.ResultListDTO;
 import com.green.Schedule.result.dto.ScheduleCalendarDTO;
 import com.green.Schedule.result.dto.ScheduleDetailDTO;
 import com.green.Schedule.result.dto.ScheduleTodayDTO;
@@ -62,15 +63,14 @@ public class ResultService {
     return resultMapper.selectEngineerNo(memNo);
   }
 
-
   // 결과보고 "조회"(읽기전용) - 이 일정에 등록된 AS_RESULT 조회
   public ResultDTO selectResultByScheduleNo(long scheduleNo){
     return resultMapper.selectResultByScheduleNo(scheduleNo);
   }
 
-
-  public List<ResultDTO> selectResults(){
-    return resultMapper.selectResults();
+  // 관리자 "결과내역" 화면 - 전체 결과보고 목록 (처리기사 이름 포함)
+  public List<ResultListDTO> selectResultList(){
+    return resultMapper.selectResultList();
   }
 
 }
