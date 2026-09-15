@@ -13,7 +13,7 @@
     <div class="survey-box">
 
       <div class="survey-header">
-        <div class="survey-header-icon">🛠️</div>
+        <div class="survey-header-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#wrench"/></svg></div>
         <h1 class="logo">냉·난방 AS</h1>
       </div>
 
@@ -21,14 +21,14 @@
 
         <!-- 링크에 engineerNo가 없거나 점수 범위를 벗어난 값으로 제출된 경우 -->
         <div th:if="${invalidLink}" class="survey-state">
-          <p class="state-icon">⚠️</p>
+          <p class="state-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#alert"/></svg></p>
           <p class="state-title">유효하지 않은 링크입니다</p>
           <p class="state-desc">문자로 받으신 링크를 다시 확인해주세요.</p>
         </div>
 
         <!-- 제출 완료 -->
         <div th:if="${submitted}" class="survey-state">
-          <p class="state-icon">✅</p>
+          <p class="state-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#check"/></svg></p>
           <p class="state-title">소중한 의견 감사합니다!</p>
           <p class="state-desc">더 나은 서비스로 보답하겠습니다.</p>
         </div>

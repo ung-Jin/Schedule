@@ -14,7 +14,7 @@
 
     <!-- 상단 메뉴 (메인페이지와 동일) -->
     <header class="first-top">
-      <h1><a th:href="@{/}"><img th:src="@{/common/airlink-horizontal.png}" alt="AIR LINK · 냉·난방 AS 스케줄 관리 시스템" class="brand-logo"></a></h1>
+      <h1><a th:href="@{/}"><img th:src="@{/common/airlink-horizontal-light.png}" alt="AIR LINK · 냉·난방 AS 스케줄 관리 시스템" class="brand-logo"></a></h1>
 
       <nav>
         <ul>
@@ -33,7 +33,7 @@
     <section class="page-content">
 
       <div class="page-hero">
-        <div class="page-icon">❄️</div>
+        <div class="page-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#snow"/></svg></div>
         <h2>서비스 소개</h2>
         <p class="page-subtitle">
           냉·난방 AS기사 스케줄 관리 시스템은 고객의 수리 요청부터<br>
@@ -44,25 +44,25 @@
       <!-- 접수부터 완료까지 흐름을 4단계로 정리 -->
       <div class="flow-row">
         <div class="flow-step">
-          <div class="flow-icon">📝</div>
+          <div class="flow-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#clipboard"/></svg></div>
           <div class="flow-label">사용자 신청</div>
           <div class="flow-desc">원하는 날짜와 시간에<br>수리를 신청합니다</div>
         </div>
         <div class="flow-arrow">→</div>
         <div class="flow-step">
-          <div class="flow-icon">🗂️</div>
+          <div class="flow-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#assign"/></svg></div>
           <div class="flow-label">관리자 배정</div>
           <div class="flow-desc">상황에 맞는<br>기사를 배정합니다</div>
         </div>
         <div class="flow-arrow">→</div>
         <div class="flow-step">
-          <div class="flow-icon">🔧</div>
+          <div class="flow-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#wrench"/></svg></div>
           <div class="flow-label">기사 방문</div>
           <div class="flow-desc">배정받은 일정을 확인하고<br>방문하여 수리합니다</div>
         </div>
         <div class="flow-arrow">→</div>
         <div class="flow-step">
-          <div class="flow-icon">✅</div>
+          <div class="flow-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#check"/></svg></div>
           <div class="flow-label">완료 확인</div>
           <div class="flow-desc">작업 결과를 등록하면<br>고객이 확인합니다</div>
         </div>

@@ -1,26 +1,30 @@
 /* 눈누(noonnu.cc) 무료 폰트 - Pretendard 웹폰트 로드 (CDN) */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/static/pretendard.min.css");
 
-/* Shared control-room palette, including standalone account screens. */
+/* White / ice blue / soft glass palette shared by every screen. */
 :root {
-  color-scheme: dark;
-  --canvas: #253649;
-  --panel: #30465c;
-  --panel-raised: #3b536b;
-  --line: #526a80;
-  --text: #f4f7fb;
-  --muted: #d0dce8;
-  --blue: #286bd5;
-  --blue-light: #a6d5ff;
-  --blue-soft: #304f70;
-  --orange: #ffb578;
-  --orange-soft: #594536;
-  --success: #69d4b1;
-  --success-soft: #2c514d;
-  --danger: #ff9298;
-  --danger-soft: #58414c;
-  --chrome: #293e53;
-  --input: #293e53;
+  color-scheme: light;
+  --canvas: #f3f9fe;
+  --panel: #ffffff;
+  --panel-raised: #eaf6ff;
+  --line: #cddfec;
+  --text: #244a73;
+  --muted: #526d87;
+  --blue: #49b8f2;
+  --blue-light: #176c9e;
+  --blue-soft: #e4f4ff;
+  --orange: #ffa75c;
+  --orange-soft: #fff0e2;
+  --success: #23765c;
+  --success-soft: #e6f6ee;
+  --danger: #ba3d51;
+  --danger-soft: #fff0f1;
+  --chrome: #ffffff;
+  --input: #ffffff;
+  --orange-ink: #995013;
+  --on-accent: #123856;
+  --glass: rgba(255, 255, 255, .82);
+  --shadow: 0 12px 32px rgba(64, 111, 151, .09);
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--canvas); color: var(--text); font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif; font-size: 15px; line-height: 1.65; }
@@ -28,7 +32,7 @@ button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 input, select, textarea { color: var(--text); background: var(--input); accent-color: var(--blue); max-width: 100%; }
-input::placeholder, textarea::placeholder { color: #becddd; }
+input::placeholder, textarea::placeholder { color: #657f96; }
 a { color: var(--blue-light); }
 :focus-visible { outline: 2px solid var(--blue-light); outline-offset: 3px; }
 input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
@@ -37,8 +41,8 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .app-shell { display: block; padding: 0; min-height: 100vh; }
 .app-shell > .container { display: flex; min-height: 100vh; width: 100%; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
-.btn-primary { background: var(--blue); color: #fff; border: 1px solid var(--blue); }
-.btn-primary:hover { background: #1d4ed8; }
+.btn-primary { background: var(--blue); color: var(--on-accent); border: 1px solid var(--blue); }
+.btn-primary:hover { background: #7acbf6; }
 .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--line); }
 .btn-outline:hover { background: var(--panel-raised); }
 .app-shell :is(.dashboard-wrap, .dash-container, .schedule-container, .page-wrap, .result-container) { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0; }
@@ -50,7 +54,7 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .app-shell .stat-complete { border-top-color: var(--success); }
 .app-shell .stat-value { font-size: 34px; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
 .app-shell .stat-icon { background: var(--blue-soft); color: var(--blue-light); }
-.app-shell .stat-progress .stat-icon { background: var(--orange-soft); color: var(--orange); }
+.app-shell .stat-progress .stat-icon { background: var(--orange-soft); color: var(--orange-ink); }
 .app-shell .stat-complete .stat-icon { background: var(--success-soft); color: var(--success); }
 .app-shell .recent-card { overflow-x: auto; }
 .app-shell :is(.recent-table, .engineer-table) th { background: var(--panel-raised); }
@@ -71,16 +75,16 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .app-shell .result-form-box { min-width: 0; }
 .app-shell .today-card { border-left: 3px solid var(--blue); }
 .app-shell :is(.badge.receipt, .badge.assigned, .status-received, .status-assigned) { background: var(--blue-soft); color: var(--blue-light); }
-.app-shell :is(.badge.progress, .status-progress) { background: var(--orange-soft); color: var(--orange); }
+.app-shell :is(.badge.progress, .status-progress) { background: var(--orange-soft); color: var(--orange-ink); }
 .app-shell :is(.badge.complete, .badge-work, .status-completed, .status-done, .diff-up) { background: var(--success-soft); color: var(--success); }
 .app-shell :is(.badge.canceled, .badge-rest, .status-canceled, .diff-down) { background: var(--danger-soft); color: var(--danger); }
 .app-shell .today-card:hover { background: var(--panel-raised); }
 .app-shell .today-middle { align-items: flex-start; text-align: left; }
 .app-shell .dash-main { grid-template-columns: minmax(320px, .9fr) minmax(0, 1.4fr); }
 .app-shell .schedule-container { --accent-soft: var(--blue-soft); --surface-2: var(--panel-raised); }
-.app-shell .receive-icon { color: #83b4ff; }
-.app-shell .assign-icon { color: #83b4ff; }
-.app-shell .progress-icon { color: var(--orange); }
+.app-shell .receive-icon { color: var(--blue-light); }
+.app-shell .assign-icon { color: var(--blue-light); }
+.app-shell .progress-icon { color: var(--orange-ink); }
 .app-shell .complete-icon { color: var(--success); }
 .eyebrow { color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
 .airlink-logo { display: block; height: 58px; width: auto; max-width: 100%; object-fit: contain; object-position: center; border-radius: 8px; }
@@ -108,3 +112,19 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   .app-shell .card { padding: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* Light glass on welcome/form surfaces; solid white for operational data. */
+body { background: radial-gradient(ellipse at 8% 0%, #eaf6ff, transparent 55%), var(--canvas); }
+.landing-page, .account-page { background: radial-gradient(ellipse at 5% 8%, #dff2ff, transparent 48%), radial-gradient(ellipse at 100% 95%, #fff1e5, transparent 45%), #f7fbff; }
+.account-page :is(.login-box, .join-form), .app-shell :is(.welcome-card, .request-form-area, .info-box, .complete-box) { background: var(--glass); backdrop-filter: blur(16px); border: 1px solid #d8e8f3; box-shadow: var(--shadow); border-radius: 20px; }
+.app-shell :is(.card, .recent-card, .cal-card, .assign-card, .dash-calendar-card, .dash-satisfaction-card, .result-form-box, .as-info-box) { background: #fff; }
+.side { box-shadow: 3px 0 20px #244a7305; }
+.header { background: #ffffffed; }
+.btn-primary, .btn-login, .submit-btn, .btn-submit, .assign-card button { color: var(--on-accent); }
+.fc-event-line, .dash-event-line { color: #fff; }
+.app-shell .fc .fc-button-primary { background: #267db1 !important; border-color: #267db1 !important; color: #fff; }
+.app-shell .schedule-container { --accent: #49b8f2; --accent-strong: #7acbf6; }
+.app-shell .view-switch button.active { color: var(--on-accent); }
+.account-page .login-flow { color: var(--orange-ink); }
+.account-page .login-box { box-shadow: 0 18px 48px #487b9d16; }
+.airlink-logo, .first-top .brand-logo { mix-blend-mode: multiply; }

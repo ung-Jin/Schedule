@@ -127,7 +127,7 @@
 
 .status-received  { background: var(--blue-soft); color: var(--blue-light); }
 .status-assigned  { background: var(--success-soft); color: var(--success); }
-.status-progress  { background: var(--orange-soft); color: var(--orange); }
+.status-progress  { background: var(--orange-soft); color: var(--orange-ink); }
 .status-completed { background: var(--panel); color: var(--muted); }
 .status-canceled  { background: var(--danger-soft); color: var(--danger); }
 
