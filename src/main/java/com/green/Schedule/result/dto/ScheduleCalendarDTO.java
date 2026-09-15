@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
  * customerAddr -> REQUEST.CUSTOMER_ADDR
  * startTime    -> AS_SCHEDULE.START_TIME
  * endTime      -> AS_SCHEDULE.END_TIME
+ * status       -> REQUEST.STATUS (완료(COMPLETED) 건인지 프론트에서 구분해서, 클릭 시
+ *                 결과보고 "작성" 화면(/as-result-report) 대신 "조회"(읽기전용) 화면(/as-result-view)으로 보내기 위함)
  */
 @Data
 public class ScheduleCalendarDTO {
@@ -24,4 +26,5 @@ public class ScheduleCalendarDTO {
     private String customerAddr;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
+    private String status;
 }

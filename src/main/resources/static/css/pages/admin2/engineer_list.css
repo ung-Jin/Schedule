@@ -136,41 +136,21 @@ body {
   color: var(--danger);
 }
 
-/* 관리 - 수정/삭제 버튼 (링크 스타일) */
-.link-edit {
-  background: none;
+/* 관리 - 수정 버튼 */
+.btn-edit {
+  background-color: var(--blue);
+  color: var(--text);
   border: none;
-  color: var(--blue-light);
+  padding: 5px 12px;
+  border-radius: 5px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  padding: 0;
   font-family: inherit;
 }
 
-.link-edit:hover {
-  text-decoration: underline;
-}
-
-.link-sep {
-  color: var(--muted);
-  margin: 0 4px;
-  font-size: 12px;
-}
-
-.link-delete {
-  background: none;
-  border: none;
-  color: var(--danger);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0;
-  font-family: inherit;
-}
-
-.link-delete:hover {
-  text-decoration: underline;
+.btn-edit:hover {
+  opacity: 0.9;
 }
 
 /* 등록/수정 폼 */
@@ -299,4 +279,22 @@ body {
 
 .btn-cancel:hover {
   background-color: var(--blue-soft);
+}
+
+/* 퇴사처리 버튼 (수정 폼 안에서만 노출) */
+.btn-retire {
+  background-color: var(--panel);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 7px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.btn-retire:hover {
+  background-color: var(--danger);
+  color: var(--panel);
 }

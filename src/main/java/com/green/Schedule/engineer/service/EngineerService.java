@@ -37,8 +37,8 @@ public class EngineerService  {
     engineerMapper.updateEngineer(engineerDTO);
   }
 
-  //기사 삭제
-  public void deleteEngineer(int engineerNo){
-    engineerMapper.deleteEngineer(engineerNo);
+  //기사 퇴사 처리 (STATUS를 RETIRED로 변경)
+  public void retireEngineer(int engineerNo){
+    engineerMapper.retireEngineer(engineerNo);
   }
 }

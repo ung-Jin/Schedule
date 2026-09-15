@@ -12,10 +12,12 @@
 <th:block layout:fragment="content">
   <div class="result-container">
 
-  <!-- 화면 제목 -->
+  <!-- 화면 제목
+       resultInfo가 넘어와 있으면(=이미 등록된 결과가 있는 일정으로 들어온 경우) "수정" 모드로 문구만 바꿔줍니다.
+       (읽기전용 조회화면(result_view.html)의 "수정" 버튼을 누르면 여기로 옴) -->
   <div class="result-title">
-    <h2>AS 결과보고</h2>
-    <p>AS 작업 완료 후 처리 결과를 등록해주세요.</p>
+    <h2 th:text="${resultInfo != null} ? 'AS 결과보고 수정' : 'AS 결과보고'">AS 결과보고</h2>
+    <p th:text="${resultInfo != null} ? '등록된 처리 결과를 수정해주세요.' : 'AS 작업 완료 후 처리 결과를 등록해주세요.'">AS 작업 완료 후 처리 결과를 등록해주세요.</p>
   </div>
 
   <div class="result-content">
@@ -25,7 +27,8 @@
     <!-- ======================== -->
     <div class="result-form-box">
       <h3>처리 정보</h3>
-      <form action="/result/reg"
+      <form id="resultForm"
+            action="/result/reg"
             method="post"
             enctype="multipart/form-data">
         <!-- 나중에 일정 상세화면에서 scheduleNo 전달 -->
@@ -40,21 +43,19 @@
             name="requestNo"
             th:value="${scheduleInfo != null ? scheduleInfo.requestNo : ''}">
 
-        <!-- 처리 날짜 -->
-        <div class="form-row">
-          <label for="processDate">
-            처리날짜
-            <span class="required">*</span>
-          </label>
-          <input
-              type="datetime-local"
-              id="processDate"
-              name="processDate"
-              required>
+        <!-- 처리날짜는 이제 기사가 직접 입력하는 값이 아니라 서버가 자동으로 기록만 하고(ResultController.resultReg 참고),
+             화면(작성/수정)에는 따로 보여주지 않습니다. 실제 값 확인은 결과보고 "조회"(읽기전용) 화면(result_view.html)에서. -->
+
+        <!-- 수정일시 - "이 결과보고를 마지막으로 수정한 시각"만 따로 보여줍니다.
+             신규 등록 화면(resultInfo == null)이거나, 아직 한 번도 수정한 적 없으면(updatedAt == null) 아예 안 보여줍니다. -->
+        <div class="form-row" th:if="${resultInfo != null and resultInfo.updatedAt != null}">
+          <label>수정일시</label>
+          <div class="readonly-value" th:text="${#temporals.format(resultInfo.updatedAt, 'yyyy.MM.dd HH:mm')}">
+          </div>
         </div>
 
 
-        <!-- 처리 내용 -->
+        <!-- 처리 내용 (수정 모드면 기존 내용을 채워줌) -->
         <div class="form-row content-row">
           <label for="processContent">
             처리내용
@@ -66,6 +67,7 @@
                 name="processContent"
                 maxlength="500"
                 placeholder="작업한 내용을 상세히 입력해주세요."
+                th:text="${resultInfo != null ? resultInfo.processContent : ''}"
                 required></textarea>
             <div class="text-count">
               <span id="contentCount">0</span>/500
@@ -74,7 +76,10 @@
         </div>
 
 
-        <!-- 처리 사진 1, 2 (같은 줄에 나란히 배치) -->
+        <!-- 처리 사진 1, 2 (같은 줄에 나란히 배치)
+             필수 항목 아님 - 첨부 안 해도 등록/수정 가능 (input에 required 없음, 서버도 없으면 null로 저장).
+             수정 모드에서 새 사진을 고르지 않으면 기존 사진이 그대로 유지되므로(ResultController.resultReg 참고),
+             여기서도 기존 사진을 미리보기로 먼저 보여줍니다. -->
         <div class="form-row">
           <label>
             처리사진
@@ -101,10 +106,12 @@
                     accept="image/jpeg, image/png"
                     hidden>
 
-                <!-- 사진 미리보기 -->
+                <!-- 사진 미리보기 (수정 모드면 기존 사진을 처음부터 보여줌) -->
                 <div class="image-preview-box">
                   <img
                       id="imagePreview"
+                      th:src="${resultInfo != null ? resultInfo.imagePath : null}"
+                      th:style="${resultInfo != null and resultInfo.imagePath != null} ? 'display:block' : ''"
                       alt="처리사진1 미리보기">
                 </div>
               </div>
@@ -129,15 +136,58 @@
                     accept="image/jpeg, image/png"
                     hidden>
 
-                <!-- 사진 미리보기 -->
+                <!-- 사진 미리보기 (수정 모드면 기존 사진을 처음부터 보여줌) -->
                 <div class="image-preview-box">
                   <img
                       id="imagePreview2"
+                      th:src="${resultInfo != null ? resultInfo.imagePath2 : null}"
+                      th:style="${resultInfo != null and resultInfo.imagePath2 != null} ? 'display:block' : ''"
                       alt="처리사진2 미리보기">
                 </div>
               </div>
             </div>
 
+          </div>
+        </div>
+
+        <!-- 사진 미첨부 사유 (선택) - 사진을 하나도 첨부하지 않았을 때 참고용으로 남기는 사유입니다.
+             필수 아님(처리사진과 마찬가지). 맨 마지막 "기타"를 고르면 옆 텍스트칸에 직접 입력.
+             수정 모드일 때, 기존에 저장된 값이 위 4개 프리셋 중 하나가 아니면 "기타"가 선택되고
+             그 텍스트가 그대로 옆 입력칸에 채워집니다 (noPhotoReasonIsEtc/noPhotoReasonEtcValue -
+             ResultController.asResultReport 참고). -->
+        <div class="form-row content-row">
+          <label>
+            미첨부 사유
+          </label>
+          <div class="no-photo-reason-box">
+            <label class="reason-option">
+              <input type="radio" name="noPhotoReason" value="단순 설정/원격 조치로 사진이 필요 없음"
+                     th:checked="${resultInfo != null and resultInfo.noPhotoReason == '단순 설정/원격 조치로 사진이 필요 없음'}">
+              단순 설정/원격 조치로 사진이 필요 없음
+            </label>
+            <label class="reason-option">
+              <input type="radio" name="noPhotoReason" value="고객이 촬영을 원하지 않음"
+                     th:checked="${resultInfo != null and resultInfo.noPhotoReason == '고객이 촬영을 원하지 않음'}">
+              고객이 촬영을 원하지 않음
+            </label>
+            <label class="reason-option">
+              <input type="radio" name="noPhotoReason" value="현장 여건상 촬영이 어려움(조명/장소 등)"
+                     th:checked="${resultInfo != null and resultInfo.noPhotoReason == '현장 여건상 촬영이 어려움(조명/장소 등)'}">
+              현장 여건상 촬영이 어려움(조명/장소 등)
+            </label>
+            <label class="reason-option">
+              <input type="radio" name="noPhotoReason" value="촬영을 깜빡함"
+                     th:checked="${resultInfo != null and resultInfo.noPhotoReason == '촬영을 깜빡함'}">
+              촬영을 깜빡함
+            </label>
+            <label class="reason-option reason-option-etc">
+              <input type="radio" id="noPhotoReasonEtcRadio" name="noPhotoReason" value="ETC"
+                     th:checked="${noPhotoReasonIsEtc}">
+              기타
+              <input type="text" id="noPhotoReasonEtc" name="noPhotoReasonEtc" maxlength="100"
+                     placeholder="사유를 직접 입력해주세요"
+                     th:value="${noPhotoReasonEtcValue}">
+            </label>
           </div>
         </div>
 
@@ -154,7 +204,8 @@
 
           <button
               type="submit"
-              class="submit-btn">
+              class="submit-btn"
+              th:text="${resultInfo != null} ? '수정 완료' : '결과 등록하기'">
             결과 등록하기
           </button>
 
@@ -264,6 +315,8 @@
     // 처리내용 글자수 카운터 (textarea에 입력할 때마다 "0/500" 숫자 갱신)
     const contentTextarea = document.getElementById('processContent');
     const contentCount = document.getElementById('contentCount');
+    // 수정 모드로 들어와서 처음부터 내용이 채워져 있는 경우에도 글자수가 0으로 보이지 않도록 최초 1회 반영
+    contentCount.textContent = contentTextarea.value.length;
     contentTextarea.addEventListener('input', function () {
       contentCount.textContent = contentTextarea.value.length;
     });
@@ -294,6 +347,56 @@
 
     setupImagePreview('resultImage', 'imagePreview');
     setupImagePreview('resultImage2', 'imagePreview2');
+
+    // 사진 미첨부 사유 - "기타" 라디오를 선택했을 때만 옆 텍스트칸을 활성화합니다.
+    // (비활성화된 input은 폼 제출 시 아예 안 딸려가므로, 다른 사유를 고르면 예전에 써둔 기타 텍스트가
+    //  실수로 같이 전송되는 일도 자동으로 막아줍니다)
+    const etcRadio = document.getElementById('noPhotoReasonEtcRadio');
+    const etcInput = document.getElementById('noPhotoReasonEtc');
+    const reasonRadios = document.querySelectorAll('input[name="noPhotoReason"]');
+
+    function syncNoPhotoReasonEtc() {
+      etcInput.disabled = !etcRadio.checked;
+    }
+
+    reasonRadios.forEach(function (radio) {
+      radio.addEventListener('change', syncNoPhotoReasonEtc);
+    });
+    syncNoPhotoReasonEtc(); // 수정 모드로 들어와서 처음부터 "기타"가 선택되어 있는 경우 대비 초기 반영
+
+    // 텍스트칸에 바로 타이핑을 시작하면 "기타" 라디오도 자동으로 선택되게
+    etcInput.addEventListener('focus', function () {
+      etcRadio.checked = true;
+      syncNoPhotoReasonEtc();
+    });
+
+    // 처리사진 / 미첨부 사유 - 최소 하나는 있어야 함
+    // (둘 다 필수는 아니지만, 사진도 안 올리고 사유도 안 고르면 아예 빈 값으로 넘어가버리니
+    //  "사진이 있거나" 또는 "사유가 선택돼있거나" 둘 중 하나는 반드시 있게 제출 시점에 확인합니다)
+    const resultForm = document.getElementById('resultForm');
+    const resultImageInput = document.getElementById('resultImage');
+    const resultImage2Input = document.getElementById('resultImage2');
+    const imagePreviewEl = document.getElementById('imagePreview');
+    const imagePreview2El = document.getElementById('imagePreview2');
+    resultForm.addEventListener('submit', function (e) {
+      // 새로 고른 파일이 있는지 + (수정 모드라) 기존에 첨부돼있던 사진이 남아있는지까지 같이 확인.
+      // th:src가 null이면 Thymeleaf가 src 속성 자체를 안 그려주므로, getAttribute('src')로
+      // "신규 등록(사진 없음)"과 "수정 모드(기존 사진 있음)"를 구분할 수 있습니다.
+      const hasPhoto =
+          resultImageInput.files.length > 0 ||
+          resultImage2Input.files.length > 0 ||
+          !!imagePreviewEl.getAttribute('src') ||
+          !!imagePreview2El.getAttribute('src');
+
+      // "기타"를 선택하고 텍스트를 안 채운 경우는 사유를 고른 걸로 인정하지 않음
+      const checkedReason = document.querySelector('input[name="noPhotoReason"]:checked');
+      const hasReason = !!checkedReason && (checkedReason.value !== 'ETC' || etcInput.value.trim() !== '');
+
+      if (!hasPhoto && !hasReason) {
+        e.preventDefault();
+        alert('처리사진을 최소 1장 첨부하거나, 미첨부 사유를 선택(또는 기타 사유 입력)해주세요.');
+      }
+    });
   </script>
 </th:block>
   

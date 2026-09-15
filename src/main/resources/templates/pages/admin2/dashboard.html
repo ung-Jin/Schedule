@@ -5,6 +5,7 @@
 
 <!--이 곳에 link태그로 css파일을 연결하는 코드 작성-->
 <th:block layout:fragment="content_css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="/css/pages/admin2/dashboard.css">
 </th:block>
 
@@ -21,7 +22,6 @@
     <div class="stat-cards">
 
       <div class="stat-card stat-receipt">
-        <div class="stat-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#clipboard"/></svg></div>
         <div class="stat-info">
           <div class="stat-label">접수완료</div>
           <div class="stat-value"><span id="receiptCount">0</span>건</div>
@@ -34,10 +34,11 @@
           <div class="stat-label">기사배정</div>
           <div class="stat-value"><span id="assignedCount">0</span>건</div>
         </div>
-      </div>
-
+      </div>        
       <div class="stat-card stat-progress">
+
         <div class="stat-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#wrench"/></svg></div>
+
         <div class="stat-info">
           <div class="stat-label">작업진행</div>
           <div class="stat-value"><span id="progressCount">0</span>건</div>
@@ -45,7 +46,9 @@
       </div>
 
       <div class="stat-card stat-complete">
+
         <div class="stat-icon" aria-hidden="true"><svg class="ui-icon"><use href="/common/ui-icons.svg#check"/></svg></div>
+
         <div class="stat-info">
           <div class="stat-label">작업완료</div>
           <div class="stat-value"><span id="completeCount">0</span>건</div>

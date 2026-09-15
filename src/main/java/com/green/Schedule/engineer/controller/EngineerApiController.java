@@ -31,10 +31,10 @@ public class EngineerApiController {
     return true;
   }
 
-  //기사 삭제
-  @DeleteMapping("/delete/{engineerNo}")
-  public boolean deleteEngineer(@PathVariable("engineerNo") int engineerNo){
-    engineerService.deleteEngineer(engineerNo);
+  //기사 퇴사 처리
+  @PostMapping("/retire/{engineerNo}")
+  public boolean retireEngineer(@PathVariable("engineerNo") int engineerNo){
+    engineerService.retireEngineer(engineerNo);
     return true;
   }
 }

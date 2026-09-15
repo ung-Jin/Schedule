@@ -162,6 +162,15 @@ body {
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
 }
 
+/* 진행예정 상태 카드는 아직 클릭해도 이동하지 않으므로, 클릭 가능하다는 느낌을 주지 않도록 함 */
+.today-card-pending {
+  cursor: default;
+}
+
+.today-card-pending:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
 /* 왼쪽 : 시간 (한 줄로, 줄바꿈되지 않게) */
 .today-time {
   flex-shrink: 0;
@@ -204,7 +213,7 @@ body {
 
 /* 진행상태 버튼/뱃지 - 고객명이 줄바꿈되지 않도록 가운데 칸에 폭을 더 내주기 위해 폭을 줄임 */
 
-.status-btn {
+.status-badge {
   flex-shrink: 0;
   width: 76px;
   height: 42px;
@@ -212,35 +221,157 @@ body {
   border-radius: 12px;
   background-color: var(--panel);
   color: var(--blue-light);
-  font-weight: bold;
-  font-size: 13px;
-  cursor: pointer;
-}
 
-.status-btn:hover {
-  background-color: var(--panel);
-}
-
-.status-badge {
-  flex-shrink: 0;
-  width: 76px;
-  height: 42px;
-  border-radius: 12px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 13px;
+
+
+/* 진행예정 - 아직 방문 시작 시각 전. 표시만 하고 클릭해도 이동하지 않음 */
+.status-pending {
+  background-color: var(--panel);
+  color: var(--muted);
 }
 
-.status-progress {
+/* 결과보고 - 방문 시작 시각이 지났는데 아직 결과가 등록되지 않음. 카드를 클릭하면 결과보고 작성 화면으로 이동 */
+.status-report {
+  border: 1px solid var(--blue);
   background-color: var(--panel);
-  color: var(--orange-ink);
+  color: var(--blue-light);
 }
 
 .status-done {
   background-color: var(--panel);
   color: var(--success);
+}
+
+
+/* 달력 클릭 시 뜨는 고객 기본정보 모달 */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-box {
+  position: relative;
+  width: 340px;
+  max-width: calc(100% - 40px);
+  background-color: var(--panel);
+  border-radius: 10px;
+  padding: 28px 24px 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-box h3 {
+  margin: 0 0 16px 0;
+  font-size: 17px;
+  color: var(--text);
+}
+
+/* 모달 안 정보 표(고객명/연락처/주소/방문시간) - result_report.css의 .info-table과 같은 모양이지만,
+   이 화면(result_dashboard.html)은 result_report.css를 불러오지 않으므로 여기 따로 정의합니다 */
+.modal-box .info-table {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.modal-box .info-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal-box .info-row:last-child {
+  border-bottom: none;
+}
+
+.modal-box .info-title {
+  flex-shrink: 0;
+
+  width: 76px;
+  height: 42px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: var(--text);
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.modal-view-btn:hover {
+  background-color: var(--blue);
+}
+
+.modal-view-btn[hidden] {
+  display: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 연락처 값 + 전화연결 버튼을 한 줄에 나란히 */
+.modal-tel-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.call-btn {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border: 1px solid var(--blue);
+  border-radius: 20px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.call-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 

@@ -53,9 +53,7 @@
           <span th:if="${engineer.status == 'REST'}" class="badge badge-rest">휴무</span>
         </td>
         <td>
-          <button class="link-edit" th:onclick="'openEditForm(' + ${engineer.engineerNo} + ')'">수정</button>
-          <span class="link-sep">|</span>
-          <button class="link-delete" th:onclick="'deleteEngineer(' + ${engineer.engineerNo} + ')'">삭제</button>
+          <button class="btn-edit" th:onclick="'openEditForm(' + ${engineer.engineerNo} + ')'">수정</button>
         </td>
       </tr>
       </tbody>
@@ -141,6 +139,8 @@
 
       <!--버튼-->
       <div class="btn-group">
+        <!--퇴사처리 버튼 (수정 모드에서만 노출)-->
+        <button type="button" class="btn-retire" id="retireBtn" onclick="retireEngineerFromForm()" style="display:none;">퇴사처리</button>
         <button type="button" class="btn-cancel" onclick="closeForm()">취소</button>
         <button type="button" class="btn-primary" id="submitBtn" onclick="submitForm()">등록하기</button>
       </div>

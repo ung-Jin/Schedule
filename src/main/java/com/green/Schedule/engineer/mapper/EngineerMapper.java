@@ -23,6 +23,6 @@ public interface EngineerMapper {
   //기사 정보 수정
   void updateEngineer(EngineerDTO engineerDTO);
 
-  //기사 삭제
-  void deleteEngineer(int engineerNo);
+  //기사 퇴사 처리 (STATUS를 RETIRED로 변경)
+  void retireEngineer(int engineerNo);
 }
