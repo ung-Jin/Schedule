@@ -1,57 +1,64 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{layouts/layout}">
 
 <th:block layout:fragment="content_css">
-<!-- 이 곳에 link태그로 css파일을 연결하는 코드 작성 -->
+  <!-- 이 곳에 link태그로 css파일을 연결하는 코드 작성 -->
 </th:block>
 
 <!-- 아래 bloack에 layout으로 보낼 코드 작성 -->
 <th:block layout:fragment="content">
 
-    <h2>결과화면</h2>
+  <h2>결과화면</h2>
 
-    <table>
-        <thead>
-        <tr>
-            <th>결과번호</th>
-            <th>일정번호</th>
-            <th>처리일자</th>
-            <th>처리내용</th>
-            <th>상태</th>
-            <th>이미지</th>
-            <th>이미지2</th>
-            <th>등록일</th>
-        </tr>
-        </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>결과번호</th>
+        <th>일정번호</th>
+        <th>처리기사</th>
+        <th>처리일자</th>
+        <th>처리내용</th>
+        <th>처리이미지</th>
+        <th>처리이미지2</th>
+        <th>등록일</th>
+      </tr>
+    </thead>
 
-        <tbody>
-        <tr th:each="result : ${resultList}">
+    <tbody>
+      <tr th:each="result : ${resultList}">
 
-            <td th:text="${result.resultNo}"></td>
+        <td th:text="${result.resultNo}"></td>
 
-            <td th:text="${result.scheduleNo}"></td>
+        <td th:text="${result.scheduleNo}"></td>
 
-            <td th:text="${result.processDate}"></td>
+        <td th:text="${result.engineerName}"></td>
 
-            <td th:text="${result.processContent}"></td>
+        <td th:text="${#temporals.format(result.processDate, 'yyyy-MM-dd HH:mm')}"></td>
 
-            <td th:text="${result.imagePath}"></td>
+        <td th:text="${result.processContent}"></td>
 
-            <td th:text="${result.imagePath2}"></td>
+        <td>
+          <img th:if="${result.imagePath != null}" th:src="${result.imagePath}" alt="처리 결과 이미지"
+            style="width: 150px; height: 100px; object-fit: cover;">
+        </td>
 
-            <td th:text="${result.createdAt}"></td>
+        <td>
+          <img th:if="${result.imagePath2 != null}" th:src="${result.imagePath2}" alt="처리 결과 이미지 2"
+            style="width: 150px; height: 100px; object-fit: cover;">
+        </td>
 
-        </tr>
-        </tbody>
+        <td th:text="${#temporals.format(result.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
 
-    </table>
+      </tr>
+    </tbody>
+
+  </table>
 
 </th:block>
 
 <th:block layout:fragment="content_js">
-<!-- 이 곳에 script태그로 js파일을 연결하는 코드 작성 -->
+  <!-- 이 곳에 script태그로 js파일을 연결하는 코드 작성 -->
 </th:block>
 
 </html>

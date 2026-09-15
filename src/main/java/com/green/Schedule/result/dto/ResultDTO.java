@@ -13,4 +13,5 @@ public class ResultDTO {
   private String imagePath;
   private String imagePath2;
   private LocalDateTime createdAt;
+  private String engineerName;
 }
