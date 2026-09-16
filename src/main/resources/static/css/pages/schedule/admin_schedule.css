@@ -139,6 +139,49 @@
 }
 .fc-more-cell:hover { text-decoration: underline; }
 
+/* "+N" 클릭 시 뜨는 접힌 일정 목록 팝오버 (기사 홈 대시보드와 통일된 방식 - 날짜 이동 대신 바로 이 자리에 표시).
+   주의: 이 팝오버는 document.body에 바로 추가되어 .schedule-container 바깥에 위치하므로,
+   .schedule-container 안에서만 정의된 --surface/--border/--text-dim 같은 별칭 변수는 여기선 값이 없어
+   투명하게 나옵니다. 그래서 반드시 common/layout.css의 전역(:root) 변수를 그대로 써야 합니다
+   (기사 홈 대시보드의 .dash-more-popover가 쓰는 것과 동일). */
+.cal-more-popover {
+  position: fixed;
+  z-index: 1200;
+  min-width: 190px;
+  max-width: 260px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(12, 34, 54, .18);
+  padding: 6px;
+}
+.cal-more-popover-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cal-more-popover-item:hover { background-color: var(--blue-soft); }
+.cal-more-popover-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.cal-more-popover-text .name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+.cal-more-popover-text .sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 /* 이벤트 안에 기사명/증상/시작시간을 세 줄로 표시 (admin_schedule.js의 eventContent) */
 .fc-event-lines {
   display: flex;
@@ -212,71 +255,42 @@
 .assign-card form > div > div span { color: var(--text-dim); font-size: 13px; }
 
 .assign-card .time-range {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
 .assign-card .time-field {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 5px;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
   min-width: 0;
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #edf7fc;
+  padding: 0;
   cursor: pointer;
-  transition: border-color .16s, box-shadow .16s, background .16s;
-}
-
-.assign-card .time-field:hover,
-.assign-card .time-field:focus-within {
-  border-color: var(--accent);
-  background: var(--surface);
-  box-shadow: 0 0 0 3px rgba(14, 165, 198, .11);
 }
 
 .assign-card .time-field .time-field-caption {
-  color: var(--text-dim);
-  font-size: 11px;
+  color: var(--text);
+  font-size: 13px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .assign-card .time-field input {
   width: 100%;
-  min-height: 30px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  min-height: 44px;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
   color: var(--text);
-  font-size: 16px;
-  font-weight: 750;
+  font-size: 15px;
+  font-weight: 650;
   font-variant-numeric: tabular-nums;
-  box-shadow: none;
 }
 
-.assign-card .time-field input:focus { border: 0; box-shadow: none; }
-
-.assign-card .time-range .time-range-arrow {
-  display: grid;
-  place-items: center;
-  color: var(--blue-light);
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.assign-card form > div .time-help {
-  margin-top: 1px;
-  color: var(--text-dim);
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.5;
-}
+.assign-card .time-field input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(14, 165, 198, .11); }
  
 .assign-card button[type="button"] {
   width: 100%;
