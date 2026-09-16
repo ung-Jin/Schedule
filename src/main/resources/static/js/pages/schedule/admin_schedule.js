@@ -43,6 +43,7 @@ function buildEvents(engineerFilter) {
           backgroundColor: color,
           borderColor: color,
           textColor: '#fff',
+          displayOrder: r.status === 'RECEIVED' ? 0 : 1,
           extendedProps: {
             isAssigned: false,
             status: r.status,
@@ -72,6 +73,7 @@ function buildEvents(engineerFilter) {
         backgroundColor: color,
         borderColor: color,
         textColor: '#fff',
+        displayOrder: s.status === 'RECEIVED' ? 0 : 1,
         extendedProps: {
           isAssigned: true,
           status: s.status,
@@ -88,16 +90,17 @@ function buildEvents(engineerFilter) {
 }
 
 // 하루에 "접수완료"(RECEIVED, 빨강 - 아직 기사 배정 안 된 건이라 빨리 처리해야 하는 고객)가 아닌
-// 일정이 몇 개까지 바로 보일지. 이걸 넘어가면 나머지는 "+N" 자리표시 이벤트 하나로 묶습니다.
+// 일정이 몇 개까지 바로 보일지. 기사 홈 대시보드(result_dashboard.js의 capDashEventsPerDay)와
+// 같은 방식으로, 이 개수까지는 그대로 보여주고 그 이상(초과분)만 "+N"으로 접습니다.
 const MAX_VISIBLE_OTHER_PER_DAY = 1;
 
 /**
  * 월간 달력(dayGridMonth) 전용 - 하루에 일정이 너무 많이 몰려서 그 날짜 칸 때문에
  * 달력 전체 높이가 늘어지는 걸 막기 위한 처리입니다.
- * RECEIVED(빨강, 미배정 접수)는 배정을 빨리 해줘야 하는 건이라 절대 생략하지 않고 전부 보여주고,
- * 그 외 상태(배정완료/진행중/완료)만 하루 MAX_VISIBLE_OTHER_PER_DAY개까지 보여준 뒤 나머지는
- * "+N"(N=그 날짜에 숨겨진 개수) 자리표시 이벤트로 접습니다. 이 자리표시를 클릭하면(eventClick 참고)
- * 그 날짜의 일간(timeGridDay) 화면으로 이동해서 전체를 볼 수 있습니다.
+ * RECEIVED(빨강, 미배정 접수 = 배정전)는 배정을 빨리 해줘야 하는 건이라 절대 생략하지 않고 전부 보여주고,
+ * 그 외 상태(배정완료/진행중/완료 = 이미 배정된 건)는 하루 MAX_VISIBLE_OTHER_PER_DAY개까지만 칸에
+ * 직접 보여주고, 그 초과분만 "+N"(N=그 날짜에 숨겨진 개수) 자리표시 이벤트 하나로 묶습니다.
+ * 이 자리표시를 클릭하면(eventClick 참고) 날짜 이동 없이 숨겨진 일정들을 작은 목록(팝오버)으로 보여줍니다.
  * 일/주간 뷰(timeGridDay/timeGridWeek)에서는 칸 높이 문제가 없으므로 이 처리를 적용하지 않습니다.
  */
 function capEventsPerDay(events) {
@@ -120,9 +123,10 @@ function capEventsPerDay(events) {
       return;
     }
 
+    // MAX_VISIBLE_OTHER_PER_DAY개는 그대로 보여주고, 그 초과분만 "+N"으로 접습니다.
     result.push.apply(result, otherEvents.slice(0, MAX_VISIBLE_OTHER_PER_DAY));
 
-    const hiddenCount = otherEvents.length - MAX_VISIBLE_OTHER_PER_DAY;
+    const hiddenEvents = otherEvents.slice(MAX_VISIBLE_OTHER_PER_DAY);
     result.push({
       id: 'more-' + dateKey,
       start: dateKey,
@@ -130,12 +134,80 @@ function capEventsPerDay(events) {
       backgroundColor: 'transparent',
       borderColor: 'transparent',
       textColor: 'inherit',
+      displayOrder: 2,
       classNames: ['fc-more-placeholder'],
-      extendedProps: { isMoreLink: true, moreCount: hiddenCount, moreDate: dateKey }
+      extendedProps: { isMoreLink: true, moreCount: hiddenEvents.length, moreDate: dateKey, hiddenEvents: hiddenEvents }
     });
   });
 
   return result;
+}
+
+/* ---------------- 하루 칸에 접힌 일정 목록 팝오버 ---------------- */
+// "+N" 자리표시를 클릭했을 때, 날짜를 이동시키는 대신(기사 홈 대시보드와 통일된 방식으로)
+// 접혀 있던 일정들을 작은 목록으로 그 자리에 바로 보여줍니다.
+function removeMorePopover() {
+  const existing = document.getElementById('calMorePopover');
+  if (existing) existing.remove();
+  document.removeEventListener('click', handleMorePopoverOutsideClick);
+}
+
+function handleMorePopoverOutsideClick(e) {
+  const popover = document.getElementById('calMorePopover');
+  if (popover && !popover.contains(e.target)) removeMorePopover();
+}
+
+function showMorePopover(anchorEl, hiddenEvents) {
+  removeMorePopover();
+
+  const popover = document.createElement('div');
+  popover.id = 'calMorePopover';
+  popover.className = 'cal-more-popover';
+
+  hiddenEvents.forEach(function (ev) {
+    const p = ev.extendedProps;
+    const item = document.createElement('div');
+    item.className = 'cal-more-popover-item';
+
+    const dot = document.createElement('span');
+    dot.className = 'cal-more-popover-dot';
+    dot.style.backgroundColor = STATUS_COLORS[p.status] || '#9aa5ab';
+
+    const text = document.createElement('div');
+    text.className = 'cal-more-popover-text';
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'name';
+    nameEl.textContent = p.customerName || '-';
+
+    const subEl = document.createElement('div');
+    subEl.className = 'sub';
+    subEl.textContent = [p.engineerName, p.timeRange].filter(Boolean).join(' ') || (p.productType || '');
+
+    text.appendChild(nameEl);
+    text.appendChild(subEl);
+    item.appendChild(dot);
+    item.appendChild(text);
+
+    item.addEventListener('click', function (e) {
+      e.stopPropagation();
+      removeMorePopover();
+      console.log('일정 클릭:', p);
+    });
+
+    popover.appendChild(item);
+  });
+
+  document.body.appendChild(popover);
+
+  const rect = anchorEl.getBoundingClientRect();
+  popover.style.top = (rect.bottom + 4) + 'px';
+  popover.style.left = rect.left + 'px';
+
+  // 팝오버를 여는 클릭 자체가 곧바로 "바깥 클릭"으로 잡혀서 닫히지 않도록 다음 이벤트 루프에서 등록
+  setTimeout(function () {
+    document.addEventListener('click', handleMorePopoverOutsideClick);
+  }, 0);
 }
 
 /**
@@ -159,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------------- 캘린더 ---------------- */
   const calendarEl = document.getElementById('calendar');
   let currentEngineerFilter = 'all';
+  let currentViewType = 'dayGridMonth';
 
   const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
@@ -167,16 +240,15 @@ document.addEventListener('DOMContentLoaded', function () {
     headerToolbar: false,
     eventDisplay: 'block',
 
-    // 우리가 직접 배열 순서(빨강 먼저, 그다음 나머지, 마지막에 "+N")를 관리하므로
-    // FullCalendar 기본 정렬(eventOrder)이 순서를 다시 섞지 않도록 끕니다.
-    eventOrder: false,
+    // 지원되는 속성 정렬 방식으로 접수완료 → 일반 일정 → "+N" 순서를 유지합니다.
+    eventOrder: 'displayOrder',
+    eventOrderStrict: true,
 
     events: function (fetchInfo, successCallback) {
       const raw = buildEvents(currentEngineerFilter);
       // 월간(dayGridMonth) 뷰에서만 하루 개수 제한을 적용합니다. 일/주간 뷰는 칸이 늘어지는
       // 문제가 없어서(시간축 스크롤) 전체를 다 보여줍니다.
-      const viewType = calendar.view ? calendar.view.type : 'dayGridMonth';
-      successCallback(viewType === 'dayGridMonth' ? capEventsPerDay(raw) : raw);
+      successCallback(currentViewType === 'dayGridMonth' ? capEventsPerDay(raw) : raw);
     },
 
     eventContent: function (arg) {
@@ -218,13 +290,10 @@ document.addEventListener('DOMContentLoaded', function () {
     eventClick: function (info) {
       const p = info.event.extendedProps;
 
-      // "+N" 자리표시 클릭 - 팝오버 대신, 그 날짜의 일간(timeGridDay) 화면으로 이동시켜서
-      // 접혀 있던 일정까지 전부 보여줍니다.
+      // "+N" 자리표시 클릭 - 기사 홈 대시보드와 통일된 방식으로, 날짜를 이동시키는 대신
+      // 접혀 있던 일정들을 그 자리에서 작은 목록(팝오버)으로 보여줍니다.
       if (p.isMoreLink) {
-        calendar.changeView('timeGridDay', p.moreDate);
-        document.querySelectorAll('#viewSwitch button').forEach(function (b) {
-          b.classList.toggle('active', b.dataset.view === 'timeGridDay');
-        });
+        showMorePopover(info.el, p.hiddenEvents);
         return;
       }
 
@@ -232,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     datesSet: function (info) {
+      currentViewType = info.view.type;
       document.getElementById('calTitle').textContent = info.view.title;
     }
   });
@@ -243,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('#viewSwitch button').forEach(function (btn) {
     btn.addEventListener('click', function () {
+      currentViewType = btn.dataset.view;
       calendar.changeView(btn.dataset.view);
       document.querySelectorAll('#viewSwitch button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -252,6 +323,11 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('techFilter').addEventListener('change', function (e) {
     currentEngineerFilter = e.target.value;
     calendar.refetchEvents();
+  });
+
+  // ESC 키로 "+N" 목록 팝오버 닫기
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') removeMorePopover();
   });
 
   /* ---------------- AS 일정 배정 폼 ---------------- */

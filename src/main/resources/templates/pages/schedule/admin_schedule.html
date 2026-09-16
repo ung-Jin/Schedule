@@ -78,16 +78,14 @@
               <p>방문 시간</p>
               <div class="time-range">
                 <label class="time-field" for="startTimeInput" data-picker-field>
-                  <span class="time-field-caption">시작 시간</span>
+                  <span class="time-field-caption">시작</span>
                   <input type="time" id="startTimeInput" value="09:00" aria-label="방문 시작 시간">
                 </label>
-                <span class="time-range-arrow" aria-hidden="true">→</span>
                 <label class="time-field" for="endTimeInput" data-picker-field>
-                  <span class="time-field-caption">종료 시간</span>
+                  <span class="time-field-caption">종료</span>
                   <input type="time" id="endTimeInput" value="10:00" aria-label="방문 종료 시간">
                 </label>
               </div>
-              <p class="time-help">각 입력 상자를 눌러 방문 예정 시간을 조정하세요.</p>
               <!-- fixDate + 시간을 합쳐 LocalDateTime 형식("yyyy-MM-ddTHH:mm")으로 실제 전송하는 hidden input -->
               <input type="hidden" name="startTime" id="startTimeHidden">
               <input type="hidden" name="endTime" id="endTimeHidden">
