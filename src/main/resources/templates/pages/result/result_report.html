@@ -359,7 +359,22 @@
       etcInput.disabled = !etcRadio.checked;
     }
 
+    // 라디오 버튼은 원래 한번 고르면 다시 클릭해도 선택이 풀리지 않으므로(=수정 모드에서
+    // "이 사유는 이제 아니다" 싶을 때 아예 선택 해제할 방법이 없었음), 이미 선택된 라디오를
+    // 한 번 더 클릭하면 선택이 풀리도록 직접 처리합니다. (radio.checked를 코드로 바꾸는 건
+    // change 이벤트를 발생시키지 않으므로, syncNoPhotoReasonEtc를 매번 직접 호출해줍니다)
+    let previouslyCheckedReason = document.querySelector('input[name="noPhotoReason"]:checked') || null;
+
     reasonRadios.forEach(function (radio) {
+      radio.addEventListener('click', function () {
+        if (previouslyCheckedReason === radio) {
+          radio.checked = false;
+          previouslyCheckedReason = null;
+          syncNoPhotoReasonEtc();
+        } else {
+          previouslyCheckedReason = radio;
+        }
+      });
       radio.addEventListener('change', syncNoPhotoReasonEtc);
     });
     syncNoPhotoReasonEtc(); // 수정 모드로 들어와서 처음부터 "기타"가 선택되어 있는 경우 대비 초기 반영
@@ -367,6 +382,7 @@
     // 텍스트칸에 바로 타이핑을 시작하면 "기타" 라디오도 자동으로 선택되게
     etcInput.addEventListener('focus', function () {
       etcRadio.checked = true;
+      previouslyCheckedReason = etcRadio;
       syncNoPhotoReasonEtc();
     });
 
